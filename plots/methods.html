@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Способы задания функций и кривых</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body class="isnohome">
+
+	<div class="preloader"><div class="pulse"></div></div>
+	
+	<div id="my-page">
+		<div id="my-header">
+			<header class="site-header" >
+
+				<div class="top-line">
+					<a href="#my-menu" class="hamburger hamburger--collapse-r">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</a>
+
+					<nav id="my-menu">
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="developers.html">Разработчики</a></li>
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="transform.html">Основные преобразования функций</a></li>
+							<li><span>Элементарные функции</span>
+								<ul>
+									<li><a href="straight.html">Прямая</a></li>
+									<li><a href="parabola.html">Парабола</a></li>
+									<li><a href="hyperbole.html">Гипербола</a></li>
+									<li><a href="power.html">Степенная функция</a></li>
+									<li><a href="exponential.html">Показательная и логарифмическая функции</a></li>
+									<li><span>Тригонометрические функции</span>
+										<ul>
+											<li><a href="trigonometric-1.html">$$sin(x),\;\;cos(x),\;\;arcsin(x),\;\;arccos(x)$$</a></li>
+											<li><a href="trigonometric-2.html">$$tg(x),\;\;ctg(x),\;\;arctg(x),\;\;arcctg(x)$$</a></li>
+										</ul>
+									</li>
+									<li><a href="hyperbolic.html">Гиперболические функции</a></li>
+								</ul>
+							</li>
+							<li><a href="other-functions.html">Некоторые другие функции</a></li>
+							<li><span>Построение графиков функций и кривых</span>
+								<ul>
+									<li><span>Явное задание</span>
+										<ul>
+											<li><a href="explicit-scheme.html">Схема построения</a></li>
+											<li><span>Примеры</span>
+												<ul>
+													<li><a href="explicit-example-1.html">Пример 1</a></li>
+													<li><a href="explicit-example-2.html">Пример 2</a></li>
+													<li><a href="explicit-example-3.html">Пример 3</a></li>
+													<li><a href="explicit-example-4.html">Пример 4</a></li>
+													<li><a href="explicit-example-5.html">Пример 5</a></li>
+													<li><a href="explicit-example-6.html">Пример 6</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="implicit.html">Неявное задание</a></li>
+									<li><span>Параметрическое задание</span>
+										<ul>
+											<li><a href="parametric-scheme.html">Схема построения</a></li>
+											<li><a href="parametric-example.html">Пример</a></li>
+										</ul>
+									</li>
+									<li><a href="polar.html">Полярное задание</a></li>
+								</ul>
+							</li>
+							<li><a href="special-points.html">Особые точки кривых</a></li>
+						</ul>
+					</nav>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1" style="margin-bottom: 20px;">Способы задания функций и кривых</h1></div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1" style="margin-bottom: 15px; margin-top: 0px;">Функция $$\:y(x)$$</h1></div>
+					</div>
+
+					<div class="methods-container">
+						<div class="row align-items-center justify-content-center">
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div id="methodsPlot1" class="jxgbox"></div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div class="row justify-content-center">
+									<div class="methodsDesc">
+										<div class="col-12"><p id="methodsPlot1Desc" class="text-center" style="margin-bottom: 25px">$$Явно$$<span class="blue">$$\;\;y=\sqrt{4-x^2}$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot1Desc" class="text-center" style="margin-bottom: 25px;">$$Неявно$$<span class="blue">$$\;\;\left\{\begin{matrix} x^2+y^2-4=0\\ y\geq 0 \end{matrix}\right.$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot1Desc" class="text-center">$$Параметрически$$<span class="blue">$$\;\;\left\{\begin{matrix} x=2cos(t)\\ y=2sin(t)\\ t\in [0,\pi] \end{matrix}\right.$$</span></p></div>
+									</div>
+								</div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div id="methodsPlot2" class="jxgbox"></div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div class="row justify-content-center">
+									<div class="methodsDesc">
+										<div class="col-12"><p id="methodsPlot2Desc" class="text-center" style="margin-bottom: 25px">$$Явно$$<span class="red">$$\;\;y=-\sqrt{4-x^2}$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot2Desc" class="text-center" style="margin-bottom: 25px;">$$Неявно$$<span class="red">$$\;\;\left\{\begin{matrix} x^2+y^2-4=0\\ y\leq 0 \end{matrix}\right.$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot2Desc" class="text-center">$$Параметрически$$<span class="red">$$\;\;\left\{\begin{matrix} x=2cos(t)\\ y=2sin(t)\\ t\in [\pi,2\pi] \end{matrix}\right.$$</span></p></div>
+									</div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1" style="margin-bottom: 15px; margin-top: 0px;">Функция $$\:x(y)$$</h1></div>
+					</div>
+
+					<div class="methods-container">
+						<div class="row align-items-center  justify-content-center">
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div id="methodsPlot3" class="jxgbox"></div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div class="row justify-content-center">
+									<div class="methodsDesc">
+										<div class="col-12"><p id="methodsPlot3Desc" class="text-center" style="margin-bottom: 25px">$$Явно$$<span class="blue">$$\;\;x=\sqrt{4-y^2}$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot3Desc" class="text-center" style="margin-bottom: 25px;">$$Неявно$$<span class="blue">$$\;\;\left\{\begin{matrix} x^2+y^2-4=0\\ x\geq 0 \end{matrix}\right.$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot3Desc" class="text-center">$$Параметрически$$<span class="blue">$$\;\;\left\{\begin{matrix} x=2cos(t)\\ y=2sin(t)\\ t\in [-\frac{\pi}{2},\frac{\pi}{2}] \end{matrix}\right.$$</span></p></div>
+									</div>
+								</div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div id="methodsPlot4" class="jxgbox"></div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div class="row justify-content-center">
+									<div class="methodsDesc">
+										<div class="col-12"><p id="methodsPlot4Desc" class="text-center" style="margin-bottom: 25px">$$Явно$$<span class="red">$$\;\;x=-\sqrt{4-y^2}$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot4Desc" class="text-center" style="margin-bottom: 25px;">$$Неявно$$<span class="red">$$\;\;\left\{\begin{matrix} x^2+y^2-4=0\\ x\leq 0 \end{matrix}\right.$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot4Desc" class="text-center">$$Параметрически$$<span class="red">$$\;\;\left\{\begin{matrix} x=2cos(t)\\ y=2sin(t)\\ t\in [\frac{\pi}{2},\frac{3\pi}{2}] \end{matrix}\right.$$</span></p></div>
+									</div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1 methods-h1" style="margin-bottom: 15px; margin-top: 0;">Кривая $$\:x^2+y^2=4$$</h1></div>
+					</div>
+
+					<div class="methods-container">
+						<div class="row justify-content-center align-items-center">
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-3"><div class="methods-column">
+								<div id="methodsPlot5" class="jxgbox"></div>
+							</div></div>
+
+							<div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-vl-6"><div class="methods-column">
+								<div class="row justify-content-center">
+									<div class="methodsDesc">
+										<div class="col-12"><p id="methodsPlot5Desc" class="text-center" style="margin-bottom: 25px;">$$Неявно$$<span class="purple">$$\;\; x^2+y^2-4=0$$</span></p></div>
+										<div class="col-12"><p id="methodsPlot5Desc" class="text-center">$$Параметрически$$<span class="purple">$$\;\;\left\{\begin{matrix} x=2cos(t)\\ y=2sin(t)\\ t\in [0,2\pi] \end{matrix}\right.$$</span></p></div>
+									</div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</header>
+		</div>
+
+	</div>
+
+	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

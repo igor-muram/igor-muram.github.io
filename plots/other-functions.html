@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Некоторые другие функции</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body class="isnohome">
+
+	<div class="preloader"><div class="pulse"></div></div>
+	
+	<div id="my-page">
+		<div id="my-header">
+			<header class="site-header" >
+
+				<div class="top-line">
+					<a href="#my-menu" class="hamburger hamburger--collapse-r">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</a>
+
+					<nav id="my-menu">
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="developers.html">Разработчики</a></li>
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="transform.html">Основные преобразования функций</a></li>
+							<li><span>Элементарные функции</span>
+								<ul>
+									<li><a href="straight.html">Прямая</a></li>
+									<li><a href="parabola.html">Парабола</a></li>
+									<li><a href="hyperbole.html">Гипербола</a></li>
+									<li><a href="power.html">Степенная функция</a></li>
+									<li><a href="exponential.html">Показательная и логарифмическая функции</a></li>
+									<li><span>Тригонометрические функции</span>
+										<ul>
+											<li><a href="trigonometric-1.html">$$sin(x),\;\;cos(x),\;\;arcsin(x),\;\;arccos(x)$$</a></li>
+											<li><a href="trigonometric-2.html">$$tg(x),\;\;ctg(x),\;\;arctg(x),\;\;arcctg(x)$$</a></li>
+										</ul>
+									</li>
+									<li><a href="hyperbolic.html">Гиперболические функции</a></li>
+								</ul>
+							</li>
+							<li><a href="other-functions.html">Некоторые другие функции</a></li>
+							<li><span>Построение графиков функций и кривых</span>
+								<ul>
+									<li><span>Явное задание</span>
+										<ul>
+											<li><a href="explicit-scheme.html">Схема построения</a></li>
+											<li><span>Примеры</span>
+												<ul>
+													<li><a href="explicit-example-1.html">Пример 1</a></li>
+													<li><a href="explicit-example-2.html">Пример 2</a></li>
+													<li><a href="explicit-example-3.html">Пример 3</a></li>
+													<li><a href="explicit-example-4.html">Пример 4</a></li>
+													<li><a href="explicit-example-5.html">Пример 5</a></li>
+													<li><a href="explicit-example-6.html">Пример 6</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="implicit.html">Неявное задание</a></li>
+									<li><span>Параметрическое задание</span>
+										<ul>
+											<li><a href="parametric-scheme.html">Схема построения</a></li>
+											<li><a href="parametric-example.html">Пример</a></li>
+										</ul>
+									</li>
+									<li><a href="polar.html">Полярное задание</a></li>
+								</ul>
+							</li>
+							<li><a href="special-points.html">Особые точки кривых</a></li>
+						</ul>
+					</nav>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1" style="margin-bottom: 12px;">Некоторые другие функции</h1></div>
+					</div>
+
+					<div class="other-container">
+						<div class="row justify-content-center">
+
+							<div class="col-lg-6 col-sm-12 text-justify"><div class="other-column">
+								<div id="otherPlot1" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="otherPlot1Desc" class="text-center"><span class="blue">$$y=|$$</span>$$x$$<span class="blue">$$|\;=\;$$</span>$$\left\{\begin{matrix} x,\;\;x\geq 0\\ -x,\;\;x<0 \end{matrix}\right.$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-lg-6 col-sm-12 text-justify"><div class="other-column">
+								<div id="otherPlot2" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="otherPlot2Desc" class="text-center"><span class="blue">$$y=sign($$</span>$$x$$<span class="blue">$$)\;=\;$$</span>$$\left\{\begin{matrix} 1,\;\;x>0\\ -1,\;\;x<0 \end{matrix}\right.$$</p></div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+					<div class="other-container">
+						<div class="row justify-content-center">
+
+							<div class="col-lg-6 col-sm-12 text-justify"><div class="other-column">
+								<div id="otherPlot3" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="otherPlot3Desc" class="text-center"><span class="blue">$$y=\;[$$</span>$$x$$<span class="blue">$$]$$</span>$$\;=k\;\;при\;\;x\in [k,\;k+1)$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-lg-6 col-sm-12 text-justify"><div class="other-column">
+								<div id="otherPlot4" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="otherPlot4Desc" class="text-center"><span class="blue">$$y=\{$$</span>$$x$$<span class="blue">$$\}\;$$</span>$$=x-[x]$$</p></div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</header>
+		</div>
+
+	</div>
+
+	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

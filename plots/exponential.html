@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Показательная и логарифмическая функции</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body class="isnohome">
+
+	<div class="preloader"><div class="pulse"></div></div>
+	
+	<div id="my-page">
+		<div id="my-header">
+			<header class="site-header" >
+
+				<div class="top-line">
+					<a href="#my-menu" class="hamburger hamburger--collapse-r">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</a>
+
+					<nav id="my-menu">
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="developers.html">Разработчики</a></li>
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="transform.html">Основные преобразования функций</a></li>
+							<li><span>Элементарные функции</span>
+								<ul>
+									<li><a href="straight.html">Прямая</a></li>
+									<li><a href="parabola.html">Парабола</a></li>
+									<li><a href="hyperbole.html">Гипербола</a></li>
+									<li><a href="power.html">Степенная функция</a></li>
+									<li><a href="exponential.html">Показательная и логарифмическая функции</a></li>
+									<li><span>Тригонометрические функции</span>
+										<ul>
+											<li><a href="trigonometric-1.html">$$sin(x),\;\;cos(x),\;\;arcsin(x),\;\;arccos(x)$$</a></li>
+											<li><a href="trigonometric-2.html">$$tg(x),\;\;ctg(x),\;\;arctg(x),\;\;arcctg(x)$$</a></li>
+										</ul>
+									</li>
+									<li><a href="hyperbolic.html">Гиперболические функции</a></li>
+								</ul>
+							</li>
+							<li><a href="other-functions.html">Некоторые другие функции</a></li>
+							<li><span>Построение графиков функций и кривых</span>
+								<ul>
+									<li><span>Явное задание</span>
+										<ul>
+											<li><a href="explicit-scheme.html">Схема построения</a></li>
+											<li><span>Примеры</span>
+												<ul>
+													<li><a href="explicit-example-1.html">Пример 1</a></li>
+													<li><a href="explicit-example-2.html">Пример 2</a></li>
+													<li><a href="explicit-example-3.html">Пример 3</a></li>
+													<li><a href="explicit-example-4.html">Пример 4</a></li>
+													<li><a href="explicit-example-5.html">Пример 5</a></li>
+													<li><a href="explicit-example-6.html">Пример 6</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="implicit.html">Неявное задание</a></li>
+									<li><span>Параметрическое задание</span>
+										<ul>
+											<li><a href="parametric-scheme.html">Схема построения</a></li>
+											<li><a href="parametric-example.html">Пример</a></li>
+										</ul>
+									</li>
+									<li><a href="polar.html">Полярное задание</a></li>
+								</ul>
+							</li>
+							<li><a href="special-points.html">Особые точки кривых</a></li>
+						</ul>
+					</nav>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1 exponential-h1">Показательная и логарифмическая функции</h1></div>
+					</div>
+
+					<div class="exponential-container">
+						<div class="row justify-content-center">
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
+								<div id="exponentialPlot1" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="exponentialPlot1Desc" class="text-center">$$y=a^x$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
+								<div id="exponentialPlot2" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="exponentialPlot2Desc" class="text-center">$$y=log_{a}x$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
+								<div id="exponentialPlot3" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="exponentialPlot3Desc" class="text-center"><span class="blue">$$y=a^x\;\;$$</span>$$и$$<span class="red">$$\;\;\:y=log_{a}x$$</span></p></div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 style="margin-top: 10px; margin-bottom: 10px;">Свойства</h1></div>
+					</div>
+
+					<div class="exponential-container">
+						<div class="row justify-content-center">
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
+								<div class="exponentialPropRow">
+									<div class="row justify-content-center"><div class="col-lg-10 text-center"><h1 class="h1 green" style="margin-bottom: 0; margin-top: 11px;">$$y=a^x$$</h1></div></div>
+									<div class="col-12"><p class="exponentialProp1 text-center">$$a^{x_1+x_2} = a^{x_1} \cdot a^{x_2};\quad$$ $$a^{x_1-x_2} = \frac{a^{x_1}}{a^{x_2}};$$</p></div>
+									<div class="col-12"><p class="exponentialProp1 text-center">$$\left(a^{x_1}\right)^{x_2} = a^{x_1\cdot x_2} = \left(a^{x_2}\right)^{x_1};\;$$</p></div>
+									<div class="col-12"><p class="exponentialProp1 text-center" style="margin-bottom: 0px;">$$(a\cdot b)^x = a^x \cdot b^x;\quad$$ $$\left(\frac{a}{b}\right)^x = \frac{a^x}{b^x};$$</p></div>
+									<div class="col-12"><p class="exponentialProp1 text-center">$$a^0 = 1;\quad$$ $$a^{-x} = \frac{1}{a^x};\quad$$ $$\sqrt[n]{a^x} = a^{\frac{x}{n}};$$</p></div>
+									<div class="col-12"><p class="exponentialProp1 last text-center">Если $$\;\;a^{x_1} = a^{x_2},\;\;$$ то $$\;\;x_1=x_2;$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
+								<div class="exponentialPropRow exponentialPropRow2">
+									<div class="row justify-content-center"><div class="col-lg-10 text-center"><h1 class="h1 green" style="margin-bottom: 15px; margin-top: 11px;">$$y=log_{a}x$$</h1></div></div>
+									<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 18px;">$$lg{x}=log_{_{10}}{x};\quad$$ $$ln{x}=log_{e}{x};$$</p></div>
+									<div class="col-12"><p class="exponentialProp2 text-center">$$log_{a}{a}=1;\quad$$ $$a^{log_{a}{x}}=x;\quad$$ $$log_{a}{1}=0;$$</p></div>
+									<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 0px;">$$log_{a}{x^p}=p\cdot log_{a}{x};\quad$$ $$log_{a^q}{x}=\frac{1}{q}\cdot log_{a}{x};$$</p></div>
+									<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 5px; margin-top: 0px;">$$log_{a}{b}=\frac{log_{c}{b}}{log_{c}{a}};\quad$$ $$log_{a}{x}=\frac{1}{log_{x}{a}};$$</p></div>
+									<div class="col-12"><p class="exponentialProp2 text-center">$$log_{a}{(x_1\cdot x_2)}=$$$$\;log_{a}{x_1}+log_{a}{x_2};$$</p></div>
+									<div class="col-12"><p class="exponentialProp2 last text-center">$$log_{a}{\left (\frac{x_1}{x_2} \right)} =$$$$\;log_{a}{x_1}-log_{a}{x_2};$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-lg-7 col-xl-4">
+								<div class="navigation">
+									<a href="power.html"><div class="elem-prev" title="Степенная функция"><i class="fa fa-angle-left"></i></div></a>
+									<a href="trigonometric-1.html"><div class="elem-next" title="Тригонометрические функции"><i class="fa fa-angle-right"></i></div></a>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+				</div>
+			
+			</header>
+		</div>
+
+	</div>
+
+	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

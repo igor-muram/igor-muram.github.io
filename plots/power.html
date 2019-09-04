@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Степенная функция</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body class="isnohome">
+
+	<div class="preloader"><div class="pulse"></div></div>
+	
+	<div id="my-page">
+		<div id="my-header">
+			<header class="site-header" >
+
+				<div class="top-line">
+					<a href="#my-menu" class="hamburger hamburger--collapse-r">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</a>
+
+					<nav id="my-menu">
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="developers.html">Разработчики</a></li>
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="transform.html">Основные преобразования функций</a></li>
+							<li><span>Элементарные функции</span>
+								<ul>
+									<li><a href="straight.html">Прямая</a></li>
+									<li><a href="parabola.html">Парабола</a></li>
+									<li><a href="hyperbole.html">Гипербола</a></li>
+									<li><a href="power.html">Степенная функция</a></li>
+									<li><a href="exponential.html">Показательная и логарифмическая функции</a></li>
+									<li><span>Тригонометрические функции</span>
+										<ul>
+											<li><a href="trigonometric-1.html">$$sin(x),\;\;cos(x),\;\;arcsin(x),\;\;arccos(x)$$</a></li>
+											<li><a href="trigonometric-2.html">$$tg(x),\;\;ctg(x),\;\;arctg(x),\;\;arcctg(x)$$</a></li>
+										</ul>
+									</li>
+									<li><a href="hyperbolic.html">Гиперболические функции</a></li>
+								</ul>
+							</li>
+							<li><a href="other-functions.html">Некоторые другие функции</a></li>
+							<li><span>Построение графиков функций и кривых</span>
+								<ul>
+									<li><span>Явное задание</span>
+										<ul>
+											<li><a href="explicit-scheme.html">Схема построения</a></li>
+											<li><span>Примеры</span>
+												<ul>
+													<li><a href="explicit-example-1.html">Пример 1</a></li>
+													<li><a href="explicit-example-2.html">Пример 2</a></li>
+													<li><a href="explicit-example-3.html">Пример 3</a></li>
+													<li><a href="explicit-example-4.html">Пример 4</a></li>
+													<li><a href="explicit-example-5.html">Пример 5</a></li>
+													<li><a href="explicit-example-6.html">Пример 6</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="implicit.html">Неявное задание</a></li>
+									<li><span>Параметрическое задание</span>
+										<ul>
+											<li><a href="parametric-scheme.html">Схема построения</a></li>
+											<li><a href="parametric-example.html">Пример</a></li>
+										</ul>
+									</li>
+									<li><a href="polar.html">Полярное задание</a></li>
+								</ul>
+							</li>
+							<li><a href="special-points.html">Особые точки кривых</a></li>
+						</ul>
+					</nav>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center"><h1 class="h1">Степенная функция $$\;y=x^n$$</h1></div>
+					</div>
+
+					<div class="power-container">
+						<div class="row justify-content-center">
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="power-column">
+								<div id="powerPlot1" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="powerPlot1Desc" class="text-center">$$n\;\;чётное$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="power-column">
+								<div id="powerPlot2" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="powerPlot2Desc" class="text-center">$$n\;\;нечётное$$</p></div>
+								</div>
+							</div></div>
+							
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="power-column">
+								<div class="powerPropRow">
+									<div class="row justify-content-center"><div class="col-lg-10 text-center"><h1 class="h1" style="margin-bottom: 0; margin-top: 3px;">Свойства:</h1></div></div>
+									<div class="col-12"><p class="powerProp text-center">$$x^{p+q} = x^p \cdot x^q;\quad$$ $$x^{p-q} = \frac{x^p}{x^q};$$</p></div>
+									<div class="col-12"><p class="powerProp text-center">$$\left(x^p\right)^q = x^{p\cdot q} = \left(x^q\right)^p;\;$$</p></div>
+									<div class="col-12"><p class="powerProp text-center">$$(x_1\cdot x_2)^p = x_1^p \cdot x_2^p;\quad$$ $$\left(\frac{x_1}{x_2}\right)^p = \frac{x_1^p}{x_2^p};$$</p></div>
+									<div class="col-12"><p class="powerProp text-center">$$x^0 = 1;\quad$$ $$x^{-p} = \frac1{x^p};\quad$$ $$\sqrt[n]{x} = x^{\frac1n};$$</p></div>
+									<div class="col-12"><p class="powerProp last text-center">$$\sqrt[m]{\sqrt[n]{x}}=\left ( x^{\frac{1}{n}} \right )^{\frac{1}{m}}=$$$$\;x^{\frac{1}{n\cdot m}}=\sqrt[n\cdot m]{x};$$</p></div>
+								</div>
+							</div></div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center"><div class="col-lg-10 text-center" style="height: 3vh;"></div></div>
+
+					<div class="power-container">
+						<div class="row justify-content-center">
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="power-column">
+								<div id="powerPlot3" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="powerPlot3Desc" class="text-center">$$y=\sqrt[n]{x}$$</p></div>
+								</div>
+							</div></div>
+
+							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="power-column">
+								<div id="powerPlot4" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12"><p id="powerPlot4Desc" class="text-center"><span class="blue">$$y=x^3\;\;$$</span>$$и$$<span class="red">$$\;\;y=\sqrt[3]{x}$$</span></p></div>
+								</div>
+							</div></div>
+
+							<div class="col-lg-7 col-xl-4">
+								<div class="navigation">
+									<a href="hyperbole.html"><div class="elem-prev" title="Гипербола"><i class="fa fa-angle-left"></i></div></a>
+									<a href="exponential.html"><div class="elem-next" title="Показательная и логарифмическая функции"><i class="fa fa-angle-right"></i></div></a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</header>
+		</div>
+
+	</div>
+
+	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

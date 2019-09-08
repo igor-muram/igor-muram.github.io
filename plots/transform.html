@@ -100,25 +100,25 @@
 					<div class="transform-container">
 						<div class="row justify-content-center">
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
 									<div class="col-xs-12 col-md-5 col-lg-12 col-xl-12 col-vl-5"><p id="shiftUDText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f(x)$$</span>$$\;+\;$$<span class="red">$$A$$</span><span>$$,\quad $$</span><span class="red">$$A=\;$$</span><span id="shiftUDValue" class="red math">0</span></p></div>
 									<div class="col-xs-12 col-md-7 col-lg-12 col-xl-12 col-vl-7"><input type="range" id="shiftUDSlider" class="slider" min="-1.6" max="1.9" step="0.1" oninput="showShiftUD();"></div>
 								</div>
 								<div id="shiftUDPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="shiftUDDesc" class="text-center">Сдвиг на $$A$$ вверх при $$A$$ > 0, сдвиг на $$A$$ вниз при $$A$$ < 0</p></div>
+									<div class="col-12"><p id="shiftUDDesc" class="text-center">Сдвиг на $$A$$ вверх при $$A>0$$, сдвиг на $$A$$ вниз при $$A<0$$</p></div>
 								</div>
 							</div></div>
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
 									<div class="col-xs-12 col-md-5 col-lg-12 col-xl-12 col-vl-5"><p id="shiftLRText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f(x$$</span>$$\;+\;$$<span class="red">$$A$$</span><span class="blue">$$)$$</span><span>$$,\quad $$</span><span class="red">$$A=\;$$</span><span id="shiftLRValue" class="red math">0</span></p></div>
 									<div class="col-xs-12 col-md-7 col-lg-12 col-xl-12 col-vl-7"><input type="range" id="shiftLRSlider" class="slider" min="-1.6" max="1.9" step="0.1" oninput="showShiftLR();"></div>
 								</div>
 								<div id="shiftLRPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="shiftLRDesc" class="text-center">Сдвиг на $$A$$ влево при $$A$$ > 0, сдвиг на $$A$$ вправо при $$A$$ < 0</p></div>
+									<div class="col-12"><p id="shiftLRDesc" class="text-center">Сдвиг на $$A$$ влево при $$A>0$$, сдвиг на $$A$$ вправо при $$A<0$$</p></div>
 								</div>
 							</div></div>
 
@@ -126,25 +126,25 @@
 
 						<div class="row justify-content-center">
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
 									<div class="col-xs-12 col-md-5 col-lg-12 col-xl-12 col-vl-5"><p id="stretchUDText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="red">$$k$$</span><span class="blue">$$f(x)$$</span><span>$$,\quad $$</span><span class="red">$$k=\;$$</span><span id="stretchUDValue" class="red math">1</span></p></div>
 									<div class="col-xs-12 col-md-7 col-lg-12 col-xl-12 col-vl-7"><input type="range" id="stretchUDSlider" class="slider" min="0.1" max="3" step="0.1" value="1" oninput="showStretchUD();"></div>
 								</div>
 								<div id="stretchUDPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="stretchUDDesc" class="text-center">Растяжение по оси $$OY$$ при $$k$$ > $$1$$, сжатие по оси $$OY$$ при $$k$$ < $$1$$</p></div>
+									<div class="col-12"><p id="stretchUDDesc" class="text-center">Растяжение по оси $$OY$$ при &nbsp;$$k>1$$, сжатие по оси $$OY$$ при &nbsp;$$0 < k < 1$$</p></div>
 								</div>
 							</div></div>
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
 									<div class="col-xs-12 col-md-5 col-lg-12 col-xl-12 col-vl-5"><p id="stretchLRText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f($$</span><span class="red">$$k$$</span><span class="blue">$$x)$$</span><span>$$,\quad $$</span><span class="red">$$k=\;$$</span><span id="stretchLRValue" class="red math">1</span></p></div>
 									<div class="col-xs-12 col-md-7 col-lg-12 col-xl-12 col-vl-7"><input type="range" id="stretchLRSlider" class="slider" min="0.1" max="3" step="0.1" value="1" oninput="showStretchLR();"></div>
 								</div>
 								<div id="stretchLRPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="stretchLRDesc" class="text-center">Растяжение по оси $$OX$$ при $$k$$ < $$1$$, сжатие по оси $$OX$$ при $$k$$ > $$1$$</p></div>
+									<div class="col-12"><p id="stretchLRDesc" class="text-center">Растяжение по оси $$OX$$ при &nbsp;$$0 < k < 1$$, сжатие по оси $$OX$$ при &nbsp;$$k>1$$</p></div>
 								</div>
 							</div></div>
 
@@ -152,10 +152,10 @@
 
 						<div class="row justify-content-center">
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
-									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-5 col-xl-7 col-vl-7"><p id="mirrorUDText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="red">$$-$$</span><span class="blue">$$f(x)$$</span></p></div>
-									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-7 col-xl-5 col-vl-5"><div class="mirrorUD" onclick="showMirrorUD();"><div id="ceilMirrorUD" class="ceilMirrorUD"></div><p class="mirrorUDCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
+									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-6 col-xl-7 col-vl-7"><p id="mirrorUDText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="red">$$-$$</span><span class="blue">$$f(x)$$</span></p></div>
+									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-6 col-xl-5 col-vl-5"><div class="mirrorUD" onclick="showMirrorUD();"><div id="ceilMirrorUD" class="ceilMirrorUD"></div><p class="mirrorUDCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
 								</div>
 								<div id="mirrorUDPlot" class="jxgbox"></div>
 								<div class="row">
@@ -163,10 +163,10 @@
 								</div>
 							</div></div>
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column">
 								<div class="row justify-content-center">
-									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-5 col-xl-7 col-vl-7"><p id="mirrorLRText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f($$</span><span class="red">$$-$$</span><span class="blue">$$x)$$</span></p></div>
-									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-7 col-xl-5 col-vl-5"><div class="mirrorLR" onclick="showMirrorLR();"><div id="ceilMirrorLR" class="ceilMirrorLR"></div><p class="mirrorLRCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
+									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-6 col-xl-7 col-vl-7"><p id="mirrorLRText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f($$</span><span class="red">$$-$$</span><span class="blue">$$x)$$</span></p></div>
+									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-6 col-xl-5 col-vl-5"><div class="mirrorLR" onclick="showMirrorLR();"><div id="ceilMirrorLR" class="ceilMirrorLR"></div><p class="mirrorLRCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
 								</div>
 								<div id="mirrorLRPlot" class="jxgbox"></div>
 								<div class="row">
@@ -178,25 +178,25 @@
 
 						<div class="row justify-content-center">
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column" style="margin-bottom: 20px;">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column" style="margin-bottom: 20px;">
 								<div class="row justify-content-center">
 									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-5 col-xl-7 col-vl-7"><p id="moduleUDText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="red">$$|$$</span><span class="blue">$$f(x)$$</span><span class="red">$$|$$</span></p></div>
 									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-7 col-xl-5 col-vl-5"><div class="moduleUD" onclick="showModuleUD();"><div id="ceilModuleUD" class="ceilModuleUD"></div><p class="moduleUDCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
 								</div>
 								<div id="moduleUDPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="moduleUDDesc" class="text-center">Часть графика, расположенная ниже оси $$OX$$, отображается симметрично относительно оси $$OX$$. Оставшаяся часть графика остаётся неизменной.</p></div>
+									<div class="col-12"><p id="moduleUDDesc" class="text-center">Часть графика, распо&shy;ло&shy;женная ниже оси $$OX$$, отобра&shy;жается симмет&shy;рично относи&shy;тельно оси $$OX$$. Остав&shy;шаяся часть графика оста&shy;ётся неизменной.</p></div>
 								</div>
 							</div></div>
 
-							<div class="col-lg-5 col-sm-10 text-justify"><div class="transform-column" style="margin-bottom: 20px;">
+							<div class="col-sm-10 col-md-9 col-lg-5 text-justify"><div class="transform-column" style="margin-bottom: 20px;">
 								<div class="row justify-content-center">
 									<div class="col-xs-3 col-sm-6 col-md-7 col-lg-5 col-xl-7 col-vl-7"><p id="moduleLRText"><span class="green">$$g(x)$$</span>$$\;=\;$$<span class="blue">$$f($$</span><span class="red">$$|$$</span><span class="blue">$$x$$</span><span class="red">$$|$$</span><span class="blue">$$)$$</span></p></div>
 									<div class="col-xs-9 col-sm-6 col-md-5 col-lg-7 col-xl-5 col-vl-5"><div class="moduleLR" onclick="showModuleLR();"><div id="ceilModuleLR" class="ceilModuleLR"></div><p class="moduleLRCheck">Показать<span class="green">$$\;\;g(x)$$</span></p></div></div>
 								</div>
 								<div id="moduleLRPlot" class="jxgbox"></div>
 								<div class="row">
-									<div class="col-12"><p id="moduleLRDesc" class="text-center">Часть графика, расположенная левее оси $$OY$$, исчезает. Оставшаяся часть графика отображается симметрично относительно оси $$OY$$.</p></div>
+									<div class="col-12"><p id="moduleLRDesc" class="text-center">Часть графика, распо&shy;ло&shy;женная левее оси $$OY$$, исче&shy;зает. Остав&shy;шаяся часть графика отобра&shy;жается симмет&shy;рично относи&shy;тельно оси $$OY$$.</p></div>
 								</div>
 							</div></div>
 

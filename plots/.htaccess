@@ -1,4 +1,4 @@
-ErrorDocument 404 https://igor-muram.github.io/plots/404.php
+ErrorDocument 404 /404.html
 
 <ifModule mod_expires.c>
 

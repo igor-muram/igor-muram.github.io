@@ -1,3 +1,5 @@
+ErrorDocument 404 https://igor-muram.github.io/plots/404.html
+
 <ifModule mod_expires.c>
 
 # Add correct content-type for fonts
@@ -43,5 +45,3 @@ ExpiresByType application/xhtml+xml "access plus 600 seconds"
 AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
 
 </ifModule>
-
-ErrorDocument 404 https://igor-muram.github.io/plots/404.html

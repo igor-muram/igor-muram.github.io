@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>Гипербола</title>
+	<title>Пример 1</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,57 +94,29 @@
 					</nav>
 
 					<div class="row justify-content-center">
-						<div class="col-lg-10 text-center"><h1 class="h1">Гипербола</h1></div>
+						<div class="col-lg-10 text-center"><h1 class="explicit-title">Пример 1</h1></div>
 					</div>
 
-					<div class="hyperbole-container">
+					<div class="explicit-example-container">
 						<div class="row justify-content-center">
-
-							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="hyperbole-column">
-								<div id="hyperbolePlot1" class="jxgbox"></div>
-								<div class="row">
-									<div class="col-12"><p id="hyperbolePlot1Desc" class="text-center">$$Функция\;\;y=\frac{1}{x}$$</p></div>
+							<div class="col-xs-10 col-sm-12 col-md-10 col-xl-9 col-vl-5 col-sl-6 text-justify algorithm-text">
+								<div class="explicit-example1-text text-center "><span class="green">$$f(x)\;$$</span>$$=max$$ <span class="blue">$$ \{cos(x) - 2,\;$$</span> <span class="red">$$x^2 - 12.57x + 36.5\}$$</span></div>
+								<b>1.</b>&ensp;Построить функции <span class="blue">$$cos(x) - 2$$</span> и <span class="red">$$x^2 - 12.57x + 36.5$$</span> на одной коор&shy;ди&shy;натной плос&shy;кости.<br>
+								<b>2.</b>&ensp;Найти все проме&shy;жутки, на которых одна из функций больше другой.<br>
+								<b>3.</b>&ensp;На каждом найденном проме&shy;жутке оставить макси&shy;мальную из функций и убрать мини&shy;мальную.
+								
+								<div class="explicit-example-nav">
+									<a href="explicit-scheme.html"><div class="col-xs-1 explicit-example-prev" title="Схема построения"><i class="fa fa-angle-left"></i></div></a>
+									<a href="explicit-example-2.html"><div class="col-xs-1 explicit-example-next" title="Пример 2"><i class="fa fa-angle-right"></i></div></a>
 								</div>
-							</div></div>
+							</div>
 
-							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="hyperbole-column">
-								<div id="hyperbolePlot2" class="jxgbox"></div>
-								<div class="row">
-									<div class="col-12"><p id="hyperbolePlot2Desc" class="text-center">$$Функция\;\;y=\frac{ax+b}{cx+d}=$$$$\;p+\frac{s}{x+q}$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
-								</div>
-							</div></div>
-
-							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="hyperbole-column">
-								<div id="hyperbolePlot3" class="jxgbox"></div>
-								<div class="row">
-									<div class="col-12"><p id="hyperbolePlot3Desc" class="text-center">$$Кривая\;\;\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$$</p></div>
-								</div>
-							</div></div>
-
-						</div>
-					</div>
-
-					<div class="row justify-content-center">
-						<div class="col-lg-10 text-center"><h1 style="margin-top: 3px; margin-bottom: 10px;">Примеры</h1></div>
-					</div>
-
-					<div class="hyperbole-container">
-						<div class="row justify-content-center">
-
-							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="hyperbole-column">
-								<div class="row hyperboleExampleDescRow">
-									<div class="col-12"><p class="hyperboleExampleDesc text-center">$$y=4+\frac{s}{x+2}$$</p></div>
-									<div class="col-12"><p class="hyperboleExampleDesc text-center"><span class="blue">$$s=2$$</span></p></div>
-									<div class="col-12"><p class="hyperboleExampleDesc text-center"><span class="green">$$s=-2$$</span></p></div>
-									<div class="col-12"><p class="hyperboleExampleDesc text-center"><span class="red">$$s=4$$</span></p></div>
-								</div>
-							</div></div>
-
-							<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="hyperbole-column"><div id="hyperbolePlot4" class="jxgbox"></div></div></div>
-							<div class="col-lg-7 col-xl-4">
-								<div class="navigation">
-									<a href="parabola.html"><div class="elem-prev" title="Парабола"><i class="fa fa-angle-left"></i></div></a>
-									<a href="power.html"><div class="elem-next" title="Степенная функция"><i class="fa fa-angle-right"></i></div></a>
+							<div class="col-xs-10 col-sm-12 col-md-10 col-xl-9 col-vl-6 col-sl-5 offset-vl-1">
+								<div class="explicit-example-column">
+									<div class="row justify-content-center">
+										<div class="col-sm-12"><div class="example1" onclick="showExample1();"><div id="ceilExample1" class="ceilExample1"></div><p class="example1Check">Показать<span class="green">$$\;\;f(x)$$</span></p></div></div>
+									</div>
+									<div id="explicitExample1Plot" class="jxgbox"></div>
 								</div>
 							</div>
 

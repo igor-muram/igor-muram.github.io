@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="isnohome">
+<body>
 
 	<div class="preloader"><div class="pulse"></div></div>
 	
@@ -92,329 +92,327 @@
 							<li><a href="special-points.html">Особые точки кривых</a></li>
 						</ul>
 					</nav>
+				</div>
 
-					<div class="row justify-content-center">
-						<div class="col-lg-10 text-center"><h1 class="parametric-title h1" style="margin-bottom: 15px;">Схема построения параметрически заданных плоских кривых</h1></div>
-					</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-10 text-center"><h1 class="parametric-title h1" style="margin-bottom: 15px;">Схема построения параметрически заданных плоских кривых</h1></div>
+				</div>
 
-					<div class="parametric-scheme-container">
-						<div class="row justify-content-start">
-							<div class="text-justify">
+				<div class="parametric-scheme-container">
+					<div class="row justify-content-start">
+						<div class="text-justify">
 
-								<div class="algorithm-text"><i style="margin-left: 31px;"></i><b>1.</b>&ensp;Найти общую часть облас&shy;тей опре&shy;де&shy;ления функций $$x(t),\;y(t)$$.</div>
+							<div class="algorithm-text"><i style="margin-left: 31px;"></i><b>1.</b>&ensp;Найти общую часть облас&shy;тей опре&shy;де&shy;ления функций $$x(t),\;y(t)$$.</div>
 
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>2.</b>&ensp;Уста&shy;новить, обла&shy;дает ли кривая симмет&shy;рией (при наличии симмет&shy;рии можно сокра&shy;тить выкладки, огра&shy;ничив соответ&shy;ству&shy;ющим обра&shy;зом иcсле&shy;ду&shy;емую часть кривой).</div>
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>2.</b>&ensp;Уста&shy;новить, обла&shy;дает ли кривая симмет&shy;рией (при наличии симмет&shy;рии можно сокра&shy;тить выкладки, огра&shy;ничив соответ&shy;ству&shy;ющим обра&shy;зом иcсле&shy;ду&shy;емую часть кривой).</div>
+								</div>
+
+								<div class="panel-collapse algorithm-text">
+									Доста&shy;точные условия симметрии кривой:<br>
+
+									<div class="row justify-content-start">
+										<div class="parametric-scheme-table-container col-sm-12">
+											<div style="overflow-x:auto;">
+												<table id="parametric-scheme-table-1" class="parametric-scheme-table">
+													<tr>
+														<td>
+															Симметрия относительно оси <div class="math">Ox:</div><br>
+															$$\forall t\in T\;\;x(t)=x(-t),\;\;y(t)=-y(-t)$$
+														</td>
+														<td>
+															Симметрия относительно точки <div class="math">(0,0):</div><br>
+															$$\forall t\in T\;\;x(t)=-x(-t),\;\;y(t)=-y(-t)$$
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Симметрия относительно оси <div class="math">Oy:</div><br>
+															$$\forall t\in T\;\;x(t)=-x(-t),\;\;y(t)=y(-t)$$
+														</td>
+														<td>
+															<p>Наложение ветвей графика:</p>
+															$$\forall t\in T\;\;x(t)=x(-t),\;\;y(t)=y(-t)$$
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Симметрия относительно оси $$x=x_{0}=x(t_{0})$$:<br>
+															$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=-(x(t_{0})-x(t_{0}-t)),$$<br>$$y(t_{0}+t)=y(t_{0}-t)$$
+														</td>
+														<td>
+															Симметрия относительно точки $$(x_{0},y_{0})=(x(t_{0}),y(t_{0}))$$:<br>
+															$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=-(x(t_{0})-x(t_{0}-t)),$$<br>$$y(t_{0})-y(t_{0}+t)=-(y(t_{0})-y(t_{0}-t))$$
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Симметрия относительно оси $$y=y_{0}=y(t_{0})$$:<br>
+															$$\forall t\in T\;\;x(t_{0}+t)=x(t_{0}-t),$$<br>$$y(t_{0})-y(t_{0}+t)=-(y(t_{0})-y(t_{0}-t))$$
+														</td>
+														<td>
+															<p>Наложение ветвей графика:</p>
+															$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=x(t_{0})-x(t_{0}-t),$$<br>$$y(t_{0})-y(t_{0}+t)=y(t_{0})-y(t_{0}-t)$$
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
 									</div>
+								</div>
+							</div>
 
-									<div class="panel-collapse algorithm-text">
-										Доста&shy;точные условия симметрии кривой:<br>
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>3.</b>&ensp;Опреде&shy;лить, обла&shy;дает ли данная кривая периодич&shy;ностью.</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
+										Если для некоторого $$\;\tau$$<br>
+										$$\forall t\in T\;\;x(t+\tau)=\;$$$$T_{x}+x(t),\;\;$$$$y(t+\tau)=y(t),\;$$ то функция $$\;y(x)\;$$ имеет период $$\;T_{x},$$<br>
+										$$\forall t\in T\;\;x(t+\tau)=x(t),\;$$$$y(t+\tau)=T_{y}+y(t),\;$$ то функция $$\;x(y)\;$$ имеет период $$\;T_{y}.$$
+									</div>
+								</div>
+							</div>
+
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>4.</b>&ensp;Найти все значе&shy;ния пара&shy;метра, в которых хотя бы одна из функций $$x(t),\;y(t)$$ беско&shy;нечна. Проверить наличие асимптот у графика функции $$y(x)$$.</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
+										Условия сущест&shy;во&shy;вания асимптот графика парамет&shy;ри&shy;чески заданной функции $$y(x):$$<br>
+										Если при &nbsp;$$t\to S\;\;x\to x_{0},\;\;$$ а &nbsp;&nbsp;$$y\to \infty,\;$$ то  $$x=x_{0}\;-\;$$ вертикаль&shy;ная асимп&shy;тота кривой.<br>
+										Если при &nbsp;$$t\to S\;\;x\to \infty,\;\;$$ а &nbsp;&nbsp;$$y\to y_{0},\;$$ то $$\;y=y_{0}\;-\;$$ горизон&shy;таль&shy;ная асимп&shy;тота кривой.<br>
+										Если при &nbsp;$$t\to S\;\;x\to \infty\;\;$$ и &nbsp;&nbsp;$$y\to \infty,\;$$ то <u>возможна</u> наклон&shy;ная асимп&shy;тота кривой  $$y=kx+b,\;\;k,b\in \mathbb{R},\;$$ где<br>
+										$$k=\lim_{t\to S}\frac{y(t)}{x(t)},\;\;$$ $$b=\lim_{t\to S}(y(t)-kx(t)),\;\;$$ $$S=\{t_{n},\;t_{n}-0,\;t_{n}+0,\;$$$$\infty,\;-\infty,\;+\infty\}, \;\;$$$$t_{n}\in \mathbb{R}.$$
+									</div>
+								</div>
+							</div>
+
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>5.</b>&ensp;Найти все значения пара&shy;метра, в которых хотя бы одна из произ&shy;водных $$x'(t),\;y'(t)$$ равна нулю или разрывна. Определить точки экстре&shy;мума функции (вершины кривой).</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
+										Кривая имеет экстремум (вершину) в точке $$\left ( x(t_{k}),\;y(t_{k}) \right ),\;$$ если функции  $$x=x(t),\;y=y(t)\;$$ непре&shy;рывны в точке $$t=t_{k}$$ и на проме&shy;жутке  $$\left ( t_{k-1},\;t_{k+1} \right )\;$$ одна из произ&shy;водных  $$x'(t),\;y'(t)\;$$ сохра&shy;няет знак, а вторая меняет.
+									</div>
+								</div>
+							</div>
+
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>6.</b>&ensp;Найти все значения пара&shy;метра, в которых  $$f_{x}^{'}(t)=0.\;$$ Определить проме&shy;жутки возрас&shy;тания и убывания функции  $$y=f(x).$$</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
+										Если на интер&shy;вале $$\left ( t_{k},\;t_{k+1} \right )$$ произ&shy;водная $$f_{x}^{'}(t)$$ сущест&shy;вует и положи&shy;тельна (отрица&shy;тельна), то функция $$f(x)$$ на этом интер&shy;вале возрас&shy;тает (убывает).<br>
+										Вычислить первую произ&shy;водную функции можно по формуле  $$f_{x}^{'}(t)=\frac{y_{t}^{'}(t)}{x_{t}^{'}(t)}.$$
+									</div>
+								</div>
+							</div>
+
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>7.</b>&ensp;Найти все значения пара&shy;метра, в которых  $$f_{xx}^{''}(t)=0.\;$$ Определить направ&shy;ление выпук&shy;лости каждой ветви графика кривой.</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
+										Если на интер&shy;вале  $$\left ( t_{k},\;t_{k+1} \right )\:$$ произ&shy;водная  $$f_{xx}^{''}(t)\:$$ сущест&shy;вует и положи&shy;тельна (отрица&shy;тельна), то функция  $$f(x)\:$$ на этом интер&shy;вале выпукла вниз (вверх).<br>
+										Вычислить вторую произ&shy;водную функции можно по формуле  $$f_{xx}^{''}(t)=\frac{\left ( f_{x}^{'}(t) \right )_{t}^{'}}{x_{t}^{'}(t)}.$$
+									</div>
+								</div>
+							</div>
+
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>8.</b>&ensp;Составить таблицу.</div>
+								</div>
+
+								<div class="panel-collapse">
+									<div class="algorithm-text">
 
 										<div class="row justify-content-start">
 											<div class="parametric-scheme-table-container col-sm-12">
-												<div style="overflow-x:auto;">
-													<table id="parametric-scheme-table-1" class="parametric-scheme-table">
+												<div style="overflow-x: auto;">
+													<table id="parametric-scheme-table-2" class="parametric-scheme-table">
 														<tr>
-															<td>
-																Симметрия относительно оси <div class="math">Ox:</div><br>
-																$$\forall t\in T\;\;x(t)=x(-t),\;\;y(t)=-y(-t)$$
-															</td>
-															<td>
-																Симметрия относительно точки <div class="math">(0,0):</div><br>
-																$$\forall t\in T\;\;x(t)=-x(-t),\;\;y(t)=-y(-t)$$
-															</td>
+															<td></td>
+															<td>$$t$$</td>
+															<td>$$-\infty$$</td>
+															<td>$$(-\infty,\; t_{1})$$</td>
+															<td>$$t_{1}$$</td>
+															<td>$$(t_{1},\; t_{2})$$</td>
+															<td>$$t_{2}$$</td>
+															<td>$$\cdots $$</td>
+															<td>$$t_{p}$$</td>
+															<td>$$(t_{p},\; t_{p+1})$$</td>
+															<td>$$t_{p+1}$$</td>
+															<td>$$\cdots $$</td>
+															<td>$$t_{n}$$</td>
+															<td>$$(t_{n},\; +\infty)$$</td>
+															<td>$$+\infty$$</td>
 														</tr>
 														<tr>
-															<td>
-																Симметрия относительно оси <div class="math">Oy:</div><br>
-																$$\forall t\in T\;\;x(t)=-x(-t),\;\;y(t)=y(-t)$$
-															</td>
-															<td>
-																<p>Наложение ветвей графика:</p>
-																$$\forall t\in T\;\;x(t)=x(-t),\;\;y(t)=y(-t)$$
-															</td>
+															<td>$$1$$</td>
+															<td>$$x$$</td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
 														</tr>
 														<tr>
-															<td>
-																Симметрия относительно оси $$x=x_{0}=x(t_{0})$$:<br>
-																$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=-(x(t_{0})-x(t_{0}-t)),$$<br>$$y(t_{0}+t)=y(t_{0}-t)$$
-															</td>
-															<td>
-																Симметрия относительно точки $$(x_{0},y_{0})=(x(t_{0}),y(t_{0}))$$:<br>
-																$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=-(x(t_{0})-x(t_{0}-t)),$$<br>$$y(t_{0})-y(t_{0}+t)=-(y(t_{0})-y(t_{0}-t))$$
-															</td>
+															<td>$$2$$</td>
+															<td>$$y$$</td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
 														</tr>
 														<tr>
-															<td>
-																Симметрия относительно оси $$y=y_{0}=y(t_{0})$$:<br>
-																$$\forall t\in T\;\;x(t_{0}+t)=x(t_{0}-t),$$<br>$$y(t_{0})-y(t_{0}+t)=-(y(t_{0})-y(t_{0}-t))$$
-															</td>
-															<td>
-																<p>Наложение ветвей графика:</p>
-																$$\forall t\in T\;\;x(t_{0})-x(t_{0}+t)=x(t_{0})-x(t_{0}-t),$$<br>$$y(t_{0})-y(t_{0}+t)=y(t_{0})-y(t_{0}-t)$$
-															</td>
+															<td>$$3$$</td>
+															<td>$$y_{x}'$$</td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+															<td class="white-fill"></td>
+														</tr>
+														<tr>
+															<td>$$4$$</td>
+															<td>$$y_{xx}''$$</td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+															<td class="white-fill"></td>
+															<td class="grey-fill"></td>
+														</tr>
+														<tr>
+															<td>$$5$$</td>
+															<td>Интервалы монотонности</td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+														</tr>
+														<tr>
+															<td>$$6$$</td>
+															<td>Интервалы выпуклости</td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+															<td class="grey-fill"></td>
+															<td class="cross"></td>
+														</tr>
+														<tr>
+															<td>$$7$$</td>
+															<td>Особые точки графика и уравнения асимптот</td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
+															<td class="cross"></td>
+															<td class="white-fill"></td>
 														</tr>
 													</table>
 												</div>
+
 											</div>
 										</div>
+
+										<i class="fas fa-angle-right"></i>Таблица строится только для тех значений пара&shy;метра  $$t,\;$$ для которых опреде&shy;лены обе функции:  $$x(t),\;y(t).$$<br>
+										<i class="fas fa-angle-right"></i>Для пост&shy;роения графика доста&shy;точно заполнить ячейки таблицы, выде&shy;ленные белым цветом.<br>
+										<i class="fas fa-angle-right"></i>Ячейки таблицы, поме&shy;ченные крестом, заполнять не нужно.<br>
+										<i class="fas fa-angle-right"></i>В первой строке таблицы череду&shy;ются значения пара&shy;метра (найденные в пунктах 4-7) и интер&shy;валы, на которые разби&shy;вается всё множество  $$T\:$$ этими значе&shy;ниями. Значения пара&shy;метра, найденные в пунктах 4 и 5, разби&shy;вают множество  $$T\:$$ на проме&shy;жутки знако&shy;пос&shy;то&shy;янства произ&shy;водных  $$x'(t),\;y'(t)$$, и, следо&shy;ва&shy;тельно, система урав&shy;нений  $$x=x(t),\;y=y(t)$$ на каждом интер&shy;вале разбие&shy;ния задаёт парамет&shy;ри&shy;чески <b>функцию</b>  $$y=f(x),\;$$ которая явля&shy;ется одной из веток исходной кривой.<br>
+										<i class="fas fa-angle-right"></i>Для постро&shy;ения графика явно заданной функции  $$y=f(x)\;$$ исполь&shy;зуют аналогич&shy;ную таблицу.
+
 									</div>
 								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>3.</b>&ensp;Опреде&shy;лить, обла&shy;дает ли данная кривая периодич&shy;ностью.</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-											Если для некоторого $$\;\tau$$<br>
-											$$\forall t\in T\;\;x(t+\tau)=\;$$$$T_{x}+x(t),\;\;$$$$y(t+\tau)=y(t),\;$$ то функция $$\;y(x)\;$$ имеет период $$\;T_{x},$$<br>
-											$$\forall t\in T\;\;x(t+\tau)=x(t),\;$$$$y(t+\tau)=T_{y}+y(t),\;$$ то функция $$\;x(y)\;$$ имеет период $$\;T_{y}.$$
-										</div>
-									</div>
-								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>4.</b>&ensp;Найти все значе&shy;ния пара&shy;метра, в которых хотя бы одна из функций $$x(t),\;y(t)$$ беско&shy;нечна. Проверить наличие асимптот у графика функции $$y(x)$$.</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-											Условия сущест&shy;во&shy;вания асимптот графика парамет&shy;ри&shy;чески заданной функции $$y(x):$$<br>
-											Если при &nbsp;$$t\to S\;\;x\to x_{0},\;\;$$ а &nbsp;&nbsp;$$y\to \infty,\;$$ то  $$x=x_{0}\;-\;$$ вертикаль&shy;ная асимп&shy;тота кривой.<br>
-											Если при &nbsp;$$t\to S\;\;x\to \infty,\;\;$$ а &nbsp;&nbsp;$$y\to y_{0},\;$$ то $$\;y=y_{0}\;-\;$$ горизон&shy;таль&shy;ная асимп&shy;тота кривой.<br>
-											Если при &nbsp;$$t\to S\;\;x\to \infty\;\;$$ и &nbsp;&nbsp;$$y\to \infty,\;$$ то <u>возможна</u> наклон&shy;ная асимп&shy;тота кривой  $$y=kx+b,\;\;k,b\in \mathbb{R},\;$$ где<br>
-											$$k=\lim_{t\to S}\frac{y(t)}{x(t)},\;\;$$ $$b=\lim_{t\to S}(y(t)-kx(t)),\;\;$$ $$S=\{t_{n},\;t_{n}-0,\;t_{n}+0,\;$$$$\infty,\;-\infty,\;+\infty\}, \;\;$$$$t_{n}\in \mathbb{R}.$$
-										</div>
-									</div>
-								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>5.</b>&ensp;Найти все значения пара&shy;метра, в которых хотя бы одна из произ&shy;водных $$x'(t),\;y'(t)$$ равна нулю или разрывна. Определить точки экстре&shy;мума функции (вершины кривой).</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-											Кривая имеет экстремум (вершину) в точке $$\left ( x(t_{k}),\;y(t_{k}) \right ),\;$$ если функции  $$x=x(t),\;y=y(t)\;$$ непре&shy;рывны в точке $$t=t_{k}$$ и на проме&shy;жутке  $$\left ( t_{k-1},\;t_{k+1} \right )\;$$ одна из произ&shy;водных  $$x'(t),\;y'(t)\;$$ сохра&shy;няет знак, а вторая меняет.
-										</div>
-									</div>
-								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>6.</b>&ensp;Найти все значения пара&shy;метра, в которых  $$f_{x}^{'}(t)=0.\;$$ Определить проме&shy;жутки возрас&shy;тания и убывания функции  $$y=f(x).$$</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-											Если на интер&shy;вале $$\left ( t_{k},\;t_{k+1} \right )$$ произ&shy;водная $$f_{x}^{'}(t)$$ сущест&shy;вует и положи&shy;тельна (отрица&shy;тельна), то функция $$f(x)$$ на этом интер&shy;вале возрас&shy;тает (убывает).<br>
-											Вычислить первую произ&shy;водную функции можно по формуле  $$f_{x}^{'}(t)=\frac{y_{t}^{'}(t)}{x_{t}^{'}(t)}.$$
-										</div>
-									</div>
-								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>7.</b>&ensp;Найти все значения пара&shy;метра, в которых  $$f_{xx}^{''}(t)=0.\;$$ Определить направ&shy;ление выпук&shy;лости каждой ветви графика кривой.</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-											Если на интер&shy;вале  $$\left ( t_{k},\;t_{k+1} \right )\:$$ произ&shy;водная  $$f_{xx}^{''}(t)\:$$ сущест&shy;вует и положи&shy;тельна (отрица&shy;тельна), то функция  $$f(x)\:$$ на этом интер&shy;вале выпукла вниз (вверх).<br>
-											Вычислить вторую произ&shy;водную функции можно по формуле  $$f_{xx}^{''}(t)=\frac{\left ( f_{x}^{'}(t) \right )_{t}^{'}}{x_{t}^{'}(t)}.$$
-										</div>
-									</div>
-								</div>
-
-								<div class="panel">
-									<div class="panel-heading">
-										<div class="panel-text algorithm-text"><i class="fas fa-angle-down"></i><b>8.</b>&ensp;Составить таблицу.</div>
-									</div>
-
-									<div class="panel-collapse">
-										<div class="algorithm-text">
-
-											<div class="row justify-content-start">
-												<div class="parametric-scheme-table-container col-sm-12">
-													<div style="overflow-x: auto;">
-														<table id="parametric-scheme-table-2" class="parametric-scheme-table">
-															<tr>
-																<td></td>
-																<td>$$t$$</td>
-																<td>$$-\infty$$</td>
-																<td>$$(-\infty,\; t_{1})$$</td>
-																<td>$$t_{1}$$</td>
-																<td>$$(t_{1},\; t_{2})$$</td>
-																<td>$$t_{2}$$</td>
-																<td>$$\cdots $$</td>
-																<td>$$t_{p}$$</td>
-																<td>$$(t_{p},\; t_{p+1})$$</td>
-																<td>$$t_{p+1}$$</td>
-																<td>$$\cdots $$</td>
-																<td>$$t_{n}$$</td>
-																<td>$$(t_{n},\; +\infty)$$</td>
-																<td>$$+\infty$$</td>
-															</tr>
-															<tr>
-																<td>$$1$$</td>
-																<td>$$x$$</td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-															</tr>
-															<tr>
-																<td>$$2$$</td>
-																<td>$$y$$</td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-															</tr>
-															<tr>
-																<td>$$3$$</td>
-																<td>$$y_{x}'$$</td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-																<td class="white-fill"></td>
-															</tr>
-															<tr>
-																<td>$$4$$</td>
-																<td>$$y_{xx}''$$</td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-																<td class="white-fill"></td>
-																<td class="grey-fill"></td>
-															</tr>
-															<tr>
-																<td>$$5$$</td>
-																<td>Интервалы монотонности</td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-															</tr>
-															<tr>
-																<td>$$6$$</td>
-																<td>Интервалы выпуклости</td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-																<td class="grey-fill"></td>
-																<td class="cross"></td>
-															</tr>
-															<tr>
-																<td>$$7$$</td>
-																<td>Особые точки графика и уравнения асимптот</td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-																<td class="cross"></td>
-																<td class="white-fill"></td>
-															</tr>
-														</table>
-													</div>
-
-												</div>
-											</div>
-
-											<i class="fas fa-angle-right"></i>Таблица строится только для тех значений пара&shy;метра  $$t,\;$$ для которых опреде&shy;лены обе функции:  $$x(t),\;y(t).$$<br>
-											<i class="fas fa-angle-right"></i>Для пост&shy;роения графика доста&shy;точно заполнить ячейки таблицы, выде&shy;ленные белым цветом.<br>
-											<i class="fas fa-angle-right"></i>Ячейки таблицы, поме&shy;ченные крестом, заполнять не нужно.<br>
-											<i class="fas fa-angle-right"></i>В первой строке таблицы череду&shy;ются значения пара&shy;метра (найденные в пунктах 4-7) и интер&shy;валы, на которые разби&shy;вается всё множество  $$T\:$$ этими значе&shy;ниями. Значения пара&shy;метра, найденные в пунктах 4 и 5, разби&shy;вают множество  $$T\:$$ на проме&shy;жутки знако&shy;пос&shy;то&shy;янства произ&shy;водных  $$x'(t),\;y'(t)$$, и, следо&shy;ва&shy;тельно, система урав&shy;нений  $$x=x(t),\;y=y(t)$$ на каждом интер&shy;вале разбие&shy;ния задаёт парамет&shy;ри&shy;чески <b>функцию</b>  $$y=f(x),\;$$ которая явля&shy;ется одной из веток исходной кривой.<br>
-											<i class="fas fa-angle-right"></i>Для постро&shy;ения графика явно заданной функции  $$y=f(x)\;$$ исполь&shy;зуют аналогич&shy;ную таблицу.
-
-										</div>
-									</div>
-								</div>
-
-								<div class="algorithm-text" style="margin-bottom: 8px"><i style="margin-left: 31px;"></i><b>9.</b>&ensp;Определить характер особых точек кривой.</div>
-								<div class="algorithm-text" style="margin-bottom: 8px"><i style="margin-left: 31px;"></i><b>10.</b>&ensp;Найти нули функций  $$x(t),\;y(t)$$ и их интер&shy;валы знако&shy;пос&shy;то&shy;янства.</div>
-								<div class="algorithm-text"><i style="margin-left: 31px;"></i><b>11.</b>&ensp;Пользуясь таблицей и инфор&shy;мацией из п.10, построить ветви кривой, соответст&shy;вующие проме&shy;жуткам $$\left ( t_{k},\;t_{k+1} \right )$$. Если была установ&shy;лена симметрия или чётность, то дори&shy;совать функцию на всю область опреде&shy;ления соответст&shy;вующим образом.</div>
-
 							</div>
+
+							<div class="algorithm-text" style="margin-bottom: 8px"><i style="margin-left: 31px;"></i><b>9.</b>&ensp;Определить характер особых точек кривой.</div>
+							<div class="algorithm-text" style="margin-bottom: 8px"><i style="margin-left: 31px;"></i><b>10.</b>&ensp;Найти нули функций  $$x(t),\;y(t)$$ и их интер&shy;валы знако&shy;пос&shy;то&shy;янства.</div>
+							<div class="algorithm-text"><i style="margin-left: 31px;"></i><b>11.</b>&ensp;Пользуясь таблицей и инфор&shy;мацией из п.10, построить ветви кривой, соответст&shy;вующие проме&shy;жуткам $$\left ( t_{k},\;t_{k+1} \right )$$. Если была установ&shy;лена симметрия или чётность, то дори&shy;совать функцию на всю область опреде&shy;ления соответст&shy;вующим образом.</div>
+
 						</div>
 					</div>
+				</div>
 
-					<div class="parametric-scheme-container">
-						<div class="row">
-							<a href="parametric-example.html">
-								<div class="col-xs-1 parametric-scheme-next" title="Пример"><i class="fa fa-angle-right"></i></div>
-							</a>
-						</div>
+				<div class="parametric-scheme-container">
+					<div class="row">
+						<a href="parametric-example.html">
+							<div class="col-xs-1 parametric-scheme-next" title="Пример"><i class="fa fa-angle-right"></i></div>
+						</a>
 					</div>
-
 				</div>
 
 			</header>
 		</div>
-
 	</div>
 
 	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>

@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>Пример 1. Асимптоты функции.</title>
+	<title>Пример 4. Асимптоты функции.</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,54 +95,58 @@
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1>Пример 1</h1></div>
+					<div class="col-lg-10 text-center"><h1>Пример 4</h1></div>
 				</div>
 
 				<div class="asymptotes-example-container">
 					<div class="algorithm-text text-justify">
-						Найти асимп&shy;тоты графика функции 
+						Найти асимп&shy;тоты кривой 
 						<span class="blue"> 
-							$$\:$$ $$y=\sqrt{\frac{x^{3}}{x-2}}=\;$$
-							$$\left | x \right |\cdot \sqrt{\frac{x}{x-2}}$$
+							$$\:$$ $$x=2\cdot ch\left ( t \right ),\;\;$$
+							$$y=3\cdot sh \left ( t \right )$$
 						</span> 
 						<br>
-						Функция опре&shy;де&shy;лена на множестве $$( -\infty,\:0 ]\cup \left ( 2,\:+\infty  \right )$$.
-						Функция имеет верти&shy;кальную асимп&shy;тоту $$$$ $$x=2$$, $$$$ т.к. $$\lim_{\;x\rightarrow 2+}y(x)=\infty$$. 
-						<br>
+						$$x=2\cdot \frac{e^{t}+e^{-t}}{2}=\;$$
+						$$e^{t}+e^{-t},\;\;$$
+						$$y=3\cdot \frac{e^{t}-e^{-t}}{2}$$. $$\;$$
 						Проверим наличие наклонных асимптот:
+						<br><br>
 					</div>
 
 					<div class="row">
-						<div class="col-7 algorithm-text text-justify">
+						<div class="col-8 algorithm-text">
+							<b>1.</b>$$\;$$При $$$$ $$t\rightarrow +\infty:$$ $$\;$$ 
+							$$x(t)\rightarrow +\infty\;$$ и $$\:$$ $$y(t)\rightarrow +\infty$$. 
 							<br>
-							<b>1.</b> $$\;$$ $$x\rightarrow +\infty$$, $$\;$$ 
-							$$k\:=\lim_{x\rightarrow +\infty}\frac{y(x)}{x}=\;$$
-							$$\lim_{x\rightarrow +\infty}\sqrt{\frac{x}{x-2}}=1$$, 
+							$$k\:=\lim_{t\rightarrow +\infty}\frac{y(t)}{x(t)}=\;$$
+							$$\lim_{t\rightarrow +\infty}\frac{3}{2}\cdot \frac{e^{t}-e^{-t}}{e^{t}+e^{-t}}=\frac{3}{2}$$
+							<br>
+							$$b=\lim_{t\rightarrow +\infty}\left ( y(t) - kx(t) \right )=\;$$
+							$$\lim_{t\rightarrow +\infty}=\frac{3}{2}\cdot \left ( e^{t} - e^{-t} - \left ( e^{t}+e^{-t} \right ) \right )=0$$
 							<br><br>
-							$$b=\lim_{x\rightarrow +\infty}\left ( y(x) - kx \right )=\;$$
-							$$\lim_{x\rightarrow +\infty}x\cdot \left ( \sqrt{\frac{x}{x-2}} - 1 \right )=1$$ 
-							<br><br>
-							<b>2.</b> $$\;$$ $$x\rightarrow -\infty$$, $$\;$$ 
-							$$k\:=\lim_{x\rightarrow -\infty}\frac{y(x)}{x}=\;$$
-							$$\lim_{x\rightarrow -\infty}\left ( - \sqrt{\frac{x}{x-2}} \right )=-1$$, 
-							<br><br>
-							$$b=\lim_{x\rightarrow -\infty}\left ( y(x) - kx \right )=\;$$
-							$$\lim_{x\rightarrow -\infty}x\cdot \left ( - \sqrt{\frac{x}{x-2}} + 1 \right )=-1$$
+							<b>2.</b>$$\;$$При $$$$ $$t\rightarrow -\infty:$$ $$\;$$ 
+							$$x(t)\rightarrow +\infty\;$$ и $$\:$$ $$y(t)\rightarrow +\infty$$. 
+							<br>
+							$$k\:=\lim_{t\rightarrow -\infty}\frac{y(t)}{x(t)}=\;$$
+							$$\lim_{t\rightarrow -\infty}\frac{3}{2}\cdot \frac{e^{t}-e^{-t}}{e^{t}+e^{-t}}=-\frac{3}{2}$$
+							<br>
+							$$b=\lim_{t\rightarrow -\infty}\left ( y(t) - kx(t) \right )=\;$$
+							$$\lim_{t\rightarrow -\infty}=\frac{3}{2}\cdot \left ( e^{t} - e^{-t} + e^{t}+e^{-t} \right )=0$$
 							<br><br>
 						</div>
-						
-						<div class="col-5"><div id="asymptotesExample1Plot" class="jxgbox"></div></div>
+
+						<div class="col-4"><div id="asymptotesExample4Plot" class="jxgbox"></div></div>
 					</div>
 
 					<div class="algorithm-text text-justify">
-						Ответ: $$$$ Верти&shy;кальная асимп&shy;тота $$$$ $$x=2$$, $$$$ 
-						наклонные асимп&shy;тоты $$$$ $$y=x+1\;$$ при $$$$ $$x\rightarrow +\infty\;$$
-						и $$\:$$ $$y=-x-1\;$$ при $$$$ $$x\rightarrow -\infty$$.
+						Ответ: $$$$ Наклонные асимп&shy;тоты $$$$ $$y=\frac{3}{2}\cdot x\;$$ при $$$$ $$t\rightarrow +\infty\;$$
+						и $$\:$$ $$y=-\frac{3}{2}\cdot x\;$$ при $$$$ $$t\rightarrow -\infty$$.
 					</div>
 
-					<div class="asymptotes-example-nav">
-						<a href="#"><div class="col-xs-1 asymptotes-example-prev" title=""><i class="fa fa-angle-left"></i></div></a>
-						<a href="asymptotes-example-2.html"><div class="col-xs-1 asymptotes-example-next" title="Пример 2"><i class="fa fa-angle-right"></i></div></a>
+					<br>
+
+					<div class="asymptotes-example-nav examples-nav-end">
+						<a href="asymptotes-example-3.html"><div class="col-xs-1 asymptotes-example-prev" title="Пример 3"><i class="fa fa-angle-left"></i></div></a>
 					</div>
 				</div>
 

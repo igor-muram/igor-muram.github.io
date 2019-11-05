@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>Пример 2. Асимптоты функции.</title>
+	<title>Пример 3. Асимптоты функции.</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +28,7 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
+	<!-- <div class="preloader"><div class="pulse"></div></div> -->
 	
 	<div id="my-page">
 		<div id="my-header">
@@ -95,34 +95,50 @@
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1>Пример 2</h1></div>
+					<div class="col-lg-10 text-center"><h1>Пример 3</h1></div>
 				</div>
 
-				<div class="row asymptotes-example-container">
-					<div class="col-8 algorithm-text text-justify">
+				<div class="asymptotes-example-container asymptotes-example-3-container">
+					<div class="algorithm-text text-justify">
 						Найти асимп&shy;тоты кривой 
 						<span class="blue"> 
-							$$\:$$ $$x=\frac{1}{t},\;\;$$ 
-							$$y=\frac{t+2}{t+1}$$
+							$$\:$$ $$x=t\cdot \ln t,\;\;$$
+							$$y=t\cdot \ln \left ( t + 1 \right )$$
 						</span> 
 						<br><br>
-
-						<b>1.</b> $$\;$$При $$$$ $$t\rightarrow 0:$$ $$\;\;$$ 
-						$$x\rightarrow \infty\;$$ и $$\:$$ $$y\rightarrow 2\;$$ 
-						$$\Rightarrow\; y=2\;$$ $$-\;$$ гори&shy;зон&shy;таль&shy;ная асимп&shy;тота.
-						<br><br>
-						<b>2.</b> $$\;$$При $$$$ $$t\rightarrow -1:$$ $$\;\;$$ 
-						$$x\rightarrow -1\;$$ и $$\:$$ $$y\rightarrow \infty\;$$ 
-						$$\Rightarrow\; x=-1\;$$ $$-\;$$ вер&shy;ти&shy;каль&shy;ная асимп&shy;тота.
-						<br><br><br>
+						Кривая опре&shy;де&shy;лена на множестве $$\left ( 0,\:+\infty  \right )$$.
+						$$\;$$При $$$$ $$t\rightarrow 0+:$$ $$\;$$ 
+						$$x\rightarrow 0\;$$ и $$\:$$ $$y\rightarrow 0\;$$ 
+						$$\Rightarrow\;$$ асимп&shy;тот нет.
+						<br>
+						Проверим наличие наклонных асимптот:
 					</div>
 
-					<div class="col-4"><div id="asymptotesExample2Plot" class="jxgbox"></div></div>
-				</div>
+					<div class="row">
+						<div class="col-8 algorithm-text text-justify">
+							<br>
+							При $$$$ $$t\rightarrow +\infty:$$ $$\;\;$$ 
+							$$x\rightarrow +\infty\;$$ и $$\:$$ $$y\rightarrow +\infty$$. 
+							<br><br>
+							$$k\:=\lim_{t\rightarrow +\infty}\frac{y(t)}{x(t)}=\;$$
+							$$\lim_{t\rightarrow +\infty}\frac{\ln \left ( t + 1 \right )}{\ln t}=\;$$
+							$$\lim_{t\rightarrow +\infty}\frac{\ln t + \ln \left ( 1 + \frac{1}{t} \right )}{\ln t}=1$$
+							<br><br>
+							$$b=\lim_{t\rightarrow +\infty}\left ( y(t) - kx(t) \right )=\;$$
+							$$\lim_{t\rightarrow +\infty}\left ( t\cdot \ln \left ( t + 1 \right ) - t\cdot \ln t \right )=\:$$
+							$$\lim_{t\rightarrow +\infty}\left ( t\cdot \ln \left ( 1 + \frac{1}{t} \right ) \right )=1$$
+							<br><br>
+						</div>
 
-				<div class="asymptotes-example-nav">
-					<a href="asymptotes-example-1.html"><div class="col-xs-1 asymptotes-example-prev" title="Пример 1"><i class="fa fa-angle-left"></i></div></a>
-					<a href="asymptotes-example-3.html"><div class="col-xs-1 asymptotes-example-next" title="Пример 3"><i class="fa fa-angle-right"></i></div></a>
+						<div class="col-4"><div id="asymptotesExample3Plot" class="jxgbox"></div></div>
+					</div>
+
+					<div class="algorithm-text text-justify">Ответ: $$$$ Наклонная асимп&shy;тота $$$$ $$y=x+1$$.</div>
+
+					<div class="asymptotes-example-nav">
+						<a href="asymptotes-example-2.html"><div class="col-xs-1 asymptotes-example-prev" title="Пример 2"><i class="fa fa-angle-left"></i></div></a>
+						<a href="asymptotes-example-4.html"><div class="col-xs-1 asymptotes-example-next" title="Пример 4"><i class="fa fa-angle-right"></i></div></a>
+					</div>
 				</div>
 
 			</header>

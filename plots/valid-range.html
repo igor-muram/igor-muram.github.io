@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>Пример 1. Выпуклость функции.</title>
+	<title>ОДЗ и промежутки непрерывности</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,42 +114,53 @@
 					</nav>
 				</div>
 
-				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1>Пример 1</h1></div>
+				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
+					<div class="text-center">
+						<h1 class="valid-title-main valid-title">ОДЗ и промежутки непрерывности</h1>
+						<h1 class="valid-title" style="margin-top: 20px;">Явное задание</h1>
+					</div>
 				</div>
 
-				<div class="convex-example-container">
+				<div class="valid-container">
 					<div class="row">
-
-						<div class="col-sm-12 col-vl-8 algorithm-text">
-							<span class="blue">$$y=2x^{4}-3x^{2}+x-1$$</span> <br>
-							<span class="green">$$y''=\:$$</span>
-							$$2\cdot 4\cdot 3x^{2}-3\cdot 2=\:$$  
-							<span class="green">$$24\left ( x - \frac{1}{2} \right ) \left ( x + \frac{1}{2} \right )$$</span>
-							<br><br>
-
-							<div id="convexExample1Interval" class="jxgbox"></div>
-
-							<br>
-
-							<div class="algorithm-text text-justify" style="padding-right: 30px;">
-								Ответ: $$$$ Функция выпукла вниз на проме&shy;жутках $$\left ( -\infty,\: -0.5 \right )\cup \left ( 0.5,\: +\infty \right )$$ 
-								и выпукла вверх на проме&shy;жутке $$\left ( -0.5,\: 0.5 \right )$$. 
-								Таким образом, $$$$ $$x=-0.5$$ $$$$ и $$$$ $$x=0.5$$ $$$$ $$-$$ $$$$ точки пере&shy;гиба функции.
-							</div>
+						<div class="col-xs-12 text-justify algorithm-text">
+							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D$$ $$–$$ область опре&shy;де&shy;ления функции (множество значений $$x$$, для которых $$f(x)\in \mathbb{R}$$). 
+							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. В случае case-функций к особым точкам добав&shy;ляют значения $$x$$, в которых «стыку&shy;ются» функции. 
+							Если $$x=-\infty$$ (и/или $$x=+\infty$$) явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$, то эти значения также явля&shy;ются особыми точками функции. 
+							Особые точки разби&shy;вают область опре&shy;де&shy;ления на участки непре&shy;рыв&shy;ности функции.
 						</div>
-
-						<div class="col-sm-12 col-vl-4">
-							<div id="convexExample1Plot" class="jxgbox"></div>
-						</div>
-
-						<br>
-
 					</div>
+				</div>
 
-					<div class="convex-example-nav">
-						<a href="convex.html"><div class="col-xs-1 convex-example-prev" title="Теория"><i class="fa fa-angle-left"></i></div></a>
-						<a href="convex-example-2.html"><div class="col-xs-1 convex-example-next" title="Пример 2"><i class="fa fa-angle-right"></i></div></a>
+				<br>
+
+				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
+					<div class="text-center"><h1 class="valid-title">Неявное задание</h1></div>
+				</div>
+
+				<div class="valid-container">
+					<div class="row">
+						<div class="col-xs-12 text-justify algorithm-text">
+							В боль&shy;шин&shy;стве случаев невоз&shy;можно найти множество опре&shy;де&shy;ления значений (а также область значения) для неявно заданной кривой, исходя только из функ&shy;цио&shy;наль&shy;ного урав&shy;нения. 
+							Поэтому на данном этапе лишь исклю&shy;чают из даль&shy;ней&shy;шего рассмот&shy;рения значения $$x$$ и $$y$$, для которых не опре&shy;де&shy;лена $$F(x, y)$$.
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
+					<div class="text-center"><h1 class="valid-title">Параметрическое задание</h1></div>
+				</div>
+
+				<div class="valid-container" style="margin-bottom: 20px;">
+					<div class="row">
+						<div class="col-xs-12 text-justify algorithm-text">
+							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D=\mathbb{R} \setminus A$$ $$–$$ область опре&shy;де&shy;ления функции, 
+							$$A$$ $$–$$ множество значений пара&shy;метра $$t$$, при которых хотя бы одна из функций $$x(t)$$, $$$$ $$y(t)$$ не опре&shy;де&shy;лена или терпит разрыв. 
+							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. Если $$t=-\infty$$ (и/или $$t=+\infty$$) явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$, 
+							то эти значения также явля&shy;ются особыми точками кривой. Особые точки разби&shy;вают область опре&shy;де&shy;ления на участки непре&shy;рыв&shy;ности кривой.
+						</div>
 					</div>
 				</div>
 

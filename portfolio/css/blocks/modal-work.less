@@ -51,10 +51,25 @@
     font-size: 1.2rem;
     color: @gray;
     text-transform: uppercase;
+
+    @media @mobile-sm {
+        margin-top: .8rem;
+    }
 }
 
 .modal-work__info-divider {
     margin: 0 1rem;
+
+    @media @mobile-sm {
+        display: none;
+    }
+}
+
+.modal-work__date {
+    @media @mobile-sm {
+        display: block;
+        margin-top: .8rem;
+    }
 }
 
 .modal-work__client, .modal-work__demo {

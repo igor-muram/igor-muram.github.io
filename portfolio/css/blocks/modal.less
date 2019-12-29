@@ -74,6 +74,15 @@
     text-transform: uppercase;
     color: @black;
     font-weight: 700;
+
+    @media @mobile-sm {
+        font-size: 2.5rem;
+
+        &--contact {
+            font-size: 1.75rem;
+            margin-bottom: .5rem !important;
+        }
+    }
 }
 
 .modal__subtitle {
@@ -81,4 +90,10 @@
     font-size: 1.06rem;
     color: @black;
     font-weight: 400;
+
+    @media @mobile-sm {
+        &--contact {
+            font-size: 1rem;
+        }
+    }
 }

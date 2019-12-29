@@ -1,0 +1,75 @@
+// main: ../style.less
+
+.burger {
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    border: 0;
+    background: none;
+    display: none;
+    cursor: pointer;
+
+    @media @tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham {
+    color: transparent;
+    transition: transform .4s;
+    user-select: none;
+
+    &.active {
+        transform: rotate(45deg);
+    }
+
+    .top {
+        stroke-dasharray: 40 160;
+    }
+    
+    .middle {
+        stroke-dasharray: 40 142;
+        transform-origin: 50%;
+        transition: transform 400ms;
+    }
+
+    .bottom {
+        stroke-dasharray: 40 85;
+        transform-origin: 50%;
+        transition: transform 400ms, stroke-dashoffset 400ms;
+    }
+
+    &.active {
+        .top {
+            stroke-dashoffset: -64px;
+        }
+    
+        .middle {
+            transform: rotate(90deg);
+        }
+
+        .bottom {
+            stroke-dashoffset: -64px;
+        }
+    }
+}
+
+.burger__icon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

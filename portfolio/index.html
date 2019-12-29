@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="icon" href="images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon-180x180.jpg">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Портфолио</title>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader"><div class="pulse"></div></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <div class="user">
+                    <div class="user__avatar">
+                        <img src="images/avatar.jpg" alt="Аватар">
+                    </div>
+                    <div class="user__content">
+                        <div class="user__name">
+                            Игорь<br>Мурамщиков
+                        </div>
+                        <div class="user__prof">Веб-разработчик</div>
+                    </div>
+                </div>
+
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="#works">Работы</a>
+                    <a class="nav__link" href="#about">Обо мне</a>
+                    <a class="nav__link" href="#news">Статьи</a>
+                    <a class="nav__link nav__link--btn" href="#" data-modal="#modal_hire_me">Написать</a>
+                </nav>
+
+                <button class="burger" type="button" id="navToggle">
+                    <svg class="ham" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+                      <path
+                      class="line top"
+                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                      <path
+                      class="line middle"
+                      d="m 30,50 h 40" />
+                      <path
+                      class="line bottom"
+                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </header>
+
+
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
+
+        <div class="intro__inner">
+            <div class="intro__content">
+                <h2 class="intro__subtitle">Привет, меня зовут</h2>
+                <h1 class="intro__title">Игорь Мурамщиков</h1>
+                <div class="intro__text">Я занимаюсь Frontend-разработкой</div>
+
+                <ul class="social">
+                    <li><a href="https://vk.com/id151045231"><div><i class="fab fa-vk"></i></div></a></li>
+                    <li><a href="mailto:igor.muram@gmail.com"><div><i class="fab fa-google-plus-g"></i></div></a></li>
+                    <li><a href="https://www.instagram.com/igor_muram/"><div><i class="fab fa-instagram"></i></div></a></li>
+                    <li><a href="https://github.com/igor-muram"><div><i class="fab fa-github"></i></div></a></li>
+                </ul>
+
+                <a class="btn btn--intro" href="#" data-modal="#modal_hire_me">Написать</a>
+                <button class="btn btn--intro" type="button" data-modal="#modal_resume">Резюме</button>
+            </div>
+
+            <img class="intro__photo" src="images/photo.png" alt="">
+        </div><!-- /.intro__inner -->
+
+    </div><!-- /.container -->
+</section>
+
+
+
+<!-- Works -->
+<div id="works" class="works">
+    <div class="container">
+
+        <div class="works__nav">
+            <a class="works__nav-link" href="#" data-filter="all">Все</a>
+            <a class="works__nav-link" href="#" data-filter="landing">Лендинги</a>
+            <!-- <a class="works__nav-link" href="#" data-filter="website">Многостраничные сайты</a> -->
+            <a class="works__nav-link" href="#" data-filter="interaction">Интерактивные сайты</a>
+        </div>
+
+
+        <div class="portfolio" id="portfolio">
+            <div class="portfolio__col" data-cat="landing">
+                <div class="work" data-modal="#modal_project_1">
+                    <img class="work__image img" src="images/works/Web_Template/preview_thumb.jpg" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Лендинг</div>
+                        <div class="work__title">
+                            Web Template
+                            <time class="work__date" datetime="2019-11-01 19:00">2019</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio__col" data-cat="interaction">
+                <div class="work" data-modal="#modal_project_2">
+                    <img class="work__image img" src="images/works/Plots/preview_thumb.jpg" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Интерактивный сайт</div>
+                        <div class="work__title">
+                            Plots
+                            <time class="work__date" datetime="2019-11-01 19:00">2019</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.portfolio -->
+
+        <div class="text-center">
+            <a id="more-works" class="btn btn--sm" href="#">Еще работы</a>
+        </div>
+
+    </div><!-- /.container -->
+</div><!-- /.works -->
+
+
+
+<!-- About -->
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="about__inner">
+            <div class="about__photo">
+                <img class="img" src="images/about_photo.png" alt="">
+            </div>
+
+            <div class="about__content">
+                <h3 class="about__title">Обо мне</h3>
+                <h2 class="about__bigtitle">Кто я такой</h2>
+                <div class="about__text">
+                    <p>Lorem ipsum dolor sit amet, consec-tetur adipisicing elit. Iste a dolores consectetur provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis id laborios-am animi eos excepturi sint.</p>
+                    <p>Lorem ipsum dolor sit amet, consec-tetur adipisicing elit. Iste a dolores consectetur provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis id laborios-am animi eos excepturi sint.</p>
+                    <p>Lorem ipsum dolor sit amet, consec-tetur adipisicing elit. Iste a dolores consectetur provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis id laborios-am animi eos excepturi sint.</p>
+                </div>
+                <a class="btn" href="#" data-modal="#modal_hire_me">Написать</a>
+                <button class="btn" type="button" data-modal="#modal_resume">Резюме</button>
+            </div><!-- /.about__content -->
+        </div><!-- /.about__inner -->
+
+    </div><!-- /.container -->
+</section>
+
+
+<!-- News -->
+<section id="news" class="news">
+    <div class="container">
+
+        <div class="news__header">
+            <h3 class="news__title">Мои статьи</h3>
+            <div class="news__text">Иногда я пишу что-то умное или интересное</div>
+        </div>
+
+
+        <div class="articles">
+            <div class="articles__col">
+                <div class="articles__item">
+                    <div class="articles__header">
+                        <time class="articles__date">
+                            18<br>декабря
+                        </time>
+                        <a class="news-photo" href="https://storage.tusur.ru/files/131947/essu-19-part-2.pdf#page=171" target="_blank">
+                            <img class="articles__photo" src="images/articles/tusur/preview.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="articles__content">
+                        <h4 class="articles__title">
+                            <a class="news-title" href="https://storage.tusur.ru/files/131947/essu-19-part-2.pdf#page=171" target="_blank">Проектная разработка виртуальной лабораторной работы с 3D-визуализацией движения гироскопа</a>
+                        </h4>
+                        <div class="articles__cat">Графика, программирование</div>
+                        <div class="articles__journal">"Электронные средства и системы управления"</div>
+                        <div class="articles__text">
+                            <p>
+                                Краткая обзорная статья о проектной деятельности, организованной на кафедре общей физики НГТУ.
+                                Проектная деятельность описана на примере разработки интерактивной виртуальной лаборатории по моделированию прецессии и нутации гироскопа. 
+                            </p>
+                        </div>
+                    </div>
+                    <a class="btn btn--sm btn--news news-detail" href="https://storage.tusur.ru/files/131947/essu-19-part-2.pdf#page=171" target="_blank">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- <div class="articles__col">
+                <div class="articles__item">
+                    <div class="articles__header">
+                        <time class="articles__date">
+                            30<br>января
+                        </time>
+                        <a class="news-photo" href="#">
+                            <img class="articles__photo" src="https://placehold.it/370x257" alt="">
+                        </a>
+                    </div>
+                    <div class="articles__content">
+                        <h4 class="articles__title">
+                            <a class="news-title" href="#">Тема статьи</a>
+                        </h4>
+                        <div class="articles__cat">Категория</div>
+                        <div class="articles__journal">Журнал</div>
+                        <div class="articles__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                        </div>
+                    </div>
+                    <a class="btn btn--sm btn--news news-detail" href="#">Подробнее</a>
+                </div>
+            </div> -->
+
+        </div><!-- /.articles -->
+
+        <div class="news__footer">
+            <a class="news__link" href="#">Показать больше статей</a>
+        </div>
+
+    </div><!-- /.container -->
+</section>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer__inner">
+            <div class="footer__credits">
+
+                <div class="footer__social">
+                    <a href="https://vk.com/id151045231"><i class="fab fa-vk"></i></a>
+                    <a href="mailto:igor.muram@gmail.com"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.instagram.com/igor_muram/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/igor-muram"><i class="fab fa-github"></i></a>
+                </div>
+            </div><!-- /.footer__credits -->
+
+            <nav class="footer__nav">
+                <a class="footer__nav-link" href="#works">Работы</a>
+                <a class="footer__nav-link" href="#about">Обо мне</a>
+                <a class="footer__nav-link" href="#news">Статьи</a>
+                <a class="footer__nav-link footer__nav-link--btn" href="#" data-modal="#modal_hire_me">Написать</a>
+            </nav>
+        </div><!-- /.footer__inner -->
+
+    </div><!-- /.container -->
+</footer>
+
+
+<!-- Modals -->
+<div class="modal" id="modal_project_1">
+    <div class="modal__dialog">
+
+        <button class="modal__close" type="button" data-close>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-work">
+            <div class="modal-work__preview">
+                <div data-slider="slick">
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Web_Template/1.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Web_Template/2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Web_Template/3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-work__content">
+
+                <div class="modal-work__header">
+                    <h3 class="modal-work__title">Web Template</h3>
+                    <div class="modal-work__info">
+                        Лендинг <span class="modal-work__info-divider">|</span> 2019
+                    </div>
+                </div>
+
+                <div class="modal-work__client">
+                    <div class="modal-work__client-title">Клиент:</div>
+                    <div class="modal-work__client-company">Личный проект</div>
+                </div>
+
+                <div class="modal-work__demo">
+                    <div class="modal-work__demo-title">Демонстрация:</div>
+                    <div class="modal-work__demo-link"><a href="https://igor-muram.github.io/demo/index.html">Подробнее</a></div>
+                </div>
+
+                <div class="modal-work__text">
+                    <p>
+                        <b>Web Template</b> - это созданный мной шаблон для быстрого старта вёрстки. 
+                    </p>
+                    <p>
+                        Шаблон включает в себя часто используемые мной инструменты и плагины. 
+                        По умолчанию в шаблоне настроены меню, прелоадер и кнопка возврата к началу страницы. 
+                        Также созданы несколько вариантов оформления кнопок, чекбоксов, аккордеонов, всплывающих подсказок и иконок социальных сетей.
+                    </p>
+                    <p>
+                        На стартовой странице подробно описаны правила установки шаблона и работы с ним.
+                    </p>
+                </div>
+
+                <div class="modal-work__footer">
+                    <button class="modal-work__btn slickPrev" type="button">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal-work__btn slickNext" type="button">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div><!-- /.modal-work__content -->
+        </div><!--/.modal-work -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="modal_project_2">
+    <div class="modal__dialog">
+
+        <button class="modal__close" type="button" data-close>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-work">
+            <div class="modal-work__preview">
+                <div data-slider="slick">
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/preview.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/1.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/3.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/4.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/5.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="images/works/Plots/6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-work__content">
+
+                <div class="modal-work__header">
+                    <h3 class="modal-work__title">Plots</h3>
+                    <div class="modal-work__info">
+                        Интерактивный сайт <span class="modal-work__info-divider">|</span> 2019
+                    </div>
+                </div>
+
+                <div class="modal-work__client">
+                    <div class="modal-work__client-title">Клиент:</div>
+                    <div class="modal-work__client-company"><a href="https://www.nstu.ru">НГТУ</a></div>
+                </div>
+
+                <div class="modal-work__demo">
+                    <div class="modal-work__demo-title">Демонстрация:</div>
+                    <div class="modal-work__demo-link"><a href="https://igor-muram.github.io/plots/index.html">Подробнее</a></div>
+                </div>
+
+                <div class="modal-work__text">
+                    <p>
+                        <b>Plots</b> содержит полную теоретическую информацию, связанную с графиками функций и кривых, в сжатом виде.
+                    </p>
+                    <p>
+                        Теория представлена в виде раскрывающихся блоков с подробными пояснениями, либо в графическом виде с цветовым выделением необходимых связей и краткими пояснениями.
+                    </p>
+                    <p>
+                        Помимо теории приложение включает в себя большое количество примеров с решениями, часть из которых являются интерактивными. 
+                        Пользователь может изменять параметры и наблюдать за изменением или построением графиков.
+                    </p>
+                </div>
+
+                <div class="modal-work__footer">
+                    <button class="modal-work__btn slickPrev" type="button">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <button class="modal-work__btn slickNext" type="button">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div><!-- /.modal-work__content -->
+        </div><!--/.modal-work -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="modal_resume">
+    <div class="modal__dialog">
+
+        <button class="modal__close" type="button" data-close>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal__content">
+            <h3 class="modal__title text-center">Резюме</h3>
+
+            <div class="text-center">
+                <a class="btn btn--cv" href="docs/curriculum_vitae.pdf" target="_blank">Посмотреть PDF</a>
+                <a class="btn btn--cv" href="docs/curriculum_vitae.rar" download="">Загрузить PDF</a>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline__col timeline__col--left">
+                    <h4 class="timeline__title">Опыт</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="11-21-2019">2018 - <b>Настоящее время</b></time>
+                        <h5 class="timeline__subtitle">НГТУ</h5>
+                        <div class="timeline__position">Студент</div>
+                        <div class="timeline__text">
+                            <p>В свободное от учебы время занимаюсь созданием сайтов и изучаю новые веб-технологии.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="timeline__title">Образование</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="11-21-2019">2017 - <b>Настоящее время</b></time>
+                        <h5 class="timeline__subtitle">НГТУ</h5>
+                        <div class="timeline__position">Студент</div>
+                        <div class="timeline__text">
+                            <p>
+                                Студент 3 курса.<br>
+                                Факультет прикладной математики и информатики.<br>
+                                Средний балл 5.0 (95.6 по шкале ECTS).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="11-21-2019">2006 - 2017</time>
+                        <h5 class="timeline__subtitle">Школа</h5>
+                        <div class="timeline__text">
+                            <p>Закончил 11 классов с отличием.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="timeline__title">Навыки и знания</h4>
+                    <div class="progress-bar">
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">HTML, CSS (Sass, Scss, Less)</div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">Javascript, JQuery, C++</div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">Численные методы</div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">Математический анализ</div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.progress-bar -->
+
+                    <div class="timeline__text">
+                        <p>С моими работами можно познакомиться на <a href="https://github.com/igor-muram">GitHub</a></p>
+                    </div>
+                </div>
+
+                <div class="timeline__col timeline__col--right">
+                    <h4 class="timeline__title">Награды</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="12-28-2019">2019</time>
+                        <h5 class="timeline__subtitle">Командная олимпиада по математике</h5>
+                        <div class="timeline__position">Золотая медаль</div>
+                        <div class="timeline__text">
+                            <p>Победа в <b>международной</b> командной студенческой олимпиаде по математике.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="11-28-2019">2019</time>
+                        <h5 class="timeline__subtitle">Стипендиат мэрии г. Новосибирска</h5>
+                        <div class="timeline__text">
+                            <a href="images/awards/grant.pdf" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="11-22-2019">2019</time>
+                        <h5 class="timeline__subtitle">Конференция по электронным средствам</h5>
+                        <div class="timeline__position">Диплом 1 степени</div>
+                        <div class="timeline__text">
+                            <p>Лучший доклад на <b>международной</b> научно-практической конференции «Электронные средства и системы управления».</p>
+                            <a href="images/awards/conference.pdf" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                   <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-16-2019">2019</time>
+                        <h5 class="timeline__subtitle">Олимпиада по математике</h5>
+                        <div class="timeline__position">Диплом 1 степени</div>
+                        <div class="timeline__text">
+                            <p>Победа во II туре <b>международной</b> студенческой олимпиады по математике.</p>
+                            <a href="images/awards/math.jpg" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-15-2019">2019</time>
+                        <h5 class="timeline__subtitle">Олимпиада по физике</h5>
+                        <div class="timeline__position">Диплом 3 степени</div>
+                        <div class="timeline__text">
+                            <p>Победа в заключительном туре <b>международной</b> студенческой олимпиады по физике.</p>
+                            <a href="images/awards/physics.pdf" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+                </div><!-- /.timeline__col -->
+
+            </div><!-- /.timeline -->
+
+            <div class="text-center">
+                <a class="btn btn--cv mb-0" href="#" data-modal="#modal_hire_me">Написать</a>
+            </div>
+
+        </div><!-- /.modal__content -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="modal_hire_me">
+    <div class="modal__dialog modal__dialog--sm">
+
+        <button class="modal__close" type="button" data-close>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="contact">
+            <div class="contact__left">
+                <h3 class="modal__title mb-0">Поговорим?</h3>
+                <h4 class="modal__subtitle">Позвоните мне или напишите</h4>
+
+                <ul class="contact__info">
+                    <li class="contact__info-item">
+                        <i class="fas fa-mobile-alt contact__info-icon"></i>
+                        8 (999) 490 0920
+                    </li>
+                    <li class="contact__info-item">
+                        <i class="far fa-envelope contact__info-icon"></i>
+                        igor.muram@gmail.com
+                    </li>
+                </ul>
+
+                <form class="form" action="/" meth-od="post">
+                    <div class="form__group">
+                        <label class="form__label" for="input-email">E-mail</label>
+                        <input class="form__input" name="input-email" type="text" id="input-email" placeholder="Напишите свой E-mail">
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="input-text">Сообщение</label>
+                        <textarea class="form__textarea" name="input-text" id="input-text" placeholder="Напишите свое сообщение..."></textarea>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="btn" type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div><!-- /.contact__left -->
+        </div><!-- /.contact -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="top active" title="Наверх"><i class="fa fa-angle-up"></i></div>
+
+<!-- JS -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

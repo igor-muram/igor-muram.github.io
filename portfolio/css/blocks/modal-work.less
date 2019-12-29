@@ -1,0 +1,150 @@
+// main: ../style.less
+
+.modal-work {
+    display: flex;
+}
+
+.modal-work__preview {
+    width: 65%;
+    position: relative;
+    overflow: hidden;
+
+    @media @notebook {
+       display: none;
+    }
+}
+
+.modal-work__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate(-50%, -50%);
+}
+
+.modal-work__content {
+    text-align: justify;
+    width: 35%;
+    padding: 3rem 3rem 1rem 1.73rem;
+    position: relative;
+
+    @media @notebook {
+        width: 100%;
+    }
+}
+
+.modal-work__header {
+    margin-bottom: 2.2rem;
+}
+
+.modal-work__title {
+    margin-bottom: .2rem;
+
+    font-size: 2.12rem;
+    color: @black;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.modal-work__info {
+    font-size: 1.2rem;
+    color: @gray;
+    text-transform: uppercase;
+}
+
+.modal-work__info-divider {
+    margin: 0 1rem;
+}
+
+.modal-work__client, .modal-work__demo {
+    margin-bottom: 2.2rem;
+}
+
+.modal-work__client-title, .modal-work__demo-title {
+    margin-bottom: .2rem;
+
+    font-size: 1.06rem;
+    color: @black;
+    font-weight: 700;
+}
+
+.modal-work__client-company {
+    font-size: .94rem;
+    font-style: italic;
+    color: @gray;
+}
+
+.modal-work__client-company, .modal-work__demo-link {
+    a {
+        font-size: .94rem;
+        font-style: italic;
+        color: @gray;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.modal-work__text {
+    margin-bottom: 8.66rem;
+
+    font-size: 1rem;
+    line-height: 2;
+    color: @gray;
+    font-weight: 300;
+}
+
+.modal-work__footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.8rem 1rem;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.modal-work__btn {
+    padding: 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    font-size: 1.8rem;
+    color: @black;
+    text-transform: uppercase;
+
+    transition: all .2s linear;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:focus, &:active {
+        outline: none;
+    }
+
+    @media @notebook {
+        display: none;
+    }
+}
+
+#modal_project_1, #modal_project_2 {
+    .slick-dots {
+        li.slick-active {
+            button {
+                background-color: @black;
+            }
+        }
+
+        button {
+            border: 1px solid @black;
+        }
+    }
+}

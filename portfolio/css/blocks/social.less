@@ -1,0 +1,104 @@
+// main: ../style.less
+
+.social {
+	margin-bottom: 45px;
+	display: flex;
+	font-size: 40px;
+	margin-left: -37px;
+	a {
+		display: block;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		position: relative;
+		transition: .5s;
+		color: #298cad;
+		margin-right: 40px;
+		&:hover {
+			color: #36d2ff;
+		}
+	}
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		a {
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				background: #2fbae1;
+				width: 100%;
+				height: 1px;
+				left: 0;
+				transition: transform .5s;
+				transform: scaleY(0);
+			}
+			&::before {
+				transform-origin: right;
+			}
+			&::after {
+				transform-origin: left;
+			}
+			&:hover {
+				&::before {
+					transform: scaleX(0);
+					transform-origin: left;
+				}
+				&::after {
+					transform: scaleX(0);
+					transform-origin: right;
+				}
+				div {
+					&::before {
+						transform: scaleY(1);
+						transform-origin: top;
+					}
+					&::after {
+						transform: scaleY(1);
+						transform-origin: bottom;
+					}
+				}
+			}
+			div {
+				&::before, &::after {
+					content: '';
+					position: absolute;
+					background: #2fbae1;
+					width: 1px;
+					height: 100%;
+					transition: transform .5s;
+					transform: scaleY(0);
+				}
+				&::before {
+					left: 0;
+					transform-origin: bottom;
+				}
+				&::after {
+					right: 0;
+					transform-origin: top;
+				}
+			}
+		}
+	}
+
+	@media @notebook {
+		margin-left: -32px;
+	}
+
+	@media @tablet {
+		font-size: 35px;
+		margin-left: -38px;
+
+		a {
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+		}
+	}
+
+	@media @mobile {
+		margin-left: -35px;
+	}
+}
+

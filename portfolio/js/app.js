@@ -30,14 +30,11 @@ $(function() {
 
     /*---------------------------Menu---------------------------*/
 
-    $("nav").on("click", "a", function (e) {
+    $("nav, .about").on("click", "a", function (e) {
         e.preventDefault();
         var id  = $(this).attr('href'),
             top = $(id).offset().top;
-        if ($(window).width() > 576)
-            top -= 30;
-        else
-            top -= 120;
+        top -= ($(window).width() > 576) ? 30 : 120;
         $('body,html').animate({scrollTop: top}, 800);
     });
 

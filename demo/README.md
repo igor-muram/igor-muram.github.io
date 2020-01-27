@@ -16,7 +16,6 @@
 	<li><a href="https://bower.io" target="_blank">Bower</a></li>
 	<li><a href="https://mmenujs.com" target="_blank">Mmenu</a></li>
 	<li><a href="https://jonsuh.com/hamburgers/" target="_blank">Css-hamburgers</a></li>
-	<li><a href="https://jonsuh.com/hamburgers/" target="_blank">Css-hamburgers</a></li>
 </ul>
 
 <p>Images used in the template are responsive. For image responsiveness, specify the <b>img-responsive</b> class and use the <b>srcset</b> attribute.</p>
@@ -51,16 +50,16 @@
 	<li>Social Icons</li>
 </ul>
 
-<h3 style="text-align: center;">How to use a template</h3>
+<h2 style="text-align: center;">How to use a template</h3>
 
 <ul>
-	<li>For working with the template, install <a href="https://nodejs.org/en/">NodeJS</a.></li>
+	<li>For working with the template, install <a href="https://nodejs.org/en/">NodeJS</a>.</li>
 	<li><a href="#">Download</a> the <b>Web Template</b> from the GitHub page.</li>
 	<li>Install Node Modules with the <b>npm i</b> command.</li>
 	<li>Run the template with the <b>gulp</b> command.</li>
 </ul>
 
-<h3 style="text-align: center;">How to interact with a template using Gulp</h3>
+<h2 style="text-align: center;">How to interact with a template using Gulp</h3>
 
 <ul>
 	<li>At the beginning of the <b>gulpfile.js</b> file, you can change the desired css preprocessor (Sass or Scss). Sass preprocessor installed.</li>
@@ -69,7 +68,7 @@
 	<li><b>rsync</b>: deploy the project to the server from the dist folder using rsync.</li>
 </ul>
 
-<h3 style="text-align: center;">Rules for working with the template</h3>
+<h2 style="text-align: center;">Rules for working with the template</h3>
 
 <ul>
 	<li>All HTML files should have the same initial content, as in the <b>app/index.html</b> file.</li>

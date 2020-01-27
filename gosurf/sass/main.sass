@@ -1,0 +1,674 @@
+@import "vars"
+@import "libs"
+@import "global"
+
+.header
+	position: relative
+	height: 100vh
+
+.header__slider
+	&-item
+		height: 100vh
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		position: relative
+	.slick-current
+		.header__map
+			display: block
+
+.slider-item__info
+	position: absolute
+	right: 80px
+	bottom: 116px
+	text-align: right
+	&-title
+		font-weight: 800
+		font-size: 80px
+		line-height: 86px
+		margin-bottom: 48px
+	&-subtitle
+		margin-bottom: 5px
+	&-subtext
+		margin-bottom: 8px
+	&-text
+		font-weight: 800
+		font-size: 40px
+		line-height: 46px
+		margin-bottom: 20px
+
+.slider-arrows
+	position: absolute
+	top: 40px
+	right: 80px
+	cursor: pointer
+	z-index: 4
+	&__left
+		right: 125px
+
+.slider-dots-head
+	position: absolute
+	right: 50px
+	bottom: 36px
+	max-width: 920px
+	width: 100%
+	.slick-current
+		.dots-box
+			border-top: 4px solid $green
+
+.dots-box
+	width: 200px
+	height: 28px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	border-top: 4px solid #fff
+	padding-top: 6px
+	&__number
+		font-size: 24px
+		line-height: 34px
+		font-weight: 800
+	&__name
+		font-weight: 300
+		line-height: 19px
+		text-transform: capitalize
+
+.header__aside
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 5
+	border-right: 1px solid rgba(#fff, .25)
+	height: 100vh
+	text-align: center
+
+.header__title
+	font-size: 200px
+	max-width: 467px
+	opacity: .07
+	font-weight: 800
+	line-height: 156px
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 4
+
+.menu
+	padding-top: 40px
+	a
+		span
+			display: block
+			font-size: 12px
+			line-height: 14px
+			letter-spacing: 3px
+			font-weight: 500
+			padding-top: 6px
+			margin-bottom: 20px
+			text-transform: capitalize
+			transition: all .3s ease
+	li:hover
+		a span
+			transform: scale(1.2)
+
+.burger
+	width: 60px
+	height: 60px
+	padding: 0
+	border: 0
+	position: absolute
+	right: 27px
+	top: 70px
+	z-index: 20
+	cursor: pointer
+	background: none
+	display: none
+	transition: all .3s ease
+	&:hover
+		transform: scale(1.1)
+
+.line 
+	fill: none
+	transition: stroke-dasharray .4s, stroke-dashoffset .4s
+	stroke: $green
+	stroke-width: 5.5
+	stroke-linecap: round
+
+.ham
+	color: transparent
+	transition: transform .4s
+	user-select: none
+	&.active 
+		transform: rotate(45deg)
+	.top 
+		stroke-dasharray: 40 160
+	.middle 
+		stroke-dasharray: 40 142
+		transform-origin: 50%
+		transition: transform 400ms
+	.bottom 
+		stroke-dasharray: 40 85
+		transform-origin: 50%
+		transition: transform 400ms, stroke-dashoffset 400ms
+	&.active 
+		.top 
+			stroke-dashoffset: -64px
+		.middle 
+			transform: rotate(90deg)
+		.bottom 
+			stroke-dashoffset: -64px
+
+.burger__icon 
+	display: block
+	max-width: 100%
+	height: auto
+
+.header__date
+	font-size: 72px
+	line-height: 64px
+	font-weight: 800
+	&-container
+		padding-top: 15px
+		font-weight: 300
+		font-size: 16px
+		line-height: 19px
+		letter-spacing: 1.4px
+		margin-bottom: 30px
+		display: block
+
+.header__search
+	margin-top: 27px
+	margin-bottom: 35px
+	cursor: pointer
+
+.header__location
+	display: inline-block
+	font-weight: 300
+	font-size: 12px
+	line-height: 14px
+	letter-spacing: 1.05px
+	position: relative
+	padding-left: 19px
+	text-transform: capitalize
+	&:before
+		content: ''
+		position: absolute
+		width: 11px
+		height: 13px
+		background-image: url(../img/marker.svg)
+		left: 0
+		top: 0
+
+.header__map
+	position: absolute
+	right: 0
+	top: 0
+	z-index: 3
+	display: none
+
+.header__arrows
+	position: absolute
+	bottom: 30px
+	left: 210px
+	z-index: 3
+
+.line-animation
+	stroke-dashoffset: 600
+	stroke-dasharray: 600
+	animation: animdash 4.5s forwards
+	&--north
+		stroke-dashoffset: 800
+		stroke-dasharray: 800
+		animation-delay: 5.5s
+	&--west, &--east, &--south
+		animation-delay: 3s
+	&--south
+		stroke-dashoffset: -900
+		stroke-dasharray: 900
+
+@keyframes animdash
+	to
+		stroke-dashoffset: 0
+
+.surf
+	background-image: url(../img/surf-bg.svg)
+	background-repeat: no-repeat
+	background-position: right top
+	background-size: auto
+	position: relative
+	&__subtitle
+		text-align: right
+		padding-right: 80px
+		margin-top: -86px
+	&-slider
+		padding-top: 110px
+		.slick-slide:nth-child(4n + 1)
+			.surf-box
+				margin-top: 32px
+		.slick-slide:nth-child(4n + 3)
+			.surf-box
+				margin-top: 89px
+		.slick-current
+			.surf-box__inner-btn
+				display: block
+			.surf-box__inner
+				background-color: rgba(#1C2121, .3)
+		.slider-arrows
+			top: 56px
+			opacity: .25
+	.subtitle__coords
+		font-size: 18px
+		line-height: 22px
+		letter-spacing: 8px
+		transform: rotate(-90deg)
+		position: absolute
+		right: 105px
+		top: 820px
+		width: 0
+		height: 0
+		white-space: nowrap
+
+.surf-box
+	&__wrapper
+		background-position: center
+		background-repeat: no-repeat
+		background-size: cover
+	&__inner
+		min-height: 750px
+		background-color: rgba(#1C2121, .85)
+		position: relative
+		&:hover
+			background-color: rgba(#1C2121, .5)
+			transition: all .5s
+			cursor: pointer
+			.surf-box__inner-btn
+				display: block
+		&-title
+			font-weight: 800
+			font-size: 40px
+			line-height: 36px
+			padding: 72px 0 0 40px
+			width: 140px
+		&-location
+			font-size: 18px
+			line-height: 22px
+			letter-spacing: 8px
+			transform: rotate(-90deg)
+			position: absolute
+			left: 40px
+			bottom: 80px
+			width: 0
+			height: 0
+			white-space: nowrap
+			span
+				font-weight: 100
+		&-btn
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			text-align: center
+			display: none
+
+.slider-map
+	max-width: 1200px
+	min-height: 635px
+	background-image: url(../img/world-map-dots.png)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	margin: 0 auto
+	.slick-list
+		min-height: 635px
+		overflow: visible
+	.slick-current
+		.slider-dots__content
+			display: block
+
+.slider-dots
+	position: relative
+	&__circle
+		width: 23px
+		height: 23px
+		background-color: $green
+		border-radius: 50%
+		cursor: pointer
+		box-shadow: 0px 0px 35px rgba($green, .84)
+	&__content
+		display: none
+		width: 285px
+		padding: 27px 30px 0 30px
+		background-color: rgba(#0F1010, .7)
+		border-radius: 6px
+		position: absolute
+		bottom: 35px
+		transform: translateX(-45%)
+		z-index: 4
+		&:before
+			content: ''
+			position: absolute
+			width: 0
+			height: 0
+			border-bottom: 20px solid $green
+			border-left: 12px solid transparent
+			border-right: 12px solid transparent
+			bottom: -21px
+			left: 45%
+			border-bottom-left-radius: 10px
+			border-bottom-right-radius: 10px
+			cursor: pointer
+		&-item
+			text-align: center
+			img
+				margin: 0 auto 8px
+		&-number
+			font-weight: 800
+			line-height: 23px
+		&-name
+			font-weight: 300
+			font-size: 10px
+			line-height: 12px
+		&-row
+			display: flex
+			justify-content: space-between
+			padding-bottom: 30px
+		&-title
+			font-weight: 800
+			font-size: 18px
+			line-height: 26px
+			padding-bottom: 8px
+			margin-bottom: 8px
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				background-color: $green
+				width: 80px
+				height: 1px
+				bottom: 0
+				left: 0
+		&-subtitle
+			line-height: 19px
+			text-transform: capitalize
+		&-link
+			padding-top: 4px
+	&--1
+		top: 330px
+		left: -17px
+		.slider-dots__content
+			transform: translateX(0)
+			&:before
+				left: 0
+	&--2
+		top: 290px
+		left: -15px
+		.slider-dots__circle
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				background-image: url(../img/mini-marker.svg)
+				width: 14px
+				height: 17px
+				background-size: cover
+				right: -15px
+				top: -20px
+	&--3
+		top: 318px
+		left: 35px
+	&--4
+		top: 500px
+		left: -40px
+	&--5
+		top: 227px
+		left: -70px
+	&--6
+		top: 555px
+		left: -112px
+	&--7
+		top: 395px
+		left: -95px
+	&--8
+		top: 500px
+		left: 35px
+		.slider-dots__content
+			transform: translateX(-261.5px)
+			&:before
+				left: auto
+				right: 0
+
+.holder
+	background-position: bottom right
+	background-repeat: no-repeat
+	&.travel
+		background-image: url(../img/travel-bg.png)
+	&.sleep
+		background-image: url(../img/flower.png)
+	.slider-arrows
+		top: 235px
+		right: 88px
+		opacity: .25
+		&__left
+			right: 133px
+
+.holder-slider
+	&__head
+		background-position: top left
+		background-repeat: no-repeat
+		min-height: 780px
+	&__descr
+		padding: 160px 0 0 132px
+		min-height: 320px
+		margin-top: -230px
+		background-repeat: no-repeat
+		background-position: right center
+		background-size: contain
+		.descr__head
+			position: relative
+			padding-right: 78px
+			&.descr__head-sleep
+				padding-right: 200px
+			img
+				position: absolute
+				right: 0
+				top: 0
+			.holder__star-list
+				position: absolute
+				right: 0
+				top: 0
+				li
+					margin-top: -6px
+				img
+					position: static
+	&__subtitle
+		text-align: right
+		padding-right: 80px
+		padding: 132px 80px 0 0
+	&__info
+		display: flex
+		justify-content: space-around
+		&-item
+			min-height: 200px
+			margin-bottom: 66px
+			position: relative
+		&-subtitle
+			font-size: 18px
+			line-height: 22px
+			letter-spacing: 8px
+			opacity: .5
+			transform: rotate(-90deg)
+			white-space: nowrap
+			text-align: right
+			position: absolute
+			top: 94px
+			left: -97px
+			width: 200px
+			height: 0
+		&-title
+			font-weight: 800
+			font-size: 40px
+			line-height: 36px
+			padding-left: 40px
+			position: relative
+			div.sum
+				display: inline-block
+			span
+				font-size: 14px
+				line-height: 36px
+				font-weight: 400
+				letter-spacing: 5.25px
+				opacity: .75
+				display: flex
+				justify-content: flex-end
+	&__btn
+		text-align: center
+
+.shop
+	background-image: url(../img/shop-bg.png)
+	background-repeat: no-repeat
+	background-position: right center
+	.slider-arrows
+		opacity: .25
+		top: 0
+	&__slider
+		padding-left: 132px
+		&-inner
+			display: flex
+		&-info
+			max-width: 480px
+			margin-right: 40px
+			width: 100%
+			padding-top: 150px
+		.shop__star-list
+			margin-left: -15px
+		&-price
+			font-weight: 800
+			font-size: 32px
+			line-height: 40px
+			margin-bottom: 64px
+			padding-left: 6px
+			sup
+				font-size: 18px
+				padding-left: 2px
+		&-btn
+			padding-left: 6px
+		&-content
+			padding-left: 170px
+			display: flex
+			align-items: flex-end
+			.surfboard-img
+				min-height: 695px
+				max-width: 228px
+			.shop__extras
+				padding-left: 150px
+				&-inner
+					display: flex
+				&-title
+					font-weight: 800
+					font-size: 28px
+					line-height: 40px
+					margin-bottom: 25px
+				&-box
+					text-align: center
+					margin-right: 57px
+				&-img
+					min-height: 105px
+					display: flex
+					align-items: center
+					justify-content: center
+					margin-bottom: 36px
+				&-name
+					opacity: .5
+					font-size: 18px
+					line-height: 22px
+					letter-spacing: 8px
+					margin-bottom: 3px
+				&-price
+					font-weight: 800
+					font-size: 18px
+					line-height: 40px
+
+.descr__head-shop
+	max-width: 340px
+	margin-bottom: 47px
+
+.surfboard
+	position: relative
+	&-box
+		position: absolute
+		&__circle
+			width: 20px
+			height: 20px
+			border-radius: 50%
+			position: relative
+			background-color: #fff
+			cursor: pointer
+			.circle-row
+				background-color: $green
+				position: absolute
+				width: 12px
+				height: 2px
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%) rotate(0deg)
+				& + .circle-row
+					transform: translate(-50%, -50%) rotate(90deg)
+			&.active
+				.circle-row
+					transform: translate(-50%, -50%) rotate(0deg)
+				& + .surfboard-box__content
+					opacity: 1
+		&__content
+			position: absolute
+			top: -15px
+			left: 40px
+			width: 359px
+			font-weight: 800
+			font-size: 24px
+			line-height: 24px
+			padding-left: 104px
+			transition: all .5s linear
+			opacity: 0
+			&:before
+				content: ''
+				position: absolute
+				width: 80px
+				height: 1px
+				background-color: #fff
+				top: 50%
+				left: 0
+		&--1
+			right: 40px
+			top: 215px
+		&--2
+			left: -3px
+			top: 300px
+		&--3
+			left: 54px
+			bottom: 60px
+			.surfboard-box__content
+				padding-left: 0
+				padding-right: 104px
+				top: -15px
+				left: -380px
+				text-align: right
+				&:before
+					right: 0
+					left: auto
+
+.footer
+	text-align: center
+	padding: 240px 0 34px
+	&__copy
+		padding-top: 27px
+		opacity: .5
+		font-weight: 300
+		font-size: 12px
+		line-height: 14px
+		letter-spacing: 1.05px
+	.btn
+		span
+			padding: 17px 17px 15px
+			&:after
+				display: none
+
+@import "media"

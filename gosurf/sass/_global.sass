@@ -1,0 +1,278 @@
+html
+	box-sizing: border-box
+	overflow-x: hidden
+
+*, *:before, *:after
+	box-sizing: inherit
+
+*
+	-webkit-tap-highlight-color: transparent
+	&:focus, &:active
+		outline: none
+
+body
+	font-family: 'Fira Sans', sans-serif
+	font-weight: 400
+	font-size: 16px
+	background-color: #171919
+	color: #fff
+	text-transform: uppercase
+	min-width: 320px
+	overflow-x: hidden
+
+a
+	display: inline-block
+	text-decoration: none
+	color: #fff
+
+ul, li
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.container
+	max-width: 1920px
+	margin: 0 auto
+
+.preloader
+	align-items: center
+	display: flex
+	height: 100vh
+	width: 100vw
+	position: fixed
+	z-index: 100
+	background-color: #171919
+	.caption
+		margin: 0 auto
+	.cube-loader
+		width: 73px
+		height: 73px
+		margin: 0 auto
+		margin-top: 49px
+		position: relative
+		transform: rotateZ(45deg)
+		z-index: 100
+		.cube
+			position: relative
+			transform: rotateZ(45deg)
+			width: 50%
+			height: 50%
+			float: left
+			transform: scale(1.1)
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: $green
+				animation: cube-loader 2.76s infinite linear both
+				transform-origin: 100% 100%
+		.loader-2
+			transform: scale(1.1) rotateZ(90deg)
+			&:before
+				animation-delay: .35s
+		.loader-3
+			transform: scale(1.1) rotateZ(180deg)
+			&:before
+				animation-delay: .69s
+		.loader-4
+			transform: scale(1.1) rotateZ(270deg)
+			&:before
+				animation-delay: 1.04s
+
+@keyframes cube-loader
+	0%, 10%
+		transform: perspective(136px) rotateX(-180deg)
+		opacity: 0
+	25%, 75% 
+		transform: perspective(136px) rotateX(0deg)
+		opacity: 1
+	90%, 100%
+		transform: perspective(136px) rotateY(180deg)
+		opacity: 0
+
+.top
+	position: fixed
+	background-color: #171919
+	border: 1px solid #fff
+	border-radius: 10px
+	text-align: center
+	cursor: pointer
+	width: 45px
+	height: 45px
+	font-size: 30px
+	bottom: 10px
+	right: -100px
+	transition: color .2s linear, background-color .2s linear, right .2s linear, border-color .2s linear
+	&:hover
+		background-color: #fff
+		border-color: #171919
+		svg path
+			fill: #171919
+	&.active
+		right: 15px
+		transition: right .2s linear
+
+.headline-left, .headline-right
+	font-size: 22px
+	line-height: 32px
+	letter-spacing: 7.33333px
+	opacity: .5
+	position: relative
+	display: inline-block
+	&:before
+		content: ''
+		position: absolute
+		width: 80px
+		height: 1px
+		background-color: #fff
+		top: 50%
+
+.headline-left
+	padding-left: 103px
+	&:before
+		left: 0
+
+.headline-right
+	padding-right: 103px
+	&:before
+		right: 0
+
+.title
+	span
+		font-weight: 800
+		font-size: 200px
+		color: rgba(#fff, .02)
+		position: relative
+		transform: translateX(-50px)
+		display: inline-block
+	h3
+		margin: 0
+		color: #fff
+		font-size: 80px
+		position: absolute
+		top: 0
+		right: -5px
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			width: 80px
+			height: 1px
+			background-color: $green
+
+.subtitle
+	display: inline-block
+	text-align: right
+	&__head
+		font-weight: 800
+		font-size: 40px
+		padding-right: 6px
+		span
+			font-weight: 100
+
+.descr
+	display: inline-block
+	padding-left: 5px
+	&__head
+		font-weight: 800
+		font-size: 40px
+		span
+			font-weight: 100
+
+.btn
+	font-weight: 800
+	font-size: 40px
+	line-height: 36px
+	span
+		padding: 17px 57px 17px 17px
+		background-color: $green
+		display: inline-block
+		margin-left: 19px
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 20px
+			height: 1px
+			background-color: #fff
+			top: 50%
+			left: -10px
+		&:after
+			content: ''
+			position: absolute
+			width: 25px
+			height: 21px
+			background-image: url(../img/arrows-right.svg)
+			top: 50%
+			right: 17px
+			transform: translateY(-50%)
+
+.surf
+	padding-top: 60px
+	margin-top: 105px
+
+.travel
+	margin-top: 110px
+	padding: 60px 0 300px
+
+.sleep
+	padding-bottom: 90px
+	padding-top: 60px
+	margin: -160px 0 0
+
+.shop
+	padding-top: 60px
+	
+input[type=number]
+	-moz-appearance: textfield
+	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+		-webkit-appearance: none
+		margin: 0
+
+.quantity
+	display: inline-block
+	input
+		width: 30px
+		height: 42px
+		display: block
+		border: none
+		background-color: transparent
+		font-weight: 800
+		font-size: 40px
+		line-height: 36px
+		color: #fff
+		pointer-events: none
+	&-nav
+		float: left
+		position: static
+		height: 42px
+	&-button
+		position: relative
+		cursor: pointer
+		width: 20px
+		height: 20px
+		display: flex
+		align-items: center
+		justify-content: center
+		top: 50px
+		&.quantity-up
+			position: absolute
+			right: 0
+		&.quantity-down
+			position: absolute
+			right: 30px
+
+.star-list
+	li
+		display: inline-block
+		& + li
+			margin-left: -30px
+
+.slider-arrows, .slider-item__info-link, .slider-dots__content-link, .quantity-button, .surfboard-box__circle
+	transition: all .3s ease
+	&:hover
+		transform: scale(1.25)

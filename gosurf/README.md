@@ -11,4 +11,6 @@ Layout of the site from the design created in Figma.
 	<li><a href="https://wowjs.uk">Wow.js</a></li>
 </ul>
 
+<p>Site layout began with my personal starting <a href="https://igor-muram.github.io/demo/index.html">template</a>.</p>
+
 <p>View a <a href="https://igor-muram.github.io/gosurf/index.html" target="_blank">demo</a>.</p>

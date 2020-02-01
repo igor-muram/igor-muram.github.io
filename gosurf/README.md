@@ -16,6 +16,6 @@
 	<li><a href="https://bower.io" target="_blank">Bower</a></li>
 </ul>
 
-<p><b><u>CSS Flexbox</u></b> was used for site layout.</p>
+<p><b>CSS Flexbox</b> was used for site layout.</p>
 
 <p>Site layout began with my personal starting <a href="https://igor-muram.github.io/demo/index.html" target="_blank">template</a>.</p>

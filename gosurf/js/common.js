@@ -1,6 +1,10 @@
 $(function() {
+
+	/* Preloader */
 	$('.preloader').delay(1500).fadeOut('slow');
 
+
+	/* Sliders */
 	$('.header__slider').slick({
 		infinite: true,
 		fade: true,
@@ -143,35 +147,40 @@ $(function() {
 		nextArrow: '<img class="slider-arrows slider-arrows__right wow fadeInRight" data-wow-delay=".5s" data-wow-offset="200" src="img/arrows-right.svg" alt=""></img>',
 	});
 
+
+	/* Buttons '+' and '-' */
 	$('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt=""></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt=""></div></div>').insertAfter('.quantity input');
 	$('.quantity').each(function() {
-		var spinner = $(this),
-		input = spinner.find('input[type="number"]'),
-		btnUp = spinner.find('.quantity-up'),
-		btnDown = spinner.find('.quantity-down'),
-		min = input.attr('min'),
-		max = input.attr('max');
+		let spinner = $(this),
+				input = spinner.find('input[type="number"]'),
+				btnUp = spinner.find('.quantity-up'),
+				btnDown = spinner.find('.quantity-down'),
+				min = input.attr('min'),
+				max = input.attr('max');
 
 		btnUp.click(function() {
-			var oldValue = parseFloat(input.val()),
+			let oldValue = parseFloat(input.val()),
 			newVal = (oldValue >= max) ? oldValue : oldValue + 1;
 			spinner.find("input").val(newVal);
 			spinner.find("input").trigger("change");
 		});
 
 		btnDown.click(function() {
-			var oldValue = parseFloat(input.val()),
+			let oldValue = parseFloat(input.val()),
 			newVal = (oldValue <= min) ? oldValue : oldValue - 1;
 			spinner.find("input").val(newVal);
 			spinner.find("input").trigger("change");
 		});
 	});
 
-	var itemNum = 1;
+
+	/* Calculator */
+	let itemNum = 1;
 
 	function count() {
 		let sum = ($('.guests-' + itemNum).val() - 1) * $('.sum-' + itemNum).data('guests') 
-		+ $('.nights-' + itemNum).val() * $('.sum-' + itemNum).data('nights');
+						 + $('.nights-' + itemNum).val() 			* $('.sum-' + itemNum).data('nights');
+
 		$('.sum-' + itemNum).html(sum);
 	}
 
@@ -180,28 +189,37 @@ $(function() {
 		count();
 	});
 
+
+	/* Circles on board */
 	$('.surfboard-box__circle').on('click', function() { 
 		$(this).toggleClass('active');
 	});
 
-	var date = new Date(),
-	month = date.getMonth() + 1,
-	currMonth = (month < 10) ? '0' + month : month;
 
-	$('.header__date-day').html(date.getDate());
+	/* Date in header */
+	let date = new Date(),
+			month = date.getMonth() + 1,
+			currMonth = (month < 10) ? '0' + month : month,
+			day = date.getDate(),
+			currDay = (day < 10) ? '0' + day : day;
+
+	$('.header__date-day').html(currDay);
 	$('.header__date-month').html(currMonth);
 	$('.header__date-year').html(date.getFullYear());
 
-	const navToggle = $("#navToggle");
-	const menu = $(".menu");
 
-	navToggle.on("click", function(e) {
+	/* Menu */
+	$("#navToggle").on("click", function(e) {
 		e.preventDefault();
-		menu.toggleClass("show");
+		$(".menu").toggleClass("show");
 	});
 
+
+	/* Wow JS initialization */
 	new WOW().init();
 
+
+	/* Scroll to section */
 	$(".header__arrows, .menu__list li").on("click", "a", function (e) {
 		e.preventDefault();
 		var id  = $(this).attr('href'),
@@ -209,6 +227,8 @@ $(function() {
 		$('body,html').animate({scrollTop: top}, 800);
 	});
 
+
+	/* Back to top button */
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 50)
 			$('.top').addClass('active');
@@ -220,6 +240,8 @@ $(function() {
 		$('html,body').stop().animate({scrollTop: 0}, 'slow', 'swing');
 	});
 
+
+	/* Disabling links */
 	$('.logo, .slider-item__info-link, .btn').on("click", function (e) {
 		e.preventDefault();
 	});

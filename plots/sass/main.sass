@@ -1,0 +1,1024 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px !important
+	min-height: 320px !important
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	color: $text
+	.site-header
+		height: 100vh
+		.top-line
+			position: absolute
+			width: 100%
+			z-index: 3
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+p
+	font-family: $default-font, sans-serif
+	font-size: 19px
+	margin-bottom: 10px
+
+span
+	font-family: $default-font, sans-serif
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+section
+	background-color: #fff
+	
+h1, .h1
+	line-height: 1
+	margin-top: 11px
+
+h2
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+table, th, td
+	border-collapse: collapse
+
+th, td, #grid
+	border: 1px solid #333333
+
+table
+	border: 2px solid #333333
+
+td 
+  text-align: center
+  padding: 0 10px 0 10px
+  height: 5.2vh
+  .mjx-math, .mjx-char, .mjx-box
+  	color: #333 !important
+
+.math
+	font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw
+	font-size: 20px
+
+span.mjx-chtml.MJXc-display
+	margin: 0
+	display: inline	
+
+span.mjx-mfrac
+	margin-top: 11.5px
+	margin-bottom: 11.5px
+
+#MathJax_Message
+	display: none
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+.text-justify
+	text-align: justify
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 100
+	background-color: #1e1d1e
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin: 
+			left: -40px
+			top: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
+#my-menu:not(.mm-menu)
+	display: none
+
+.mm-navbar
+	color: #000
+
+.mm-listitem__text
+	&:hover
+		transform: translateX(10px)
+		transition: all .5s ease
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 15px 45px
+	font-size: 18px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	margin-top: 25px
+	margin-bottom: 25px
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+		outline: none !important
+	&::-moz-focus-inner
+		border: 0
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+.container-404
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	position: absolute
+	width: 80%
+	z-index: 1
+	background-color: #fefefe
+	border: 2px solid $accent
+	p
+		padding-left: 50px
+		padding-right: 50px
+		font-size: 25px
+		line-height: 1.5
+	img
+		left: 50%
+		transform: translate(-50%, 0%)
+		position: relative
+		margin-right: 0
+
+.markdown-body
+	margin: 0 !important
+	padding: 0 !important
+	h1
+		display: none
+	&::before
+		display: none
+
+.hamburger
+	position: absolute
+	padding: 0
+	margin: 
+		left: 13px
+		top: 16px
+	left: 0
+	top: 0
+	z-index: 90
+
+#particles-js
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 1
+
+.top, .next, .prev, .elem-next, .elem-prev, .parametric-example-prev, .parametric-scheme-next, .explicit-scheme-next, .explicit-example-prev, .explicit-example-next, .monotonicity-example-prev, .monotonicity-example-next, .convex-example-prev, .convex-example-next, .asymptotes-example-prev, .asymptotes-example-next, .monotonicity-next, .convex-next, .asymptotes-next
+	background-color: #adadad
+	z-index: 12
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	text-align: center
+	cursor: pointer
+	width: 60px
+	height: 60px
+	line-height: 60px
+	font-size: 30px
+	transition: all .3s ease
+	opacity: .5
+	color: #000
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+	
+.next, .prev, .elem-next, .elem-prev, .parametric-scheme-next, .explicit-scheme-next
+	margin-bottom: 20px
+	position: absolute
+
+.top
+	position: fixed
+	bottom: 20px
+	right: -100px
+	&.active
+		right: 35px
+
+.next
+	right: 73px
+	margin-top: 40px
+
+.prev
+	left: 73px	
+	margin-top: 40px
+
+.elem-prev
+	bottom: -75%
+	right: 10%
+	transform: translate(-10%, 75%)
+
+.elem-next
+	bottom: -75%
+	transform: translate(0%, 75%)
+
+.parametric-example-prev
+	position: fixed
+	bottom: 18px
+	left: 19px
+
+.parametric-scheme-next, .explicit-scheme-next
+	width: 60px
+	height: 60px
+	line-height: 60px
+	font-size: 30px
+	margin-top: 10px
+
+.parametric-scheme-next
+	left: 53px
+
+.explicit-scheme-next
+	left: 73px
+
+.explicit-example-prev, .explicit-example-next
+	position: absolute
+	margin-top: 15px
+
+.explicit-example-next
+	left: 82px
+
+.monotonicity-next, .convex-next, .asymptotes-next
+	margin-top: 15px
+
+.monotonicity-example-prev, .monotonicity-example-next, .convex-example-prev, .convex-example-next, .asymptotes-example-prev, .asymptotes-example-next
+	display: inline-block
+
+.start, .end
+	left: 60%
+	transform: translate(-60%, 75%)
+
+.slider 
+  appearance: none
+  width: 100% 
+  height: 4px 
+  outline: none
+  background: #5353d1
+  opacity: 0.7
+  transition: opacity .2s
+	
+.slider:hover 
+	opacity: 1
+
+.slider:active
+	opacity: 1
+
+.slider::-webkit-slider-thumb
+  appearance: none
+  width: 15px
+  height: 15px
+  cursor: pointer
+  border: 1px solid #777
+  border-radius: 100%
+  background: #e0e0e0
+  z-index: 4
+
+.poster
+	position: relative
+	margin: auto
+	cursor: pointer
+	
+.descr, .descr-up
+	display: none
+	padding: 10px
+	margin-bottom: 15px
+	background: #f3f3f3
+	height: auto
+	width: 100%
+	border: 1px solid $accent
+	border-radius: 7px
+	-moz-box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+	-webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+
+.poster:hover, .poster:active
+	.descr, .descr-up
+		display: inline
+		position: absolute
+		left: 0
+		z-index: 50
+		font-size: 20px
+	.descr
+		top: 71px
+	.descr-up
+		bottom: 62px
+	.info
+		opacity: 1
+
+.main, .navigation
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	position: absolute
+	z-index: 1
+
+.logo
+  background: linear-gradient(grey, white)
+  justify-content: center
+  align-items: center
+  border-radius: 100%
+  text-align: center
+  font-size: 105px
+  font-family: $calligraph-font, sans-serif
+  display: flex
+  height: 330px
+  width: 330px
+  color: #000
+  border: 1px solid $accent
+  z-index: 2
+
+.developers-container
+	top: 30%
+	left: 50%
+	transform: translate(-50%, -30%)
+	position: absolute
+	z-index: 1
+	background-color: #fafafa
+	border: 1px solid $accent
+	padding: 
+		left: 25px
+		right: 25px
+		top: 15px
+	width: auto
+	margin-top: 80px
+	margin-bottom: 60px
+
+.developers-column
+	a
+		text-decoration: none
+		transition: .5s
+		color: #298cad
+		&:hover
+			color: #36d2ff
+	li
+		list-style: none
+		padding: 0
+		margin: 0
+	.column-1
+		margin-right: 20px
+	.column-2
+		margin-left: 20px
+
+.developer-img
+	left: 50%
+	transform: translate(-50%, 0%)
+	position: relative
+
+.social
+	display: flex
+	justify-content: space-between
+	font-size: 27px
+	padding-left: 0
+	margin-bottom: 15px
+	a
+		display: block
+		width: 40px
+		height: 40px
+		line-height: 40px
+		text-align: center
+		position: relative
+	li
+		a
+			&::before, &::after
+				content: ''
+				position: absolute
+				background: #2fbae1
+				width: 100%
+				height: 1px
+				left: 0
+				transition: transform .5s
+				transform: scaleY(0)
+			&::before
+				transform-origin: right
+			&::after
+				transform-origin: left
+			&:hover
+				&::before
+					transform: scaleX(0)
+					transform-origin: left
+				&::after
+					transform: scaleX(0)
+					transform-origin: right
+				div
+					&::before
+						transform: scaleY(1)
+						transform-origin: top
+					&::after
+						transform: scaleY(1)
+						transform-origin: bottom
+			div
+				&::before, &::after
+					content: ''
+					position: absolute
+					background: #2fbae1
+					width: 1px
+					height: 100%
+					transition: transform .5s
+					transform: scaleY(0)
+				&::before
+					left: 0
+					transform-origin: bottom
+				&::after
+					right: 0
+					transform-origin: top
+
+.developers-name, .leader-name
+	text-align: center
+	font-size: 24px
+	color: #000
+	z-index: 3
+	line-height: 1.4
+
+.developers-name
+	margin-top: 10px
+
+.leader-name
+	margin-bottom: 20px
+
+.methods-container
+	margin-left: 45px
+	margin-right: 45px
+
+.methods-column
+	padding: 
+		left: 19px
+		right: 19px
+		top: 8px
+		bottom: 10px
+
+#methodsPlot1Desc, #methodsPlot2Desc, #methodsPlot3Desc, #methodsPlot4Desc, #methodsPlot5Desc
+	margin-bottom: 0
+	font-size: 21px
+
+#methodsPlot3Desc, #methodsPlot4Desc
+	.MJXc-TeX-size4-R
+		font-size: 29px
+
+.info
+	position: absolute
+	bottom: 9px
+	right: 5px
+	z-index: 12
+	font-size: 27px
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	transition: all .3s ease
+	opacity: .5
+	i
+		color: $accent
+
+#tSlider
+	margin-bottom: 25px
+	margin-top: 15px
+	opacity: 1
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#5353d1, endColorstr=#5353d1)"
+	background: -webkit-linear-gradient(left, #1e28ff 39.9%, #000000 39.9%, #000000 40.1%, #007800 40.1%, #007800 59.9%, #000000 59.9%, #000000 60.1%, #6535bf 60.1%, #6535bf 79.9%, #000000 79.9%, #000000 80.1%, #ff0000 80.1%)
+	background: -moz-linear-gradient(left, #1e28ff 39.9%, #000000 39.9%, #000000 40.1%, #007800 40.1%, #007800 59.9%, #000000 59.9%, #000000 60.1%, #6535bf 60.1%, #6535bf 79.9%, #000000 79.9%, #000000 80.1%, #ff0000 80.1%)
+	background: -o-linear-gradient(left, #1e28ff 39.9%, #000000 39.9%, #000000 40.1%, #007800 40.1%, #007800 59.9%, #000000 59.9%, #000000 60.1%, #6535bf 60.1%, #6535bf 79.9%, #000000 79.9%, #000000 80.1%, #ff0000 80.1%)
+	background: linear-gradient(to right, #1e28ff 39.9%, #000000 39.9%, #000000 40.1%, #007800 40.1%, #007800 59.9%, #000000 59.9%, #000000 60.1%, #6535bf 60.1%, #6535bf 79.9%, #000000 79.9%, #000000 80.1%, #ff0000 80.1%)
+	&:hover
+		cursor: pointer
+
+#tLabel
+	padding-right: 0
+	p
+		margin-bottom: 0
+		text-align: center
+	span.mjx-chtml.MJXc-display
+		.MJXc-TeX-math-I
+			font-size: 40px
+			text-align: center
+
+#shiftUDPlot, #shiftLRPlot, #stretchUDPlot, #stretchLRPlot, #mirrorUDPlot, #mirrorLRPlot, #moduleUDPlot, #moduleLRPlot
+	height: 33vh
+	margin-bottom: 15px
+
+#mirrorUDPlot, #mirrorLRPlot, #moduleUDPlot, #moduleLRPlot
+	.JXGtext
+		font-size: 21px !important
+
+#shiftUDDesc, #shiftLRDesc, #stretchUDDesc, #stretchLRDesc, #mirrorUDDesc, #mirrorLRDesc, #moduleUDDesc, #moduleLRDesc
+	font-size: 19px
+	margin-bottom: 5px
+	line-height: 1.4
+	.mjx-char
+		color: #333 !important
+
+#shiftUDSlider, #shiftLRSlider, #stretchUDSlider, #stretchLRSlider
+	width: 100%
+	border: none
+	padding-left: 0
+	margin-top: 11px
+
+#shiftUDValue, #shiftLRValue, #stretchUDValue, #stretchLRValue
+	padding-right: 0
+	font-size: 23px
+
+#stretchUDText
+	#MJXc-Node-113 > span
+		color: #1e28ff !important
+
+#mirrorUDText, #mirrorLRText, #moduleUDText, #moduleLRText
+	text-align: left
+	margin-bottom: 5px
+
+.mirrorUD, .mirrorLR, .moduleUD, .moduleLR
+	text-align: left
+	margin-bottom: 0
+
+.mirrorUDCheck, .mirrorLRCheck, .moduleUDCheck, .moduleLRCheck, .example1Check, .example2Check
+	cursor: pointer
+	padding-left: 20px
+	display: block
+	position: relative
+	top: 2px
+
+.ceilMirrorUD, .ceilMirrorLR, .ceilModuleUD, .ceilModuleLR, .ceilExample1, .ceilExample2
+	position: absolute
+	cursor: pointer
+	border: 2px solid #c4c9c9
+	width: 18px
+	height: 18px
+	top: 9px
+	left: 0
+	border-radius: 3px
+	transition: .2s
+	
+.is-checked
+	border-top: 2px solid transparent
+	border-left: 2px solid transparent
+	border-right: 2px solid #408cc2
+	border-bottom: 2px solid #408cc2
+	transform: rotate(40deg)
+	width: 12px
+	height: 22px
+	transform-origin: 100% 100%
+	top: 4px
+	left: -5px
+
+.transform-container
+	padding-left: 0
+	padding-right: 0
+
+.transform-column, .parametric-example-column
+	margin: 11px 0
+	border: 2px solid black
+	height: 96%
+
+.transform-column, .parametric-example-column, .straight-column, .parabola-column, .hyperbole-column, .power-column, .exponential-column, .trigonometric-column, .hyperbolic-column, .explicit-example-column
+	padding: 
+		left: 19px
+		right: 19px
+		top: 11px
+		bottom: 5px
+
+.straight-container, .parabola-container, .hyperbole-container, .exponential-container, .trigonometric-container, .hyperbolic-container
+	padding-left: 50px
+	padding-right: 50px
+
+.power-container
+	padding-left: 20px
+
+.algorithm-text
+	font-family: $default-font
+	font-size: 26px
+	line-height: 1.6
+
+.explicit-scheme-container, .explicit-example-container, .parametric-scheme-container, .monotonicity-scheme-container, .monotonicity-example-container, .convex-scheme-container, .convex-example-container, .asymptotes-scheme-container, .asymptotes-example-container, .valid-container, .periodicity-container
+	padding-left: 87px
+	padding-right: 87px
+	margin-top: 7px
+	margin-bottom: 10px
+
+.explicit-scheme-container, .explicit-example-container, .monotonicity-scheme-container, .monotonicity-example-container, .convex-scheme-container, .convex-example-container, .asymptotes-scheme-container, .asymptotes-example-container, .periodicity-container
+	a:hover
+		text-decoration: none
+
+.explicit-scheme-container, .parametric-scheme-container
+	a
+		text-decoration: none
+		color: #333
+
+.panel-heading
+	margin-bottom: 8px
+	.panel-text
+		cursor: pointer
+		i
+			margin-right: 15px
+			transition: 0.3s
+	&.in
+		i
+			transform: rotate(180deg)
+			color: #2fbae1
+
+.panel-collapse
+	margin-top: 15px
+	margin-bottom: 15px
+	border: 1px solid $accent
+	border-radius: 4px
+	background-color: #ebebeb
+	padding: 8px 15px
+	display: none
+	span.mjx-chtml.MJXc-display
+		display: inline
+		font-size: 40px
+	i
+		margin-right: 15px
+
+.parametric-example-condition
+	font-size: 25px
+	margin-bottom: 0
+
+.parametric-example-container, .parametric-scheme-container
+	padding-left: 68px
+	padding-right: 68px
+
+.parametric-example-table-container
+	padding-left: 84px
+	padding-right: 84px
+	width: 100%
+	margin-top: 11px
+  height: 96%
+
+.parametric-scheme-table-container
+	padding-left: 16px
+	padding-right: 16px
+	width: 100%
+	margin-top: 20px
+	margin-bottom: 15px
+
+#parametric-example-table 
+  font-size: 20px
+
+.parametric-scheme-table
+	font-size: 23px
+	td
+		padding: 6px 25px
+		div
+			font-size: 26px
+			display: inline
+		span.mjx-chtml.MJXc-display
+			display: inline
+			font-size: 35px
+		p
+			margin-bottom: 5px
+			font-size: 23px
+
+#parametric-scheme-table-1
+	line-height: 2
+
+#parametric-scheme-table-2
+	line-height: 1.4
+	td
+		padding: 15px 20px
+
+.purple-fill
+	background-color: rgb(155, 124, 214)
+
+.red-fill
+	background-color: rgb(254, 85, 85)
+
+.green-fill
+	background-color: rgb(146, 209, 79)
+
+.blue-fill
+	background-color: rgb(1, 176, 241)
+
+.white-fill
+	background-color: #fff
+
+.grey-fill
+	background-color: #a1a1a1
+
+.purple
+	color: #6535bf
+
+.red
+	color: #ff0000
+
+.green
+	color: #007800
+
+.blue
+	color: #1e28ff
+
+.cross
+	background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), black, transparent calc(50% + 1px)), linear-gradient(to bottom left, transparent calc(50% - 1px), black, transparent calc(50% + 1px))
+
+#parametric-example-calc
+	height: 100%
+	margin-top: 10px
+	margin-bottom: 20px
+	border: 2px solid #000
+	padding-top: 15px
+	padding-bottom: 23px
+	text-align: center
+	.poster, #MJXc-Node-325, #MJXc-Node-346, #MJXc-Node-368, #MJXc-Node-382, #MJXc-Node-520, #MJXc-Node-740
+		font-size: 23.5px
+	.poster-1
+		.descr
+			#MJXc-Node-407, #MJXc-Node-443, #MJXc-Node-486, #MJXc-Node-506
+				font-size: 23px
+	.poster-2
+		.descr-up
+			#MJXc-Node-567, #MJXc-Node-619, #MJXc-Node-646, #MJXc-Node-702
+				font-size: 23px
+	.poster-3
+		.descr-up
+			#MJXc-Node-750, #MJXc-Node-758, #MJXc-Node-803, #MJXc-Node-817, #MJXc-Node-862
+				font-size: 23px
+
+.smallParametricTitle
+	margin-top: -3px
+	margin-bottom: 15px
+
+#smallParametricPlot, #bigParametricPlot
+	height: 36vh
+	margin-bottom: 15px
+
+#straightPlot1, #straightPlot2, #straightPlot3, #straightPlot4, #hyperbolePlot1, #hyperbolePlot2, #hyperbolePlot3, #hyperbolePlot4, #trigonometric1Plot1, #trigonometric1Plot2, #trigonometric1Plot4, #trigonometric1Plot5, #trigonometric2Plot1, #trigonometric2Plot2, #trigonometric2Plot4, #trigonometric2Plot5, #hyperbolicPlot1, #hyperbolicPlot2, #hyperbolicPlot3, #hyperbolicPlot4, #hyperbolicPlot5, #otherPlot1, #otherPlot2, #otherPlot3, #otherPlot4, #methodsPlot1
+	height: 37.7vh
+	margin-bottom: 15px
+
+#powerPlot1, #powerPlot2, #powerPlot3, #powerPlot4
+	height: 39.2vh
+	margin-bottom: 15px
+	
+#exponentialPlot1, #exponentialPlot2, #exponentialPlot3
+	height: 36vh
+	margin-bottom: 15px
+
+#straightPlot1Desc, #straightPlot2Desc, #straightPlot3Desc, #parabolaPlot1Desc, #parabolaPlot2Desc, #parabolaPlot3Desc, #hyperbolePlot1Desc, #hyperbolePlot2Desc, #hyperbolePlot3Desc, #powerPlot1Desc, #powerPlot2Desc, #powerPlot3Desc, #powerPlot4Desc, #exponentialPlot1Desc, #exponentialPlot2Desc, #exponentialPlot3Desc, #trigonometric1Plot1Desc, #trigonometric1Plot2Desc, #trigonometric1Plot3Desc, #trigonometric1Plot4Desc, #trigonometric1Plot5Desc, #trigonometric2Plot1Desc, #trigonometric2Plot2Desc, #trigonometric2Plot3Desc, #trigonometric2Plot4Desc, #trigonometric2Plot5Desc, #hyperbolicPlot1Desc, #hyperbolicPlot2Desc, #hyperbolicPlot3Desc, #hyperbolicPlot4Desc, #hyperbolicPlot5Desc, #otherPlot1Desc, #otherPlot2Desc, #otherPlot3Desc, #otherPlot4Desc
+	font-size: 23px
+	margin-bottom: 0
+
+#straightPlot4
+	#MJXc-Node-232
+		text-decoration: overline
+		font-size: 22px
+
+#straightPlot2Desc
+	#MJXc-Node-134
+		color: #ff0000
+	#MJXc-Node-138
+		color: #007800
+
+.parabolaExampleDescRow, .hyperboleExampleDescRow
+	margin-top: 62px
+
+.parabolaExampleDesc, .hyperboleExampleDesc
+	font-size: 28px
+	margin-bottom: 0
+
+#parabolaPlot1, #parabolaPlot2, #parabolaPlot3, #parabolaPlot4
+	height: 39.2vh
+	margin-bottom: 15px
+
+#parabolaPlot1Desc
+	#MJXc-Node-112
+		color: #6535bf
+	#MJXc-Node-117
+		color: #ff0000
+
+#parabolaPlot2Desc
+	#MJXc-Node-154, #MJXc-Node-155, #MJXc-Node-156
+		color: #ff0000
+
+#parabolaPlot3Desc
+	#MJXc-Node-193, #MJXc-Node-194, #MJXc-Node-195
+		color: #ff0000
+
+#hyperbolePlot2Desc
+	#MJXc-Node-182
+		color: #6535bf
+	#MJXc-Node-189
+		color: #ff0000
+
+#hyperbolePlot3Desc
+	#MJXc-Node-237
+		color: #ff0000
+	#MJXc-Node-245
+		color: #007800
+
+.power-h1
+	line-height: 1.1
+
+.power-column-prop
+	padding-top: 0px
+	margin-top: -12px
+
+.powerPropRow
+	height: 37.7vh
+	border: 1px solid #356aa0
+	border-radius: 10px
+	.powerProp
+		font-size: 27.9px
+		margin-bottom: 0
+
+#powerPlot4
+	#MJXc-Node-399
+		text-decoration: overline
+		font-size: 24.5px
+
+.exponentialPropRow
+	height: 48.5vh
+	border: 1px solid #356aa0
+	border-radius: 10px
+	.exponentialProp1
+		font-size: 27.5px
+	.exponentialProp2
+		font-size: 24px
+
+.exponentialPropRow1, .exponentialPropRow2
+	padding-top: 15px
+
+#trigonometric1Plot3, #trigonometric2Plot3, #methodsPlot2, #methodsPlot3, #methodsPlot4, #methodsPlot5
+	margin-bottom: 15px
+
+#trigonometric2Plot3
+	#MJXc-Node-176, #MJXc-Node-192, #MJXc-Node-199, #MJXc-Node-212
+		text-decoration: overline
+
+#hyperbolicPlot1, #hyperbolicPlot2
+	margin-bottom: 5px
+
+#hyperbolicPlot4, #hyperbolicPlot5
+	margin-top: 10px
+
+.other-container
+	padding-left: 150px
+	padding-right: 150px
+
+.other-column
+	padding: 
+		left: 19px
+		right: 19px
+		top: 11px
+		bottom: 5px
+
+#otherPlot1Desc
+	#MJXc-Node-107, #MJXc-Node-117, #MJXc-Node-118
+		color: #1e28ff
+
+#otherPlot2Desc
+	#MJXc-Node-142, #MJXc-Node-151, #MJXc-Node-163
+		color: #000
+	#MJXc-Node-174, #MJXc-Node-184, #MJXc-Node-185
+		color: #1e28ff
+
+.explicit-example1-text, .explicit-example2-text
+	font-size: 28px
+	margin-bottom: 10px
+
+.explicit-example1-text
+	#MJXc-Node-96, #MJXc-Node-105, #MJXc-Node-117
+		color: #000
+
+.explicit-example-column
+	border: 2px solid black
+	height: 59vh
+	margin-top: 12px
+
+.example1, .ceilExample1, .example2, .ceilExample2
+	margin-left: 15px
+	margin-bottom: 15px
+
+.ceilExample1, .ceilExample2
+	margin-top: 2px
+
+.example1Check, .example2Check
+	font-size: 22px
+
+#explicitExample1Plot, #explicitExample2Plot
+	height: 50vh
+
+.explicit-example2-text
+	#MJXc-Node-83, #MJXc-Node-84, #MJXc-Node-85, #MJXc-Node-86
+		color: #007800
+	#MJXc-Node-94, #MJXc-Node-97, #MJXc-Node-98, #MJXc-Node-99, #MJXc-Node-100, #MJXc-Node-101, #MJXc-Node-102
+		color: #1e28ff
+	#MJXc-Node-119, #MJXc-Node-120, #MJXc-Node-121
+		color: #ff0000
+
+#monotonicityExample1Plot, #convexExample1Plot, #convexExample2Plot, #asymptotesExample1Plot, #asymptotesExample4Plot
+	height: 485px
+	max-width: 550px
+
+#monotonicityExample1Plot, #convexExample1Plot, #convexExample2Plot, #asymptotesExample1Plot
+	margin-bottom: 25px
+
+#monotonicityExample1Interval
+	height: 130px
+	max-width: 680px
+
+.monotonicity-example-nav, .convex-example-nav, .asymptotes-example-nav
+	width: 124px
+	margin: 20px auto
+	bottom: 0
+	&.examples-nav-end
+		width: 60px
+
+#monotonicityExample2Plot, #monotonicityExample3Plot, #asymptotesExample2Plot, #asymptotesExample3Plot
+	height: 385px
+	max-width: 550px
+	margin-top: 10px
+
+#monotonicityExample2Interval, #monotonicityExample3Interval, #convexExample1Interval, #convexExample2Interval
+	height: 130px
+	max-width: 480px
+	margin-bottom: 25px
+
+#asymptotesExample1Plot
+	margin-top: 34px
+	margin-left: 29px
+
+.asymptotes-example-3-container
+	#MJXc-Node-269
+		margin-top: 0
+
+@import "media" // Always at the end

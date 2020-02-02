@@ -1,18 +1,15 @@
-var	syntax        = 'sass'; /* Syntax: sass or scss; */
-   	gmWatch        = false; /* ON/OFF GraphicsMagick watching "img/_src" folder (true/false). Linux install gm: sudo apt update; sudo apt install graphicsmagick */
+let	syntax        = 'sass'; /* Syntax: sass or scss; */
 
-var	gulp          = require('gulp'),
+let	gulp          = require('gulp'),
    	gutil         = require('gulp-util' ),
    	sass          = require('gulp-sass'),
    	browserSync   = require('browser-sync'),
    	concat        = require('gulp-concat'),
-   	terser 				= require('gulp-terser'),
+   	terser        = require('gulp-terser'),
    	cleancss      = require('gulp-clean-css'),
    	rename        = require('gulp-rename'),
    	autoprefixer  = require('gulp-autoprefixer'),
    	notify        = require('gulp-notify'),
-   	imageResize   = require('gulp-image-resize'),
-   	imagemin      = require('gulp-imagemin'),
    	del           = require('del');
 
 /* Local Server */
@@ -28,12 +25,12 @@ gulp.task('browser-sync', function() {
 /* Sass|Scss Styles */
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+	.pipe(sass({ outputStyle: 'compressed' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss({ level: { 1: { specialComments: 0 } } })) /* Opt., comment out when debugging */
 	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream())
+	.pipe(browserSync.reload({ stream: true }))
 });
 
 /* JS */
@@ -56,11 +53,6 @@ gulp.task('code', function() {
 	.pipe(browserSync.reload({ stream: true }))
 });
 
-/* Clean @*x IMG's */
-gulp.task('cleanimg', function() {
-	return del(['app/img/@*'], { force: true })
-});
-
 /* Remove folder 'dist' */
 gulp.task('removedist', function(done) { 
 	return del(['dist']); 
@@ -72,21 +64,25 @@ gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(Conti
 
 	ContinueProcess();
 
-	var buildFiles = gulp.src([
+	let buildFiles = gulp.src([
 		'app/*.html',
 		'app/.htaccess',
 		]).pipe(gulp.dest('dist'));
 
-	var buildCss = gulp.src([
+	let buildCss = gulp.src([
 		'app/css/main.min.css',
 		]).pipe(gulp.dest('dist/css'));
 
-	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
+	let buildSass = gulp.src([
+		'app/sass/**/*.sass',
+		]).pipe(gulp.dest('dist/sass'));
+
+	let buildJs = gulp.src([
+		'app/js/*.js',
 		]).pipe(gulp.dest('dist/js'));
 
-	var buildImg = gulp.src([
-		'app/img/*',
+	let buildImg = gulp.src([
+		'app/img/**/*.*',
 		]).pipe(gulp.dest('dist/img'));
 
 }));

@@ -81,11 +81,11 @@ gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(Conti
 		]).pipe(gulp.dest('dist/js'));
 
 	let buildFonts = gulp.src([
-		'app/fonts/**/*',
+		'app/fonts/**/*.*',
 		]).pipe(gulp.dest('dist/fonts'));
 
 	let buildImg = gulp.src([
-		'app/img/**/*',
+		'app/img/**/*.*',
 		]).pipe(gulp.dest('dist/img'));
 
 }));

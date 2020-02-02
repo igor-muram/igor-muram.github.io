@@ -18,7 +18,7 @@
 	<li><a href="https://jonsuh.com/hamburgers/" target="_blank">Css-hamburgers</a></li>
 </ul>
 
-<p>Images used in the template are responsive. For image responsiveness, specify the <b>img-responsive</b> class and use the <b>srcset</b> attribute.</p>
+<p>Images used in the template are responsive. For image responsiveness, specify the <b>img-responsive</b> class.</p>
 
 <p>The template includes the following files:</p>
 

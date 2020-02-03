@@ -1,0 +1,345 @@
+@import "vars"
+@import "libs"
+@import "global"
+
+.header
+	background-image: url(../img/header-bg.svg)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center
+	height: 100vh
+	max-height: 790px
+	color: #fff
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 100px
+
+.menu__list
+	display: flex
+	z-index: 5
+	li + li
+		padding-left: 50px
+	a
+		font-weight: 600
+		text-transform: uppercase
+		opacity: .5
+		transition: all .4s ease
+		&:hover
+			opacity: 1
+
+.login
+	margin-right: 44px
+	font-weight: 600
+	text-transform: uppercase
+
+.sign-up
+	text-transform: uppercase
+	font-weight: 600
+	color: #250F8A
+	padding: 8px 43px
+	background-color: #fff
+	border-radius: 20px
+
+.header__inner
+	padding-top: 166px
+	display: flex
+	justify-content: space-between
+
+.header-content
+	&__info
+		max-width: 506px
+	&__title
+		font-weight: 700
+		font-size: 45px
+		line-height: 60px
+		margin-bottom: 10px
+		margin-top: 0
+	&__descr
+		font-size: 24px
+		line-height: 55px
+		margin-bottom: 60px
+	&__btn
+		font-weight: 600
+		text-transform: uppercase
+		color: #250F8A
+		padding: 13px 29px
+		background: #FFCA00
+		border-radius: 25px
+
+.header-slider__wrapper
+	max-width: 595px
+	
+.header-dots
+	position: absolute
+	right: 0
+	top: 50%
+	transform: translateY(-70%)
+	.slick-active button
+		opacity: 1
+		width: 15px
+	button
+		border: none
+		padding: 0
+		background-color: #fff
+		opacity: .5
+		font-size: 0
+		width: 7px
+		height: 7px
+		border-radius: 3.5px
+		cursor: pointer
+		margin: 10px auto
+		display: block
+
+.title
+	font-weight: 700
+	font-size: 35px
+	line-height: 45px
+	text-align: center
+
+.special
+	padding: 55px 0 93px
+	background-image: url(../img/special-bg.svg)
+	background-repeat: no-repeat
+	background-position: left bottom
+	text-align: center
+	&__title
+		margin-bottom: 96px
+	&__inner
+		display: flex
+		justify-content: space-between
+		max-width: 980px
+		margin: 0 auto
+	&__item
+		width: 280px
+		&-img
+			margin-bottom: 23px
+			min-height: 159px
+		&-title
+			font-weight: 700
+			font-size: 20px
+			margin-bottom: 12px
+		&-text
+			color: #272727
+			opacity: .7
+			padding: 0 10px
+
+.advantages
+	padding-top: 64px
+	background-color: #F4F9FD
+	background-image: url(../img/advantages-bg.svg)
+	background-repeat: no-repeat
+	background-position: right center
+	&-box
+		display: flex
+		justify-content: space-between
+		padding-bottom: 76px
+		&__info
+			max-width: 460px
+			padding-top: 61px
+			background-image: url(../img/title-bg-1.svg)
+			background-repeat: no-repeat
+			background-position: 22px 55px
+			&--bg
+				background-image: url(../img/title-bg-3.svg)
+				background-position: 5px 85px
+		&__title
+			font-weight: 700
+			font-size: 35px
+			line-height: 45px
+			padding: 50px 0 15px 50px
+		&__text
+			color: #272727
+			padding-left: 50px
+			p
+				margin: 12px 0
+		&--reverse
+			.advantages-box__info
+				order: 1
+				background-image: url(../img/title-bg-2.svg)
+				background-position: 22px 110px
+
+.reviews
+	background-image: url(../img/reviews-bg.svg)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center
+	padding: 38px 0 82px
+	&__title
+		color: #fff
+		max-width: 384px
+		margin: 0 auto 48px
+	&__inner
+		display: flex
+		justify-content: space-between
+		max-width: 940px
+		margin: 0 auto
+	&__item
+		width: 300px
+		border-radius: 5px
+		background-color: rgba(#fff, .2)
+		padding: 35px 20px
+		color: #fff
+		&-head
+			display: flex
+			margin-bottom: 13px
+			img
+				border-radius: 50%
+				margin-right: 20px
+		&-name
+			font-weight: 600
+		&-position
+			opacity: .5
+		&-text
+			text-align: center
+			padding-top: 39px
+			position: relative
+			&:before
+				content: '“'
+				font-weight: 700
+				font-size: 40px
+				line-height: 55px
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+
+.footer
+	&__inner
+		display: flex
+		justify-content: space-between
+		padding: 20px 40px 17px
+		color: #272727
+	&__link a + a
+		margin-left: 20px
+
+.preloader
+	align-items: center
+	display: flex
+	height: 100vh
+	width: 100vw
+	position: fixed
+	z-index: 100
+	background-color: #171919
+	.caption
+		margin: 0 auto
+	.cube-loader
+		width: 73px
+		height: 73px
+		margin: 0 auto
+		margin-top: 49px
+		position: relative
+		transform: rotateZ(45deg)
+		z-index: 100
+		.cube
+			position: relative
+			transform: rotateZ(45deg)
+			width: 50%
+			height: 50%
+			float: left
+			transform: scale(1.1)
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: #02ECF1
+				animation: cube-loader 2.76s infinite linear both
+				transform-origin: 100% 100%
+		.loader-2
+			transform: scale(1.1) rotateZ(90deg)
+			&:before
+				animation-delay: .35s
+		.loader-3
+			transform: scale(1.1) rotateZ(180deg)
+			&:before
+				animation-delay: .69s
+		.loader-4
+			transform: scale(1.1) rotateZ(270deg)
+			&:before
+				animation-delay: 1.04s
+
+@keyframes cube-loader
+	0%, 10%
+		transform: perspective(136px) rotateX(-180deg)
+		opacity: 0
+	25%, 75% 
+		transform: perspective(136px) rotateX(0deg)
+		opacity: 1
+	90%, 100%
+		transform: perspective(136px) rotateY(180deg)
+		opacity: 0
+
+.burger
+	width: 60px
+	height: 60px
+	padding: 0
+	border: 0
+	position: absolute
+	right: 15px
+	top: 70px
+	z-index: 20
+	cursor: pointer
+	background: none
+	display: none
+	transition: all .3s ease
+	&:hover
+		transform: scale(1.1)
+
+.line 
+	fill: none
+	transition: stroke-dasharray .4s, stroke-dashoffset .4s
+	stroke: #fff
+	stroke-width: 5.5
+	stroke-linecap: round
+
+.ham
+	color: transparent
+	transition: transform .4s
+	user-select: none
+	&.active 
+		transform: rotate(45deg)
+	.top 
+		stroke-dasharray: 40 160
+	.middle 
+		stroke-dasharray: 40 142
+		transform-origin: 50%
+		transition: transform 400ms
+	.bottom 
+		stroke-dasharray: 40 85
+		transform-origin: 50%
+		transition: transform 400ms, stroke-dashoffset 400ms
+	&.active 
+		.top 
+			stroke-dashoffset: -64px
+		.middle 
+			transform: rotate(90deg)
+		.bottom 
+			stroke-dashoffset: -64px
+
+.top
+	position: fixed
+	background-color: #0bd8dd
+	border: 1px solid #fff
+	border-radius: 10px
+	text-align: center
+	cursor: pointer
+	width: 45px
+	height: 45px
+	font-size: 30px
+	line-height: 30px
+	bottom: 8px
+	right: -100px
+	transition: all .3s ease
+	&:hover
+		background-color: #fff
+		border-color: #0bd8dd
+		svg path
+			fill: #0bd8dd
+	&.active
+		right: 15px
+
+@import "media"

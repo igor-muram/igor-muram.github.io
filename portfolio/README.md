@@ -8,7 +8,6 @@ Portfolio with information about me and my skills.
 <ul>
 	<li><a href="https://jquery.com" target="_blank">JQuery</a></li>
 	<li><a href="https://kenwheeler.github.io/slick/" target="_blank">Slick-carousel</a></li>
-	<li><a href="https://gulpjs.com" target="_blank">Gulp 4</a></li>
 	<li><a href="http://lesscss.org" target="_blank">Less Preprocessor</a></li>
 	<li><a href="https://bower.io" target="_blank">Bower</a></li>
 </ul>

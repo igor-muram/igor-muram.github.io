@@ -416,13 +416,26 @@
 			&:nth-child(3), &:nth-child(4)
 				margin-bottom: 50px
 
-	.holder.travel
-		background-image: none
-		padding-bottom: 190px
-		.holder-slider__subtitle
+	.holder
+		&.travel
+			background-image: none
+			padding-bottom: 190px
+			.subtitle__head
+				max-width: 300px
+		&.sleep
+			.subtitle__head
+				max-width: 240px
+		&-slider__subtitle
 			padding-top: 70px
+		.subtitle__head
+			font-size: 37px
+			span
+				display: none
 		.slider-arrows
-			top: 155px
+			top: 190px
+			right: 33px
+			&__left
+				right: 73px
 
 	.shop__slider
 		&-info
@@ -449,7 +462,7 @@
 
 	.header__arrows
 		left: 38px
-		margin: 0 0
+		margin: 0
 
 	.title
 		span
@@ -464,16 +477,11 @@
 		&__descr
 			min-height: 270px
 
-	.holder.travel
-		background-image: url(../img/travel-bg.png)
-		background-position: right 1000px
-
 	.holder
-		.subtitle__head
-			font-size: 37px
-
-	.sleep
-		&.holder
+		&.travel
+			background-image: url(../img/travel-bg.png)
+			background-position: right 1000px
+		&.sleep
 			background-position: right 1100px
 
 	.surfboard-box
@@ -521,29 +529,17 @@
 
 	.holder
 		.subtitle__head
-			font-size: 37px
-			max-width: 300px
 			padding-right: 4px
-			span
-				display: none
-		.slider-arrows
-			right: 29px
-			&__left
-				right: 69px
 
-	.holder.travel
-		background-position: right 1030px
-		.slider-arrows
-			top: 195px
-		.descr__head
-			font-size: 35px
-
-	.holder.sleep
-		.slider-arrows
-			top: 255px
-		.holder__star-list
-			position: static
-			margin: -5px 0 15px -14px
+	.holder
+		&.travel
+			background-position: right 1030px
+			.descr__head
+				font-size: 35px
+		&.sleep
+			.holder__star-list
+				position: static
+				margin: -5px 0 15px -14px
 
 	.surfboard-box
 		&--1
@@ -665,6 +661,11 @@
 		.holder-slider__info-title span
 			padding-left: 29px
 		
+	.holder-slider__descr
+		.descr__head
+			&-sleep--3, &-sleep--7 					/* very good */
+				padding-right: 90px
+
 	.shop
 		.descr__head
 			padding-right: 30px

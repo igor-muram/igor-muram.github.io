@@ -1,18 +1,18 @@
-let syntax         = 'sass'; // Syntax: sass or scss;
+let syntax = 'sass'; 	/* Syntax: sass or scss; */
 
 let gulp          = require('gulp'),
-		gutil         = require('gulp-util' ),
-		sass          = require('gulp-sass'),
-		browserSync   = require('browser-sync'),
-		concat        = require('gulp-concat'),
-		terser        = require('gulp-terser'),
-		cleancss      = require('gulp-clean-css'),
-		rename        = require('gulp-rename'),
-		autoprefixer  = require('gulp-autoprefixer'),
-		notify        = require('gulp-notify'),
-		del           = require('del');
+    gutil         = require('gulp-util' ),
+    sass          = require('gulp-sass'),
+    browserSync   = require('browser-sync'),
+    concat        = require('gulp-concat'),
+    terser        = require('gulp-terser'),
+    cleancss      = require('gulp-clean-css'),
+    rename        = require('gulp-rename'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    notify        = require('gulp-notify'),
+    del           = require('del');
 
-// Local Server
+/* Local Server */
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -20,23 +20,23 @@ gulp.task('browser-sync', function() {
 		},
 		notify: false,
 		// open: false,
-		// online: false, // Work Offline Without Internet Connection
-		// tunnel: true, tunnel: "projectname", // Demonstration page: http://projectname.localtunnel.me
+		// online: false, 				/* Work Offline Without Internet Connection */
+		// tunnel: true, tunnel: "projectname", 	/* Demonstration page: http://projectname.localtunnel.me */
 	})
 });
 
-// Sass|Scss Styles
+/* Sass|Scss Styles */
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'compressed' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(cleancss({ level: { 1: { specialComments: 0 } } })) 		/* Opt., comment out when debugging */
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
-// JS
+/* JS */
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
@@ -51,27 +51,27 @@ gulp.task('scripts', function() {
 		'app/libs/MathJax/jax/element/mml/optable/GeneralPunctuation.js',
 		'app/libs/MathJax/jax/element/mml/optable/GreekAndCoptic.js',
 		'app/libs/MathJax/jax/element/mml/optable/Latin1Supplement.js',
-		'app/js/common.js',								// Always at the end
+		'app/js/common.js',								/* Always at the end */
 		])
 	.pipe(concat('scripts.min.js'))
-	.pipe(terser()) 										// Minify js (opt.)
+	.pipe(terser()) 									/* Minify js (opt.) */
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
-// HTML Live Reload
+/* HTML Live Reload */
 gulp.task('code', function() {
 	return gulp.src('app/*.html')
 	.pipe(browserSync.reload({ stream: true }))
 });
 
-// Remove folder 'dist'
+/* Remove folder 'dist' */
 gulp.task('removedist', function(done) { 
 	return del(['dist']); 
 	done();
 });
 
-// Build
+/* Build */
 gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(ContinueProcess) {
 
 	ContinueProcess();

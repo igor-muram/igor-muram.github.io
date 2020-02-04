@@ -16,6 +16,5 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-terser": "^1.2.0",
 		"gulp-util": "^3.0.8",
-		"normalize.css": "^8.0.1"
 	}
 }

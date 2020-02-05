@@ -8,7 +8,7 @@ $(function() {
 	$('.header-slider').slick({
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 4000,
+		autoplaySpeed: 3000,
 		vertical: true,
 		dots: true,
 		dotsClass: 'header-dots',
@@ -34,5 +34,10 @@ $(function() {
 		e.preventDefault();
 		$(".menu__list").slideToggle();
 	});
+
+
+	/* Wow JS initialization */
+	wow = new WOW({ mobile: false });
+	wow.init();
 
 });

@@ -7,6 +7,7 @@
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: top center
+	position: relative
 	height: 100vh
 	max-height: 790px
 	color: #fff
@@ -19,20 +20,42 @@
 .menu__list
 	display: flex
 	z-index: 5
+	animation: fadeInDown 1s 3s both
 	li + li
 		padding-left: 50px
 	a
-		font-weight: 600
-		text-transform: uppercase
 		opacity: .5
-		transition: all .4s ease
 		&:hover
 			opacity: 1
 
+@keyframes fadeInDown
+	from
+		opacity: 0
+		transform: translateY(-100%)
+	to
+		opacity: 1
+		transform: translateY(0)
+
 .login
 	margin-right: 44px
+
+.menu__list a, .login
 	font-weight: 600
 	text-transform: uppercase
+	transition: all .4s ease
+	position: relative
+	&:after
+		content: ''
+		width: 0
+		height: 2px
+		background-color: #fff
+		position: absolute
+		bottom: -4px
+		left: 0
+		transition: all .4s ease
+	&:hover
+		&:after
+			width: 100%
 
 .sign-up
 	text-transform: uppercase
@@ -41,6 +64,9 @@
 	padding: 8px 43px
 	background-color: #fff
 	border-radius: 20px
+	transition: all .3s ease
+	&:hover
+		border-radius: 5px
 
 .header__inner
 	padding-top: 166px
@@ -67,6 +93,9 @@
 		padding: 13px 29px
 		background: #FFCA00
 		border-radius: 25px
+		transition: all .3s ease
+		&:hover
+			border-radius: 5px
 
 .header-slider__wrapper
 	max-width: 595px
@@ -211,17 +240,34 @@
 		justify-content: space-between
 		padding: 20px 40px 17px
 		color: #272727
-	&__link a + a
-		margin-left: 20px
+	&__link
+		a
+			position: relative
+			&:after
+				content: ''
+				width: 0
+				height: 2px
+				background-color: #202020
+				position: absolute
+				bottom: -4px
+				left: 0
+				transition: all .4s ease
+			&:hover
+				&:after
+					width: 100%
+		a + a
+			margin-left: 20px
 
 .preloader
+	background-color: #171919
 	align-items: center
 	display: flex
-	height: 100vh
-	width: 100vw
 	position: fixed
 	z-index: 100
-	background-color: #171919
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
 	.caption
 		margin: 0 auto
 	.cube-loader
@@ -286,8 +332,6 @@
 	background: none
 	display: none
 	transition: all .3s ease
-	&:hover
-		transform: scale(1.1)
 
 .line 
 	fill: none
@@ -295,11 +339,14 @@
 	stroke: #fff
 	stroke-width: 5.5
 	stroke-linecap: round
+	right: 0
+	position: absolute
 
 .ham
 	color: transparent
 	transition: transform .4s
 	user-select: none
+	position: relative
 	&.active 
 		transform: rotate(45deg)
 	.top 

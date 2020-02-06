@@ -73,6 +73,10 @@ gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(Conti
 		'app/css/main.min.css',
 		]).pipe(gulp.dest('dist/css'));
 
+	let buildSass = gulp.src([
+		'app/sass/**/*.sass',
+		]).pipe(gulp.dest('dist/sass'));
+
 	let buildJs = gulp.src([
 		'app/js/*.js',
 		]).pipe(gulp.dest('dist/js'));

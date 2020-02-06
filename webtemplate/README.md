@@ -1,9 +1,9 @@
-# demo
+# webtemplate
 <p>Demonstration of a personal HTML template for a quick start of site layout.</p>
 
 <p>Template author: <a href="https://github.com/igor-muram">Igor Muramshchikov</a>.</p>
 
-<p>View a <a href="https://igor-muram.github.io/demo/index.html" target="_blank">demo</a>.</p>
+<p>View a <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">demo</a>.</p>
 
 <p>Web Template is a starter template for quick start layout. The template includes the most frequently used tools and plugins:</p>
 

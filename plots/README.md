@@ -1,4 +1,4 @@
-# Plots
+# plots
 <p>Web application dedicated to graphs of functions from mathematical analysis.</p>
 
 <p>View a <a href="https://igor-muram.github.io/plots/index.html" target="_blank">demo</a>.</p>
@@ -19,4 +19,4 @@
 	<li><a href="https://vincentgarreau.com/particles.js/" target="_blank">ParticlesJS</a></li>
 </ul>
 
-<p>Site layout began with my personal starting <a href="https://igor-muram.github.io/demo/index.html" target="_blank">template</a>.</p>
+<p>Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.</p>

@@ -121,13 +121,14 @@
 		margin-bottom: 120px
 	&__items
 		display: grid
-		grid-template-columns: repeat(3, 1fr)
+		grid-template-columns: repeat(6, 1fr)
 		grid-column-gap: 55px
 
 .benefits-item
 	display: flex
 	flex-direction: column
 	align-items: flex-start
+	grid-column: span 2
 	&__img
 		margin-bottom: 37px
 		img
@@ -146,11 +147,13 @@
 		display: flex
 		justify-content: space-between
 		align-items: center
+		flex-wrap: wrap
 		margin-bottom: 36px
 	&-items
 		display: grid
 		grid-template-columns: repeat(6, 1fr)
-		grid-gap: 10px
+		grid-column-gap: 10px
+		grid-row-gap: 10px
 		margin-bottom: 131px
 	&-item
 		position: relative
@@ -197,10 +200,9 @@
 		&:hover, &:focus
 			img
 				transform: scale(1.05)
-				transition: all .25s ease
 
 .tours
-	margin-bottom: 139px
+	margin-bottom: 110px
 	&-item
 		display: grid
 		grid-template-columns: repeat(2, 1fr)
@@ -236,26 +238,32 @@
 		margin-bottom: 54px
 	&-items
 		display: grid
-		grid-template-columns: repeat(3, 1fr)
-		grid-gap: 57px
+		grid-template-columns: repeat(6, 1fr)
+		grid-column-gap: 57px
+		grid-row-gap: 57px
 	&-item
 		display: flex
 		flex-direction: column
 		align-items: flex-start
+		grid-column: span 2
+		box-shadow: 0 0 4px rgba(#000, .25)
+		transition: all .25s ease
+		cursor: pointer
+		border-radius: 10px
+		overflow: hidden
 		&__img
 			position: relative
 			margin-bottom: 45px
-			cursor: pointer
 			overflow: hidden
 			img
 				height: 377px
 				width: 100%
 				object-fit: cover
 				transition: all .25s ease
-			&:hover, &:focus
-				img
-					transform: scale(1.05)
-					transition: all .25s ease
+		&:hover, &:focus
+			box-shadow: 0 0 20px rgba(#000, .25)
+			img
+				transform: scale(1.05)
 		&__info
 			display: flex
 			justify-content: space-between
@@ -283,8 +291,9 @@
 				padding-right: 23px
 		&__text
 			margin-bottom: 31px
+			padding: 0 10px
 		&__btn
-			margin: auto 0 0
+			margin: auto 0 10px 10px
 
 .video
 	width: 100%
@@ -301,6 +310,9 @@
 		width: 100%
 		height: 100%
 		cursor: pointer
+	&:hover, &:focus
+		.play
+			transform: scale(1.1)
 	&-poster
 		border: 0
 		background-image: url(../img/video-overlay.jpg)
@@ -319,17 +331,18 @@
 	background-image: url(../img/play.svg)
 	background-repeat: no-repeat
 	background-position: center
-	background-size: 112px
-	width: 112px
-	height: 112px
+	background-size: 100px
+	width: 100px
+	height: 100px
 	position: absolute
 	top: 50%
 	left: 50%
-	margin: -56px 0 0 -56px
+	margin: -50px 0 0 -50px
 	cursor: pointer
+	transition: all .3s ease
 
 .footer
-	background-color: #0E1D28
+	background-color: $overlay
 	padding: 61px 0
 	color: #fff
 	&__wrapper
@@ -338,6 +351,7 @@
 		margin: 0 auto
 		display: flex
 		align-items: center
+		flex-wrap: wrap
 	&__logo
 		flex-basis: 50%
 	&-menu
@@ -345,6 +359,7 @@
 		&__items
 			display: flex
 			justify-content: space-between
+			flex-wrap: wrap
 		&__title
 			font-weight: 700
 			font-size: 18px

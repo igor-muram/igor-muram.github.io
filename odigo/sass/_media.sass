@@ -1,3 +1,10 @@
+@media (max-width: 1200px)
+	.tours
+		&-info
+			padding-left: 0
+		&-item
+			grid-column-gap: 80px
+
 @media (max-width: 970px)
 	.header-info
 		padding-top: 110px
@@ -9,19 +16,92 @@
 			margin-bottom: 30px
 			line-height: 51px
 
+	.btn
+		padding: 11px 32px
+		font-size: 20px
+		line-height: 28px
+		&--sm
+			padding: 7px 16px
+			font-size: 16px
+
 	.benefits
 		transform: translateY(-170px)
 		&__wrapper
-			margin-bottom: -39px
-			padding-top: 65px
+			padding: 65px 15px
 		&__title
 			margin-bottom: 85px
 		&__items
 			grid-column-gap: 40px
 
-@media (max-width: 810px)
+	.locations-item--sm
+		grid-column: span 3
+		img
+			height: 354px
+		&:last-child
+			grid-column: span 4/6
+
+	.tours
+		margin-bottom: 90px
+		&-item
+			grid-column-gap: 50px
+
+	.visit-item
+		grid-column: span 3
+		&__img
+			width: 100%
+
+	.play
+		width: 80px
+		height: 80px
+		background-size: 80px
+		margin: -40px 0 0 -40px
+
+	.footer
+		&__wrapper
+			justify-content: space-between
+		&__logo
+			flex-basis: 30%
+		&-menu
+			flex-basis: 60%
+
+@media (max-width: 860px)
 	.header-form__field
 		margin-right: 33px
+
+	.benefits
+		&__items
+			grid-column-gap: 25px
+		&-item
+			grid-column: span 3
+			margin-bottom: 40px
+			&__img
+				margin-bottom: 15px
+			&__title
+				margin-bottom: 20px
+			&__text
+				margin-bottom: 20px
+				padding-right: 30px
+			&:last-child
+				margin-bottom: 0
+
+	.locations-item
+		grid-column: span 6
+		&--sm
+			&:last-child
+				grid-column: span 6
+		&__img
+			img
+				height: 283px
+
+	.tours
+		&-item__img
+			img
+				height: 300px
+		&-info
+			&__title
+				margin-bottom: 30px
+			&__text
+				margin-bottom: 35px
 
 @media (max-width: 750px)
 	.header
@@ -84,10 +164,78 @@
 			&:nth-child(2)
 				margin-bottom: 0
 
-	.btn
-		padding: 11px 32px
-		font-size: 20px
-		line-height: 28px
+	.benefits
+		transform: translateY(0)
+		margin: 0 -15px
+		text-align: center
+		&__wrapper
+			margin-bottom: 0
+			box-shadow: none
+			padding: 75px 15px
+		&__inner
+			padding: 0
+		&__title
+			margin-bottom: 35px
+		&-item
+			grid-column: span 4/6
+			align-items: center
+			margin-bottom: 50px
+			&__title
+				margin-bottom: 15px
+			&__text
+				margin-bottom: 15px
+				padding-right: 0
+
+	.locations
+		&__top
+			display: block
+			margin-bottom: 30px
+		&__title
+			margin-bottom: 30px
+
+	.tours
+		&-item
+			justify-items: center
+			grid-column-gap: 0
+			grid-row-gap: 30px
+			margin-bottom: 50px
+			&__img
+				grid-column: span 2
+				img
+					height: 354px
+			&--reverse
+				.tours-item__img
+					order: 1
+		&-info
+			grid-column: span 2
+			&__title
+				margin-bottom: 15px
+			&__text
+				max-width: 597px
+				margin-bottom: 20px
+
+	.visit
+		margin-bottom: 90px
+		&-items
+			grid-column-gap: 0
+			grid-row-gap: 40px
+		&-item
+			grid-column: span 4/6
+			&__img
+				margin-bottom: 25px
+			&__text
+				margin-bottom: 25px
+
+	.footer
+		&__logo
+			display: none
+		&-menu
+			flex-basis: 100%
+			&__list
+				li
+					margin-top: 8px
+				a
+					font-size: 18px
 
 @media (max-width: 575px)
 	.header-nav
@@ -108,17 +256,39 @@
 			display: block
 
 	.header-info
+		padding-top: 0
+		position: absolute
+		top: 50%
+		transform: translateY(-40%)
 		&__title
 			font-size: 36px
 			line-height: 44px
 
+	.locations-item__title
+		font-size: 40px
+		line-height: 40px
+		bottom: 20px
+		left: 20px
+
+	.title
+		font-size: 30px
+
+	.visit-item
+		grid-column: span 6
+
+	.play
+		width: 60px
+		height: 60px
+		background-size: 60px
+		margin: -30px 0 0 -30px
+
 @media (max-width: 460px)
 	.header
-		padding-bottom: 235px
+		padding-bottom: 0
 		&__top
 			padding: 25px 0 0 0
 		&-info
-			padding: 50px 15px 0 0
+			padding: 0 15px 0 0
 			&__title
 				font-size: 32px
 				line-height: 39px
@@ -137,3 +307,29 @@
 		padding: 75px 20px 20px
 		a
 			font-size: 30px
+
+	.benefits-item
+		grid-column: span 6
+
+	.title
+		max-width: 253px
+
+	.tours
+		&-info__title
+			font-size: 26px
+			line-height: 33px
+		&-item__img
+			img
+				height: 300px
+
+	.footer
+		padding: 30px 0
+		&-menu
+			&__item
+				width: 100%
+				margin-bottom: 25px
+				text-align: center
+				&:last-child
+					margin: 0
+			&__title
+				font-size: 20px

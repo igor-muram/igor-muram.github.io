@@ -5,7 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 	<title>Odigo</title>
+
+	<meta name="description" content="Discover Amazing places in Japan">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#006581">
+	<link rel="shortcut icon" href="img/favicons/favicon.ico">
+
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap">
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
@@ -29,9 +44,10 @@
 
 				<nav class="header-nav">
 					<ul class="header-nav__list">
-						<li><a href="#!">Articles</a></li>
-						<li><a href="#!">Locations</a></li>
-						<li><a href="#!">Videos</a></li>
+						<li><a href="#locations">Locations</a></li>
+						<li><a href="#tours">Articles</a></li>
+						<li><a href="#visit">Top places</a></li>
+						<li><a href="#video">Videos</a></li>
 						<li><a href="#!">Sign in</a></li>
 					</ul>
 
@@ -49,9 +65,9 @@
 			</div>
 
 			<div class="header-info">
-				<div class="header-info__title">
+				<h1 class="header-info__title">
 					Discover Amazing places in Japan
-				</div>
+				</h1>
 
 				<div class="header-info__text">
 					Jump off balcony, onto stranger's head. Chase ball of string 
@@ -78,7 +94,7 @@
 			<div class="benefits__wrapper">
 				<div class="benefits__inner">
 
-					<div class="benefits__title">Benefits of Odigo</div>
+					<h2 class="benefits__title">Benefits of Odigo</h2>
 
 					<div class="benefits__items">
 
@@ -146,10 +162,10 @@
 
 		</section>
 
-		<section class="locations">
+		<section id="locations" class="locations">
 			
 			<div class="locations__top">
-				<div class="locations__title title">Get inspired for your next trip</div>
+				<h2 class="locations__title title">Get inspired for your next trip</h2>
 				<a class="locations__link link" href="#!">view all</a>
 			</div>
 
@@ -219,7 +235,7 @@
 
 		</section>
 
-		<section class="tours">
+		<section id="tours" class="tours">
 			
 			<div class="tours-item">
 				<div class="tours-item__img">
@@ -227,9 +243,9 @@
 				</div>
 
 				<div class="tours-info">
-					<div class="tours-info__title">
+					<h3 class="tours-info__title">
 						Prefecture in Focus: Tottori
-					</div>
+					</h3>
 
 					<div class="tours-info__text">
 						Jump off balcony, onto stranger's head. Chase ball
@@ -250,10 +266,10 @@
 				</div>
 
 				<div class="tours-info">
-					<div class="tours-info__title">
+					<h3 class="tours-info__title">
 						Featured Neighborhood: 
 						Kyoto’s Arashiyama
-					</div>
+					</h3>
 
 					<div class="tours-info__text">
 						Jump off balcony, onto stranger's head. Chase ball
@@ -270,11 +286,11 @@
 
 		</section>
 
-		<section class="visit">
+		<section id="visit" class="visit">
 			
-			<div class="visit__title title">
+			<h2 class="visit__title title">
 				Today top places to visit
-			</div>
+			</h2>
 
 			<div class="visit-items">
 
@@ -446,7 +462,7 @@
 	</div>
 
 	<div class="video-wrapper">
-		<section class="video">
+		<div id="video" class="video">
 			
 			<div class="video__item"></div>
 
@@ -454,9 +470,7 @@
 				<iframe class="video-box video-element"
 								src=""
 								data-src="https://www.youtube.com/embed/WLIv7HnZ_fE?rel=0&showinfo=0" 
-								frameborder="0" 
-								allowfullscreen
-								allowTransparency="true">
+								allowfullscreen>
 				</iframe>
 
 				<button class="video-poster js-video-poster"></button>
@@ -464,7 +478,7 @@
 				<div class="play"></div>
 			</div>
 
-		</section>
+		</div>
 	</div>
 	
 	<footer class="footer">

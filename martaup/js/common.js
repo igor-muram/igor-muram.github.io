@@ -8,7 +8,7 @@ $(function() {
 	$('.header-slider').slick({
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 4000,
 		vertical: true,
 		dots: true,
 		dotsClass: 'header-dots',
@@ -32,7 +32,7 @@ $(function() {
 	/* Menu */
 	$("#navToggle").on("click", function(e) {
 		e.preventDefault();
-		$(".menu__list").slideToggle();
+		$(".header-menu__list").slideToggle();
 	});
 
 

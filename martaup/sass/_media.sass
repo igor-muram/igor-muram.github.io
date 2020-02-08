@@ -103,7 +103,7 @@
 	.burger
 		display: block
 
-	.menu__list
+	.header-menu__list
 		display: none
 		position: absolute
 		top: 96px
@@ -123,14 +123,14 @@
 		li + li
 			padding-left: 0
 
-	.menu__list a:after
-		display: none
-
 	.header
 		&-btn
 			width: 100%
 		&__top
 			text-align: right
+		&-menu__list
+			a:after
+				display: none
 
 	.advantages-box
 		&__title
@@ -285,10 +285,10 @@
 			text-align: center
 			flex-wrap: wrap
 			padding-top: 21px
-		.logo
+		&__logo
 			margin-bottom: 20px
 
-	.menu__list
+	.header-menu__list
 		top: 150px
 		right: 0
 		left: 0
@@ -369,5 +369,5 @@
 				margin: 0
 
 @media (min-width: 925px)
-	.menu__list
+	.header-menu__list
 		display: flex !important

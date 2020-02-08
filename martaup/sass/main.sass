@@ -16,11 +16,15 @@
 		justify-content: space-between
 		align-items: center
 		height: 100px
+	&__logo
+		animation-delay: 1.7s
+	&-btn
+		animation-delay: 2.3s
 
-.menu__list
+.header-menu__list
 	display: flex
 	z-index: 5
-	animation: fadeInDown 1s 3s both
+	animation: fadeInDown 1s 2s both
 	li + li
 		padding-left: 50px
 	a
@@ -39,7 +43,7 @@
 .login
 	margin-right: 44px
 
-.menu__list a, .login
+.header-menu__list a, .login
 	font-weight: 600
 	text-transform: uppercase
 	transition: all .4s ease
@@ -76,6 +80,7 @@
 .header-content
 	&__info
 		max-width: 506px
+		animation-delay: 2.6s
 	&__title
 		font-weight: 700
 		font-size: 45px
@@ -99,6 +104,7 @@
 
 .header-slider__wrapper
 	max-width: 595px
+	animation-delay: 2.9s
 	
 .header-dots
 	position: absolute
@@ -332,6 +338,7 @@
 	background: none
 	display: none
 	transition: all .3s ease
+	animation-delay: 2s
 
 .line 
 	fill: none

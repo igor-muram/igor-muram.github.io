@@ -20,7 +20,7 @@ $(function() {
 	}
 
 	$('.js-video-poster, .play').on('click', function() {
-		var $video = $('.video-element'),
+		let $video = $('.video-element'),
 			src = $video.data('src');
 	 
 		$video.attr('src', src + '&autoplay=1');
@@ -45,19 +45,17 @@ $(function() {
 		$('.header-nav').addClass('active');
 	});
 
-	$('.header-nav__close').click(function() {
+	$('.header-nav__close, .header-nav__list li a').click(function() {
 		$('.header-nav').removeClass('active');
 	});
 
 
 	/* Scroll to section */
-	$(".header__arrows, .header-nav__list li").on("click", "a", function (e) {
+	$(".header-nav__list li").on("click", "a", function (e) {
 		e.preventDefault();
-		var id  = $(this).attr('href'),
+		let id  = $(this).attr('href'),
 		top = $(id).offset().top;
 		$('body,html').animate({scrollTop: top}, 800);
-
-		$('.header-nav').removeClass('active');
 	});
 
 });

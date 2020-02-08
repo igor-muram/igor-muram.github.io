@@ -36,6 +36,15 @@ $(function() {
 	});
 
 
+	/* Scroll to section */
+	$(".header-menu__list li").on("click", "a", function (e) {
+		e.preventDefault();
+		let id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 800);
+	});
+
+
 	/* Wow JS initialization */
 	wow = new WOW({ mobile: false });
 	wow.init();

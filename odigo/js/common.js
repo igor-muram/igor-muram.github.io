@@ -49,4 +49,15 @@ $(function() {
 		$('.header-nav').removeClass('active');
 	});
 
+
+	/* Scroll to section */
+	$(".header__arrows, .header-nav__list li").on("click", "a", function (e) {
+		e.preventDefault();
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 800);
+
+		$('.header-nav').removeClass('active');
+	});
+
 });

@@ -213,9 +213,50 @@
 		margin-bottom: 77px
 		&__img
 			order: 1
+			position: relative
+			overflow: hidden
 			img
 				height: 354px
 				object-fit: cover
+				transition: all .4s ease
+			&-title
+				color: transparent
+				font-size: 40px
+				line-height: 45px
+				font-weight: 700
+				text-align: center
+				padding: 0 20px
+				width: 100%
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				z-index: 5
+				transition: all .4s ease
+			&-link
+				position: absolute
+				width: 100%
+				height: 100%
+				z-index: 4
+				top: 0
+				left: 0
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				display: block
+				width: 100%
+				height: 100%
+				z-index: 2
+				transition: all .4s ease
+			&:hover, &:focus
+				.tours-item__img-title
+					color: #fff
+				img
+					transform: scale(1.05)
+				&:after
+					background-color: rgba($overlay, .4)
 		&--reverse
 			.tours-info
 				order: 1

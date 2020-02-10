@@ -1,77 +1,63 @@
 // main: ../style.less
 
 .burger {
-    width: 65px;
-    height: 65px;
-    padding: 0;
-    border: 0;
-    background: none;
-    display: none;
-    cursor: pointer;
+	width: 65px;
+	height: 65px;
+	padding: 0;
+	border: 0;
+	background: none;
+	display: none;
+	cursor: pointer;
 
-    -webkit-tap-highlight-color: transparent;
+	@media @tablet {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-    @media @tablet {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &:focus, &:active {
-        outline: none;
-    }
+	&:focus, &:active {
+		outline: none;
+	}
 }
 
 .line {
-    fill: none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #000;
-    stroke-width: 5.5;
-    stroke-linecap: round;
+	fill: none;
+	transition: stroke-dasharray .4s, stroke-dashoffset .4s;
+	stroke: #000;
+	stroke-width: 5.5;
+	stroke-linecap: round;
 }
 
 .ham {
-    color: transparent;
-    transition: transform .4s;
-    user-select: none;
+	color: transparent;
+	transition: transform .4s;
+	user-select: none;
 
-    &.active {
-        transform: rotate(45deg);
-    }
+	.top {
+		stroke-dasharray: 40 160;
+	}
 
-    .top {
-        stroke-dasharray: 40 160;
-    }
-    
-    .middle {
-        stroke-dasharray: 40 142;
-        transform-origin: 50%;
-        transition: transform 400ms;
-    }
+	.middle {
+		stroke-dasharray: 40 142;
+		transform-origin: 50%;
+		transition: transform .4s;
+	}
 
-    .bottom {
-        stroke-dasharray: 40 85;
-        transform-origin: 50%;
-        transition: transform 400ms, stroke-dashoffset 400ms;
-    }
+	.bottom {
+		stroke-dasharray: 40 85;
+		transform-origin: 50%;
+		transition: transform .4s, stroke-dashoffset .4s;
+	}
 
-    &.active {
-        .top {
-            stroke-dashoffset: -64px;
-        }
-    
-        .middle {
-            transform: rotate(90deg);
-        }
+	&.active {
+		transform: rotate(45deg);
 
-        .bottom {
-            stroke-dashoffset: -64px;
-        }
-    }
-}
+		.top, .bottom {
+			stroke-dashoffset: -64px;
+		}
 
-.burger__icon {
-    display: block;
-    max-width: 100%;
-    height: auto;
+		.middle {
+			transform: rotate(90deg);
+		}
+	}
 }

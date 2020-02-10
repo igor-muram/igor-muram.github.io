@@ -3,7 +3,7 @@
 .social {
 	margin-bottom: 45px;
 	display: flex;
-	font-size: 40px;
+	font-size: 2.67rem;
 	margin-left: -37px;
 	a {
 		display: block;
@@ -24,7 +24,7 @@
 		padding: 0;
 		margin: 0;
 		a {
-			&::before, &::after {
+			&:before, &:after {
 				content: '';
 				position: absolute;
 				background: #2fbae1;
@@ -34,34 +34,34 @@
 				transition: transform .5s;
 				transform: scaleY(0);
 			}
-			&::before {
+			&:before {
 				transform-origin: right;
 			}
-			&::after {
+			&:after {
 				transform-origin: left;
 			}
 			&:hover {
-				&::before {
+				&:before {
 					transform: scaleX(0);
 					transform-origin: left;
 				}
-				&::after {
+				&:after {
 					transform: scaleX(0);
 					transform-origin: right;
 				}
 				div {
-					&::before {
+					&:before {
 						transform: scaleY(1);
 						transform-origin: top;
 					}
-					&::after {
+					&:after {
 						transform: scaleY(1);
 						transform-origin: bottom;
 					}
 				}
 			}
 			div {
-				&::before, &::after {
+				&:before, &:after {
 					content: '';
 					position: absolute;
 					background: #2fbae1;
@@ -70,11 +70,11 @@
 					transition: transform .5s;
 					transform: scaleY(0);
 				}
-				&::before {
+				&:before {
 					left: 0;
 					transform-origin: bottom;
 				}
-				&::after {
+				&:after {
 					right: 0;
 					transform-origin: top;
 				}
@@ -87,7 +87,7 @@
 	}
 
 	@media @tablet {
-		font-size: 35px;
+		font-size: 2.34rem;
 		margin-left: -38px;
 
 		a {
@@ -107,4 +107,3 @@
 		}
 	}
 }
-

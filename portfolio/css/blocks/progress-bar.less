@@ -1,36 +1,33 @@
 // main: ../style.less
 
 .progress-bar {
-    margin-bottom: 2.6rem;
+	margin-bottom: 39px;
 }
 
 .progress-bar__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: .3rem;
-    justify-content: flex-end;
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	justify-content: flex-end;
 }
 
 .progress-bar__title {
-    font-size: .94rem;
-    font-weight: 300;
+	font-size: .94rem;
+	font-weight: 300;
 }
 
 .progress-bar__right {
-    padding-left: 1.2rem;
+	padding-left: 18px;
 }
 
 .progress-bar__bar {
-    width: 139px;
-    height: 6px;
-
-    background-color: #EFEFEF;
+	width: 139px;
+	height: 6px;
+	background-color: @light;
 }
 
 .progress-bar__progress {
-    height: 100%;
-
-    background-color: @gray;
-
-    transition: width .2s linear;
+	height: 100%;
+	background-color: @gray;
+	transition: all .3s ease;
 }

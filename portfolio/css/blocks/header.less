@@ -1,23 +1,22 @@
 // main: ../style.less
 
 .header {
-    padding: 1.2rem 0;
-    position: relative;
+	padding: 18px 0;
+	position: relative;
 
-    @media @tablet {
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-    }
+	@media @tablet {
+		background-color: @white;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+	}
 }
 
 .header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

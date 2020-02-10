@@ -1,36 +1,36 @@
 // main: ../style.less
 
 .top {
-    position: fixed;
-    background-color: @white;
-    border: 1px solid @black;
-    z-index: 5;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 30px;
-    bottom: 10px;
-    right: -100px;
-    transition: all .3s ease;
+	position: fixed;
+	background-color: @white;
+	border: 1px solid @black;
+	z-index: 5;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 2rem;
+	bottom: 10px;
+	right: -100px;
+	transition: all .4s ease;
 
-    i {
-        margin-right: 0;
-        color: @black;
-    }
+	i {
+		margin-right: 0;
+		color: @black;
+	}
 
-    &:hover {
-        background-color: @black;
-        border-color: @white;
+	&:hover {
+		background-color: @black;
+		border-color: @white;
 
-        i {
-            color: @white;
-        }
-    }
+		i {
+			color: @white;
+		}
+	}
 
-    &.active {
-        right: 15px;
-    }
+	&.active {
+		right: 15px;
+	}
 }

@@ -1,55 +1,58 @@
 // main: ../style.less
 
 .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 200;
-    background-color: #1e1d1e;
-    .pulse {
-        position: relative;
-        left: 50%;
-        top: 50vh;
-        margin-left: -40px;
-        margin-top: -40px;
-        &::before, &::after {
-            content: '';
-            border: 5px solid #323232;
-            width: 80px;
-            height: 80px;
-            border-radius: 500px;
-            position: absolute;
-        }
-        &::before {
-            animation: pulse-outer .8s ease-in infinite;
-        }
-        &::after {
-            animation: pulse-inner .8s linear infinite;
-        }
-    }
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 200;
+	background-color: @black;
+
+	.pulse {
+		position: relative;
+		left: 50%;
+		top: 50vh;
+		margin: -40px 0 0 -40px;
+
+		&:before, &:after {
+			content: '';
+			border: 5px solid @gray;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+		&:before {
+			animation: pulse-outer .8s ease-in infinite;
+		}
+
+		&:after {
+			animation: pulse-inner .8s linear infinite;
+		}
+	}
 }
 
 @keyframes pulse-outer {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: .5;
-    }
-    100% {
-        opacity: 0;
-    }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: .5;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes pulse-inner {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }

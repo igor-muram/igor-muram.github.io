@@ -1,156 +1,152 @@
 $(function() {
 
-    /*---------------------------Hide the preloader---------------------------*/
-
-    $('.preloader').delay(1500).fadeOut('slow');
-
-
-    /*---------------------------Filter---------------------------*/
-    const worksSlider = $('[data-slider="slick"]');
-    let filter = $("[data-filter]");
-
-    filter.on("click", function(e) {
-        e.preventDefault();
-        let cat = $(this).data('filter');
-
-        if (cat == 'all')
-            $("[data-cat]").removeClass("hide");
-        else {
-            $("[data-cat]").each(function() {
-                let workCat = $(this).data('cat');
-
-                if (workCat != cat)
-                    $(this).addClass('hide');
-                else
-                    $(this).removeClass('hide');
-            });
-        }
-    });
+	/*---------------------------Hide the preloader---------------------------*/
+	$('.preloader').delay(1000).fadeOut('slow');
 
 
-    /*---------------------------Menu---------------------------*/
+	/*---------------------------Filter---------------------------*/
+	const worksSlider = $('[data-slider="slick"]');
+	let filter = $("[data-filter]");
 
-    $("nav, .about").on("click", "a", function (e) {
-        e.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        top -= ($(window).width() > 576) ? 30 : 120;
-        $('body,html').animate({scrollTop: top}, 800);
-    });
+	filter.on("click", function(e) {
+		e.preventDefault();
+		let cat = $(this).data('filter');
 
+		if (cat == 'all')
+			$("[data-cat]").removeClass("hide");
+		else {
+			$("[data-cat]").each(function() {
+				let workCat = $(this).data('cat');
 
-    /*---------------------------Modal---------------------------*/
-
-    const modalCall = $("[data-modal]");
-    const modalClose = $("[data-close]");
-
-    modalCall.on("click", function(e) {
-        e.preventDefault();
-
-        let $this = $(this);
-        let modalId = $this.data('modal');
-
-        $(modalId).addClass('show');
-        $("body").addClass('no-scroll');
-
-        setTimeout(function() {
-            $(modalId).find(".modal__dialog").css({
-                transform: "scale(1)"
-            });
-        }, 200);
-
-        worksSlider.slick('setPosition');
-    });
-
-    modalClose.on("click", function(e) {
-        e.preventDefault();
-
-        let $this = $(this);
-        let modalParent = $this.parents('.modal');
-
-        modalParent.find(".modal__dialog").css({
-            transform: "scale(0)"
-        });
-
-        setTimeout(function() {
-            modalParent.removeClass('show');
-            $("body").removeClass('no-scroll');
-        }, 200);
-    });
+				if (workCat != cat)
+					$(this).addClass('hide');
+				else
+					$(this).removeClass('hide');
+			});
+		}
+	});
 
 
-    $(".modal").on("click", function(e) {
-        let $this = $(this);
+	/*---------------------------Menu---------------------------*/
 
-        $this.find(".modal__dialog").css({
-            transform: "scale(0)"
-        });
-
-        setTimeout(function() {
-            $this.removeClass('show');
-            $("body").removeClass('no-scroll');
-        }, 200);
-    });
-
-    $(".modal__dialog").on("click", function(e) {
-        e.stopPropagation();
-    });
+	$("nav, .about").on("click", "a", function (e) {
+		e.preventDefault();
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		top -= ($(window).width() > 576) ? 30 : 120;
+		$('body,html').animate({scrollTop: top}, 800);
+	});
 
 
-    /*---------------------------Slider: https://kenwheeler.github.io/slick/---------------------------*/
+	/*---------------------------Modal---------------------------*/
 
-    worksSlider.slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-        arrows: false,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        swipe: false
-    });
+	const modalCall = $("[data-modal]");
+	const modalClose = $("[data-close]");
 
-    $(".slickPrev").on("click", function(e) {
-        e.preventDefault();
-        let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
-        currentSlider.slick("slickPrev");
-    });
+	modalCall.on("click", function(e) {
+		e.preventDefault();
 
-    $(".slickNext").on("click", function(e) {
-        e.preventDefault();
-        let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
-        currentSlider.slick("slickNext");
-    });
+		let $this = $(this);
+		let modalId = $this.data('modal');
 
+		$(modalId).addClass('show');
+		$("body").addClass('no-scroll');
 
-    /*---------------------------Mobile nav---------------------------*/
+		setTimeout(function() {
+			$(modalId).find(".modal__dialog").css({
+				transform: "scale(1)"
+			});
+		}, 200);
 
-    const navToggle = $("#navToggle");
-    const nav = $("#nav");
+		worksSlider.slick('setPosition');
+	});
 
-    navToggle.on("click", function(e) {
-        e.preventDefault();
-        nav.toggleClass("show");
-    });
+	modalClose.on("click", function(e) {
+		e.preventDefault();
 
+		let $this = $(this);
+		let modalParent = $this.parents('.modal');
 
-    /*---------------------------Back to top button---------------------------*/
+		modalParent.find(".modal__dialog").css({
+			transform: "scale(0)"
+		});
 
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 50) {
-            $('.top').addClass('active');
-        } else {
-            $('.top').removeClass('active');
-        }
-    });
-    $('.top').click(function() {
-        $('html,body').stop().animate({scrollTop: 0}, 'slow', 'swing');
-    });
+		setTimeout(function() {
+			modalParent.removeClass('show');
+			$("body").removeClass('no-scroll');
+		}, 200);
+	});
 
 
-    /*---------------------------Remove standard link behavior---------------------------*/
+	$(".modal").on("click", function(e) {
+		let $this = $(this);
 
-    $("#more-works").on("click", function(e) { e.preventDefault(); });
-    $(".news__link").on("click", function(e) { e.preventDefault(); });
+		$this.find(".modal__dialog").css({
+			transform: "scale(0)"
+		});
+
+		setTimeout(function() {
+			$this.removeClass('show');
+			$("body").removeClass('no-scroll');
+		}, 200);
+	});
+
+	$(".modal__dialog").on("click", function(e) {
+		e.stopPropagation();
+	});
+
+
+	/*---------------------------Slider: https://kenwheeler.github.io/slick/---------------------------*/
+
+	worksSlider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		arrows: false,
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		swipe: false
+	});
+
+	$(".slickPrev").on("click", function(e) {
+		e.preventDefault();
+		let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
+		currentSlider.slick("slickPrev");
+	});
+
+	$(".slickNext").on("click", function(e) {
+		e.preventDefault();
+		let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
+		currentSlider.slick("slickNext");
+	});
+
+
+	/*---------------------------Mobile nav---------------------------*/
+
+	$("#navToggle").on("click", function(e) {
+		e.preventDefault();
+		$("#nav").toggleClass("show");
+	});
+
+
+	/*---------------------------Back to top button---------------------------*/
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 50)
+			$('.top').addClass('active');
+		else
+			$('.top').removeClass('active');
+	});
+
+	$('.top').click(function() {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+
+
+	/*---------------------------Remove standard link behavior---------------------------*/
+
+	$("#more-works").on("click", function(e) { e.preventDefault(); });
+	$(".news__link").on("click", function(e) { e.preventDefault(); });
 });

@@ -1,95 +1,90 @@
 // main: ../style.less
 
 .intro {
-
-    @media @mobile {
-        margin-top: 100px;
-    }
+	@media @mobile {
+		margin-top: 100px;
+	}
 }
 
 .intro__inner {
-    display: flex;
-    padding-top: 6.6rem;
-    padding-bottom: 8rem;
-    position: relative;
+	display: flex;
+	padding-top: 100px;
+	padding-bottom: 120px;
+	position: relative;
+	background: url("../images/symbols.png") right bottom no-repeat;
+	border-bottom: 1px solid fade(@gray, 30%);
 
-    background: url("../images/symbols.png") right bottom no-repeat;
-    border-bottom: 1px solid fade(@gray, 30%);
+	@media @tablet {
+		padding-top: 45px;
+		padding-bottom: 45px;
+		background-size: 350px auto;
+	}
 
-    @media @tablet {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-
-        background-size: 350px auto;
-    }
-
-    @media @mobile {
-        background: none;
-    }
+	@media @mobile {
+		background: none;
+	}
 }
 
 .intro__content {
-    width: 50%;
+	width: 50%;
 
-    @media @tablet {
-        margin-top: 140px;
-    }
+	@media @tablet {
+		margin-top: 140px;
+	}
 
-    @media @mobile {
-        width: 100%;
-        margin-top: 0;
-    }
+	@media @mobile {
+		width: 100%;
+		margin-top: 0;
+	}
 }
 
 .intro__subtitle {
-    font-size: 2.13rem;
-    color: @black;
-    font-weight: 200;
-    
-    @media @tablet {
-        font-size: 1.35rem;
-    }
+	font-size: 2.13rem;
+	color: @black;
+	font-weight: 200;
+
+	@media @tablet {
+		font-size: 1.35rem;
+	}
 }
 
 .intro__title {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
+	font-size: 3rem;
+	color: @black;
+	font-weight: 700;
 
-    font-size: 3rem;
-    color: @black;
-    font-weight: 700;
+	@media @notebook {
+		font-size: 2.7rem;
+	}
 
-    @media @notebook {
-        font-size: 2.7rem;
-    }
-
-    @media @tablet {
-        font-size: 2rem;
-    }
+	@media @tablet {
+		font-size: 2rem;
+	}
 }
 
 .intro__text {
-    margin-bottom: 25px;
-    margin-left: 3px;
+	margin-bottom: 25px;
+	margin-left: 3px;
+	font-size: 1.2rem;
+	color: fade(@black, 70%);
 
-    font-size: 1.2rem;
-    color: fade(@black, 70%);
-
-    @media @tablet {
-        font-size: 1.1rem;
-    }
+	@media @tablet {
+		font-size: 1.1rem;
+	}
 }
 
 .intro__photo {
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    z-index: 1;
+	position: absolute;
+	bottom: -1px;
+	right: 0;
+	z-index: 1;
 
-    @media @tablet {
-        width: 330px;
-    }
+	@media @tablet {
+		width: 330px;
+	}
 
-    @media @mobile {
-        display: none;
-    }
+	@media @mobile {
+		display: none;
+	}
 }

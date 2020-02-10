@@ -1,102 +1,94 @@
 // main: ../style.less
 
 .nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	height: 100%;
 
-    @media @tablet {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
+	@media @tablet {
+		width: 100%;
+		height: auto;
+		padding: 15px;
+		transition: all .5s ease;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		z-index: 100;
+		background-color: @white;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+		text-align: center;
+		display: none;
 
-        position: absolute;
-        top: 100%;
-        right: 0;
-        z-index: 1000;
-
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-        text-align: center;
-
-        display: none;
-
-        &.show {
-            display: flex;
-        }
-    }
+		&.show {
+			display: flex;
+		}
+	}
 }
 
 .nav__link {
-    margin-left: 2rem;
-    position: relative;
+	margin-left: 30px;
+	position: relative;
+	font-size: .93rem;
+	color: @black;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-decoration: none;
 
-    font-size: 0.93rem;
-    color: @black;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-decoration: none;
+	&:after {
+		content: '';
+		width: 0;
+		height: 2px;
+		background-color: @black;
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		z-index: 1;
+		transition: all .3s ease;
+	}
 
-    &:after {
-        content: '';
-        width: 0;
-        height: 2px;
-        background-color: @black;
-
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        z-index: 1;
-
-        transition: width .2s linear;
-    }
-
-    &:hover:not(.nav__link--btn) {
-
-        &:after {
-            width: 100%;
-        }
-    }
+	&:hover:not(.nav__link--btn) {
+		&:after {
+			width: 100%;
+		}
+	}
 
 
-    /* Modificators */
-    &--btn {
-        padding: 0.66rem 2rem;
+	/* Modificators */
+	&--btn {
+		padding: 10px 30px;
+		border: 2px solid @black;
+		border-radius: 20px;
+		transition: all .3s ease;
 
-        border: 2px solid @black;
-        border-radius: 20px;
+		&:hover {
+			background-color: @black;
+			color: @white;
+		}
 
-        transition: background-color .2s linear, color .2s linear;
+		@media @tablet {
+			width: auto !important;
+		}
+	}
 
-        &:hover {
-            background-color: @black;
-            color: @white;
-        }
+	@media @tablet {
+		width: 100%;
+		margin-left: 0;
+		padding: 8px 15px;
+		margin-bottom: 15px;
 
-        @media @tablet {
-            width: auto !important;
-        }
-    }
+		&:after {
+			display: none;
+		}
 
-    @media @tablet {
-        width: 100%;
-        margin-left: 0;
-        padding: .5rem 1rem;
-        margin-bottom: 1rem;
+		&--btn {
+			margin: auto;
+		}
 
-        &:after {
-            display: none;
-        }
-
-        &--btn {
-            margin: auto;
-        }
-        
-        &:hover {
-            background-color: @black;
-            color: @white;
-            transition: background-color .2s linear, color .2s linear;
-        }
-    }
+		&:hover {
+			background-color: @black;
+			color: @white;
+			transition: all .3s ease;
+		}
+	}
 }

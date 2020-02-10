@@ -1,45 +1,41 @@
 // main: ../style.less
 
 .work {
-    overflow: hidden;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 0 4px fade(#000, 25%);
+	transition: all .3s ease;
+	cursor: pointer;
 
-    border-radius: 10px;
-    box-shadow: 0 0 4px fade(#000, 25%);
+	&:hover {
+		box-shadow: 0 0 25px fade(#000, 25%);
+	}
 
-    transition: box-shadow .2s linear;
-    cursor: pointer;
+	@media @mobile {
+		max-width: 370px;
+	}
 
-    &:hover {
-        box-shadow: 0 0 25px fade(#000, 25%);
-    }
-
-    @media @mobile {
-        max-width: 370px;
-    }
-
-    @media @mobile-sm {
-        margin: 0 auto;
-    }
+	@media @mobile-sm {
+		margin: 0 auto;
+	}
 }
 
 .work__content {
-    padding: 1rem 0.8rem;
+	padding: 15px 12px;
 }
 
 .work__cat {
-    margin-bottom: 0.5rem;
-
-    font-size: .8rem;
-    color: @black;
-    text-transform: uppercase;
+	margin-bottom: 8px;
+	font-size: .8rem;
+	color: @black;
+	text-transform: uppercase;
 }
 
 .work__title {
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 1.06rem;
-    color: @black;
-    text-transform: uppercase;
-    font-weight: 700;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.06rem;
+	color: @black;
+	text-transform: uppercase;
+	font-weight: 700;
 }

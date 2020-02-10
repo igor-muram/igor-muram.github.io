@@ -19,4 +19,6 @@
 	<li><a href="https://vincentgarreau.com/particles.js/" target="_blank">ParticlesJS</a></li>
 </ul>
 
+<p><b>Vector graphics</b> are dynamically drawn in the project.</p>
+
 <p>Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.</p>

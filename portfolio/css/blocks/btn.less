@@ -13,9 +13,12 @@
 	line-height: 1.1;
 	color: @black;
 	text-transform: uppercase;
-	text-decoration: none;
 	text-align: center;
 	transition: all .3s ease;
+
+	&:focus, &:active {
+		outline: none;
+	}
 
 	&:hover {
 		background-color: @black;

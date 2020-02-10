@@ -128,5 +128,22 @@
 
 .about__link {
 	color: @gray;
-	text-decoration: none;
+	font-weight: 700;
+	position: relative;
+
+	&:after {
+		content: '';
+		width: 0;
+		height: 2px;
+		background-color: @gray;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		z-index: 1;
+		transition: all .3s ease;
+	}
+
+	&:hover:after {
+		width: 100%;
+	}
 }

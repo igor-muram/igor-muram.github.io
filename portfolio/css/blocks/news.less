@@ -43,8 +43,21 @@
 .news__link {
 	font-size: .94rem;
 	color: @gray;
+	position: relative;
 
-	&:hover {
-		text-decoration: none;
+	&:after {
+		content: '';
+		width: 0;
+		height: 2px;
+		background-color: @gray-light;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		z-index: 1;
+		transition: all .3s ease;
+	}
+
+	&:hover:after {
+		width: 100%;
 	}
 }

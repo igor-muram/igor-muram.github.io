@@ -2,7 +2,7 @@
 
 .timeline {
 	display: flex;
-	margin: 63px auto;
+	margin: 60px auto;
 	width: 100%;
 	max-width: 800px;
 	position: relative;
@@ -38,7 +38,7 @@
 }
 
 .timeline__title {
-	margin-bottom: 39px;
+	margin-bottom: 20px;
 	font-size: 1.2rem;
 	color: @black;
 	text-transform: uppercase;
@@ -46,7 +46,7 @@
 }
 
 .timeline__item {
-	margin-bottom: 39px;
+	margin-bottom: 45px;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -62,7 +62,7 @@
 }
 
 .timeline__subtitle {
-	margin-bottom: 3px;
+	margin-bottom: 7px;
 	font-size: 1.06rem;
 	color: @black;
 	font-weight: 700;
@@ -85,10 +85,27 @@
 		font-size: .94rem;
 		font-style: italic;
 		color: @gray;
-		text-decoration: none;
+		position: relative;
 
-		&:hover {
-			text-decoration: underline;
+		&:after {
+			content: '';
+			width: 0;
+			height: 2px;
+			background-color: @gray-light;
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			z-index: 1;
+			transition: all .3s ease;
+		}
+
+		&:hover:after {
+			width: 100%;
 		}
 	}
+}
+
+.timeline__works p:last-child {
+	margin-top: 40px;
+	margin-bottom: 0;
 }

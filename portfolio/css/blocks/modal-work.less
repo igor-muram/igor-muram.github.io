@@ -92,10 +92,22 @@
 		font-size: .94rem;
 		font-style: italic;
 		color: @gray;
-		text-decoration: none;
+		position: relative;
 
-		&:hover {
-			text-decoration: underline;
+		&:after {
+			content: '';
+			width: 0;
+			height: 2px;
+			background-color: @gray-light;
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			z-index: 1;
+			transition: all .3s ease;
+		}
+
+		&:hover:after {
+			width: 100%;
 		}
 	}
 }
@@ -132,6 +144,10 @@
 	color: @black;
 	text-transform: uppercase;
 	transition: all .3s ease;
+
+	&:focus, &:active {
+		outline: none;
+	}
 
 	&:hover {
 		transform: scale(1.2);

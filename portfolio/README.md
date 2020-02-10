@@ -16,6 +16,6 @@ Portfolio with information about me and my skills.
 
 <p><b>The BEM class naming methodology</b> was used to create the project.</p>
 
-<p>Modular file structure was created for this project.</p>
+<p><b>Modular file structure</b> was created for this project.</p>
 
 <p>Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.</p>

@@ -1,3 +1,7 @@
+<?php 
+$news = getNews(6);
+?>
+
 <main>
 	<div class="wrapper">
 
@@ -8,10 +12,10 @@
 
 			<div class="news-items">
 				<?php
-        // здесь в цикле загружается столько новостей, сколько надо
-				require("news-item.php");
+				for($i = 0; $i < count($news); $i++) 
+					require("news-item.php");
 				?>
-			</div> <!-- news-items end -->
+			</div>
 
 			<div class="news__more">
 				<div class="news__btn btn btn--md">Еще новости</div>

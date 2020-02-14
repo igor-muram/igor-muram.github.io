@@ -1,0 +1,156 @@
+@media (max-width: 1400px)
+	.footer
+		display: block
+		position: relative
+		&-social, &-nav
+			position: absolute
+			right: 20px
+		&-social
+			top: 15px
+		&-nav
+			bottom: 15px
+
+@media (max-width: 1150px)
+	.news
+		&__title
+			text-align: center
+			padding-right: 0
+		&-items
+			justify-content: space-around
+		&-item
+			flex-basis: 40%
+
+@media (max-width: 1000px)
+	.news-item
+		flex-basis: 45%
+
+@media (max-width: 800px)
+	.news-item
+		flex-basis: 55%
+
+	.header__burger
+		display: flex
+
+	.header-nav
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $overlay
+		z-index: 10
+		padding: 75px
+		transform: translateX(-100%)
+		transition: all .5s ease
+		&__close
+			width: 40px
+			height: 40px
+			z-index: 11
+			position: absolute
+			top: 20px
+			right: 20px
+			cursor: pointer
+			&-line
+				display: block
+				height: 2px
+				width: 100%
+				background-color: #fff
+				position: absolute
+				top: 50%
+				&:first-child
+					transform: translateY(-50%) rotate(45deg)
+				&:last-child
+					transform: translateY(-50%) rotate(-45deg)
+		&.active
+			transform: translateX(0)
+		li
+			width: 100%
+			& + li
+				margin-left: 0
+				margin-top: 25px
+		a
+			font-size: 32px
+			line-height: 35px
+
+	.footer__logo
+		width: 80px
+
+@media (max-width: 680px)
+	.news-item
+		flex-basis: 65%
+
+	.footer__logo
+		display: none
+
+	.footer-nav, .footer-social
+		width: 100%
+		position: static
+		&__list
+			justify-content: center
+
+	.footer-social
+		margin-bottom: 30px
+
+@media (max-width: 575px)
+	.news-item
+		flex-basis: 80%
+
+	.header-nav
+		padding: 75px 40px 40px
+		li + li
+			margin-top: 20px
+
+	.footer
+		display: flex
+
+	.footer-nav, .footer-social
+		width: 50%
+		li + li
+			margin-left: 0
+
+	.footer-nav__list
+		flex-direction: column
+		align-items: flex-end
+		li + li
+			margin-top: 20px
+
+	.footer-social
+		margin-bottom: 0
+		&__list
+			justify-content: flex-start
+			li
+				width: 33.33333%
+				margin: 20px 0
+
+@media (max-width: 450px)
+	.news-item
+		flex-basis: 100%
+
+	.header__logo
+		width: 80px
+
+@media (max-width: 375px)
+	.news__title
+		margin: 30px 0
+
+	.news-item__info
+		padding: 12px
+
+	.title
+		font-size: 31px
+		line-height: 34px
+
+	.footer-social__list
+		li
+			width: 50%
+			margin: 15px 0
+
+	.article
+		&__info
+			justify-content: center
+		&__stats
+			margin-right: 0
+		&__date
+			width: 100%
+			text-align: center
+			margin-top: 20px

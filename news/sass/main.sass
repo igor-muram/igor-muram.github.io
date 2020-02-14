@@ -1,0 +1,250 @@
+@import "vars"
+@import "libs"
+@import "global"
+
+.header, .footer
+	background-color: $accent
+	position: relative
+	color: #fff
+	padding: 15px 20px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&__logo
+		height: 80px
+		width: 199px
+		background-image: url(../img/logo.png)
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: left center
+
+.burger
+	width: 40px
+	height: 28px
+	position: relative
+	cursor: pointer
+	display: none
+	&__line
+		display: block
+		width: 100%
+		height: 2px
+		background-color: #fff
+		position: absolute
+		left: 0
+		&:first-child
+			top: 0
+		&:nth-child(2)
+			top: 50%
+			transform: translateY(-50%)
+		&:nth-child(3)
+			bottom: 0	
+
+.header-nav__list, .footer-nav__list
+	display: flex
+	flex-wrap: wrap
+	li + li
+		margin-left: 60px
+	a
+		font-size: 18px
+		transition: all .4s ease
+		position: relative
+		&:after
+			content: ''
+			width: 0
+			height: 2px
+			background-color: #fff
+			position: absolute
+			bottom: -2px
+			left: 0
+			transition: all .4s ease
+		&:hover, &:focus
+			&:after
+				width: 100%
+
+.news
+	margin-bottom: 100px
+	&__title
+		margin: 50px 0
+	&-items
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__more
+		text-align: center
+
+.news-item
+	display: flex
+	flex-direction: column
+	flex-basis: 30%
+	box-shadow: 0 0 4px rgba(#000, .25)
+	transition: all .25s ease
+	border-radius: 10px
+	overflow: hidden
+	margin-bottom: 50px
+	&__text
+		margin-bottom: 25px
+		padding: 0 10px
+	&__footer
+		margin: auto 10px 10px
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__date
+		font-weight: 500
+		font-size: 17px
+	&:hover, &:focus
+		box-shadow: 0 0 20px rgba(#000, .25)
+
+.news-item__img
+	position: relative
+	margin-bottom: 25px
+	overflow: hidden
+	img
+		height: 380px
+		width: 100%
+		object-fit: cover
+		transition: all .25s ease
+	&-link
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 4
+		top: 0
+		left: 0
+	&:hover, &:focus
+		img
+			transform: scale(1.05)
+
+.news-item__info
+	display: flex
+	justify-content: space-between
+	padding: 16px 25px
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	background-color: rgba($overlay, .6)
+	color: #fff
+	&-title
+		text-transform: uppercase
+		font-weight: 700
+		font-size: 18px
+		padding-right: 15px
+	&-stats
+		display: flex
+	
+.likes, .comments
+	font-weight: 700
+	cursor: pointer
+	z-index: 5
+	&__count
+		padding-right: 5px
+
+.likes
+	margin-right: 14px
+	i
+		transition: all .2s
+	&.active
+		i
+			color: red
+			animation: heartBeat .5s both ease-in-out
+
+@keyframes heartBeat
+	0%, 28%, 70%
+		transform: scale(1)
+	14%, 42%
+		transform: scale(1.4)
+
+.footer-social__list
+	display: flex
+	flex-wrap: wrap
+	font-size: 30px
+	li + li
+		margin-left: 60px
+	a
+		transition: all .4s ease
+		&:hover
+			transform: translateY(-5px)
+
+.article
+	padding: 50px 0
+	&__title
+		margin-bottom: 50px
+	&__img
+		img
+			width: 100%
+	&__text
+		text-align: justify
+	&__info, &__stats
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__info
+		margin-top: 30px
+		font-size: 22px
+		padding: 15px
+		color: #fff
+		background-color: lighten($accent, 20%)
+		flex-wrap: wrap
+	&__stats
+		margin-right: 40px
+	&__date
+		font-weight: 500
+
+.preloader
+	width: 100px
+	height: 100px
+	perspective: 780px
+	&__wrapper
+		background: $overlay
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		z-index: 100
+ 
+.load
+	position: absolute
+	width: 100%
+	height: 100%
+	border-radius: 50%
+	animation: 1.15s linear infinite
+	&-one
+		left: 0
+		top: 0
+		animation-name: rotate-one
+		border-bottom: 3px solid #5C5EDC
+	&-two
+		right: 0
+		top: 0
+		animation-name: rotate-two
+		border-right: 3px solid rgba(76, 70, 101, 0.99)
+	&-three
+		right: 0
+		bottom: 0
+		animation-name: rotate-three
+		border-top: 3px solid rgb(233, 144, 138)
+
+@keyframes rotate-one
+	from
+		transform: rotateX(35deg) rotateY(-45deg) rotateZ(0)
+	to
+		transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@keyframes rotate-two
+	from
+		transform: rotateX(50deg) rotateY(10deg) rotateZ(0)
+	to
+		transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@keyframes rotate-three
+	from
+		transform: rotateX(35deg) rotateY(55deg) rotateZ(0)
+	to
+		transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+@import "media"

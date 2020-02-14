@@ -1,0 +1,81 @@
+html
+	box-sizing: border-box
+	overflow-x: hidden
+
+*, *:before, *:after
+	box-sizing: inherit
+
+*
+	-webkit-tap-highlight-color: transparent
+	&:focus, &:active
+		outline: none
+
+body
+	font-family: $default-font
+	font-weight: 400
+	font-size: 16px
+	line-height: 24px
+	color: $text
+	min-width: 320px
+	overflow-x: hidden
+
+a
+	display: inline-block
+	text-decoration: none
+	color: inherit
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	padding: 0
+	font-size: 0
+
+img
+	max-width: 100%
+	height: auto
+	display: block
+
+ul, li
+	margin: 0
+	padding: 0
+	list-style: none
+
+.container
+	max-width: 1920px
+	margin: 0 auto
+
+.wrapper
+	max-width: 1290px
+	padding: 0 15px
+	margin: 0 auto
+
+.title
+	font-weight: 500
+	font-size: 35px
+	line-height: 42px
+	padding: 0 15px 0 0
+
+.btn
+	background-color: $accent
+	color: #fff
+	border: 0
+	padding: 15px 39px
+	font-weight: 700
+	font-size: 24px
+	line-height: 29px
+	transition: all .3s ease
+	cursor: pointer
+	border-radius: 5px
+	display: inline-block
+	user-select: none
+	&:hover, &:focus
+		background-color: lighten($accent, 10%)
+	&--md
+		padding: 11px
+		font-size: 20px
+		line-height: 25px
+		font-weight: 500
+	&--sm
+		padding: 12px 19px
+		font-size: 16px
+		line-height: 19px
+		font-weight: 400

@@ -1,6 +1,6 @@
 <?php $new = getNewByID($_GET['id']); ?>
 
-<main>
+<main class="main">
 	<div class="wrapper">
 
 		<section class="article">

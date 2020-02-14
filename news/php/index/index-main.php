@@ -2,7 +2,7 @@
 $news = getNews(6);
 ?>
 
-<main>
+<main class="main">
 	<div class="wrapper">
 
 		<section id="news" class="news">

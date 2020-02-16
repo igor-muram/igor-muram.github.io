@@ -1,6 +1,6 @@
 <div class="news-item">
 	<div class="news-item__img">
-		<img src=<?php echo $news[$i]["image"] ?>>
+		<img src=<?php echo $news[$i]["image"] ?> alt=<?php echo $news[$i]["category"] ?>>
 
 		<div class="news-item__info">
 			<div class="news-item__info-title">

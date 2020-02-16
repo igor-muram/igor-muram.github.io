@@ -9,7 +9,7 @@
 			</h1>
 
 			<div class="article__img">
-				<img src=<?php echo $new[0]["image"] ?>>
+				<img src=<?php echo $new[0]["image"] ?> alt=<?php echo $new[0]["category"] ?>>
 			</div>
 
 			<div class="article__text">

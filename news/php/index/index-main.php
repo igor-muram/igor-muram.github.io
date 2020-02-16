@@ -23,4 +23,8 @@ $news = getNews(6);
 		</section>
 
 	</div>
+
+	<?php
+	require("../blocks/top.php");
+	?>
 </main>

@@ -38,4 +38,8 @@
 		</section>
 
 	</div>
+
+	<?php
+	require("../blocks/top.php");
+	?>
 </main>

@@ -40,6 +40,6 @@
 	</div>
 
 	<?php
-	require("../blocks/top.php");
+	require("php/blocks/top.php");
 	?>
 </main>

@@ -9,7 +9,7 @@
 
 			<div class="news-item__info-stats">
 				<div class="likes">
-					<span class="likes__count">221</span>
+					<span class="likes__count" data-likes="<?php echo $news[$i]["likes"] ?>"><?php echo $news[$i]["likes"] ?></span>
 
 					<i class="fas fa-heart"></i>
 				</div>

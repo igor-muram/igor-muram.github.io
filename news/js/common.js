@@ -17,6 +17,13 @@ $(function() {
 	/* Likes */
 	$('.likes').click(function() {
 		$(this).toggleClass('active');
+
+		let likes = $(this).children(".likes__count").data('likes');
+
+		if ($(this).hasClass("active"))
+			likes++;
+
+		$(this).children(".likes__count").html(likes);
 	});
 
 });

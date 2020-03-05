@@ -1,6 +1,4 @@
-<?php 
-$news = getNews(6);
-?>
+<? $news = getNews(6); ?>
 
 <main class="main">
 	<div class="wrapper">
@@ -11,7 +9,7 @@ $news = getNews(6);
 			</h1>
 
 			<div class="news-items">
-				<?php
+				<?
 				for($i = 0; $i < count($news); $i++) 
 					require("news-item.php");
 				?>
@@ -24,7 +22,5 @@ $news = getNews(6);
 
 	</div>
 
-	<?php
-	require("php/blocks/top.php");
-	?>
+	<? require("php/blocks/top.php"); ?>
 </main>

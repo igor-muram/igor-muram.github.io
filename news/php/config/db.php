@@ -1,4 +1,4 @@
-<?php  
+<?
 require("connections.php");
 $mysqli = false;
 

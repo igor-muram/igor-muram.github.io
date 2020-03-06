@@ -13,6 +13,9 @@
 .portfolio__col {
 	flex-basis: 33.33333%;
 	padding: 15px;
+	transition: .3s ease;
+	opacity: 1;
+	min-height: 405px;
 
 	@media @tablet {
 		flex-basis: 50%;
@@ -22,4 +25,11 @@
 	@media @mobile {
 		flex-basis: 100%;
 	}
+}
+
+.hide {
+	opacity: 0;
+	flex-basis: 0;
+	width: 0;
+	padding: 0;
 }

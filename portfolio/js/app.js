@@ -31,9 +31,9 @@ $(function() {
 
 	$("nav, .about").on("click", "a", function (e) {
 		e.preventDefault();
-		var id  = $(this).attr('href'),
+		let id  = $(this).attr('href'),
 		top = $(id).offset().top;
-		top -= ($(window).width() > 576) ? 30 : 120;
+		top -= ($(window).width() > 1200) ? 30 : 130;
 		$('body,html').animate({scrollTop: top}, 800);
 	});
 

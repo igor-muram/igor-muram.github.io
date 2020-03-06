@@ -106,8 +106,7 @@ $(function() {
 		arrows: false,
 		dots: true,
 		autoplay: true,
-		autoplaySpeed: 2000,
-		swipe: false
+		autoplaySpeed: 2000
 	});
 
 	$(".slickPrev").on("click", function(e) {

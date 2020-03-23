@@ -3,10 +3,10 @@
 
 	<nav class="header-nav">
 		<ul class="header-nav__list">
-			<li><a href="#!">Главная</a></li>
-			<li><a href="#!">Новости</a></li>
-			<li><a href="#!">Контакты</a></li>
-			<li><a href="#!">О нас</a></li>
+			<li><a href="index.php">Новости</a></li>
+			<li><a href="#!" class="registration-link">Регистрация</a></li>
+			<li><a href="#!" class="authorization-link">Авторизация</a></li>
+			<li><a href="#!" class="contact-link">Написать</a></li>
 		</ul>
 
 		<div class="header-nav__close">

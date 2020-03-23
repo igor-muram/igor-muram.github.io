@@ -17,6 +17,8 @@ body
 	line-height: 24px
 	color: $text
 	height: 100%
+	&.no-scroll // новое
+		overflow-y: hidden
 
 a
 	display: inline-block
@@ -26,7 +28,6 @@ a
 h1, h2, h3, h4, h5, h6
 	margin: 0
 	padding: 0
-	font-size: 0
 
 img
 	max-width: 100%
@@ -38,12 +39,176 @@ ul, li
 	padding: 0
 	list-style: none
 
+/* новое старт */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+input[type=number]
+	-moz-appearance: textfield
+
+.main 
+	position: relative
+/* новое конец */
+
 .container
 	max-width: 1920px
 	margin: 0 auto
 	height: 100%
 	display: flex
 	flex-direction: column
+	transition: all .2s linear
+	position: relative
+	&.blur // новое
+		filter: blur(20px)
+		pointer-events: none
+		user-select: none
+
+/* новое */
+.popup
+	position: fixed
+	top: 40%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 500px
+	visibility: hidden
+	opacity: 0
+	transition: .5s
+	box-shadow: 0 5px 30px rgba(#000, .4)
+	&__content
+		padding: 50px 40px 35px
+		background-color: #fff
+		&.hide
+			opacity: 0
+			visibility: hidden
+			height: 0
+			padding: 0
+	&__title 
+		text-transform: uppercase
+		font-weight: 700
+		&.title
+			margin-bottom: 20px
+	&__subtitle 
+		text-transform: uppercase
+		font-size: 22px
+		font-weight: 500
+		margin-bottom: 20px
+	&-text
+		font-size: 34px
+		line-height: 43px
+		margin-bottom: 20px
+	&.active
+		visibility: visible
+		opacity: 1
+		top: 50%
+	&.none
+		display: none
+
+.popup-preloader
+	justify-content: center
+	align-items: center
+	background-color: #fff
+	height: 300px
+	display: none
+	&.active
+		display: flex
+
+.confirm-text
+	background-color: #fff
+	font-size: 34px
+	line-height: 43px
+	padding: 30px
+	text-align: center
+	display: none
+
+.popup-add-news, .popup-change
+	.form
+		&__group
+			margin-bottom: 20px
+		&__input
+			padding: 12px
+		&__textarea
+			height: 130px
+			padding: 12px
+
+.close
+	cursor: pointer
+	font-size: 28px
+	padding: 0
+	background: none
+	border: 0
+	position: absolute
+	top: 6px
+	right: 15px
+	transition: all .3s ease
+	&:hover 
+		transform: scale(1.15)
+
+.form
+	&__group
+		margin-bottom: 27px
+	&__label
+		display: inline-block
+		margin-bottom: 9px
+		font-size: 18px
+		font-weight: 500
+	&__input, &__textarea 
+		display: block
+		width: 100%
+		padding: 15px
+		border: 1px solid rgba(#707070, .3)
+		border-radius: 10px
+		line-height: 1.4
+		transition: all .2s ease
+		&:focus, &:active
+			border-color: $accent
+	&__textarea
+		height: 200px
+		resize: none
+	&__footer
+		display: flex
+		justify-content: space-between
+		align-items: center
+		a
+			position: relative
+			&:after
+				content: ''
+				width: 0
+				height: 2px
+				background-color: $text
+				position: absolute
+				bottom: -2px
+				left: 0
+				transition: all .4s ease
+			&:hover:after
+				width: 100%
+
+.tab-form
+	display: none
+	&.active
+		display: block
+
+.tabs
+	display: flex
+
+.tab
+	font-weight: 500
+	padding: 15px
+	display: inline-block
+	background-color: lighten($accent, 10%)
+	color: #fff
+	width: 50%
+	text-align: center
+	transition: all .2s ease
+	margin-top: -1px
+	&:not(.active):hover
+		box-shadow: 0 -4px rgba(#000, .4) inset
+		cursor: pointer
+	&.active
+		background-color: #fff
+		color: $text
+/* новое */
 
 .wrapper
 	max-width: 1290px
@@ -73,7 +238,7 @@ ul, li
 	&:hover, &:focus
 		background-color: lighten($accent, 10%)
 	&--md
-		padding: 11px
+		padding: 10px
 		font-size: 20px
 		line-height: 25px
 		font-weight: 500
@@ -82,3 +247,7 @@ ul, li
 		font-size: 16px
 		line-height: 19px
 		font-weight: 400
+	&--remove
+		min-width: 110px
+	& + .btn
+		margin-left: 15px

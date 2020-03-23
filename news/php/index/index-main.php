@@ -22,5 +22,7 @@
 
 	</div>
 
+	<div class="add-news-btn btn btn--md">Добавить новость</div>
+
 	<? require("php/blocks/top.php"); ?>
 </main>

@@ -44,7 +44,7 @@
 		width: 100%
 		height: 100%
 		background-color: $overlay
-		z-index: 10
+		z-index: 20
 		padding: 75px
 		transform: translateX(-100%)
 		transition: all .5s ease
@@ -131,12 +131,38 @@
 	.title
 		font-size: 30px
 
+	.reset
+		display: none
+
+	// новое
+	.popup
+		width: 400px
+		&__content
+			padding: 50px 30px 35px
+		&__subtitle
+			display: none
+
 @media (max-width: 450px)
 	.news-item
 		flex-basis: 100%
 
 	.header__logo
 		width: 80px
+
+	// новое
+	.popup
+		width: 350px
+		&__content
+			padding: 35px 20px
+
+	.form
+		&__label
+			font-size: 16px
+		&__input, &__textarea
+			padding: 15px 10px
+			font-size: 14px
+		&__textarea
+			height: 150px
 
 @media (max-width: 375px)
 	.news-item__info
@@ -160,3 +186,53 @@
 			width: 100%
 			text-align: center
 			margin-top: 20px
+
+	// новое
+	.popup
+		width: 300px
+
+	.contact__info
+		margin-bottom: 20px
+
+	.form
+		&__group
+			margin-bottom: 20px
+		&__input, &__textarea
+			padding: 10px
+
+	.tab
+		font-size: 15px
+		padding: 15px 10px
+
+// новое
+@media (max-height: 920px)
+	.popup-add-news, .popup-change
+		.form__group
+			margin-bottom: 14px
+
+@media (max-height: 890px)
+	.popup-add-news, .popup-change
+		.popup__content
+			padding-top: 50px
+		.form__group
+			margin-bottom: 20px
+		.form__label
+			display: none
+
+@media (max-height: 700px)
+	.popup-add-news, .popup-change
+		.popup__content
+			padding-bottom: 20px
+		.form__input, .form__textarea
+			padding: 9px
+
+@media (max-height: 650px)
+	.popup-add-news, .popup-change
+		.popup__content
+			padding: 50px 25px 15px
+		.form__group
+			margin-bottom: 15px
+		.form__input, .form__textarea
+			padding: 9px
+		.form__textarea
+			height: 90px

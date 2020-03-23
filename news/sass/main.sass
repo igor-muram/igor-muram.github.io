@@ -52,7 +52,7 @@
 	display: flex
 	flex-wrap: wrap
 	li + li
-		margin-left: 60px
+		margin-left: 25px
 	a
 		font-size: 18px
 		transition: all .4s ease
@@ -88,6 +88,7 @@
 	border-radius: 10px
 	overflow: hidden
 	margin-bottom: 50px
+	position: relative
 	&__text
 		margin-bottom: 25px
 		padding: 0 10px
@@ -96,11 +97,74 @@
 		display: flex
 		justify-content: space-between
 		align-items: center
+		flex-wrap: wrap
 	&__date
 		font-weight: 500
 		font-size: 17px
 	&:hover, &:focus
 		box-shadow: 0 0 20px rgba(#000, .25)
+		.news-item__dots
+			opacity: 1
+			visibility: visible
+
+/* новое начало */
+.news-item__dots
+	position: absolute
+	right: 7px
+	top: 7px
+	z-index: 5
+	font-size: 5px
+	background-color: rgba($overlay, .2)
+	color: #fff
+	width: 30px
+	height: 30px
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	transition: all .3s ease
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	i + i
+		margin-left: 3px
+	&:hover
+		background-color: rgba($overlay, .5)
+
+.news-item__options
+	position: absolute
+	top: 22px
+	right: 22px
+	z-index: 6
+	color: #fff
+	font-weight: 500
+	font-size: 18px
+	border-radius: 5px
+	transition: all .3s ease
+	opacity: 0
+	visibility: hidden
+	a
+		display: block
+		padding: 10px
+		width: 100%
+		text-align: center
+		transition: all .3s ease
+		background-color: rgba($overlay, .8)
+		& + a
+			border-top: 1px solid #fff
+		&:first-child
+			border-radius: 5px 5px 0 0
+		&:last-child
+			border-radius: 0 0 5px 5px
+		&:hover
+			background-color: $overlay
+	&.active
+		opacity: 1
+		visibility: visible
+/* новое конец */
 
 .news-item__img
 	position: relative
@@ -278,5 +342,25 @@
 	&.active
 		opacity: 1
 		z-index: 15
+
+.contact__info
+	margin-bottom: 30px
+	font-size: 16px
+	i
+		width: 16px
+		text-align: center
+		margin-right: 7px
+
+.contact__info-item 
+	display: flex
+	align-items: center
+
+.add-news-btn
+	position: absolute
+	left: 10px
+	bottom: 10px
+	position: sticky
+	float: left
+	z-index: 15
 
 @import "media"

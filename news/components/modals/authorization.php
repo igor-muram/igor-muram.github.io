@@ -6,7 +6,7 @@
 
 		<h3 class="title popup__title">Авторизация</h3>
 
-		<form class="form tab-form active">
+		<form class="form tab-form active" method="post" action="php/login.php">
 			<div class="form__group">
 				<label class="form__label" for="input-email">E-mail</label>
 				<input class="form__input" name="input-email" type="email" placeholder="Введите E-mail" required>
@@ -18,12 +18,12 @@
 			</div>
 
 			<div class="form__footer">
-				<button class="btn btn--sm" type="submit">Войти</button>
+				<button class="btn btn--sm" type="submit" name="login">Войти</button>
 				<a href="#!" class="forgot">Забыли пароль?</a>
-			</div> 
+			</div>
 		</form>
 
-		<form class="form tab-form">
+		<form class="form tab-form" method="post" action="php/login.php">
 			<div class="form__group">
 				<label class="form__label" for="input-phone">Телефон</label>
 				<input class="form__input" name="input-phone" type="tel" placeholder="Введите номер" required>
@@ -35,12 +35,12 @@
 			</div>
 
 			<div class="form__footer">
-				<button class="btn btn--sm" type="submit">Войти</button>
+				<button class="btn btn--sm" type="submit" name="login">Войти</button>
 				<a href="#!" class="forgot">Забыли пароль?</a>
-			</div> 
+			</div>
 		</form>
 	</div>
-	
+
 	<div class="tabs">
 		<label class="tab active">Вход по E-mail</label>
 		<label class="tab">Вход по номеру</label>

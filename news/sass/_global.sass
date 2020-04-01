@@ -1,6 +1,7 @@
 html
 	box-sizing: border-box
 	height: 100%
+	width: 100%
 
 *, *:before, *:after
 	box-sizing: inherit
@@ -38,6 +39,9 @@ ul, li
 	margin: 0
 	padding: 0
 	list-style: none
+
+form
+	display: inline
 
 /* новое старт */
 input::-webkit-outer-spin-button,
@@ -219,7 +223,7 @@ input[type=number]
 	font-weight: 500
 	font-size: 35px
 	line-height: 42px
-	padding: 0 15px 0 0
+	padding-right: 15px
 	margin-bottom: 40px
 
 .btn
@@ -248,6 +252,18 @@ input[type=number]
 		line-height: 19px
 		font-weight: 400
 	&--remove
-		min-width: 110px
-	& + .btn
-		margin-left: 15px
+		min-width: 85px
+	&--no, & + .btn
+		margin-left: 10px
+
+// новое
+.error
+	border: 2px solid #ffc341
+	background-color: #ffda8a
+	padding: 10px
+	border-radius: 5px
+	display: inline-block
+	position: fixed
+	top: 10px
+	left: 10px
+	z-index: 30

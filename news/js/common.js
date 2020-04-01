@@ -122,7 +122,7 @@ $(function() {
 	});
 
 
-	/* Disappearance of news change options when clicking in any area */
+	/* Disappearance of news options when clicking in any area */
 	$(document).click(function(e) {
 		let options = $('.news-item__options'),
 				dots    = $('.news-item__dots');

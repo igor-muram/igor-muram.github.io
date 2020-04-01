@@ -73,16 +73,17 @@
 .news
 	padding: 40px 0 20px
 	&-items
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-	&__more
+		display: grid
+		justify-items: center
+		grid-template-columns: repeat(6, 1fr)
+		column-gap: 40px
+	&__more, &__title
 		text-align: center
 
 .news-item
 	display: flex
 	flex-direction: column
-	flex-basis: 30%
+	grid-column: span 2
 	box-shadow: 0 0 4px rgba(#000, .25)
 	transition: all .25s ease
 	border-radius: 10px
@@ -240,8 +241,15 @@
 .article
 	padding: 40px 0 30px
 	&__img
+		margin: 0 auto
+		padding: 6px
+		border: 1px solid #999
+		border-radius: 4px
 		img
+			height: 700px
 			width: 100%
+			object-fit: cover
+			border-radius: 4px
 	&__text
 		text-align: justify
 	&__info, &__stats
@@ -259,6 +267,8 @@
 		margin-right: 40px
 	&__date
 		font-weight: 500
+	&__title
+		text-align: center
 
 .preloader
 	width: 100px

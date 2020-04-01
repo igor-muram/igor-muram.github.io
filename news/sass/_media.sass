@@ -13,27 +13,28 @@
 @media (max-width: 1150px)
 	.news
 		&__title
-			text-align: center
 			padding-right: 0
 		&-items
-			justify-content: space-around
+			max-width: 900px
+			margin: 0 auto
 		&-item
-			flex-basis: 40%
+			grid-column: span 3
 
 	.article, .news
 		padding-top: 30px
+	
+	.article__img
+		img
+			height: 600px
 
 	.title
 		margin-bottom: 30px
 
 @media (max-width: 1000px)
-	.news-item
-		flex-basis: 45%
+	.article__img
+		width: 100%
 
 @media (max-width: 800px)
-	.news-item
-		flex-basis: 55%
-
 	.header__burger
 		display: flex
 
@@ -78,12 +79,19 @@
 			font-size: 32px
 			line-height: 35px
 
+	.news
+		&-items
+			max-width: 400px
+		&-item
+			grid-column: span 6
+
 	.footer__logo
 		width: 80px
 
 @media (max-width: 680px)
-	.news-item
-		flex-basis: 65%
+	.article__img
+		img
+			height: 500px
 
 	.footer__logo
 		display: none
@@ -98,8 +106,9 @@
 		margin-bottom: 30px
 
 @media (max-width: 575px)
-	.news-item
-		flex-basis: 80%
+	.article__img
+		img
+			height: 300px
 
 	.header-nav
 		padding: 75px 40px 40px
@@ -143,9 +152,6 @@
 			display: none
 
 @media (max-width: 450px)
-	.news-item
-		flex-basis: 100%
-
 	.header__logo
 		width: 80px
 

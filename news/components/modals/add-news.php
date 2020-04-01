@@ -1,10 +1,10 @@
-<div class="popup popup-change">
+<div class="popup popup-add-news">
 	<div class="popup__content">
 		<button class="close">
 			<i class="fas fa-times"></i>
 		</button>
 
-		<form class="form">
+		<form class="form" method="post" action="php/add-article.php">
 			<div class="form__group">
 				<label class="form__label" for="input-category">Категория</label>
 				<input class="form__input" name="input-category" type="text" placeholder="Введите категорию" required>
@@ -40,7 +40,7 @@
 				<textarea class="form__textarea" name="input-full" placeholder="Введите текст новости" required></textarea>
 			</div>
 
-			<button class="btn btn--sm" type="submit">Изменить</button>
+			<button class="btn btn--sm" type="submit" name="add">Добавить</button>
 			<input class="btn btn--sm reset" type="reset" placeholder="Сбросить">
 		</form>
 	</div>

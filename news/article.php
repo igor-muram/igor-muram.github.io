@@ -2,30 +2,30 @@
 <html lang="ru">
 
 <?
-$title = "Статья";
-require("php/blocks/head.php");
+require_once("php/news.php");
+$article = getArticleByID($_GET['id']);
+$title = $article[0]['title'];
+require_once("components/blocks/head.php");
 ?>
 
 <body>
-	<? require("php/blocks/preloader.php"); ?>
+	<? require_once("components/blocks/preloader.php"); ?>
 
 	<div class="container">
 		<?
-		require("php/blocks/header.php");
-		require("php/article/article-main.php");
-		require("php/blocks/footer.php");
+		require_once("components/blocks/header.php");
+		require_once("templates/article-template.php");
+		require_once("components/blocks/footer.php");
 		?>
 	</div>
 
 	<?
-	require("php/modals/registration.php");
-	require("php/modals/authorization.php");
-	require("php/modals/contact.php");
-	require("php/modals/remove.php");
-	require("php/modals/change.php");
-	require("php/modals/add-news.php");
+	require_once("components/modals/registration.php");
+	require_once("components/modals/authorization.php");
+	require_once("components/modals/contact.php");
+	require_once("components/modals/change.php");
+	require_once("components/modals/remove.php");
 	?>
-	
 
 	<script src="js/scripts.min.js"></script>
 </body>

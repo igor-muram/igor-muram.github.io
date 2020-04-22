@@ -2,6 +2,14 @@
 @import "fonts"
 @import "libs"
 
+html
+	overflow-x: hidden
+
+*
+	-webkit-tap-highlight-color: transparent
+	&:focus
+		outline: none
+
 ::placeholder
 	color: #666
 
@@ -67,11 +75,15 @@ table
 	border: 2px solid #333333
 
 td 
-  text-align: center
-  padding: 0 10px 0 10px
-  height: 5.2vh
-  .mjx-math, .mjx-char, .mjx-box
-  	color: #333 !important
+	text-align: center
+	padding: 0 10px 0 10px
+	height: 5.2vh
+	.mjx-math, .mjx-char, .mjx-box
+		color: #333 !important
+
+.row
+	margin-left: 0
+	margin-right: 0
 
 .math
 	font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw
@@ -332,13 +344,13 @@ span.mjx-mfrac
 	transform: translate(-60%, 75%)
 
 .slider 
-  appearance: none
-  width: 100% 
-  height: 4px 
-  outline: none
-  background: #5353d1
-  opacity: 0.7
-  transition: opacity .2s
+	appearance: none
+	width: 100% 
+	height: 4px 
+	outline: none
+	background: #5353d1
+	opacity: 0.7
+	transition: opacity .2s
 	
 .slider:hover 
 	opacity: 1
@@ -347,14 +359,14 @@ span.mjx-mfrac
 	opacity: 1
 
 .slider::-webkit-slider-thumb
-  appearance: none
-  width: 15px
-  height: 15px
-  cursor: pointer
-  border: 1px solid #777
-  border-radius: 100%
-  background: #e0e0e0
-  z-index: 4
+	appearance: none
+	width: 15px
+	height: 15px
+	cursor: pointer
+	border: 1px solid #777
+	border-radius: 100%
+	background: #e0e0e0
+	z-index: 4
 
 .poster
 	position: relative
@@ -396,19 +408,19 @@ span.mjx-mfrac
 	z-index: 1
 
 .logo
-  background: linear-gradient(grey, white)
-  justify-content: center
-  align-items: center
-  border-radius: 100%
-  text-align: center
-  font-size: 105px
-  font-family: $calligraph-font, sans-serif
-  display: flex
-  height: 330px
-  width: 330px
-  color: #000
-  border: 1px solid $accent
-  z-index: 2
+	background: linear-gradient(grey, white)
+	justify-content: center
+	align-items: center
+	border-radius: 100%
+	text-align: center
+	font-size: 105px
+	font-family: $calligraph-font, sans-serif
+	display: flex
+	height: 330px
+	width: 330px
+	color: #000
+	border: 1px solid $accent
+	z-index: 2
 
 .developers-container
 	top: 30%
@@ -733,7 +745,7 @@ span.mjx-mfrac
 	margin-bottom: 15px
 
 #parametric-example-table 
-  font-size: 20px
+	font-size: 20px
 
 .parametric-scheme-table
 	font-size: 23px
@@ -886,7 +898,7 @@ span.mjx-mfrac
 		color: #007800
 
 .power-h1
-	line-height: 1.1
+	line-height: 1.3
 
 .power-column-prop
 	padding-top: 0px
@@ -935,11 +947,7 @@ span.mjx-mfrac
 	padding-right: 150px
 
 .other-column
-	padding: 
-		left: 19px
-		right: 19px
-		top: 11px
-		bottom: 5px
+	padding: 11px 19px 5px 19px
 
 #otherPlot1Desc
 	#MJXc-Node-107, #MJXc-Node-117, #MJXc-Node-118

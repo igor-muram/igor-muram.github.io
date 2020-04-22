@@ -55,15 +55,14 @@ $(function() {
 	});
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 50) {
-			$('.top').addClass('active');
-		} else {
-			$('.top').removeClass('active');
-		}
+		if ($(this).scrollTop() > 50)
+			$('.top').addClass("active");
+		else
+			$('.top').removeClass("active");
 	});
 
 	$('.top').click(function() {
-		$('html,body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+		$('html,body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
 	});
 
 	function panelCollapseCheck()
@@ -512,6 +511,8 @@ else if (document.title == "Показательная и логарифмиче
 	var label1 = exponentialPlot1Board.create('text', [2.1, 3.7, '$$a>1$$'], { fontSize: 20, color: '#1e28ff' });
 	var label2 = exponentialPlot1Board.create('text', [2.1, 0.7, '$$a<1$$'], { fontSize: 20, color: '#ff0000' });
 	var label3 = exponentialPlot1Board.create('text', [0.05, 1.4, '$$1$$'], { fontSize: 20, color: '#000' });
+	var label4 = exponentialPlot1Board.create('text', [2.8, -0.25, '$$x$$'], { fontSize: 21, color: '#000' });
+	var label5 = exponentialPlot1Board.create('text', [-0.25, 5.83, '$$y$$'], { fontSize: 21, color: '#000' });
 
 	var exponentialPlot2Board  = JXG.JSXGraph.initBoard('exponentialPlot2', {		
 		defaultAxes: { y: { ticks: { visible: false } }, x: { ticks: { visible: false } } },
@@ -519,9 +520,11 @@ else if (document.title == "Показательная и логарифмиче
 	var exponentialPlot3 = exponentialPlot2Board.create('functiongraph', [function(x) { if (x > 0.1) return Math.log2(x); }], { strokeWidth: 3, strokeColor: '#1e28ff' });
 	var exponentialPlot4 = exponentialPlot2Board.create('functiongraph', [function(x) { if (x > 0.1) return -Math.log2(x); }], { strokeWidth: 3, strokeColor: '#ff0000' });
 	var point2 = exponentialPlot2Board.create('point', [1, 0], { name: '', size: 3, color: '#000' });
-	var label4 = exponentialPlot2Board.create('text', [0.92, -0.4, '$$1$$'], { fontSize: 20, color: '#000' });
-	var label5 = exponentialPlot2Board.create('text', [0.35, -2.5, '$$a>1$$'], { fontSize: 20, color: '#1e28ff' });
-	var label6 = exponentialPlot2Board.create('text', [0.35, 2.5, '$$0<$$ $$a<1$$'], { fontSize: 20, color: '#ff0000' });
+	var label6 = exponentialPlot2Board.create('text', [0.92, -0.4, '$$1$$'], { fontSize: 20, color: '#000' });
+	var label7 = exponentialPlot2Board.create('text', [0.35, -2.5, '$$a>1$$'], { fontSize: 20, color: '#1e28ff' });
+	var label8 = exponentialPlot2Board.create('text', [0.35, 2.5, '$$0<$$ $$a<1$$'], { fontSize: 20, color: '#ff0000' });
+	var label9 = exponentialPlot2Board.create('text', [4.8, -0.25, '$$x$$'], { fontSize: 21, color: '#000' });
+	var label10 = exponentialPlot2Board.create('text', [-0.25, 2.83, '$$y$$'], { fontSize: 21, color: '#000' });
 
 	var exponentialPlot3Board  = JXG.JSXGraph.initBoard('exponentialPlot3', {		
 		defaultAxes: { y: { ticks: { visible: false } }, x: { ticks: { visible: false } } },
@@ -531,11 +534,13 @@ else if (document.title == "Показательная и логарифмиче
 	var line1 = exponentialPlot3Board.create('functiongraph', [function(x) { return x; }], { strokeWidth: 2, strokeColor: '#000', dash: 3 });
 	var point3 = exponentialPlot3Board.create('point', [0, 1], { name: '', size: 3, color: '#000' });
 	var point4 = exponentialPlot3Board.create('point', [1, 0], { name: '', size: 3, color: '#000' });
-	var label7 = exponentialPlot3Board.create('text', [0.4, 3.6, '$$y=a$$^{$$x$$}'], { fontSize: 20, color: '#1e28ff' });
-	var label8 = exponentialPlot3Board.create('text', [2.2, 0.7, '$$y=log$$_{$$a$$}$$x$$'], { fontSize: 20, color: '#ff0000' });
-	var label9 = exponentialPlot3Board.create('text', [3.2, 2.8, '$$y=x$$'], { fontSize: 20, color: '#000' });
-	var label10 = exponentialPlot3Board.create('text', [0.9, -0.5, '$$1$$'], { fontSize: 20, color: '#000' });
-	var label11 = exponentialPlot3Board.create('text', [-0.3, 1.4, '$$1$$'], { fontSize: 20, color: '#000' });
+	var label11 = exponentialPlot3Board.create('text', [0.4, 3.6, '$$y=a$$^{$$x$$}'], { fontSize: 20, color: '#1e28ff' });
+	var label12 = exponentialPlot3Board.create('text', [2.2, 0.7, '$$y=log$$_{$$a$$}$$x$$'], { fontSize: 20, color: '#ff0000' });
+	var label13 = exponentialPlot3Board.create('text', [3.2, 2.8, '$$y=x$$'], { fontSize: 20, color: '#000' });
+	var label14 = exponentialPlot3Board.create('text', [0.9, -0.5, '$$1$$'], { fontSize: 20, color: '#000' });
+	var label15 = exponentialPlot3Board.create('text', [-0.3, 1.4, '$$1$$'], { fontSize: 20, color: '#000' });
+	var label16 = exponentialPlot3Board.create('text', [4.02, -0.3, '$$x$$'], { fontSize: 21, color: '#000' });
+	var label17 = exponentialPlot3Board.create('text', [-0.34, 4.1, '$$y$$'], { fontSize: 21, color: '#000' });
 
 	$(window).resize(function() { 
 		exponentialPlot1Board.resizeContainer($('#exponentialPlot1').width(), $('#exponentialPlot1').height(), true, true);

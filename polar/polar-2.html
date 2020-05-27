@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <!-- <base href="/"> -->
+
+  <title>Связь полярных и декартовых координат r=1+sin(φ)</title>
+  <meta name="description" content="" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#003949" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+
+  <meta name="msapplication-TileColor" content="#ffc40d" />
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml"/>
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Custom Browsers Color Start -->
+  <meta name="theme-color" content="#000" />
+  <!-- Custom Browsers Color End -->
+
+  <link rel="stylesheet" href="css/main.min.css"/>
+</head>
+
+<body>
+  <div class="preloader__wrapper">
+    <div class="preloader">
+      <div class="load load-one"></div>
+      <div class="load load-two"></div>
+      <div class="load load-three"></div>
+    </div>
+  </div>
+
+  <div id="my-page">
+    <div id="my-header">
+      <header class="site-header">
+        <div class="top-line">
+          <a href="#my-menu" class="hamburger hamburger--collapse-r">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </a>
+
+          <nav id="my-menu">
+            <ul>
+              <li><span>Связь полярных и декартовых координат</span>
+                <ul>
+                  <li><a href="index.html">$$r=1+cos(\varphi)$$</a></li>
+                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="connection-container">
+          <div class="control">
+            <button class="button start" onclick="start()">Запустить</button>
+            <button class="button stop disabled" onclick="stop()">Остановить</button>
+
+            <div class="parameter">
+              <p>Скорость движения точки</p>
+              <input type="range" id="PointVelocity2" class="slider" min="0.1" max="0.6" step="0.1" value="0.4"/>
+            </div>
+
+            <div class="parameter">
+              <p>Размер точки</p>
+              <input type="range" id="PointSize2" class="slider" min="5" max="9" step="1" value="5"/>
+            </div>
+
+            <div class="function">$$r=1+sin(\varphi)$$</div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-sm-10 col-md-9 col-lg-5">
+              <div class="connection-column">
+                <div class="row justify-content-center">
+                  <div>
+                    <span id="XYGraph2TextX" class="graphText">$$x=\;$$<span id="XYGraph2Text1">0</span>$$,\quad$$</span>
+                    <span id="XYGraph2TextY" class="graphText">$$y=\;$$<span id="XYGraph2Text2">0</span></span>
+                  </div>
+                </div>
+
+                <div id="XYGraph2Plot" class="jxgbox plot"></div>
+              </div>
+            </div>
+
+            <div class="col-sm-10 col-md-9 col-lg-5">
+              <div class="connection-column">
+                <div class="row justify-content-center">
+                  <div>
+                    <span id="RFGraph2TextF" class="graphText">$$\varphi=\;$$<span id="RFGraph2Text1">0</span>$$,\quad$$</span>
+                    <span id="RFGraph2TextR" class="graphText">$$r=\;$$<span id="RFGraph2Text2">0</span></span>
+                  </div>
+                </div>
+
+                <div id="RFGraph2Plot" class="jxgbox plot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <script src="js/scripts.min.js"></script>
+</body>
+</html>

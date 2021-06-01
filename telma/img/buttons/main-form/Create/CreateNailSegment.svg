@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="600"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="AddNail.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="D:\Documents and Settings\Маша\Рабочий стол\TELMA.V20\Projects\Interfaces\Telbase\TelBasePanel\images\AddNail.png"
+   inkscape:export-xdpi="4.8006859"
+   inkscape:export-ydpi="4.8006859">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3364">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3366" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3368" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3346">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3348" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3350" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3334">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0"
+         id="stop3336" />
+      <stop
+         style="stop-color:#0000ff;stop-opacity:0;"
+         offset="1"
+         id="stop3338" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3253">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0"
+         id="stop3255" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop3257" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5422">
+      <stop
+         style="stop-color:#00bc00;stop-opacity:0.33201581;"
+         offset="0"
+         id="stop5424" />
+      <stop
+         style="stop-color:#00d63b;stop-opacity:0;"
+         offset="1"
+         id="stop5426" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="6.1230318e-14 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3334"
+       id="linearGradient3340"
+       x1="448.03284"
+       y1="312.25574"
+       x2="199.54579"
+       y2="38.61208"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3346"
+       id="linearGradient3352"
+       x1="254.1362"
+       y1="416.28964"
+       x2="232.66454"
+       y2="403.55634"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3364"
+       id="linearGradient3370"
+       x1="214.27036"
+       y1="484.63492"
+       x2="193.7796"
+       y2="473.71671"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2368434"
+     inkscape:cx="10.686077"
+     inkscape:cy="300.01531"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1029"
+     inkscape:window-height="676"
+     inkscape:window-x="54"
+     inkscape:window-y="70"
+     showborder="true">
+    <inkscape:grid
+       type="xygrid"
+       visible="true"
+       enabled="true"
+       id="grid2393" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       ry="90"
+       rx="90"
+       y="10.602222"
+       x="11.58176"
+       height="576.74463"
+       width="577.10175"
+       id="rect2390"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="P:\TELMA.V20\telma.v20_10_11\Projects\Interfaces\BaseInterface\Telbase\TelBasePanel\images\AddNail.png"
+       inkscape:export-xdpi="4.9935446"
+       inkscape:export-ydpi="4.9935446" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0;stroke:none;stroke-width:23.16965866000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5264"
+       width="577.10175"
+       height="576.74463"
+       x="11.581718"
+       y="11.612374"
+       rx="90"
+       ry="90"
+       inkscape:export-filename="D:\Documents and Settings\Маша\Рабочий стол\TELMA.V20\Projects\Interfaces\Telbase\TelBasePanel\images\AddNail.png"
+       inkscape:export-xdpi="409.61472"
+       inkscape:export-ydpi="409.61472" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Krivaja"
+     style="opacity:1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Linija"
+     style="opacity:1;display:inline">
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient3352);stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 279.6897,350.36977 L 211.63311,473.07613"
+       id="path3344"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:url(#linearGradient3370);fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 203.04066,468.30136 L 201.02035,491.91368 L 220.35037,477.82384"
+       id="path3354"
+       sodipodi:nodetypes="ccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Гвоздь">
+    <path
+       style="fill:url(#linearGradient3340);fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 309.10668,196.94913 L 273.75134,236.85016 C 273.75134,236.85016 271.22596,241.39585 265.16504,242.406 C 259.10413,243.41615 260.11428,243.92123 253.54829,243.92123 C 246.9823,243.92123 247.48737,243.41615 242.43661,242.91108 C 237.38585,242.406 222.23356,239.88062 219.70818,239.37554 C 217.1828,238.87047 210.11173,239.37554 206.5762,239.37554 C 203.04066,239.37554 195.96959,240.89077 193.44421,242.406 C 190.91883,243.92123 189.4036,245.94153 187.3833,248.97199 C 185.36299,252.00245 183.84776,254.02275 184.85792,259.57859 C 185.86807,265.13443 189.4036,272.71058 191.42391,277.76134 C 193.44421,282.8121 197.9899,284.83241 202.53559,290.89332 C 207.08127,296.95424 216.17264,306.04561 227.7894,315.13698 C 239.40615,324.22836 247.99245,331.29942 257.08382,337.36034 C 266.1752,343.42125 283.34779,354.53293 295.9747,360.08877 C 308.6016,365.64461 328.29958,373.72583 335.87572,376.25121 C 343.45187,378.77659 351.02801,380.7969 357.08892,382.31213 C 363.14984,383.82736 376.7869,385.84766 378.8072,385.84766 C 380.82751,385.84766 383.85797,385.84766 387.89858,385.84766 C 391.93919,385.84766 395.9798,385.34258 399.51533,383.82736 C 403.05087,382.31213 405.57625,382.8172 408.6067,379.78675 C 411.63716,376.75629 411.63716,376.25121 412.64731,372.2106 C 413.65747,368.16999 414.66762,369.18014 413.15239,364.12938 C 411.63716,359.07862 411.13209,357.56339 408.10163,351.50247 C 405.07117,345.44156 406.08132,344.93648 400.52548,338.87557 C 394.96965,332.81465 389.91888,327.25881 389.91888,325.23851 C 389.91888,323.2182 387.3935,319.68267 385.3732,314.63191 C 383.35289,309.58114 382.34274,308.57099 381.83766,304.53038 C 381.33259,300.48977 382.34274,296.95424 382.84781,293.4187 C 383.35289,289.88317 412.14224,215.63696 412.14224,215.63696 L 416.18285,200.98974 L 429.31483,204.52528 C 429.31483,204.52528 440.93159,206.04051 443.45697,206.04051 C 445.98235,206.04051 454.56865,205.03035 457.09403,204.52528 C 459.61941,204.0202 461.63971,202.50497 465.17525,199.97959 C 468.71078,197.45421 469.72093,198.46436 471.74124,191.89837 C 473.76154,185.33238 473.25647,183.31208 471.23616,178.76639 C 469.21586,174.2207 462.14479,160.58364 459.11433,158.05826 C 456.08387,155.53288 440.93159,140.38059 437.39605,137.35013 C 433.86052,134.31968 410.62701,122.70292 406.08132,119.67246 C 401.53564,116.64201 383.85797,109.06586 377.79705,107.55063 C 371.73614,106.03541 360.11938,104.0151 355.5737,103.51002 C 351.02801,103.00495 342.94679,102.49987 338.4011,103.00495 C 333.85542,103.51002 331.33003,106.03541 327.28942,107.55063 C 323.24881,109.06586 321.22851,111.59124 319.71328,115.63185 C 318.19805,119.67246 318.70313,121.18769 319.71328,127.24861 C 320.72343,133.30952 322.74374,135.83491 322.74374,135.83491 C 322.74374,135.83491 324.25897,140.38059 327.7945,144.92628 C 331.33003,149.47196 334.86557,153.0075 337.39095,155.0278 C 339.91633,157.04811 341.43156,160.07857 341.43156,160.07857 L 309.10668,196.94913 z"
+       id="path3332" />
+  </g>
+</svg>

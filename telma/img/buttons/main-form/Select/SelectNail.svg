@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="600"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="SelectNail.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="D:\Documents and Settings\Маша\Рабочий стол\TELMA.V20\Projects\Interfaces\Telbase\TelBasePanel\images\SelectNail.png"
+   inkscape:export-xdpi="4.7978296"
+   inkscape:export-ydpi="4.7978296">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3346">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3348" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3350" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3346"
+       id="linearGradient3352"
+       x1="254.1362"
+       y1="416.28964"
+       x2="232.66454"
+       y2="403.55634"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-8.7818766,-5.6761362)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3364">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3366" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3368" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3364"
+       id="linearGradient3370"
+       x1="214.27036"
+       y1="484.63492"
+       x2="193.7796"
+       y2="473.71671"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-8.7818766,-5.6761362)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3334">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0"
+         id="stop3336" />
+      <stop
+         style="stop-color:#0000ff;stop-opacity:0;"
+         offset="1"
+         id="stop3338" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3334"
+       id="linearGradient3340"
+       x1="462.31854"
+       y1="327.97003"
+       x2="248.11722"
+       y2="118.61208"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-8.7818766,-5.6761362)" />
+    <linearGradient
+       id="linearGradient3179">
+      <stop
+         style="stop-color:#f8b611;stop-opacity:0.67588931;"
+         offset="0"
+         id="stop3181" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop3183" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5422">
+      <stop
+         style="stop-color:#f5f000;stop-opacity:0.32941177;"
+         offset="0"
+         id="stop5424" />
+      <stop
+         style="stop-color:#1598b5;stop-opacity:0;"
+         offset="1"
+         id="stop5426" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="6.1230318e-14 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="448.37251"
+     inkscape:cy="245.90141"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1029"
+     inkscape:window-height="676"
+     inkscape:window-x="108"
+     inkscape:window-y="140"
+     showborder="true">
+    <inkscape:grid
+       type="xygrid"
+       visible="true"
+       enabled="true"
+       id="grid2393" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       ry="90"
+       rx="90"
+       y="10.602222"
+       x="11.58176"
+       height="576.74463"
+       width="577.10175"
+       id="rect2390"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="P:\TELMA.V20\telma.v20_10_11\Projects\Interfaces\BaseInterface\Telbase\TelBasePanel\images\SelectNail.png"
+       inkscape:export-xdpi="4.9935446"
+       inkscape:export-ydpi="4.9935446" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:23.16965866000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5264"
+       width="577.10175"
+       height="576.74463"
+       x="11.581718"
+       y="11.612374"
+       rx="90"
+       ry="90"
+       inkscape:export-filename="D:\Documents and Settings\Маша\Рабочий стол\TELMA.V20\Projects\Interfaces\Telbase\TelBasePanel\images\SelectNail.png"
+       inkscape:export-xdpi="4.7978296"
+       inkscape:export-ydpi="4.7978296" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Линия">
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient3352);stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+       d="M 270.90782,344.69363 L 202.85123,467.39999"
+       id="path3344"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:1;fill:url(#linearGradient3370);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+       d="M 194.25878,462.62522 L 192.23847,486.23754 L 211.56849,472.1477"
+       id="path3354"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:url(#linearGradient3340);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 300.3248,191.27299 L 264.96946,231.17402 C 264.96946,231.17402 262.44408,235.71971 256.38316,236.72986 C 250.32225,237.74001 251.3324,238.24509 244.76641,238.24509 C 238.20042,238.24509 238.70549,237.74001 233.65473,237.23494 C 228.60397,236.72986 213.45168,234.20448 210.9263,233.6994 C 208.40092,233.19433 201.32985,233.6994 197.79432,233.6994 C 194.25878,233.6994 187.18771,235.21463 184.66233,236.72986 C 182.13695,238.24509 180.62172,240.26539 178.60142,243.29585 C 176.58111,246.32631 175.06588,248.34661 176.07604,253.90245 C 177.08619,259.45829 180.62172,267.03444 182.64203,272.0852 C 184.66233,277.13596 189.20802,279.15627 193.75371,285.21718 C 198.29939,291.2781 207.39076,300.36947 219.00752,309.46084 C 230.62427,318.55222 239.21057,325.62328 248.30194,331.6842 C 257.39332,337.74511 274.56591,348.85679 287.19282,354.41263 C 299.81972,359.96847 319.5177,368.04969 327.09384,370.57507 C 334.66999,373.10045 342.24613,375.12076 348.30704,376.63599 C 354.36796,378.15122 368.00502,380.17152 370.02532,380.17152 C 372.04563,380.17152 375.07609,380.17152 379.1167,380.17152 C 383.15731,380.17152 387.19792,379.66644 390.73345,378.15122 C 394.26899,376.63599 396.79437,377.14106 399.82482,374.11061 C 402.85528,371.08015 402.85528,370.57507 403.86543,366.53446 C 404.87559,362.49385 405.88574,363.504 404.37051,358.45324 C 402.85528,353.40248 402.35021,351.88725 399.31975,345.82633 C 396.28929,339.76542 397.29944,339.26034 391.7436,333.19943 C 386.18777,327.13851 381.137,321.58267 381.137,319.56237 C 381.137,317.54206 378.61162,314.00653 376.59132,308.95577 C 374.57101,303.905 373.56086,302.89485 373.05578,298.85424 C 372.55071,294.81363 373.56086,291.2781 374.06593,287.74256 C 374.57101,284.20703 403.36036,209.96082 403.36036,209.96082 L 407.40097,195.3136 L 420.53295,198.84914 C 420.53295,198.84914 432.14971,200.36437 434.67509,200.36437 C 437.20047,200.36437 445.78677,199.35421 448.31215,198.84914 C 450.83753,198.34406 452.85783,196.82883 456.39337,194.30345 C 459.9289,191.77807 460.93905,192.78822 462.95936,186.22223 C 464.97966,179.65624 464.47459,177.63594 462.45428,173.09025 C 460.43398,168.54456 453.36291,154.9075 450.33245,152.38212 C 447.30199,149.85674 432.14971,134.70445 428.61417,131.67399 C 425.07864,128.64354 401.84513,117.02678 397.29944,113.99632 C 392.75376,110.96587 375.07609,103.38972 369.01517,101.87449 C 362.95426,100.35927 351.3375,98.338962 346.79182,97.833882 C 342.24613,97.328812 334.16491,96.823732 329.61922,97.328812 C 325.07354,97.833882 322.54815,100.35927 318.50754,101.87449 C 314.46693,103.38972 312.44663,105.9151 310.9314,109.95571 C 309.41617,113.99632 309.92125,115.51155 310.9314,121.57247 C 311.94155,127.63338 313.96186,130.15877 313.96186,130.15877 C 313.96186,130.15877 315.47709,134.70445 319.01262,139.25014 C 322.54815,143.79582 326.08369,147.33136 328.60907,149.35166 C 331.13445,151.37197 332.64968,154.40243 332.64968,154.40243 L 300.3248,191.27299 z"
+       id="path3332" />
+  </g>
+</svg>

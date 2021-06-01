@@ -1,0 +1,385 @@
+/* Remove background and outline on click */
+*
+	-webkit-tap-highlight-color: transparent
+	&:focus
+		outline: none
+
+/* Button */
+.ripple
+	background-color: #fff
+	opacity: .6
+	border-radius: 50%
+	animation: ripple .7s ease-in-out
+	transform: scale(0)
+	position: absolute
+@keyframes ripple
+	to
+		transform: scale(2)
+		opacity: 0
+
+.button
+	user-select: none
+	display: flex
+	align-items: center
+	border: none
+	text-decoration: none
+	font-size: 1.125rem
+	font-weight: 600
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	margin-bottom: 15px
+	overflow: hidden
+	background-color: #fff
+	color: $accent
+	padding: 15px 25px
+	border: 2px solid $accent
+	transition: all .4s ease
+	z-index: 2
+	i
+		margin-right: 0
+		&.fas, &.fa, &.fab
+			& + span
+				margin-left: 10px
+	span
+		line-height: 24px
+	&:hover
+		background-color: $accent
+		color: #fff
+	&:focus, &:hover
+		text-decoration: none
+		outline: none !important
+	&::-moz-focus-inner
+		border: 0
+
+.button-icon
+	padding: 0
+	i
+		padding: 15px
+		font-size: 1.4375rem
+
+.toggle
+	transition: all .2s ease
+	background-color: lighten($accent, 5%)
+	color: #fff
+	border: none
+	&::after
+		transition: all .2s ease
+		position: absolute
+		content: ''
+		height: 5px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 60%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:hover
+		background-color: lighten($accent, 8%)
+		&::after
+			opacity: .22
+	&.active
+		background-color: darken($accent, 17%)
+		&::after
+			height: 0
+	.ripple
+		display: none
+
+button:disabled, .button.disabled, .toggle-button.disabled
+	background-color: #ededed
+	color: #b0b0b0
+	border: none
+	box-shadow: none
+	cursor: default
+	&:hover
+		background-color: #ededed
+		color: #b0b0b0
+		border: none
+
+/* Slider */
+.slider
+	appearance: none
+	outline: none
+	background: $accent
+	transition: opacity .2s
+	cursor: pointer
+	margin-bottom: 25px
+	user-select: none
+	min-width: 290px
+
+.slider-1
+	height: 2px
+	opacity: .7
+	&:hover, &:active
+		opacity: 1
+
+.slider-2
+	height: 5px
+	border-radius: 12px
+
+.slider::-webkit-slider-thumb
+	appearance: none
+	width: 22px
+	height: 22px
+	cursor: pointer
+	border: 1px solid #bfbfbf
+	border-radius: 50%
+	background: #e0e0e0
+	z-index: 4
+	background: radial-gradient(farthest-side ellipse at top left, #fff, #aaa)
+
+/* Checkbox */
+.checkbox
+	cursor: pointer
+	font-size: 1.3125rem
+	user-select: none
+	display: flex
+	align-items: center
+	.check-1, .check-2
+		display: inline-block
+		border: 2px solid #c4c9c9
+		border-radius: 3px
+		transition: .15s ease-in-out
+		margin-right: 15px
+		width: 18px
+		height: 18px
+	&:hover
+		.check-1, .check-2
+			border: 2px solid $accent
+	&.disabled
+		color: #b0b0b0
+		cursor: default
+		pointer-events: none
+
+.checkbox-1
+	.check-1
+		&.is-checked-1
+			border-top: 2px solid transparent
+			border-left: 2px solid transparent
+			border-right: 2px solid $accent
+			border-bottom: 2px solid $accent
+			transform: rotate(42deg)
+			border-radius: 0
+			border-bottom-right-radius: 2px
+			width: 10px
+			height: 21px
+			transform-origin: 100% 100%
+			margin: -3px 26px 0 -3px
+	&:hover
+		.check-1.is-checked-1
+			border-top: 2px solid transparent
+			border-left: 2px solid transparent
+
+.checkbox-2
+	.check-2
+		background-color: transparent
+		position: relative
+		box-sizing: border-box
+		transition: border-color ease .2s
+		top: 1px
+		&:before, &:after
+			content: ''
+			box-sizing: border-box
+			position: absolute
+			height: 0
+			width: 2px
+			background-color: $accent
+			display: inline-block
+			transform-origin: left top
+			border-radius: 3px
+			transition: opacity ease .5
+		&:before 
+			top: 12.96px
+			left: 7.38px
+			box-shadow: 0 0 0 .9 #fff
+			transform: rotate(-135deg)
+		&:after 
+			top: 6.66px
+			left: .9px
+			transform: rotate(-45deg)
+		&.is-checked-2
+			border-color: $accent
+			&:after
+				height: 9px
+				animation: tobottom .2s ease 0s forwards
+			&:before
+				height: 19.5px
+				animation: totop .4s ease 0s forwards
+@keyframes tobottom
+	0%
+		height: 0 
+	100%
+		height: 9px 
+@keyframes totop
+	0%
+		height: 0 
+	50%
+		height: 0 
+	100%
+		height: 19.5px
+
+/* Expander */
+.expander
+	margin-bottom: 15px
+	max-width: 800px
+	.panel-heading
+		cursor: pointer
+		display: block
+		position: relative
+		font-weight: 600
+		i
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+		&.in
+			i
+				color: #2fbae1
+				margin-top: -10px
+	.panel-collapse
+		display: none
+		text-align: justify
+
+.expander-1
+	.panel
+		margin-bottom: 8px
+		border-radius: 6px
+		background-color: #f0f2f7
+	.panel-collapse
+		border-bottom-left-radius: 6px
+		border-bottom-right-radius: 6px
+		background-color: #f0f2f7
+		padding: 8px 15px
+	.panel-heading
+		background-color: $accent
+		border-radius: 6px
+		padding: 7px 25px 7px 47px
+		color: #fff
+		border: 1px solid $accent
+		border-radius: 8px
+		i
+			left: 15px
+			transition: all .3s ease-in-out
+		&.in
+			i
+				transform: rotate(180deg)
+
+.expander-2
+	border-top: 1px solid $accent
+	.panel
+		border-bottom: 1px solid $accent
+	.panel-collapse
+		padding: 15px
+	.panel-heading
+		font-weight: 600
+		padding: 7px 60px 7px 15px
+		.panel-text
+			color: $text
+		i
+			right: 10px
+			transition: all .2s ease-in-out
+		&.in
+			i
+				transform: rotate(90deg)
+				transition: all .2s ease-in-out
+				right: 12px
+
+/* Select */
+.select-box 
+	display: flex
+	max-width: 400px
+	flex-direction: column
+	cursor: pointer
+	position: relative
+	margin-bottom: 10px
+	.options-container
+		background: $accent
+		color: #fff
+		max-height: 0
+		width: 100%
+		opacity: 0
+		transition: all .4s
+		border-radius: 8px
+		overflow: hidden
+		order: 1
+		&::-webkit-scrollbar
+			width: 8px
+			background: #0d141f
+			border-radius: 0 8px 8px 0
+		&::-webkit-scrollbar-thumb 
+			background: #525861
+			border-radius: 8px
+		&.active
+			max-height: 240px
+			opacity: 1
+			overflow-y: scroll
+			& + .selected::after
+				transform: translateY(-50%) rotateX(180deg)
+
+.select-box
+	.option
+		cursor: pointer
+		padding: 7px 12px
+		transition: all .2s ease
+		.radio
+			display: none
+		label
+			cursor: pointer
+		&:hover 
+			background: #2e3c4d
+
+.selected 
+	background-color: $accent
+	border-radius: 8px
+	margin-bottom: 4px
+	color: #fff
+	order: 0
+	padding: 12px 40px 12px 18px
+	position: relative
+	&::after
+		content: "\f107"
+		font-family: FontAwesome
+		position: absolute
+		font-size: 20px
+		font-weight: 900
+		right: 18px
+		top: 50%
+		transform: translateY(-50%)
+		transition: all .4s
+		margin-right: 0
+		z-index: 8
+
+/* Tabs */
+.tabs
+	display: flex
+	&-wrapper
+		max-width: 600px
+		border: 2px solid $accent
+	&-content
+		padding: 20px
+
+.tab
+	font-weight: 600
+	padding: 15px
+	display: inline-block
+	background-color: $accent
+	color: #fff
+	text-align: center
+	width: 100%
+	transition: all .2s ease
+	&:not(.active):hover
+		box-shadow: 0 -4px rgba(#000, .4) inset
+		background-color: lighten($accent, 5%)
+		cursor: pointer
+	&.active
+		background-color: #fff
+		color: $text
+	&-body
+		font-size: 1.2rem
+		display: none
+		&.active
+			display: block
+	& + .tab
+		border-left: 1px solid darken($accent, 20%)

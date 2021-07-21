@@ -1,4 +1,4 @@
-# gosurf
+# GoSurf project
 <p>Web site layout for surfing from a design created in Figma.</p>
 
 <p>View a <a href="https://igor-muram.github.io/gosurf/index.html" target="_blank">demo</a>.</p>

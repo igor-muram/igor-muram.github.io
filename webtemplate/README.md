@@ -1,4 +1,4 @@
-# webtemplate
+# WebTemplate
 <p>Demonstration of a personal HTML template for a quick start of site layout.</p>
 
 <p>Template author: <a href="https://github.com/igor-muram">Igor Muramshchikov</a>.</p>

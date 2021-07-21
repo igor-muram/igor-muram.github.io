@@ -1,9 +1,9 @@
-# odigo
-<p>Layout of the site from the design created in Figma.</p>
+# Odigo project
+<p>Web site layout for travel to Japan from a design created in Figma.</p>
 
 <p>View a <a href="https://igor-muram.github.io/odigo/index.html" target="_blank">demo</a>.</p>
 
-<p>These libraries and tools were used for site layout:</p>
+<p>Libraries and tools used to make up the site:</p>
 
 <ul>
 	<li><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a></li>
@@ -12,11 +12,14 @@
 	<li><a href="https://wowjs.uk" target="_blank">Wow.js</a></li>
 	<li><a href="https://gulpjs.com" target="_blank">Gulp 4</a></li>
 	<li><a href="https://sass-scss.ru" target="_blank">Sass Preprocessor</a></li>
-	<li><a href="https://bower.io" target="_blank">Bower</a></li>
 </ul>
 
-<p><b>CSS Flexbox</b> and <b>Grid CSS</b> were used for site layout.</p>
+<p>The methodologies used in the creation of the project:</p>
 
-<p><b>The BEM class naming methodology</b> was used to create the project.</p>
+<ul>
+	<li>CSS Flexbox</li>
+	<li>Grid CSS</li>
+	<li>BEM class naming methodology</li>
+</ul>
 
 <p>Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.</p>

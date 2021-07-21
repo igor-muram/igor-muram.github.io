@@ -1,4 +1,4 @@
-# github.io
+# GitHub pages to demonstrate created static sites
 Layout of personal sites and projects.
 
 <p>My projects:</p>

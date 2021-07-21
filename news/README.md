@@ -4,8 +4,8 @@
 <p>Technologies and tools used to make up the site:</p>
 
 <ul>
-  <li><a href="https://www.php.net" target="_blank">PHP</a></li>
-  <li><a href="https://www.mysql.com" target="_blank">MySQL</a></li>
+  	<li><a href="https://www.php.net" target="_blank">PHP</a></li>
+  	<li><a href="https://www.mysql.com" target="_blank">MySQL</a></li>
 	<li><a href="https://jquery.com" target="_blank">JQuery</a></li>
 	<li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a></li>
 	<li><a href="https://gulpjs.com" target="_blank">Gulp 4</a></li>
@@ -16,7 +16,7 @@
 
 <ul>
 	<li>CSS Flexbox</li>
-  <li>Grid CSS</li>
+  	<li>Grid CSS</li>
 	<li>BEM class naming methodology</li>
 </ul>
 

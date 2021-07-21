@@ -1,5 +1,5 @@
 # MartaUp project
-<p>Writing a website for a web studio based on the design created in Figma.
+<p>Web site layout for web studio from a design created in Figma.</p>
 
 <p>View a <a href="https://igor-muram.github.io/martaup/index.html" target="_blank">demo</a>.</p>
 

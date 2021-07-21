@@ -1,9 +1,9 @@
-# plots
+# Plots project
 <p>Web application dedicated to graphs of functions from mathematical analysis.</p>
 
 <p>View a <a href="https://igor-muram.github.io/plots/index.html" target="_blank">demo</a>.</p>
 
-<p>These libraries and tools were used for site layout:</p>
+<p>Libraries and tools used to make up the site:</p>
 
 <ul>
 	<li><a href="https://bootstrap-4.ru" target="_blank">Bootstrap 4 (grid и reboot)</a></li>

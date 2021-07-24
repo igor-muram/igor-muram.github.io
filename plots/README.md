@@ -3,6 +3,8 @@
 
 <p>View a <a href="https://igor-muram.github.io/plots/index.html" target="_blank">demo</a>.</p>
 
+## Technologies
+
 <p>Libraries and tools used to make up the site:</p>
 
 <ul>
@@ -20,3 +22,9 @@
 </ul>
 
 <p>Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.</p>
+
+## Publication in Journal
+
+<ul>
+  <li>A <a href="https://lomonosov-msu.ru/file/event/6339/eid6339_attach_c7e5544cb8d664334c169e5d0d9843342f3ffb8c.pdf#page=336" target="_blank">scientific article</a> was written on <b><i>this app</i></b> for an journal indexed in RSCI (Russian Science Citation Index).</li>
+</ul>

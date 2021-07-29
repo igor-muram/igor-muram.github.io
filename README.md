@@ -1,4 +1,4 @@
-# GitHub pages to demonstrate created sites
+# GitHub pages for created sites
 Layout of personal sites and projects.
 
 <p>My web-sites:</p>

@@ -1,6 +1,8 @@
 # Bootstrap News project
 A news website based Bootstrap that supports registration and authorization, and has an admin panel for adding, modifying, and deleting news.
 
+## Technologies
+
 Technologies and tools used to make up the site:
 
 * <a href="https://bootstrap-4.ru" target="_blank">Bootstrap 4</a>

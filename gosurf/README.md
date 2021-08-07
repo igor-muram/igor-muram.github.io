@@ -3,6 +3,8 @@ Web site layout for surfing from a design created in Figma.
 
 View a <a href="https://igor-muram.github.io/gosurf/index.html" target="_blank">demo</a>.
 
+## Technologies
+
 Libraries and tools used to make up the site:
 
 * <a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a>
@@ -13,6 +15,8 @@ Libraries and tools used to make up the site:
 * <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
 * <a href="https://sass-scss.ru" target="_blank">Sass Preprocessor</a>
 * <a href="https://bower.io" target="_blank">Bower</a>
+
+## Methodologies
 
 The methodologies used in the creation of the project:
 

@@ -88,7 +88,68 @@
 	margin-left: 22px
 	margin-right: 134px
 
-
+.about
+	background-image: url(../img/about-bg.jpg)
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+	&__item
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		padding-bottom: 150px
+		&:nth-child(odd)
+			flex-direction: row-reverse
+	&__img
+		max-width: 100%
+	&__content
+		max-width: 600px
+		&-title
+			font-size: 30px
+			line-height: 36px
+			font-weight: 700
+			margin-bottom: 5px
+		&-subtitle
+			font-size: 12px
+			line-height: 14px
+			font-weight: 400
+			margin-bottom: 30px
+			color: #306cca
+			text-transform: uppercase
+		&-text
+			display: flex
+			justify-content: space-between
+			margin-bottom: 50px
+			p
+				width: 165px
+	&__table
+		margin-bottom: 50px
+		border-bottom: 1px solid #fff
+		&-row
+			&:before
+				content: ''
+				width: 600px
+				height: 1px
+				background-color: #fff
+				position: absolute
+			& + .about__table-row
+				font-size: 36px
+				line-height: 43px
+				font-weight: bold
+		&-cell
+			padding: 10px 15px
+			white-space: nowrap
+			text-align: center
+			span
+				font-size: 14px
+				line-height: 17px
+				display: block
+		&-caption
+			caption-side: bottom
+			text-align: left
+			margin-top: 20px
+			font-size: 12px
+			line-height: 14px
 
 
 

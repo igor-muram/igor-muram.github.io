@@ -19,7 +19,7 @@ body
 	min-width: 320px
 	overflow-x: hidden
 
-h1, p
+h1, h2, h3, h4, h5, h6, p
 	margin: 0
 	padding: 0
 
@@ -38,8 +38,21 @@ button
 	background-color: transparent
 	cursor: pointer
 	color: inherit
+	&.button
+		text-transform: uppercase
+		border: 1px solid #fff
+		font-size: 18px
+		line-height: 21px
+		padding: 20px 45px
 
 .container
 	max-width: 1220px
 	margin: 0 auto
 	padding: 0 10px
+
+.title
+	font-family: $additional-font
+	padding: 100px 0
+	font-size: 48px
+	line-height: 48px
+	font-weight: 400

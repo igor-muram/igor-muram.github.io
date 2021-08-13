@@ -87,6 +87,10 @@ gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(Conti
 		'app/img/**/*.*',
 		]).pipe(gulp.dest('space/img'));
 
+	let buildFonts = gulp.src([
+		'app/fonts/**/*.*',
+		]).pipe(gulp.dest('space/fonts'));
+
 	let buildGulp = gulp.src([
 		'gulpfile.js',
 		'.bowerrc',

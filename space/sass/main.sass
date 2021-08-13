@@ -1,7 +1,92 @@
+@import "fonts"
 @import "vars"
 @import "libs"
 @import "global"
 
+.header
+	background-image: url(../img/header-bg.jpg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	&__inner, &__top
+		display: flex
+		justify-content: space-between
+	&__inner
+		flex-direction: column
+		min-height: 100vh
+	&__top
+		align-items: center
+		padding: 75px 0 30px
+	&__content
+		max-width: 600px
+	&__title
+		font-family: $additional-font
+		font-size: 60px
+		line-height: 60px
+		font-weight: 400
+		margin-bottom: 20px
+		span
+			font-size: 110px
+	&__text
+		font-size: 24px
+		line-height: 29px
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		margin-bottom: 50px
+	&__btn
+		font-size: 24px
+		line-height: 29px
+		text-transform: uppercase
+		text-align: center
+		width: 100%
+		border: 1px solid #fff
+		padding: 15px 10px
+	&__description
+		display: flex
+		justify-content: flex-end
+		margin: 40px 0 5%
+		&-text
+			width: 165px
+			font-size: 14px
+			line-height: 17px
+			& + .header__description-text
+				margin-left: 52px
+
+.menu
+	&__list
+		display: flex
+	&__item
+		& + .menu__item
+			margin-left: 30px
+	&__link
+		text-transform: uppercase
+		font-size: 18px
+		line-height: 21px
+		transition: color .3s
+		white-space: nowrap
+		position: relative
+		&:after
+			content: ''
+			width: 0
+			height: 2px
+			background-color: #fff
+			position: absolute
+			bottom: -4px
+			left: 0
+			transition: all .4s ease
+		&:hover
+			&:after
+				width: 100%
+
+.phone
+	font-size: 24px
+	line-height: 29px
+	margin-left: auto
+
+.login
+	margin-left: 22px
+	margin-right: 134px
 
 
 

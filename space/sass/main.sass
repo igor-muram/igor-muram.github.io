@@ -63,7 +63,6 @@
 		text-transform: uppercase
 		font-size: 18px
 		line-height: 21px
-		transition: color .3s
 		white-space: nowrap
 		position: relative
 		&:after
@@ -74,7 +73,7 @@
 			position: absolute
 			bottom: -4px
 			left: 0
-			transition: all .4s ease
+			transition: all .3s ease
 		&:hover
 			&:after
 				width: 100%
@@ -200,7 +199,6 @@
 	background-size: cover
 	background-repeat: no-repeat
 	padding-bottom: 100px
-
 .offer
 	&__inner
 		display: flex
@@ -362,22 +360,42 @@
 			display: flex
 			margin-left: auto
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.footer
+	background-image: url(../img/footer-bg.jpg)
+	background-position: top center
+	background-size: cover
+	background-repeat: no-repeat
+	padding: 100px 0 150px
+	&__inner
+		display: flex
+		justify-content: flex-end
+	&__text
+		width: 165px
+		margin-right: 50px
+		p + p
+			margin-top: 50px
+	&__menu, &__links
+		&-link
+			text-transform: uppercase
+			position: relative
+			&:after
+				content: ''
+				width: 0
+				height: 2px
+				background-color: #fff
+				position: absolute
+				bottom: -6px
+				left: 0
+				transition: all .3s ease
+			&:hover
+				&:after
+					width: 100%
+		li + li
+			margin-top: 20px
+	&__menu
+		width: 120px
+		margin-right: 95px
+	&__links
+		width: 165px
 
 @import "media"

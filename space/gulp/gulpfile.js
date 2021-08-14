@@ -80,6 +80,7 @@ gulp.task('build', gulp.series('removedist', 'styles', 'scripts', function(Conti
 		]).pipe(gulp.dest('space/sass'));
 
 	let buildJs = gulp.src([
+		'app/js/common.js',
 		'app/js/scripts.min.js',
 		]).pipe(gulp.dest('space/js'));
 

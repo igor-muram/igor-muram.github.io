@@ -194,12 +194,126 @@
 		& + .book__text
 			margin: 100px 0 0
 
+.info
+	background-image: url(../img/info-bg.jpg)
+	background-position: top center
+	background-size: cover
+	background-repeat: no-repeat
+	padding-bottom: 100px
 
+.offer
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__item
+		width: 500px
+		&-box
+			padding: 40px 75px
+			text-align: center
+			border: 1px solid #fff
+			min-height: 400px
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			margin-bottom: 25px
+		&-text
+			font-size: 24px
+			line-height: 29px
+			width: 236px
+			margin: 0 auto
+			span
+				color: #CB0E0E
+				font-size: 24px
+				line-height: 29px
+		&-price
+			&--old
+				text-align: right
+				font-size: 14px
+				line-height: 17px
+				margin-bottom: 16px
+				position: relative
+				&:before
+					content: ''
+					width: 68px
+					height: 2px
+					position: absolute
+					top: 8px
+					right: 0
+					transform: rotate(17deg)
+					background-color: #CB0E0E
+			&--new
+				font-size: 48px
+				line-height: 57px
+	&__btn
+		width: 100%
 
+.services
+	padding-bottom: 200px
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__content
+		width: 620px
+		margin-right: 80px
+		font-size: 24px
+		line-height: 29px
+	&__title, &__list
+		margin-bottom: 25px
+	&__list-item
+		padding-left: 36px
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 20px
+			height: 20px
+			background-color: #fff
+			border-radius: 50%
+			left: 0
+			top: 5px
+	&__description
+		font-size: 12px
+		line-height: 14px
+	&__buttons
+		width: 500px
+	&__btn
+		width: 100%
+		&--photo
+			margin-bottom: 50px
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				right: 0
+				bottom: 42px
+				background-image: url(../img/photo.png)
+				width: 192px
+				height: 150px
 
-
-
-
+.slider
+	text-align: center
+	&__inner
+		margin-bottom: 50px
+		border: 1px solid #fff
+		padding: 100px 0
+	&__description
+		font-family: $additional-font
+		font-size: 24px
+		line-height: 30px
+	&__box-img
+		width: 800px
+		height: 533px
+		object-fit: cover
+		margin: auto
+	&__arrow
+		cursor: pointer
+		position: absolute
+		top: 50%
+		z-index: 5
+		&-left
+			left: 60px
+		&-right
+			right: 60px
 
 
 

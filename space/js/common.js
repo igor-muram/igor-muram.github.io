@@ -1,5 +1,9 @@
 $(function() {
 
+	// Preloader
+	$('.preloader__wrapper').delay(1000).fadeOut('slow');
+	$('html').addClass('scroll');
+
 	// Slider
 	$('.slider__box').slick({
 		prevArrow: '<img class="slider__arrow slider__arrow-left" src="img/arrow-left.svg">',
@@ -39,13 +43,13 @@ $(function() {
 	$('.menu__btn').on('click', function() {
 		$('.menu__list').toggleClass('active');
 		$(this).toggleClass('active');
-		$('html').toggleClass('no-scroll');
+		$('html').toggleClass('scroll');
 	});
 
 	$('.menu__item, .login, .phone').on('click', function() {
 		$('.menu__list').removeClass('active');
 		$('.menu__btn').removeClass('active');
-		$('html').removeClass('no-scroll');
+		$('html').addClass('scroll');
 	});
 
 	// Scroll to section

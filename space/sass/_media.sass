@@ -22,6 +22,16 @@
 	.login
 		margin-right: 0
 
+	.book
+		background-position: top left
+		&__inner
+			display: block
+		&__text
+			width: 90%
+			margin: 0
+			& + .book__text
+				margin-top: 30px
+
 @media (max-width: 855px)
 	.header
 		background-position: center right
@@ -160,6 +170,10 @@
 		line-height: 30px
 
 @media (max-width: 360px)
+	.title
+		font-size: 26px
+		line-height: 28px
+
 	.header
 		&__top
 			flex-wrap: wrap
@@ -193,3 +207,6 @@
 	.about__table-row + .about__table-row
 		font-size: 20px
 		line-height: 22px
+
+	.process__list-item
+		font-size: 17px

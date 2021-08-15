@@ -18,6 +18,29 @@
 			width: 95%
 			margin: 0 auto 50px
 
+	.slider__arrow
+		transform: scale(0.9)
+		&-left
+			left: 0
+			&:hover
+				left: 0
+		&-right
+			right: 0
+			&:hover
+				right: 0
+
+@media (max-width: 1070px)
+	.offer
+		margin-bottom: -30px
+		&__inner
+			flex-direction: column
+			align-items: center
+		&__btn 
+			margin-bottom: 30px
+
+	.slider__arrow
+		display: none !important
+
 @media (max-width: 1000px)
 	.login
 		margin-right: 0
@@ -27,10 +50,22 @@
 		&__inner
 			display: block
 		&__text
+			line-height: 20px
 			width: 90%
 			margin: 0
 			& + .book__text
 				margin-top: 30px
+
+	.services
+		&__inner
+			flex-direction: column
+			align-items: center
+		&__content
+			width: 100%
+			margin-bottom: 180px
+			margin-right: 0
+		&__btn + .services__btn
+			margin-top: 30px
 
 @media (max-width: 855px)
 	.header
@@ -99,6 +134,18 @@
 						border-radius: 50%
 						background-color: #fff
 
+	.services
+		padding-bottom: 100px
+
+	.slider
+		&__description
+			font-size: 18px
+			line-height: 24px
+		&__box-img
+			width: 100%
+			height: 400px
+			padding: 0 15px
+
 @media (max-width: 615px)
 	.header
 		&__title
@@ -157,6 +204,12 @@
 		&__decoration
 			display: none
 
+	.slider
+		&__inner
+			padding: 60px 0
+		&__box-img
+			height: 350px
+
 @media (max-width: 500px)
 	.menu__link
 		font-size: 35px
@@ -169,10 +222,39 @@
 		font-size: 28px
 		line-height: 30px
 
+	.info, .services
+		padding-bottom: 50px
+
+	.process
+		padding-bottom: 0
+
+	.offer__item
+		width: auto
+		&-box
+			padding: 40px
+		&-price--new
+			font-size: 39px
+			line-height: 41px
+
+	.services
+		&__list, &__title
+			font-size: 18px
+			line-height: 26px
+
+	.slider__box
+		&-item
+			height: 280px
+		&-img
+			height: 100%
+			object-fit: contain
+
+	.footer
+		padding: 50px 0
+
 @media (max-width: 360px)
 	.title
-		font-size: 26px
-		line-height: 28px
+		font-size: 23px
+		line-height: 25px
 
 	.header
 		&__top
@@ -210,3 +292,13 @@
 
 	.process__list-item
 		font-size: 17px
+
+	.slider
+		&__inner
+			padding: 35px 0
+		&__box-img
+			height: 270px
+			padding: 0 5px
+
+	.slick-dots
+		margin-top: 0

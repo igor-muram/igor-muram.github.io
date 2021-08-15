@@ -56,4 +56,16 @@ $(function() {
 		$('body, html').animate({scrollTop: top}, 800);
 	});
 
+	// Back to top button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 50)
+			$('.top').addClass('active');
+		else
+			$('.top').removeClass('active');
+	});
+
+	$('.top').click(function() {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+
 });

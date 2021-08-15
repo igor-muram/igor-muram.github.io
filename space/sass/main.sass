@@ -450,4 +450,26 @@
 	&__links
 		width: 165px
 
+.top
+	position: fixed
+	background-color: #fff
+	border: 1px solid #010203
+	border-radius: 10px
+	text-align: center
+	cursor: pointer
+	width: 45px
+	height: 45px
+	font-size: 30px
+	line-height: 30px
+	bottom: 8px
+	right: -100px
+	transition: all .3s ease
+	&:hover
+		background-color: #010203
+		border-color: #fff
+		svg path
+			fill: #fff
+	&.active
+		right: 15px
+
 @import "media"

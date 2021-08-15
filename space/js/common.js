@@ -39,6 +39,13 @@ $(function() {
 	$('.menu__btn').on('click', function() {
 		$('.menu__list').toggleClass('active');
 		$(this).toggleClass('active');
+		$('html').toggleClass('no-scroll');
+	});
+
+	$('.menu__item, .login, .phone').on('click', function() {
+		$('.menu__list').removeClass('active');
+		$('.menu__btn').removeClass('active');
+		$('html').removeClass('no-scroll');
 	});
 
 });

@@ -1,0 +1,111 @@
+@media (max-width: 1000px)
+	.login
+		margin-right: 0
+
+@media (max-width: 855px)
+	.header
+		background-position: center right
+		&__content
+			margin: 0 auto
+		&__description
+			justify-content: center
+		&__top
+			padding-top: 30px
+
+	.menu
+		&__btn
+			display: block
+		&__list
+			transform: translateY(-150%)
+			flex-direction: column
+			justify-content: space-between
+			position: fixed
+			transition: all .5s ease
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: #010203
+			padding-top: 120px
+			padding-bottom: 50px
+			text-align: center
+			width: 100%
+			&.active
+				transform: translateY(0)
+		&__item + .menu__item
+			margin-left: 0
+		&__link
+			display: block
+			font-size: 45px
+			line-height: 45px
+
+	.phone, .login
+		position: relative
+		z-index: 20
+
+@media (max-width: 615px)
+	.header
+		&__title
+			font-size: 34px
+			line-height: 30px
+			span
+				font-size: 60px
+		&__content
+			text-align: center
+		&__text
+			justify-content: center
+			font-size: 18px
+			p
+				padding: 0 10px
+		&__description
+			display: block
+			&-text
+				width: 100%
+				text-align: center
+				& + .header__description-text
+					margin-left: 0
+					margin-top: 20px
+		&__btn
+			width: 60%
+			font-size: 18px
+			line-height: 24px
+
+	.menu__link
+		font-size: 40px
+		line-height: 40px
+
+@media (max-width: 500px)
+	.menu__link
+		font-size: 35px
+		line-height: 35px
+
+@media (max-width: 360px)
+	.header
+		&__top
+			flex-wrap: wrap
+			padding-top: 20px
+		&__title
+			font-size: 28px
+			span
+				font-size: 32px
+		&__text
+			margin-bottom: 35px
+		&__btn
+			width: 100%
+			font-size: 16px
+
+	.phone
+		width: 100%
+		margin-right: auto
+		margin-top: 20px
+		text-align: center
+
+	.menu, .login
+		order: -1
+
+	.menu
+		&__list
+			padding-top: 180px
+		&__link
+			font-size: 30px
+			line-height: 30px

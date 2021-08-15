@@ -56,9 +56,42 @@
 .menu
 	&__list
 		display: flex
-	&__item
-		& + .menu__item
-			margin-left: 30px
+		z-index: 5
+	&__btn
+		display: none
+		width: 40px
+		padding: 0
+		position: relative
+		z-index: 20
+		height: 30px
+		span
+			display: block
+			height: 2px
+			background-color: #fff
+			position: relative
+			&:before, &:after
+				transition: all .4s ease
+				content: ''
+				width: 40px
+				height: 2px
+				background-color: #fff
+				position: absolute
+				left: 0
+			&:before
+				top: -10px
+			&:after
+				top: 10px
+		&.active
+			span
+				background-color: transparent
+				&:before
+					transform: rotate(45deg)
+					top: 0
+				&:after
+					transform: rotate(-45deg)
+					top: 0
+	&__item  + .menu__item
+		margin-left: 30px
 	&__link
 		text-transform: uppercase
 		font-size: 18px
@@ -100,7 +133,6 @@
 		height: 100%
 		top: -25px
 		left: -25px
-		right: auto
 		border-radius: 20px 0 20px 0
 	&__img
 		max-width: 100%

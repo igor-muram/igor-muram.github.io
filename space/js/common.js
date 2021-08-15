@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	// Slider
 	$('.slider__box').slick({
 		prevArrow: '<img class="slider__arrow slider__arrow-left" src="img/arrow-left.svg">',
@@ -34,5 +34,11 @@ $(function() {
 		addDiv.classList.add('ripple');
 		this.appendChild(addDiv);
 	}
+
+	// Menu
+	$('.menu__btn').on('click', function() {
+		$('.menu__list').toggleClass('active');
+		$(this).toggleClass('active');
+	});
 
 });

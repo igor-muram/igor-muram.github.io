@@ -48,4 +48,12 @@ $(function() {
 		$('html').removeClass('no-scroll');
 	});
 
+	// Scroll to section
+	$(".menu__link, .footer__menu-link").on("click", function (e) {
+		e.preventDefault();
+		let id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body, html').animate({scrollTop: top}, 800);
+	});
+
 });

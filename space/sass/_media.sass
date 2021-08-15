@@ -1,3 +1,23 @@
+@media (max-width: 1175px)
+	.about
+		text-align: center
+		&__item
+			justify-content: center
+		&__content
+			max-width: 100%
+			&-text
+				flex-direction: column
+				align-items: center
+				p
+					width: 80%
+					margin-bottom: 20px
+		&__photo
+			margin-left: 0
+			margin-bottom: 50px
+		&__table
+			width: 95%
+			margin: 0 auto 50px
+
 @media (max-width: 1000px)
 	.login
 		margin-right: 0
@@ -74,10 +94,41 @@
 		font-size: 40px
 		line-height: 40px
 
+	.title
+		font-size: 38px
+		line-height: 38px
+		padding: 50px 0
+
+	.about
+		&__item
+			padding-bottom: 70px
+		&__table
+			&-row
+				&:first-child
+					display: none
+				& + .about__table-row
+					font-size: 21px
+					line-height: 25px
+					font-weight: 400
+			&-cell
+				display: block
+				text-align: right
+				span
+					display: inline-block
+				&:before
+					content: attr(aria-label)
+					float: left
+		&__decoration
+			display: none
+
 @media (max-width: 500px)
 	.menu__link
 		font-size: 35px
 		line-height: 35px
+
+	.about__content-text
+		p
+			width: 95%
 
 @media (max-width: 360px)
 	.header
@@ -109,3 +160,7 @@
 		&__link
 			font-size: 30px
 			line-height: 30px
+
+	.about__table-row + .about__table-row
+		font-size: 20px
+		line-height: 22px

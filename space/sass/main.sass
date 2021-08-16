@@ -164,9 +164,10 @@
 				width: 165px
 	&__table
 		margin-bottom: 50px
+		border-bottom: 1px solid #fff
 		&-row
 			position: relative
-			&:before, &:last-child:after
+			&:before
 				content: ''
 				height: 1px
 				background-color: #fff
@@ -174,8 +175,6 @@
 				display: block
 				position: absolute
 				left: 0
-			&:last-child:after
-				bottom: 0
 			& + .about__table-row
 				font-size: 36px
 				line-height: 43px

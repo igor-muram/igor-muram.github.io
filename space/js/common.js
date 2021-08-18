@@ -1,7 +1,7 @@
 $(function() {
 
 	// Preloader
-	$('.preloader__wrapper').delay(1000).fadeOut('slow');
+	$('.preloader__wrapper').delay(800).fadeOut('slow');
 	$('html').addClass('scroll');
 
 	// Slider

@@ -72,4 +72,7 @@ $(function() {
 		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
 	});
 
+	// Wow JS initialization
+	new WOW({ mobile: false }).init();
+
 });

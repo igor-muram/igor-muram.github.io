@@ -11,8 +11,6 @@ My web-sites:
 * View the <a href="https://igor-muram.github.io/plots/index.html" target="_blank">Plots</a>.
 * View the <a href="https://igor-muram.github.io/polar/index.html" target="_blank">Polar</a>.
 * View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
-* View the <a href="https://igor-muram.github.io/plots/index.html" target="_blank">Plots</a>.
-* View the <a href="https://igor-muram.github.io/polar/index.html" target="_blank">Polar</a>.
 <!--* View the <a href="https://igor-muram.github.io/portfolio/index.html" target="_blank">Portfolio</a>. -->
 
 <!-- * View the <a href="#" target="_blank">News</a>. -->

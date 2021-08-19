@@ -73,6 +73,7 @@ $(function() {
 	});
 
 	// Wow JS initialization
-	new WOW({ mobile: false }).init();
+	let wow = new WOW({ mobile: false });
+	wow.init();
 
 });

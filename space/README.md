@@ -1,5 +1,6 @@
 # Space travel project
-Web site layout for space travel from a design created in Figma.
+Web site layout for space travel from a design created in Figma.<br>
+The initial design of the site has been supplemented to improve the visual appearance of the site.
 
 View a <a href="https://igor-muram.github.io/space/index.html" target="_blank">demo</a>.
 

@@ -1,5 +1,5 @@
 # Bootstrap News project
-A layout of news website based Bootstrap.
+A layout of simple news website based Bootstrap.
 
 ## Technologies
 

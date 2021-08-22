@@ -5,10 +5,6 @@
   text-align: center;
   margin-bottom: 65px;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
-  }
-
   &__image {
     width: 260px;
   }
@@ -47,6 +43,10 @@
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
           border-radius: 5px;
           cursor: auto;
+        }
+        &.disabled {
+          opacity: 0.4;
+          pointer-events: none;
         }
       }
     }

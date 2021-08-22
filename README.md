@@ -16,9 +16,12 @@ Layout:
 * View the <a href="https://igor-muram.github.io/space/index.html" target="_blank">Space travel</a>.
 * View the <a href="https://igor-muram.github.io/odigo/index.html" target="_blank">Odigo</a>.
 * View the <a href="https://igor-muram.github.io/martaup/index.html" target="_blank">MartaUp</a>.
-* View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
 * View the <a href="https://igor-muram.github.io/bootstrap-news/index.html" target="_blank">Bootstrap News</a>. 
 <!-- * View the <a href="https://igor-muram.github.io/portfolio/index.html" target="_blank">Portfolio</a>. -->
+
+Templates:
+
+* View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
 
 <!-- Frontend (React): -->
 

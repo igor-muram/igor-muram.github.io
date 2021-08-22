@@ -8,7 +8,6 @@ Web apps:
 
 * View the <a href="https://golab.nstu.ru" target="_blank">Virtual physical laboratory</a>.
 * View the <a href="https://igor-muram.github.io/plots/index.html" target="_blank">Plots</a>.
-* View the <a href="https://igor-muram.github.io/polar/index.html" target="_blank">Polar</a>.
 
 Layout:
 

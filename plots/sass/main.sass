@@ -187,6 +187,7 @@ span.mjx-mfrac
 	cursor: pointer
 	margin-top: 25px
 	margin-bottom: 25px
+	user-select: none
 	&::after
 		transition: background-color .2s ease
 		position: absolute
@@ -213,6 +214,20 @@ span.mjx-mfrac
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
+
+button:disabled, .button.disabled
+	background-color: #ededed
+	color: #b0b0b0
+	border: none
+	box-shadow: none
+	cursor: default
+	&::before, &::after
+		display: none
+	&:hover
+		background-color: #ededed
+		color: #b0b0b0
+		border: none
+		box-shadow: none
 
 .container-404
 	top: 50%
@@ -342,6 +357,35 @@ span.mjx-mfrac
 .start, .end
 	left: 60%
 	transform: translate(-60%, 75%)
+
+.control
+	max-width: 1585px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+	margin: 0 auto 15px
+	padding-top: 15px
+
+.parameter
+	display: flex
+	flex-direction: column
+	justify-content: center
+	width: 350px
+	p
+		text-align: center
+		margin-bottom: 20px
+		font-size: 20px
+		line-height: 20px
+.control
+	max-width: 1585px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+	margin: 0 auto 15px
+	padding-top: 15px
+
 
 .slider 
 	appearance: none
@@ -536,7 +580,7 @@ span.mjx-mfrac
 	margin-right: 45px
 
 .methods-column
-	padding: 
+	padding:
 		left: 19px
 		right: 19px
 		top: 8px
@@ -681,6 +725,28 @@ span.mjx-mfrac
 	font-family: $default-font
 	font-size: 26px
 	line-height: 1.6
+
+.plot
+	height: 500px
+	margin-bottom: 15px
+
+#XYGraph1Slider, #RFGraph1Slider
+	width: 100%
+	border: none
+
+.graphText
+	font-size: 23px
+	margin-bottom: 15px
+	display: inline-block
+
+.function
+	font-size: 22px
+
+.connection-column
+	margin: 11px 0
+	border: 2px solid black
+	height: 96%
+	padding: 11px 19px 5px 19px
 
 .explicit-scheme-container, .explicit-example-container, .parametric-scheme-container, .monotonicity-scheme-container, .monotonicity-example-container, .convex-scheme-container, .convex-example-container, .asymptotes-scheme-container, .asymptotes-example-container, .valid-container, .periodicity-container
 	padding-left: 87px

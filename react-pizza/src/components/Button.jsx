@@ -15,9 +15,9 @@ const Button = ({ onClick, className, outline, children }) => {
 };
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
-  outline: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  outline: PropTypes.bool,
 };
 
 export default Button;

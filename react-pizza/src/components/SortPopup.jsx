@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function SortPopup({ items }) {
+const SortPopup = React.memo(function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const sortRef = React.useRef();
@@ -59,7 +59,7 @@ export default function SortPopup({ items }) {
       )}
     </div>
   );
-}
+});
 
 SortPopup.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -68,3 +68,5 @@ SortPopup.propTypes = {
 SortPopup.defaultProps = {
   items: [],
 };
+
+export default SortPopup;

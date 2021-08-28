@@ -1,4 +1,4 @@
 export const setPizzas = (items) => ({
-  type: 'SET_Pizzas',
+  type: 'SET_PIZZAS',
   payload: items,
 });

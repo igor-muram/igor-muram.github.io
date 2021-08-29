@@ -3,7 +3,11 @@
 .pizza-block {
   width: 280px;
   text-align: center;
-  margin-bottom: 65px;
+  margin-bottom: 55px;
+
+  &:not(:nth-of-type(4n)) {
+    margin-right: 3.7%;
+  }
 
   &__image {
     width: 260px;

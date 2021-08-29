@@ -36,7 +36,9 @@ export default function Home() {
       <div className="content__items">
         {isLoaded
           ? items?.map((obj) => <PizzaBlock key={obj.id} {...obj} />)
-          : Array(12).fill(<PizzaLoadingBlock />)}
+          : Array(12)
+              .fill(0)
+              .map((_, index) => <PizzaLoadingBlock key={index} />)}
       </div>
     </div>
   );

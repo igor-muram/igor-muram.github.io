@@ -1,7 +1,7 @@
 # React App for pizza store
 
 * Web application for a pizza store based on React.
-* This project was bootstrapped with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>.
+* This project was created with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>.
 * The layout is based on a design made in Figma.
 
 ## Technologies

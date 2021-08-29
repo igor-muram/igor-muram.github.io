@@ -1,5 +1,28 @@
 @import '../variables';
 
+@keyframes show-poster {
+  0% {
+    opacity: 0.6;
+    margin-top: 11px;
+  }
+  25% {
+    opacity: 0.7;
+    margin-top: 12px;
+  }
+  50% {
+    opacity: 0.8;
+    margin-top: 13px;
+  }
+  75% {
+    opacity: 0.9;
+    margin-top: 14px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
+
 .pizza-block {
   width: 280px;
   text-align: center;
@@ -38,21 +61,58 @@
       }
 
       li {
-        padding: 8px;
+        padding: 8px 5px;
+        margin: 0 3px;
         flex: 1;
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 5px;
         @include noselect();
+        &:hover {
+          background-color: darken(#f3f3f3, 10%);
+        }
         &.active {
           background: #ffffff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-          border-radius: 5px;
           cursor: auto;
+          pointer-events: none;
         }
         &.disabled {
           opacity: 0.4;
           pointer-events: none;
+        }
+        &:not(.disabled) .tooltip {
+          text-align: justify;
+          white-space: nowrap;
+          display: none;
+          padding: 8px 12px;
+          margin-top: 10px;
+          background: #000;
+          color: #fff;
+          border-radius: 6px;
+          pointer-events: none;
+          top: 75%;
+          left: 20%;
+          &:before {
+            content: '';
+            position: absolute;
+            border: 10px solid transparent;
+            border-bottom: 10px solid #000;
+            top: -20px;
+            left: 10px;
+            margin-top: 0;
+          }
+        }
+        &:not(.disabled):hover .tooltip,
+        &:not(.disabled):active .tooltip {
+          display: inline-block;
+          z-index: 3;
+          font-size: 15px;
+          position: absolute;
+          animation: show-poster 0.2s ease-in-out forwards;
         }
       }
     }

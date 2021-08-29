@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "server": "npx json-server --watch public/db.json"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -17,14 +17,14 @@ export default function PizzaBlock({
   const availableSizes = [26, 30, 40];
 
   const [activeType, setActiveType] = React.useState(types[0]);
-  const [activeSize, setActiveSize] = React.useState(sizes[0]);
+  const [activeSize, setActiveSize] = React.useState(0);
 
   const onSelectType = (index) => {
     setActiveType(index);
   };
 
-  const onSelectSize = (size) => {
-    setActiveSize(size);
+  const onSelectSize = (index) => {
+    setActiveSize(index);
   };
 
   const onAddPizza = () => {
@@ -33,7 +33,9 @@ export default function PizzaBlock({
       name,
       imageUrl,
       price,
-      size: activeSize,
+      sizePrice: 150 * activeSize,
+      typePrice: 100 * activeType,
+      size: availableSizes[activeSize],
       type: availableTypes[activeType],
     };
 
@@ -45,7 +47,7 @@ export default function PizzaBlock({
       <img className="pizza-block__image" src={imageUrl} alt={name} />
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
-        <ul>
+        <ul className="pizza-block__types">
           {availableTypes.map((type, index) => (
             <li
               key={type}
@@ -55,19 +57,21 @@ export default function PizzaBlock({
                 disabled: !types.includes(index),
               })}>
               {type}
+              {types.includes(index) && <span className="tooltip">+ {100 * index} ₽</span>}
             </li>
           ))}
         </ul>
-        <ul>
-          {availableSizes.map((size) => (
+        <ul className="pizza-block__sizes">
+          {availableSizes.map((size, index) => (
             <li
               key={size}
-              onClick={() => onSelectSize(size)}
+              onClick={() => onSelectSize(index)}
               className={classNames({
-                active: activeSize === size,
+                active: sizes[activeSize] === size,
                 disabled: !sizes.includes(size),
               })}>
               {size} см.
+              {sizes.includes(size) && <span className="tooltip">+ {150 * index} ₽</span>}
             </li>
           ))}
         </ul>

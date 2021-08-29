@@ -19,13 +19,8 @@ export default function PizzaBlock({
   const [activeType, setActiveType] = React.useState(types[0]);
   const [activeSize, setActiveSize] = React.useState(0);
 
-  const onSelectType = (index) => {
-    setActiveType(index);
-  };
-
-  const onSelectSize = (index) => {
-    setActiveSize(index);
-  };
+  const onSelectType = (index) => setActiveType(index);
+  const onSelectSize = (index) => setActiveSize(index);
 
   const onAddPizza = () => {
     const info = {

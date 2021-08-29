@@ -14,9 +14,7 @@ const SortPopup = React.memo(function SortPopup({
     (obj) => obj.type === activeSortType && obj.order === activeSortOrder,
   ).name;
 
-  const toggleVisiblePopup = () => {
-    setVisiblePopup(!visiblePopup);
-  };
+  const toggleVisiblePopup = () => setVisiblePopup(!visiblePopup);
 
   const handleOutsideClick = (e) => {
     const path = e.path || (e.composedPath && e.composedPath());

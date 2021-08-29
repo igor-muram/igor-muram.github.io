@@ -21,6 +21,7 @@ Button.propTypes = {
   className: PropTypes.string,
   outline: PropTypes.bool,
   add: PropTypes.bool,
+  circle: PropTypes.bool,
 };
 
 export default Button;

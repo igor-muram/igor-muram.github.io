@@ -10,9 +10,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
-  const addedPizzas = Object.keys(items).map((key) => {
-    return items[key].items[0];
-  });
+  const addedPizzas = Object.keys(items).map((key) => items[key].items[0]);
 
   const onClearCart = () => {
     if (window.confirm('Вы действительно хотите очистить корзину?')) {
@@ -26,17 +24,10 @@ export default function Cart() {
     }
   };
 
-  const onPlusCartItem = (id) => {
-    dispatch(plusCartItem(id));
-  };
+  const onPlusCartItem = (id) => dispatch(plusCartItem(id));
+  const onMinusCartItem = (id) => dispatch(minusCartItem(id));
 
-  const onMinusCartItem = (id) => {
-    dispatch(minusCartItem(id));
-  };
-
-  const onClickOrder = () => {
-    console.log('Ваш заказ:', items);
-  };
+  const onClickOrder = () => console.log('Ваш заказ:', items);
 
   return (
     <div className="container container--cart">

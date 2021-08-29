@@ -60,7 +60,7 @@ export default function Home() {
               <PizzaBlock
                 onAddToCart={onAddPizza}
                 key={obj.id}
-                pizzasCount={cartItems[obj.id]?.length}
+                pizzasCount={cartItems[obj.id]?.items?.length}
                 {...obj}
               />
             ))

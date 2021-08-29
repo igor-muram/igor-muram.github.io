@@ -11,7 +11,7 @@ const sortItems = [
   { name: 'популярности', type: 'rating', order: 'desc' },
   { name: 'цене по убыванию', type: 'price', order: 'desc' },
   { name: 'цене по возрастанию', type: 'price', order: 'asc' },
-  { name: 'алфавиту', type: 'name', order: 'asc' },
+  { name: 'названию', type: 'name', order: 'asc' },
 ];
 
 export default function Home() {

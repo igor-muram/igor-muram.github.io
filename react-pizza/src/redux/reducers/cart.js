@@ -14,7 +14,7 @@ const cart = (state = initialState, action) => {
           : [action.payload],
       };
 
-      const allPizzas = [].concat.apply([], Object.values(newItems));
+      const allPizzas = Object.values(newItems).flat();
       const totalPrice = allPizzas.reduce(
         (sum, { price, typePrice, sizePrice }) => price + typePrice + sizePrice + sum,
         0,

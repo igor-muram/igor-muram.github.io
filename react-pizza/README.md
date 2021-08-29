@@ -1,4 +1,4 @@
-# React App for pizza store
+# Pizza store based on React + Redux
 
 * Web application for a pizza store based on React.
 * This project was created with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>.

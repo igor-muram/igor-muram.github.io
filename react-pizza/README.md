@@ -9,9 +9,12 @@
 Technologies and tools used to make up the site:
 
 * <a href="https://ru.reactjs.org" target="_blank">ReactJS</a>
+* <a href="https://github.com/facebook/prop-types" target="_blank">prop-types</a> (runtime type checking for React props)
 * <a href="https://redux.js.org" target="_blank">Redux</a> (a library for storing data on the client side)
 * <a href="https://github.com/reduxjs/redux-thunk" target="_blank">redux-thunk</a> (additional library for asynchronous actions in Redux)
+* <a href="https://github.com/reduxjs/react-redux" target="_blank">react-redux</a> (React bindings for Redux)
 * <a href="https://reactrouter.com" target="_blank">React Router</a> (a library for implementing transitions without reloading the page)
+* <a href="https://skeletonreact.com" target="_blank">react-content-loader</a> (creating of animated skeleton-screen components, replacing usual loading)
 * <a href="https://github.com/axios/axios" target="_blank">Axios</a> (library for sending AJAX requests)
 * <a href="https://github.com/typicode/json-server" target="_blank">json-server</a> (for storing pizzas on a fake server)
 * <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>

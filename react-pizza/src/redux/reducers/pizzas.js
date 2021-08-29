@@ -8,6 +8,7 @@ const pizzas = (state = initialState, action) => {
     return {
       ...state,
       items: action.payload,
+      isLoaded: true,
     };
   }
   return state;

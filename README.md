@@ -18,9 +18,9 @@ Layout:
 * View the <a href="https://igor-muram.github.io/bootstrap-news/index.html" target="_blank">Bootstrap News</a>. 
 <!-- * View the <a href="https://igor-muram.github.io/portfolio/index.html" target="_blank">Portfolio</a>. -->
 
-Frontend (React):
+Frontend:
 
-* View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a>.
+* View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a>  (React + Redux).
 
 Templates:
 

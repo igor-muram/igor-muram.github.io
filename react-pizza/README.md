@@ -19,6 +19,7 @@ Technologies and tools used to make up the site:
 * <a href="https://skeletonreact.com" target="_blank">react-content-loader</a> (creating of animated skeleton-screen components, replacing usual loading)
 * <a href="https://github.com/axios/axios" target="_blank">Axios</a> (library for sending AJAX requests)
 * <a href="https://github.com/typicode/json-server" target="_blank">json-server</a> (for storing pizzas on a fake server)
+* <a href="https://www.heroku.com" target="_blank">Heroku</a> (platform that enables to build, run, and operate applications entirely in the cloud)
 * <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>
 * <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
 * <a href="https://webpack.js.org" target="_blank">Webpack</a>

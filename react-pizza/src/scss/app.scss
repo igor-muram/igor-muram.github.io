@@ -45,7 +45,6 @@ body {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 3vw;
 
     @media (max-width: 1440px) {
       grid-template-columns: 1fr 1fr 1fr;
@@ -179,7 +178,9 @@ body {
       @media (max-width: 768px) {
         width: 100%;
         justify-content: center;
-        order: 1;
+        order: 3;
+        margin-top: 35px;
+        margin-bottom: -15px;
       }
 
       img {
@@ -187,6 +188,11 @@ body {
         height: 80px;
 
         @media (max-width: 768px) {
+          width: 350px;
+          height: 350px;
+        }
+
+        @media (max-width: 460px) {
           width: 300px;
           height: 300px;
         }
@@ -361,7 +367,7 @@ body {
       justify-content: space-between;
       align-items: center;
 
-      @media (max-width: 500px) {
+      @media (max-width: 520px) {
         flex-direction: column;
       }
 
@@ -376,7 +382,7 @@ body {
             line-height: 31px;
           }
 
-          @media (max-width: 500px) {
+          @media (max-width: 520px) {
             margin-top: 15px;
           }
         }

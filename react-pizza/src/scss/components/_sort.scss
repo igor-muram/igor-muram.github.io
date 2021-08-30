@@ -1,19 +1,29 @@
 @import '../variables';
 
 .sort {
+  margin-left: 20px;
   position: relative;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 
   &__label {
     display: flex;
     align-items: center;
     white-space: nowrap;
 
+    @media (max-width: 360px) {
+      display: flex;
+      flex-direction: column;
+    }
+
     svg {
       margin-right: 8px;
-      transform: rotate(180deg);
+      transform: rotate(180deg) translateY(2px);
 
       &.rotated {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translateY(-2px);
       }
     }
 
@@ -21,10 +31,14 @@
       margin-right: 8px;
     }
 
-    span {
+    &-text {
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+
+      @media (max-width: 360px) {
+        margin-top: 5px;
+      }
     }
   }
 
@@ -38,8 +52,13 @@
     overflow: hidden;
     width: 205px;
 
+    @media (max-width: 360px) {
+      right: auto;
+    }
+
     ul {
       overflow: hidden;
+
       li {
         padding: 12px 20px;
         cursor: pointer;

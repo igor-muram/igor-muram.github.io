@@ -18,13 +18,13 @@ Layout:
 * View the <a href="https://igor-muram.github.io/bootstrap-news/index.html" target="_blank">Bootstrap News</a>. 
 <!-- * View the <a href="https://igor-muram.github.io/portfolio/index.html" target="_blank">Portfolio</a>. -->
 
-Templates:
-
-* View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
-
 Frontend (React):
 
 * View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a>.
+
+Templates:
+
+* View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
 
 <!-- FullStack: -->
 

@@ -4,6 +4,8 @@
 * This project was created with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>.
 * The layout is based on a design made in Figma.
 
+View a <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">demo</a>.
+
 ## Technologies
 
 Technologies and tools used to make up the site:

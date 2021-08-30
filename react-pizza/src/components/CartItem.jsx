@@ -14,9 +14,9 @@ export default function CartItem({
   onMinus,
   onPlus,
 }) {
-  const handleRemoveClick = () => onRemove(id);
-  const handleMinusItemClick = () => onMinus(id);
-  const handlePlusItemClick = () => onPlus(id);
+  const handleRemoveClick = () => onRemove(id, type, size);
+  const handleMinusItemClick = () => onMinus(id, type, size);
+  const handlePlusItemClick = () => onPlus(id, type, size);
 
   return (
     <div className="cart__item">

@@ -1,23 +1,32 @@
 export const addPizzaToCart = (pizzaObj) => ({
   type: 'ADD_PIZZA_TO_CART',
-  payload: pizzaObj,
+  payload: {
+    id: `id_${pizzaObj.id}_${pizzaObj.type}_${pizzaObj.size}`,
+    obj: pizzaObj,
+  },
 });
 
 export const clearCart = () => ({
   type: 'CLEAR_CART',
 });
 
-export const removeCartItem = (id) => ({
+export const removeCartItem = (id, type, size) => ({
   type: 'REMOVE_CART_ITEM',
-  payload: id,
+  payload: {
+    id: `id_${id}_${type}_${size}`,
+  },
 });
 
-export const plusCartItem = (id) => ({
+export const plusCartItem = (id, type, size) => ({
   type: 'PLUS_CART_ITEM',
-  payload: id,
+  payload: {
+    id: `id_${id}_${type}_${size}`,
+  },
 });
 
-export const minusCartItem = (id) => ({
+export const minusCartItem = (id, type, size) => ({
   type: 'MINUS_CART_ITEM',
-  payload: id,
+  payload: {
+    id: `id_${id}_${type}_${size}`,
+  },
 });

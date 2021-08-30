@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const getTotalPrice = (arr) =>
-  arr.reduce((sum, { price, typePrice, sizePrice }) => price + typePrice + sizePrice + sum, 0);
+  arr.reduce((sum, { obj }) => obj.price + obj.typePrice + obj.sizePrice + sum, 0);
 
 const getTotalSum = (obj, path) => {
   return Object.values(obj).reduce((sum, obj) => sum + _get(obj, path), 0);
@@ -46,10 +46,10 @@ const cart = (state = initialState, action) => {
     case 'REMOVE_CART_ITEM': {
       const newItems = JSON.parse(JSON.stringify(state.items));
 
-      const currentTotalPrice = newItems[action.payload].totalPrice;
-      const currentTotalCount = newItems[action.payload].items.length;
+      const currentTotalPrice = newItems[action.payload.id].totalPrice;
+      const currentTotalCount = newItems[action.payload.id].items.length;
 
-      delete newItems[action.payload];
+      delete newItems[action.payload.id];
 
       return {
         ...state,
@@ -61,13 +61,13 @@ const cart = (state = initialState, action) => {
 
     case 'PLUS_CART_ITEM': {
       const newObjItems = [
-        ...state.items[action.payload].items,
-        state.items[action.payload].items[0],
+        ...state.items[action.payload.id].items,
+        state.items[action.payload.id].items[0],
       ];
 
       const newItems = {
         ...state.items,
-        [action.payload]: {
+        [action.payload.id]: {
           items: newObjItems,
           totalPrice: getTotalPrice(newObjItems),
         },
@@ -85,13 +85,13 @@ const cart = (state = initialState, action) => {
     }
 
     case 'MINUS_CART_ITEM': {
-      const oldItems = state.items[action.payload].items;
+      const oldItems = state.items[action.payload.id].items;
       const newObjItems =
-        oldItems.length > 1 ? state.items[action.payload].items.slice(1) : oldItems;
+        oldItems.length > 1 ? state.items[action.payload.id].items.slice(1) : oldItems;
 
       const newItems = {
         ...state.items,
-        [action.payload]: {
+        [action.payload.id]: {
           items: newObjItems,
           totalPrice: getTotalPrice(newObjItems),
         },

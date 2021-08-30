@@ -10,7 +10,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
-  const addedPizzas = Object.keys(items).map((key) => items[key].items[0]);
+  const addedPizzas = Object.keys(items).map((key) => items[key].items);
 
   const onClearCart = () => {
     if (window.confirm('Вы действительно хотите очистить корзину?')) {
@@ -18,14 +18,14 @@ export default function Cart() {
     }
   };
 
-  const onRemoveCartItem = (id) => {
+  const onRemoveCartItem = (id, type, size) => {
     if (window.confirm('Вы действительно хотите удалить выбранную пиццу?')) {
-      dispatch(removeCartItem(id));
+      dispatch(removeCartItem(id, type, size));
     }
   };
 
-  const onPlusCartItem = (id) => dispatch(plusCartItem(id));
-  const onMinusCartItem = (id) => dispatch(minusCartItem(id));
+  const onPlusCartItem = (id, type, size) => dispatch(plusCartItem(id, type, size));
+  const onMinusCartItem = (id, type, size) => dispatch(minusCartItem(id, type, size));
 
   const onClickOrder = () => console.log('Ваш заказ:', items);
 
@@ -106,12 +106,12 @@ export default function Cart() {
             </div>
           </div>
           <div className="content__items">
-            {addedPizzas.map((obj) => (
+            {addedPizzas.map((elem) => (
               <CartItem
-                {...obj}
-                key={obj.id}
-                totalPrice={items[obj.id].totalPrice}
-                totalCount={items[obj.id].items.length}
+                {...elem[0].obj}
+                key={elem[0].id}
+                totalPrice={items[elem[0].id].totalPrice}
+                totalCount={items[elem[0].id].items.length}
                 onRemove={onRemoveCartItem}
                 onMinus={onMinusCartItem}
                 onPlus={onPlusCartItem}

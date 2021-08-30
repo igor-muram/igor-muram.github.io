@@ -30,4 +30,5 @@ Technologies and tools used to make up the site:
 The methodologies used in the creation of the project:
 
 * CSS Flexbox
+* Grid CSS
 * BEM class naming methodology

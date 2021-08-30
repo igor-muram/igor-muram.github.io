@@ -22,9 +22,9 @@ Templates:
 
 * View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
 
-<!-- Frontend (React): -->
+Frontend (React):
 
-<!-- * View the <a href="#" target="_blank">Pizza Store</a>. -->
+* View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a>.
 
 <!-- FullStack: -->
 

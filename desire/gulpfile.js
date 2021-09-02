@@ -1,12 +1,14 @@
 const { src, dest, watch, parallel, series }  = require('gulp');
 
-const scss          = require('gulp-sass');
+const sass          = require('gulp-sass');
 const concat        = require('gulp-concat');
 const browserSync   = require('browser-sync').create();
 const uglify        = require('gulp-uglify-es').default;
 const autoprefixer  = require('gulp-autoprefixer');
 const imagemin      = require('gulp-imagemin');
 const del           = require('del');
+
+const syntax = 'sass';
 
 function browsersync() {
   browserSync.init({
@@ -49,10 +51,9 @@ function scripts() {
     .pipe(browserSync.stream())
 }
 
-
 function styles() {
-  return src('app/scss/style.scss')
-      .pipe(scss({outputStyle: 'compressed'}))
+  return src('app/' + syntax + '/style.' + syntax)
+      .pipe(sass({outputStyle: 'compressed'}))
       .pipe(concat('style.min.css'))
       .pipe(autoprefixer({
         overrideBrowserslist: ['last 10 version'],
@@ -73,7 +74,7 @@ function build() {
 }
 
 function watching() {
-  watch(['app/scss/**/*.scss'], styles);
+  watch(['app/' + syntax + '/**/*.' + syntax], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/*.html']).on('change', browserSync.reload);
 }
@@ -85,8 +86,5 @@ exports.scripts = scripts;
 exports.images = images;
 exports.cleanDist = cleanDist;
 
-
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles ,scripts ,browsersync, watching);
-
-
+exports.default = parallel(styles, scripts, browsersync, watching);

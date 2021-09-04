@@ -63,3 +63,19 @@ If an incorrect phone number or email address is entered into the authorization 
 ## Menu before and after registration or authorization
 
 ![menu](https://user-images.githubusercontent.com/54866075/132107021-349672c9-ab8a-40ec-8109-e2d4c75a349e.png)
+
+## Add news item form
+
+* The form is invoked by pressing the "Add news" button on the main page, available to the administrator. 
+* Clicking the "Reset" button clears the data entered in the form.
+* Clicking the "Add" button adds the data entered in the form to the database.
+
+![image](https://user-images.githubusercontent.com/54866075/132107242-a9b9e47d-c0c4-473a-bbd2-3c9f3940b1c7.png)
+
+## Page before adding news item
+
+![image](https://user-images.githubusercontent.com/54866075/132107281-dcd028a3-62f1-4ea8-9a1d-bd67681c7a9a.png)
+
+## Page after adding news item
+
+![image](https://user-images.githubusercontent.com/54866075/132107284-0a1b3b9f-156f-4bf2-a8cb-1444467d8683.png)

@@ -128,3 +128,9 @@ The news deletion and modification forms can be called up by clicking on the but
 Site page on download and after download
 
 ![preloader](https://user-images.githubusercontent.com/54866075/132107667-3682cd3a-06c3-49ea-b6b0-82bdf09cf476.png)
+
+## Mobile menu
+
+Site page before and after clicking the menu button
+
+![menu-mobile](https://user-images.githubusercontent.com/54866075/132107722-2aac2d84-808a-442e-af15-0732988cc707.png)

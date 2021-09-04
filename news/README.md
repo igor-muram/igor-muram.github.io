@@ -31,3 +31,11 @@ Site layout began with my personal starting <a href="https://igor-muram.github.i
 ## News list. Medium screens (tablets) and small screens (phones)
 
 ![sm-md](https://user-images.githubusercontent.com/54866075/132106800-3b8c0e7d-aff2-4e84-8cce-243d26a2e429.png)
+
+## Detailed news page. Large screens (computers, laptops)
+
+![image](https://user-images.githubusercontent.com/54866075/132106878-b11d33d0-3c10-4c65-9755-a4880b507b55.png)
+
+## Detailed news page. Medium screens (tablets) and small screens (phones)
+
+![sm-md-detail](https://user-images.githubusercontent.com/54866075/132106911-2c459278-95c8-49fc-918d-e98599ae76bc.png)

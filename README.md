@@ -18,14 +18,14 @@ Layout:
 * View the <a href="https://igor-muram.github.io/bootstrap-news/index.html" target="_blank">Bootstrap News</a>. 
 <!-- * View the <a href="https://igor-muram.github.io/portfolio/index.html" target="_blank">Portfolio</a>. -->
 
-Frontend:
-
-* View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a>  (React + Redux).
-
 Templates:
 
 * View the <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">Web Template</a>.
 
-<!-- FullStack: -->
+Frontend:
 
-<!-- * View the <a href="#" target="_blank">News</a>. -->
+* View the <a href="https://pizza-shop-on-react.herokuapp.com" target="_blank">Pizza Store</a> (React + Redux).
+
+FullStack:
+
+* View the <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">News</a> (PHP + MySQL).

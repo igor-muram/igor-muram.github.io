@@ -97,3 +97,16 @@ The news deletion and modification forms can be called up by clicking on the but
 ## View of the news before and after changing
 
 ![change-res](https://user-images.githubusercontent.com/54866075/132107448-06391f06-d072-4d1d-aacd-41a60450eb60.png)
+
+## Window for confirming news deletion
+
+* Clicking the "No" button will close the window. 
+* Clicking the "Yes" button will start the process of deleting the news item.
+* The news deletion process accompanies an animation.
+* After deleting the news item, you will automatically go to the home page.
+
+![image](https://user-images.githubusercontent.com/54866075/132108031-5a5fdef3-8b5b-4466-8c0d-fb2e180a8547.png)
+
+![image](https://user-images.githubusercontent.com/54866075/132108068-8164e2fd-da30-4bfe-8626-47bc2c730729.png)
+
+![image](https://user-images.githubusercontent.com/54866075/132108073-34304908-b9ac-4ead-b25f-0a405e621707.png)

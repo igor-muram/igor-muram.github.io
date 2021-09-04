@@ -71,8 +71,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`name`, `email`, `phone`, `password`, `type`) VALUES
-('Никита', 'nikita.nstu@gmail.com', '89241841123', '123', 'admin'),
-('Игорь', 'igor.muram@gmail.com', '89994900920', '123', 'admin');
+('Никита', 'nikita@gmail.com', '89858554786', '12345', 'user'),
+('Игорь', 'igor@gmail.com', '89994445566', '12345', 'user');
 
 --
 -- Индексы сохранённых таблиц

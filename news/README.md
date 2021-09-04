@@ -3,7 +3,7 @@ A news website that supports registration and authorization by phone number and 
 
 View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">demo</a>.
 
-![image](https://user-images.githubusercontent.com/54866075/132106701-32170df4-1118-442f-82ef-73c748cb2a6a.png)
+![image](https://user-images.githubusercontent.com/54866075/132108863-d89a70b6-0a2f-4072-9375-92ffc2c1db18.png)
 
 ## Technologies
 
@@ -25,6 +25,10 @@ The methodologies used in the creation of the project:
 * BEM class naming methodology
 
 Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.
+
+## Main page. Large screens (computers, laptops)
+
+![image](https://user-images.githubusercontent.com/54866075/132106701-32170df4-1118-442f-82ef-73c748cb2a6a.png)
 
 ## Main page. Medium screens (tablets) and small screens (phones)
 

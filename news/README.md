@@ -49,3 +49,17 @@ Clicking the "Reset" button clears the data entered in the form.
 When entering into the registration form a phone number or e-mail address that exists in the database, an error message appears in the upper left corner of the screen.
 
 ![errors](https://user-images.githubusercontent.com/54866075/132107989-ada59554-4824-4e2f-b9eb-78e0d1f19d60.png)
+
+## Authorization form
+
+The user can log in to the site by e-mail address or phone number.
+
+![auth](https://user-images.githubusercontent.com/54866075/132107151-3ddce8bf-ab90-4ad1-bb06-3aabf41f61fa.png)
+
+If an incorrect phone number or email address is entered into the authorization form, an error message appears in the upper left corner of the screen.
+
+![errors-auth](https://user-images.githubusercontent.com/54866075/132107942-b2877440-38a6-48b5-9a82-b8ba4bac9764.png)
+
+## Menu before and after registration or authorization
+
+![menu](https://user-images.githubusercontent.com/54866075/132107021-349672c9-ab8a-40ec-8109-e2d4c75a349e.png)

@@ -39,3 +39,13 @@ Site layout began with my personal starting <a href="https://igor-muram.github.i
 ## Detailed news page. Medium screens (tablets) and small screens (phones)
 
 ![sm-md-detail](https://user-images.githubusercontent.com/54866075/132106911-2c459278-95c8-49fc-918d-e98599ae76bc.png)
+
+## Registration form
+
+Clicking the "Reset" button clears the data entered in the form.
+
+![image](https://user-images.githubusercontent.com/54866075/132106977-ffe2acd9-f26b-433d-b8eb-107fb8f98c03.png)
+
+When entering into the registration form a phone number or e-mail address that exists in the database, an error message appears in the upper left corner of the screen.
+
+![errors](https://user-images.githubusercontent.com/54866075/132107989-ada59554-4824-4e2f-b9eb-78e0d1f19d60.png)

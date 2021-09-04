@@ -79,3 +79,21 @@ If an incorrect phone number or email address is entered into the authorization 
 ## Page after adding news item
 
 ![image](https://user-images.githubusercontent.com/54866075/132107284-0a1b3b9f-156f-4bf2-a8cb-1444467d8683.png)
+
+## Detailed news item page for the administrator
+
+![image](https://user-images.githubusercontent.com/54866075/132107306-eccb2988-52fd-4151-9995-cd1cc2f57158.png)
+
+## Buttons for deleting and changing a news item
+
+The news deletion and modification forms can be called up by clicking on the buttons on the detailed news page.
+
+![image](https://user-images.githubusercontent.com/54866075/132107376-eb3fc825-6d0c-4e7c-9e9a-c44553f1de2c.png)
+
+## Form for changing a news item before and after changing fields
+
+![change](https://user-images.githubusercontent.com/54866075/132107410-702616f0-1e09-4c11-9cd7-f06a6e08a37f.png)
+
+## View of the news before and after changing
+
+![change-res](https://user-images.githubusercontent.com/54866075/132107448-06391f06-d072-4d1d-aacd-41a60450eb60.png)

@@ -110,3 +110,15 @@ The news deletion and modification forms can be called up by clicking on the but
 ![image](https://user-images.githubusercontent.com/54866075/132108068-8164e2fd-da30-4bfe-8626-47bc2c730729.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/132108073-34304908-b9ac-4ead-b25f-0a405e621707.png)
+
+## JavaScript
+
+* Preloader when the site loads.
+* Appearance and disappearance of the menu for mobile devices by clicking on the "burger" icon.
+* Animation of likes for news as a heartbeat.
+* Button to return to the top of the page, appearing when the page scrolls.
+* Modal windows for registration, authorization, and communication.
+* Modal windows for adding and modifying news.
+* Modal window for deleting news with animation of the deletion process.
+* Switching tabs for authorization by phone number or email. 
+* Appearance and disappearance of menus for actions with the news.

@@ -144,12 +144,3 @@ Site page before and after clicking the menu button
 ## Modal window for contact
 
 ![image](https://user-images.githubusercontent.com/54866075/132108003-78e059c1-bff5-49fb-aa8e-74b4ab7e21f6.png)
-
-## News item menu
-
-* On hovering over the news, an icon with three dots appears in the top right corner of the news, and clicking on it displays a menu for actions with the news. 
-* The menu contains two items: "Share" and "Copy picture". 
-* The menu remains active, when the cursor is moved outside the news area. 
-* Clicking on the area outside the news or on the three-dot icon disappears the menu.
-
-![dots](https://user-images.githubusercontent.com/54866075/132108159-d5269772-d1a4-4d9e-bdbc-ce1c1a498280.png)

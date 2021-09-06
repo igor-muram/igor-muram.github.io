@@ -1,136 +1,174 @@
-$(function() {
-	
-	/* Preloader */
-	$('.preloader__wrapper').delay(800).fadeOut('slow');
+$(function () {
+  /* Preloader */
+  $('.preloader__wrapper').delay(800).fadeOut('slow');
 
+  /* Menu */
+  $('.header__burger').click(function () {
+    $('.header-nav').addClass('active');
+  });
 
-	/* Menu */
-	$('.header__burger').click(function() {
-		$('.header-nav').addClass('active');
-	});
+  $('.header-nav__close, .header-nav__list li a').click(function () {
+    $('.header-nav').removeClass('active');
+  });
 
-	$('.header-nav__close, .header-nav__list li a').click(function() {
-		$('.header-nav').removeClass('active');
-	});
+  /* Likes */
+  $('.likes').click(function () {
+    $(this).toggleClass('active');
 
+    let likes = $(this).children('.likes__count').data('likes');
 
-	/* Likes */
-	$('.likes').click(function() {
-		$(this).toggleClass('active');
+    if ($(this).hasClass('active')) likes++;
 
-		let likes = $(this).children(".likes__count").data('likes');
+    $(this).children('.likes__count').html(likes);
+  });
 
-		if ($(this).hasClass("active"))
-			likes++;
+  /* Back to top button */
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) $('.top').addClass('active');
+    else $('.top').removeClass('active');
+  });
 
-		$(this).children(".likes__count").html(likes);
-	});
+  $('.top').click(function () {
+    $('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
+  });
 
+  /* Modal windows */
+  $(
+    '.registration-link, .authorization-link, .contact-link, .remove-link, .change-link, .add-news-btn, .close, .js-no',
+  ).click(function () {
+    $('.container').toggleClass('blur');
+    $('body').toggleClass('no-scroll');
+  });
 
-	/* Back to top button */
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 50)
-			$('.top').addClass('active');
-		else
-			$('.top').removeClass('active');
-	});
+  $('.registration-link').click(function () {
+    $('.popup-registration').toggleClass('active');
+  });
 
-	$('.top').click(function() {
-		$('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
-	});
+  $('.authorization-link').click(function () {
+    $('.popup-authorization').toggleClass('active');
+  });
 
+  $('.contact-link').click(function () {
+    $('.popup-contact').toggleClass('active');
+  });
 
-	/* Modal windows */
-	$('.registration-link, .authorization-link, .contact-link, .remove-link, .change-link, .add-news-btn, .close, .js-no').click(function() {
-		$('.container').toggleClass('blur');
-		$('body').toggleClass('no-scroll');
-	});
+  $('.remove-link').click(function () {
+    $('.popup-remove').toggleClass('active');
+  });
 
-	$('.registration-link').click(function() {
-		$('.popup-registration').toggleClass('active');
-	});
+  $('.change-link').click(function () {
+    $('.popup-change').toggleClass('active');
+  });
 
-	$('.authorization-link').click(function() {
-		$('.popup-authorization').toggleClass('active');
-	});
+  $('.remove-link, .change-link').click(function () {
+    $('.news-item__options, .news-item__dots').removeClass('active');
+  });
 
-	$('.contact-link').click(function() {
-		$('.popup-contact').toggleClass('active');
-	});
+  $('.add-news-btn').click(function () {
+    $('.popup-add-news').toggleClass('active');
+  });
 
-	$('.remove-link').click(function() {
-		$('.popup-remove').toggleClass('active');
-	});
+  $('.close, .js-no').click(function () {
+    $('.popup').removeClass('active');
+  });
 
-	$('.change-link').click(function() {
-		$('.popup-change').toggleClass('active');
-	});
+  /* News Removal Animation */
+  $('.js-yes').click(function () {
+    let content = $(this).closest('.popup__content'),
+      confirm = $(this).closest('.popup').find('.confirm-text'),
+      preloader = $(this).closest('.popup').find('.popup-preloader');
 
-	$('.remove-link, .change-link').click(function() {
-		$('.news-item__options, .news-item__dots').removeClass('active');
-	});
+    content.addClass('hide');
+    preloader.addClass('active').show().delay(600).fadeOut('fast');
 
-	$('.add-news-btn').click(function() {
-		$('.popup-add-news').toggleClass('active');
-	});
+    setTimeout(function () {
+      confirm.show().delay(1100).fadeOut('fast');
+    }, 800);
 
-	$('.close, .js-no').click(function() {
-		$('.popup').removeClass('active');
-	});
+    setTimeout(function () {
+      $('.container').removeClass('blur');
+      $('body').removeClass('no-scroll');
+      preloader.removeClass('active');
+      content.removeClass('hide');
+      $('.popup-remove').addClass('none').removeClass('active');
+    }, 2000);
 
+    setTimeout(function () {
+      $('.popup-remove').removeClass('none');
+    }, 2100);
+  });
 
-	/* News Removal Animation */
-	$('.js-yes').click(function() {
-		let content   = $(this).closest('.popup__content'),
-				confirm   = $(this).closest('.popup').find('.confirm-text'),
-				preloader = $(this).closest('.popup').find('.popup-preloader');
+  /* Tabs in Autorization */
+  $('.popup-authorization').on('click', '.tab', function () {
+    $('.popup-authorization').find('.active').removeClass('active');
 
-		content.addClass('hide');
-		preloader.addClass('active').show().delay(600).fadeOut('fast');
+    $(this).addClass('active');
+    $('.tab-form').eq($(this).index()).addClass('active');
+  });
 
-		setTimeout(function() { 
-			confirm.show().delay(1100).fadeOut('fast'); 
-		}, 800);
-		
-		setTimeout(function() { 
-			$('.container').removeClass('blur');
-			$('body').removeClass('no-scroll');
-			preloader.removeClass('active');
-			content.removeClass('hide');
-			$('.popup-remove').addClass('none').removeClass('active');
-		}, 2000);
+  /* Dots */
+  $('.news-item__dots').click(function () {
+    $(this).closest('.news-item').find('.news-item__options').toggleClass('active');
+    $(this).toggleClass('active');
+  });
 
-		setTimeout(function() { 
-			$('.popup-remove').removeClass('none'); 
-		}, 2100);
-	});
+  /* Disappearance of news options when clicking in any area */
+  $(document).click(function (e) {
+    let options = $('.news-item__options'),
+      dots = $('.news-item__dots');
 
+    if (
+      !options.is(e.target) &&
+      !dots.is(e.target) &&
+      dots.has(e.target).length === 0 &&
+      options.has(e.target).length === 0
+    ) {
+      options.removeClass('active');
+      dots.removeClass('active');
+    }
+  });
 
-	/* Tabs in Autorization */
-	$('.popup-authorization').on("click", ".tab", function() {
-		$('.popup-authorization').find('.active').removeClass('active');
+  /* E-mail Ajax Send */
+  $('.form-contact').submit(function () {
+    var th = $(this);
+    $.ajax({
+      type: 'POST',
+      url: 'php/mail.php',
+      data: th.serialize(),
+    }).done(function () {
+      alert('Thank you!');
+      setTimeout(function () {
+        // Done Functions
+        th.trigger('reset');
+      }, 1000);
+    });
+    return false;
+  });
 
-		$(this).addClass('active');
-		$('.tab-form').eq($(this).index()).addClass('active');
-	});
+  $('#more-news-btn').click(function () {
+    var btn_more = $(this);
+    var count_show = parseInt(btn_more.attr('count_show'));
+    var count_add = btn_more.attr('count_add');
 
+    btn_more.text('Подождите...');
 
-	/* Dots */
-	$('.news-item__dots').click(function() {
-		$(this).closest('.news-item').find('.news-item__options').toggleClass('active');
-		$(this).toggleClass('active');
-	});
-
-
-	/* Disappearance of news options when clicking in any area */
-	$(document).click(function(e) {
-		let options = $('.news-item__options'),
-				dots    = $('.news-item__dots');
-
-		if (!options.is(e.target) && !dots.is(e.target) && dots.has(e.target).length === 0 && options.has(e.target).length === 0) {
-			options.removeClass("active");
-			dots.removeClass("active");
-		}
-	});
-
+    $.ajax({
+      url: 'php/ajax.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        count_show,
+        count_add,
+      },
+      success: function (data) {
+        if (data.result == 'success') {
+          $('.news-items').append(data.html);
+          btn_more.text('Еще новости');
+          btn_more.attr('count_show', count_show + 3);
+        } else {
+          btn_more.text('Больше нет новостей');
+        }
+      },
+    });
+  });
 });

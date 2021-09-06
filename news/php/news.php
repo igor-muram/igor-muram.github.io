@@ -1,13 +1,13 @@
-<?
+<?php
 require_once("db.php");
 
-function getArticles($limit)
+function getArticles($startIndex, $countView)
 {
 	global $mysqli;
 	connectDB();
-	$stmt = $mysqli->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT ?");
+	$stmt = $mysqli->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT ?, ?");
 
-	if ($stmt->bind_param("i", $limit)) {
+	if ($stmt->bind_param("ii", $startIndex, $countView)) {
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$stmt->close();
@@ -84,3 +84,4 @@ function updateArticle($id, $category, $likes, $date, $title, $image, $short, $f
 	$stmt->close();
 	closeDB();
 }
+?>

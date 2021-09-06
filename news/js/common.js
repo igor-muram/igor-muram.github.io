@@ -106,28 +106,6 @@ $(function () {
     $('.tab-form').eq($(this).index()).addClass('active');
   });
 
-  /* Dots */
-  $('.news-item__dots').click(function () {
-    $(this).closest('.news-item').find('.news-item__options').toggleClass('active');
-    $(this).toggleClass('active');
-  });
-
-  /* Disappearance of news options when clicking in any area */
-  $(document).click(function (e) {
-    let options = $('.news-item__options'),
-      dots = $('.news-item__dots');
-
-    if (
-      !options.is(e.target) &&
-      !dots.is(e.target) &&
-      dots.has(e.target).length === 0 &&
-      options.has(e.target).length === 0
-    ) {
-      options.removeClass('active');
-      dots.removeClass('active');
-    }
-  });
-
   /* E-mail Ajax Send */
   $('.form-contact').submit(function () {
     var th = $(this);

@@ -1,15 +1,4 @@
 <div class="news-item">
-	<div class="news-item__dots">
-		<i class="fas fa-circle"></i>
-		<i class="fas fa-circle"></i>
-		<i class="fas fa-circle"></i>
-	</div>
-
-	<div class="news-item__options">
-		<a href="#!">Поделиться</a>
-		<a href="#!">Скопировать картинку</a>
-	</div>
-
 	<div class="news-item__img">
 		<img src=<?php echo $news[$i]['image'] ?> alt=<?php echo $news[$i]['category'] ?>>
 

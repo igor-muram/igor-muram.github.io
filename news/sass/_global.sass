@@ -18,7 +18,7 @@ body
 	line-height: 24px
 	color: $text
 	height: 100%
-	&.no-scroll // новое
+	&.no-scroll
 		overflow-y: hidden
 
 a
@@ -43,7 +43,6 @@ ul, li
 form
 	display: inline
 
-/* новое старт */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button
 	-webkit-appearance: none
@@ -54,7 +53,6 @@ input[type=number]
 
 .main 
 	position: relative
-/* новое конец */
 
 .container
 	max-width: 1920px
@@ -64,12 +62,11 @@ input[type=number]
 	flex-direction: column
 	transition: all .2s linear
 	position: relative
-	&.blur // новое
+	&.blur
 		filter: blur(20px)
 		pointer-events: none
 		user-select: none
 
-/* новое */
 .popup
 	position: fixed
 	top: 40%
@@ -212,7 +209,6 @@ input[type=number]
 	&.active
 		background-color: #fff
 		color: $text
-/* новое */
 
 .wrapper
 	max-width: 1290px
@@ -256,7 +252,6 @@ input[type=number]
 	&--no, & + .btn
 		margin-left: 10px
 
-// новое
 .error
 	border: 2px solid #ffc341
 	background-color: #ffda8a

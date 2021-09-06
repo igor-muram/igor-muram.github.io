@@ -17,17 +17,6 @@ if (empty($news)) {
     foreach ($news as $item) {
         $html .= "
             <div class=\"news-item\">
-            	<div class=\"news-item__dots\">
-            		<i class=\"fas fa-circle\"></i>
-            		<i class=\"fas fa-circle\"></i>
-            		<i class=\"fas fa-circle\"></i>
-            	</div>
-            
-            	<div class=\"news-item__options\">
-            		<a>Поделиться</a>
-            		<a>Скопировать картинку</a>
-            	</div>
-            
             	<div class=\"news-item__img\">
             		<img src={$item['image']} alt={$item['category']}>
             

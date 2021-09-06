@@ -11,12 +11,13 @@ View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">
 * Registration by phone number and email.
 * Authorization by phone number and email.
 * Check and output of errors during registration and authorization data entry.
+* Sending letters from the contact form to the mail.
 * Adding news in a self-made admin panel.
 * Modifying news in a self-made admin panel. 
 * Deleting news in a self-made admin panel.
 * Output a few recent news items.
 * Downloading additional news by clicking the button.
-* Sending letters from the contact form to the mail.
+* Navigate to a page with a detailed description of the selected news item.
 
 ## Technologies
 
@@ -24,6 +25,7 @@ Technologies and tools used to make up the site:
 
 * <a href="https://www.php.net" target="_blank">PHP</a>
 * <a href="https://www.mysql.com" target="_blank">MySQL</a>
+* <a href="https://developer.mozilla.org/ru/docs/Web/Guide/AJAX" target="_blank">AJAX</a>
 * <a href="https://jquery.com" target="_blank">JQuery</a>
 * <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>
 * <a href="https://gulpjs.com" target="_blank">Gulp 4</a>

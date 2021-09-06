@@ -1,9 +1,22 @@
 # News project
-A news website that supports registration and authorization by phone number and email, and has an admin panel for adding, modifying and deleting news.
+
+A sports news website.
 
 View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">demo</a>.
 
 ![image](https://user-images.githubusercontent.com/54866075/132108863-d89a70b6-0a2f-4072-9375-92ffc2c1db18.png)
+
+## Functionality
+
+* Registration by phone number and email.
+* Authorization by phone number and email.
+* Check and output of errors during registration and authorization data entry.
+* Adding news in a self-made admin panel.
+* Modifying news in a self-made admin panel. 
+* Deleting news in a self-made admin panel.
+* Output a few recent news items.
+* Downloading additional news by clicking the button.
+* Sending letters from the contact form to the mail.
 
 ## Technologies
 

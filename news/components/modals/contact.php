@@ -18,7 +18,13 @@
 			</li>
 		</ul>
 
-		<form class="form">
+		<form class="form form-contact" method="post">
+		    <!-- Hidden Required Fields -->
+    		<input type="hidden" name="project_name" value="News">
+    		<input type="hidden" name="admin_email" value="igor.muram@gmail.com">
+    		<input type="hidden" name="form_subject" value="Contact">
+    		<!-- END Hidden Required Fields -->
+		    
 			<div class="form__group">
 				<label class="form__label" for="input-email">E-mail</label>
 				<input class="form__input" name="input-email" type="email" placeholder="Введите E-mail" required>

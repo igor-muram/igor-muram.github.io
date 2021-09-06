@@ -1,4 +1,4 @@
-<?
+<?php
 require_once("connections.php");
 $mysqli = false;
 
@@ -27,3 +27,4 @@ function resultToArray($result)
 	
 	return $array;
 }
+?>

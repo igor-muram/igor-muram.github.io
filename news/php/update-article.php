@@ -1,4 +1,4 @@
-<?
+<?php
 require_once("news.php");
 
 $id = $_GET['id'];
@@ -12,5 +12,6 @@ $full = $_POST['input-full'];
 
 updateArticle($id, $category, $likes, $date, $title, $image, $short, $full);
 
-$location = "/news/article.php?id=" . $id;
+$location = "/article.php?id=" . $id;
 header('Location: ' . $location);
+?>

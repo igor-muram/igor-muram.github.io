@@ -1,4 +1,4 @@
-<? require_once("news.php");
+<?php require_once("news.php");
 
 $category = $_POST['input-category'];
 $likes = $_POST['input-likes'];
@@ -9,4 +9,5 @@ $short = $_POST['input-short'];
 $full = $_POST['input-full'];
 
 addArticle($category, $likes, $date, $title, $image, $short, $full);
-header('Location: /news/index.php');
+header('Location: /index.php');
+?>

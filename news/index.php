@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<?
+<?php
 $title="Новости";
 require_once("components/blocks/head.php");
 ?>
 
 <body>
-	<? require_once("components/blocks/preloader.php"); ?>
+	<?php
+	
+	require_once("components/blocks/preloader.php"); ?>
 
 	<div class="container">
-		<?
+		<?php
 		require_once("components/blocks/header.php");
 		require_once("templates/index-template.php");
 		require_once("components/blocks/footer.php");
 		?>
 	</div>
 
-	<?
+	<?php
 	require_once("components/modals/registration.php");
 	require_once("components/modals/authorization.php");
 	require_once("components/modals/contact.php");
@@ -25,14 +27,14 @@ require_once("components/blocks/head.php");
 	?>
 
 
-	<? if (isset($_SESSION['errors'])) : ?>
-		<? foreach ($_SESSION['errors'] as $error) : ?>
+	<?php if (isset($_SESSION['errors'])) : ?>
+		<?php foreach ($_SESSION['errors'] as $error) : ?>
 			<div class="error">
-				<?=$error ?>
+				<?php echo $error ?>
 			</div>
-		<? endforeach; ?>
-		<? $_SESSION['errors'] = array() ?>
-	<? endif; ?>
+		<?php endforeach; ?>
+		<?php $_SESSION['errors'] = array() ?>
+	<?php endif; ?>
 
 
 	<script src="js/scripts.min.js"></script>

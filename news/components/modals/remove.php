@@ -6,7 +6,7 @@
 
         <div class="popup-text">Вы уверены, что хотите удалить новость?</div>
 
-        <form method="post" action="php/delete-article.php?id=<?= $article[0]['id'] ?>">
+        <form method="post" action="php/delete-article.php?id=<?php echo $article[0]['id'] ?>">
             <button class="btn btn--md btn--remove" type="submit">Да</button>
         </form>
         <button class="btn btn--md btn--remove btn--no js-no">Нет</button>

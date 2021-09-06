@@ -1,5 +1,3 @@
-<? require_once("php/news.php"); ?>
-
 <div class="news-item">
 	<div class="news-item__dots">
 		<i class="fas fa-circle"></i>
@@ -13,16 +11,16 @@
 	</div>
 
 	<div class="news-item__img">
-		<img src=<?=$news[$i]['image'] ?> alt=<?=$news[$i]['category'] ?>>
+		<img src=<?php echo $news[$i]['image'] ?> alt=<?php echo $news[$i]['category'] ?>>
 
 		<div class="news-item__info">
 			<div class="news-item__info-title">
-				<?=$news[$i]['category'] ?>
+				<?php echo $news[$i]['category'] ?>
 			</div>
 
 			<div class="news-item__info-stats">
 				<div class="likes">
-					<span class="likes__count" data-likes="<?=$news[$i]['likes'] ?>"><?=$news[$i]['likes'] ?></span>
+					<span class="likes__count" data-likes="<?php echo $news[$i]['likes'] ?>"><?php echo $news[$i]['likes'] ?></span>
 
 					<i class="fas fa-heart"></i>
 				</div>
@@ -35,16 +33,16 @@
 			</div>
 		</div>
 
-		<a class="news-item__img-link" href="article.php?id=<?=$news[$i]['id'] ?>" target="_blank"></a>
+		<a class="news-item__img-link" href="article.php?id=<?php echo $news[$i]['id'] ?>" target="_blank"></a>
 	</div>
 
 	<div class="news-item__text">
-		<?=$news[$i]['short_text'] ?>
+		<?php echo $news[$i]['short_text'] ?>
 	</div>
 
 	<div class="news-item__footer">
-		<a class="news-item__btn btn btn--sm" href="article.php?id=<?=$news[$i]['id'] ?>" target="_blank">Подробнее</a>
-		<div class="news-item__date"><?=$news[$i]['date'] ?></div>
+		<a class="news-item__btn btn btn--sm" href="article.php?id=<?php echo $news[$i]['id'] ?>" target="_blank">Подробнее</a>
+		<div class="news-item__date"><?php echo $news[$i]['date'] ?></div>
 	</div>
 </div>
 
@@ -56,7 +54,7 @@
 
 		<div class="popup-text">Вы уверены, что хотите удалить новость?</div>
 		<form method="post">
-			<input type="text" name="id" value="<?=$news[$i]['id'] ?>">
+			<input type="text" name="id" value="<?php echo $news[$i]['id'] ?>">
 			<button class="btn btn--md btn--remove js-yes" name="yes" type="submit">Да</button>
 		</form>
 		<button class="btn btn--md btn--remove js-no">Нет</button>

@@ -4,12 +4,12 @@
 	<nav class="header-nav">
 		<ul class="header-nav__list">
 			<li><a href="index.php">Новости</a></li>
-			<? if (isset($_SESSION['user'])) : ?>
+			<?php if (isset($_SESSION['user'])): ?>
 				<li><a href="php/logout.php">Выход</a></li>
-			<? else : ?>
+			<?php else: ?>
 				<li><a href="#!" class="registration-link">Регистрация</a></li>
 				<li><a href="#!" class="authorization-link">Авторизация</a></li>
-			<? endif; ?>
+			<?php endif ?>
 			<li><a href="#!" class="contact-link">Написать</a></li>
 		</ul>
 

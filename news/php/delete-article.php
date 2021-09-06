@@ -1,5 +1,6 @@
-<?
+<?php
 require_once("news.php");
 $id = $_GET["id"];
 deleteArticle($id);
-header('Location: /news/index.php');
+header('Location: /index.php');
+?>

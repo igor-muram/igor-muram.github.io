@@ -159,3 +159,13 @@ Site page before and after clicking the menu button
 ## Modal window for contact
 
 ![image](https://user-images.githubusercontent.com/54866075/132108003-78e059c1-bff5-49fb-aa8e-74b4ab7e21f6.png)
+
+## Loading additional news
+
+Site page before loading, during loading and after loading additional news
+
+![image](https://user-images.githubusercontent.com/54866075/132236308-bb19242a-350a-4531-aa8b-a088c9d0227f.png)
+
+![image](https://user-images.githubusercontent.com/54866075/132236450-fb403289-371a-4c5e-a598-94624038f163.png)
+
+![image](https://user-images.githubusercontent.com/54866075/132236353-455d1979-d255-4ca0-8fc7-b80def409910.png)

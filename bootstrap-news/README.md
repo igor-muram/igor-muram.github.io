@@ -1,7 +1,7 @@
 # Bootstrap News project
 A layout of simple news website based Bootstrap.
 
-![image](https://user-images.githubusercontent.com/54866075/132108926-4d4911f2-7719-4322-aa04-45717f43848f.png)
+![image](https://user-images.githubusercontent.com/54866075/132954830-622e1e5a-a3de-4860-af91-bda0dd7dbcbf.png)
 
 ## Technologies
 

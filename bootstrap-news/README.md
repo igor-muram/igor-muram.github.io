@@ -16,7 +16,7 @@ Site layout began with my personal starting <a href="https://igor-muram.github.i
 
 ## Main page. Large screens (computers, laptops)
 
-
+![image](https://user-images.githubusercontent.com/54866075/132955179-8d4734b5-3be0-4b20-94fc-49e5ec07d696.png)
 
 ## Main page. Medium screens (tablets) and small screens (phones)
 

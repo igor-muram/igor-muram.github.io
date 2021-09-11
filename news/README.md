@@ -2,7 +2,7 @@
 
 A sports news website (FrontEnd + BackEnd).
 
-View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">demo</a>.
+View a [demo](https://bootstrap-sport-news.000webhostapp.com).
 
 ![image](https://user-images.githubusercontent.com/54866075/132954114-a71a0c05-3621-4ec0-84e8-cb93b5e036bc.png)
 
@@ -23,13 +23,13 @@ View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">
 
 Technologies and tools used to make up the site:
 
-* <a href="https://www.php.net" target="_blank">PHP</a>
-* <a href="https://www.mysql.com" target="_blank">MySQL</a>
-* <a href="https://developer.mozilla.org/ru/docs/Web/Guide/AJAX" target="_blank">AJAX</a>
-* <a href="https://jquery.com" target="_blank">JQuery</a>
-* <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>
-* <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
-* <a href="https://sass-scss.ru" target="_blank">Sass Preprocessor</a>
+* [PHP](https://www.php.net)
+* [MySQL](https://www.mysql.com)
+* [AJAX](https://developer.mozilla.org/ru/docs/Web/Guide/AJAX)
+* [JQuery](https://jquery.com)
+* [Normalize.css](https://necolas.github.io/normalize.css/)
+* [Gulp 4](https://gulpjs.com)
+* [Sass Preprocessor](https://sass-scss.ru)
 
 ## Methodologies
 
@@ -39,7 +39,7 @@ The methodologies used in the creation of the project:
 * Grid CSS
 * BEM class naming methodology
 
-Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.
+Site layout began with my personal starting [template](https://igor-muram.github.io/webtemplate/index.html).
 
 ## Main page. Large screens (computers, laptops)
 

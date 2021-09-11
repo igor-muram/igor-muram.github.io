@@ -1,10 +1,10 @@
 # News project
 
-A sports news website.
+A sports news website (FrontEnd + BackEnd).
 
 View a <a href="https://bootstrap-sport-news.000webhostapp.com" target="_blank">demo</a>.
 
-![image](https://user-images.githubusercontent.com/54866075/132108863-d89a70b6-0a2f-4072-9375-92ffc2c1db18.png)
+![image](https://user-images.githubusercontent.com/54866075/132954114-a71a0c05-3621-4ec0-84e8-cb93b5e036bc.png)
 
 ## Functionality
 

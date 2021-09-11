@@ -24,7 +24,7 @@ Site layout began with my personal starting <a href="https://igor-muram.github.i
 
 ## Detailed news page. Large screens (computers, laptops)
 
-
+![image](https://user-images.githubusercontent.com/54866075/132959699-b8207c60-86b2-4741-81a3-e5ab8f845d0d.png)
 
 ## Detailed news page. Medium screens (tablets) and small screens (phones)
 

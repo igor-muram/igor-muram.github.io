@@ -1,20 +1,20 @@
 # WebTemplate
 Demonstration of a personal HTML template for a quick start of site layout.<br>
 
-Template author: <a href="https://github.com/igor-muram">Igor Muramshchikov</a>.<br>
+Template author: [Igor Muramshchikov](https://github.com/igor-muram).<br>
 
-View a <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">demo</a>.<br>
+View a [demo](https://igor-muram.github.io/webtemplate/index.html).<br>
 
 Web Template is a starter template for quick start layout. The template includes the most frequently used tools and plugins:<br>
 
-* <a href="https://bootstrap-4.ru" target="_blank">Bootstrap 4 (grid и reboot)</a>
-* <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
-* <a href="https://jquery.com" target="_blank">JQuery</a>
-* <a href="https://sass-scss.ru" target="_blank">Sass and Scss Preprocessors</a>
-* <a href="https://fontawesome.com" target="_blank">Font Awesome</a>
-* <a href="https://bower.io" target="_blank">Bower</a>
-* <a href="https://mmenujs.com" target="_blank">Mmenu</a>
-* <a href="https://jonsuh.com/hamburgers/" target="_blank">Css-hamburgers</a>
+* [Bootstrap 4 (grid и reboot)](https://bootstrap-4.ru)
+* [Gulp 4](https://gulpjs.com)
+* [JQuery](https://jquery.com)
+* [Sass and Scss Preprocessors](https://sass-scss.ru)
+* [Font Awesome](https://fontawesome.com)
+* [Bower](https://bower.io)
+* [Mmenu](https://mmenujs.com)
+* [Css-hamburgers](https://jonsuh.com/hamburgers/)
 
 Images used in the template are responsive. For image responsiveness, specify the <b>img-responsive</b> class.<br>
 
@@ -44,8 +44,8 @@ The template contains starting styles and animations for the elements:<br>
 
 ## How to use a template
 
-* For working with the template, install <a href="https://nodejs.org/en/">NodeJS</a>.
-* <a href="#">Download</a> the <b>Web Template</b> from the GitHub page.
+* For working with the template, install [NodeJS](https://nodejs.org/en/).
+* [Download](#) the <b>Web Template</b> from the GitHub page.
 * Install Node Modules with the <b>npm i</b> command.
 * Run the template with the <b>gulp</b> command.
 
@@ -64,7 +64,7 @@ The template contains starting styles and animations for the elements:<br>
 * <b>Custom HTML</b> in the <b>app/index.html</b> file is start of custom HTML markup.
 * For installing new jQuery library, use the command "<b>bower i library_name</b>" in the command window. Libraries are automatically added to the <b>app/libs</b> folder. Also you must install Bower (command "<b>npm i -g bower</b>"). After installation, write the path to the js library file in the <b>gulpfile.js</b> file in the '<b>scripts</b>' task.
 * For changing color of the page, change the value of the variable '<b>accent</b>' in the file <b>app/sass/_vars.sass</b> | <b>app/scss/_vars.scss</b>.
-* For changing animation of the hamburger icon for the menu, <a href="https://jonsuh.com/hamburgers/">select the desired class</a> and change it in the <b>app/index.html</b> file. Also in this source you can find detailed instructions for configuring the plugin.
+* For changing animation of the hamburger icon for the menu, [select the desired class](https://jonsuh.com/hamburgers/) and change it in the <b>app/index.html</b> file. Also in this source you can find detailed instructions for configuring the plugin.
 * All user scripts must be in the <b>app/js/common.js</b> file and begin after a <b>Custom JS</b> comment.
 * All Sass | Scss variables must be in the <b>app/sass/_vars.sass</b> | <b>app/scss/_vars.scss</b> file.
 * All styles of the elements created by default are in the <b>app/sass/_UI.sass</b> | <b>app/scss/_UI.scss</b> file. To use an element, choose the necessary design option and repeat the markup described for it in the <b>app/index.html</b> file.

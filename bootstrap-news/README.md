@@ -28,3 +28,4 @@ Site layout began with my personal starting <a href="https://igor-muram.github.i
 
 ## Detailed news page. Medium screens (tablets) and small screens (phones)
 
+![detail](https://user-images.githubusercontent.com/54866075/132960249-4c42c0dd-ac87-4c43-b731-24621370dd0a.png)

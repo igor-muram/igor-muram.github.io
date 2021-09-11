@@ -1,26 +1,26 @@
 # Plots project
 Web application dedicated to graphs of functions from mathematical analysis.
 
-View a <a href="https://igor-muram.github.io/plots/index.html" target="_blank">demo</a>.
+View a [demo](https://igor-muram.github.io/plots/index.html).
 
 ## Technologies
 
 Libraries and tools used to make up the site:
 
-* <a href="https://bootstrap-4.ru" target="_blank">Bootstrap 4 (grid и reboot)</a>
-* <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
-* <a href="https://jquery.com" target="_blank">JQuery</a>
-* <a href="https://sass-scss.ru" target="_blank">Sass Preprocessor</a>
-* <a href="https://fontawesome.com" target="_blank">Font Awesome</a>
-* <a href="https://bower.io" target="_blank">Bower</a>
-* <a href="https://www.mathjax.org" target="_blank">MathJax</a>
-* <a href="https://jsxgraph.uni-bayreuth.de/wp/index.html" target="_blank">JSXGraph</a>
-* <a href="https://mmenujs.com" target="_blank">Mmenu</a>
-* <a href="https://jonsuh.com/hamburgers/" target="_blank">Css-hamburgers</a>
-* <a href="https://vincentgarreau.com/particles.js/" target="_blank">ParticlesJS</a>
+* [Bootstrap 4 (grid и reboot)](https://bootstrap-4.ru)
+* [Gulp 4](https://gulpjs.com)
+* [JQuery](https://jquery.com)
+* [Sass Preprocessor](https://sass-scss.ru)
+* [Font Awesome](https://fontawesome.com)
+* [Bower](https://bower.io)
+* [MathJax](https://www.mathjax.org)
+* [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
+* [Mmenu](https://mmenujs.com)
+* [Css-hamburgers](https://jonsuh.com/hamburgers/)
+* [ParticlesJS](https://vincentgarreau.com/particles.js/)
 
-Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.
+Site layout began with my personal starting [template](https://igor-muram.github.io/webtemplate/index.html).
 
 ## Publication in Journal
 
-* A <a href="https://lomonosov-msu.ru/file/event/6339/eid6339_attach_c7e5544cb8d664334c169e5d0d9843342f3ffb8c.pdf#page=336" target="_blank">scientific article</a> was written on <b><i>this app</i></b> for an journal indexed in RSCI (Russian Science Citation Index).
+* A [scientific article](https://lomonosov-msu.ru/file/event/6339/eid6339_attach_c7e5544cb8d664334c169e5d0d9843342f3ffb8c.pdf#page=336) was written on <b><i>this app</i></b> for an journal indexed in RSCI (Russian Science Citation Index).

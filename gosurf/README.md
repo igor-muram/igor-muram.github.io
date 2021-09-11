@@ -1,20 +1,20 @@
 # GoSurf project
 Web site layout for surfing from a design created in Figma.
 
-View a <a href="https://igor-muram.github.io/gosurf/index.html" target="_blank">demo</a>.
+View a [demo](https://igor-muram.github.io/gosurf/index.html).
 
 ## Technologies
 
 Libraries and tools used to make up the site:
 
-* <a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a>
-* <a href="https://jquery.com" target="_blank">JQuery</a>
-* <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>
-* <a href="https://kenwheeler.github.io/slick/" target="_blank">Slick-carousel</a>
-* <a href="https://wowjs.uk" target="_blank">Wow.js</a>
-* <a href="https://gulpjs.com" target="_blank">Gulp 4</a>
-* <a href="https://sass-scss.ru" target="_blank">Sass Preprocessor</a>
-* <a href="https://bower.io" target="_blank">Bower</a>
+* [Animate.css](https://daneden.github.io/animate.css/)
+* [JQuery](https://jquery.com)
+* [Normalize.css](https://necolas.github.io/normalize.css/)
+* [Slick-carousel](https://kenwheeler.github.io/slick/)
+* [Wow.js](https://wowjs.uk)
+* [Gulp 4](https://gulpjs.com)
+* [Sass Preprocessor](https://sass-scss.ru)
+* [Bower](https://bower.io)
 
 ## Methodologies
 
@@ -23,4 +23,4 @@ The methodologies used in the creation of the project:
 * CSS Flexbox
 * BEM class naming methodology
 
-Site layout began with my personal starting <a href="https://igor-muram.github.io/webtemplate/index.html" target="_blank">template</a>.
+Site layout began with my personal starting [template](https://igor-muram.github.io/webtemplate/index.html).

@@ -29,4 +29,9 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ## Layout on large devices
 
-![image](https://user-images.githubusercontent.com/54866075/132998550-46f66e73-f971-4e99-9262-7d9cca9db666.png)
+![image](https://user-images.githubusercontent.com/54866075/132998614-e04cf591-c14e-4091-91fd-9a4a230c91dc.png)
+
+## Layout on medium devices
+
+![image](https://user-images.githubusercontent.com/54866075/132999059-6cbc8f2c-14a7-4e30-8a56-32fcdb43fdef.png)
+

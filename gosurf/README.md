@@ -31,10 +31,6 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/132998614-e04cf591-c14e-4091-91fd-9a4a230c91dc.png)
 
-## Layout on medium devices
+## Layout on medium and small devices
 
-![image](https://user-images.githubusercontent.com/54866075/132999059-6cbc8f2c-14a7-4e30-8a56-32fcdb43fdef.png)
-
-## Layout on small devices
-
-![image](https://user-images.githubusercontent.com/54866075/132999513-b8737830-f15f-470b-b894-94b07b7ff5eb.png)
+![gosurf](https://user-images.githubusercontent.com/54866075/133000725-62e5a89b-46d1-450b-9767-296bac197ef8.png)

@@ -3,6 +3,8 @@ Web site layout for travel to Japan from a design created in Figma.
 
 View a [demo](https://igor-muram.github.io/odigo/index.html).
 
+![image](https://user-images.githubusercontent.com/54866075/133000913-70072238-bd13-4d21-903c-68eb6d6fe153.png)
+
 ## Technologies
 
 Libraries and tools used to make up the site:

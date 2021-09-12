@@ -35,3 +35,6 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/132999059-6cbc8f2c-14a7-4e30-8a56-32fcdb43fdef.png)
 
+## Layout on small devices
+
+![image](https://user-images.githubusercontent.com/54866075/132999513-b8737830-f15f-470b-b894-94b07b7ff5eb.png)

@@ -26,3 +26,7 @@ The methodologies used in the creation of the project:
 * BEM class naming methodology
 
 Site layout began with my personal starting [template](https://igor-muram.github.io/webtemplate/index.html).
+
+## Layout on large screens
+
+![image](https://user-images.githubusercontent.com/54866075/132999966-e4615932-d6da-471c-9fc0-bdc44a77aece.png)

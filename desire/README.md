@@ -8,7 +8,7 @@ Web site layout for the furniture store from a design created in Figma.
 Libraries and tools used to make up the site:
 
 * [JQuery](https://jquery.com)
-* [Normalize.css](https://necolas.github.io/normalize.css/)
+* [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 * [Slick-carousel](https://kenwheeler.github.io/slick/)
 * [Gulp 4](https://gulpjs.com)
 * [Sass Preprocessor](https://sass-scss.ru)

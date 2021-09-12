@@ -31,10 +31,6 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/132999966-e4615932-d6da-471c-9fc0-bdc44a77aece.png)
 
-## Layout on medium screens
+## Layout on medium and small screens
 
-![image](https://user-images.githubusercontent.com/54866075/133000354-f13dae21-44bb-46d9-96a7-b8d2a0818128.png)
-
-## Layout on small screens
-
-![image](https://user-images.githubusercontent.com/54866075/133000609-bfc87f67-a3d7-4e97-87b3-9b00cc5bc61f.png)
+![martaup](https://user-images.githubusercontent.com/54866075/133000852-4c2aafc9-0ed0-408b-a95a-e96f50080a1a.png)

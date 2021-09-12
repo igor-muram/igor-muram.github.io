@@ -3,6 +3,8 @@ Web site layout for web studio from a design created in Figma.
 
 View a [demo](https://igor-muram.github.io/martaup/index.html).
 
+![image](https://user-images.githubusercontent.com/54866075/132999776-b3395bdf-6700-4172-a580-cac651898678.png)
+
 ## Technologies
 
 Libraries and tools used to make up the site:

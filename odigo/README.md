@@ -33,3 +33,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Layout on medium screens
 
 ![image](https://user-images.githubusercontent.com/54866075/133486138-a8966f61-9606-4a88-8616-a2867f13effb.png)
+
+## Layout on small screens
+
+![image](https://user-images.githubusercontent.com/54866075/133488882-dddf35b6-afd0-41a4-8ae6-a53d1aef43fd.png)

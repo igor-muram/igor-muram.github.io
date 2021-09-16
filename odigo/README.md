@@ -30,10 +30,6 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/133484152-229bcea9-97ac-4185-a644-8f5a0bfa536e.png)
 
-## Layout on medium screens
+## Layout on medium and small screens
 
-![image](https://user-images.githubusercontent.com/54866075/133486138-a8966f61-9606-4a88-8616-a2867f13effb.png)
-
-## Layout on small screens
-
-![image](https://user-images.githubusercontent.com/54866075/133488882-dddf35b6-afd0-41a4-8ae6-a53d1aef43fd.png)
+![odigo](https://user-images.githubusercontent.com/54866075/133642817-471a8060-53d2-4932-a921-3b5470424f88.png)

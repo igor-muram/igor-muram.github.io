@@ -1,0 +1,20 @@
+<template>
+  <button>
+    <slot></slot>
+  </button>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="sass">
+.button
+	padding: 10px 15px
+	background: none
+	border: 1px solid teal
+	color: teal
+	cursor: pointer
+	&--right
+		align-self: flex-end
+</style>

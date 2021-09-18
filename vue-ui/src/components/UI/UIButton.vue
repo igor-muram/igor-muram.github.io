@@ -17,6 +17,7 @@ export default {
 	border: 1px solid teal
 	color: teal
 	cursor: pointer
+	display: inline-block
 	&--right
 		align-self: flex-end
 </style>

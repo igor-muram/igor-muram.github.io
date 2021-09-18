@@ -1,11 +1,13 @@
 <template>
-  <button>
+  <div class="button">
     <slot></slot>
-  </button>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'ui-button',
+};
 </script>
 
 <style lang="sass">

@@ -3,17 +3,12 @@
     <h3>Создание поста</h3>
     <input v-model="post.title" class="input" type="text" placeholder="Название" />
     <input v-model="post.body" class="input" type="text" placeholder="Описание" />
-    <ui-button class="button button--right" @click="createPost">Создать</ui-button>
+    <ui-button class="button--right" @click="createPost">Создать</ui-button>
   </form>
 </template>
 
 <script>
-import UIButton from '@/components/UI/UIButton';
-
 export default {
-  components: {
-    UIButton,
-  },
   data() {
     return {
       post: {

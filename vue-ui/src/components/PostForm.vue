@@ -1,14 +1,19 @@
 <template>
-  <form @submit.prevent>
-    <h4>Создание поста</h4>
+  <form class="form" @submit.prevent>
+    <h3>Создание поста</h3>
     <input v-model="post.title" class="input" type="text" placeholder="Название" />
     <input v-model="post.body" class="input" type="text" placeholder="Описание" />
-    <button class="button" @click="createPost">Создать</button>
+    <ui-button class="button button--right" @click="createPost">Создать</ui-button>
   </form>
 </template>
 
 <script>
+import UIButton from '@/components/UI/UIButton';
+
 export default {
+  components: {
+    UIButton,
+  },
   data() {
     return {
       post: {
@@ -35,18 +40,12 @@ export default {
 	display: flex
 	flex-direction: column
 
+h3
+	margin-bottom: 15px
+
 .input
 	width: 100%
 	border: 1px solid teal
 	padding: 10px 15px
-	margin-top: 15px
-
-.button
-	margin-top: 15px
 	margin-bottom: 15px
-	padding: 10px 15px
-	background: none
-	border: 1px solid teal
-	color: teal
-	cursor: pointer
 </style>

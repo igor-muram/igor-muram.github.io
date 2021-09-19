@@ -1,11 +1,14 @@
 <template>
   <div class="app">
     <h1>Страница с постами</h1>
-    <ui-button @click="showDialog">Создать пост</ui-button>
+    <div class="app__buttons">
+      <ui-button @click="showDialog">Создать пост</ui-button>
+      <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
+    </div>
     <ui-dialog v-model:show="dialogVisible">
       <post-form @create="createPost" />
     </ui-dialog>
-    <post-list @remove="removePost" :posts="posts" v-if="isPostsLoaded" />
+    <post-list @remove="removePost" :posts="sortedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
   </div>
 </template>
@@ -25,6 +28,11 @@ export default {
       posts: [],
       dialogVisible: false,
       isPostsLoaded: false,
+      selectedSort: '',
+      sortOptions: [
+        { value: 'title', name: 'по названию' },
+        { value: 'body', name: 'по содержимому' },
+      ],
     };
   },
   methods: {
@@ -52,6 +60,13 @@ export default {
   mounted() {
     this.fetchPosts();
   },
+  computed: {
+    sortedPosts() {
+      return [...this.posts].sort((post1, post2) =>
+        post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]),
+      );
+    },
+  },
 };
 </script>
 
@@ -65,6 +80,9 @@ export default {
 
 .app
 	padding: 20px
+	&__buttons
+		display: flex
+		justify-content: space-between
 
 h1
 	margin-bottom: 20px

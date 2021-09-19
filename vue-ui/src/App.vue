@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <h1>Страница с постами</h1>
+    <ui-input v-model="searchQuery" placeholder="Поиск..." />
     <div class="app__buttons">
       <ui-button @click="showDialog">Создать пост</ui-button>
       <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
@@ -8,7 +9,7 @@
     <ui-dialog v-model:show="dialogVisible">
       <post-form @create="createPost" />
     </ui-dialog>
-    <post-list @remove="removePost" :posts="sortedPosts" v-if="isPostsLoaded" />
+    <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
   </div>
 </template>
@@ -29,6 +30,7 @@ export default {
       dialogVisible: false,
       isPostsLoaded: false,
       selectedSort: '',
+      searchQuery: '',
       sortOptions: [
         { value: 'title', name: 'по названию' },
         { value: 'body', name: 'по содержимому' },
@@ -51,7 +53,7 @@ export default {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
         this.posts = response.data;
       } catch (e) {
-        alert('Произошла ошибка: ' + e);
+        alert('Во время загрузки постов произошла ошибка: ' + e);
       } finally {
         this.isPostsLoaded = true;
       }
@@ -64,6 +66,11 @@ export default {
     sortedPosts() {
       return [...this.posts].sort((post1, post2) =>
         post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]),
+      );
+    },
+    sortedAndSearchedPosts() {
+      return this.sortedPosts.filter((post) =>
+        post.title.toLowerCase().includes(this.searchQuery.toLowerCase()),
       );
     },
   },

@@ -10,7 +10,7 @@
       />
     </transition-group>
   </div>
-  <h3 v-else style="color: red">Список постов пуст</h3>
+  <h2 v-else style="color: red; margin-top: 15px">Список постов пуст</h2>
 </template>
 
 <script>

@@ -20,6 +20,7 @@ export default {
 	display: inline-block
 	user-select: none
 	transition: all .3s ease
+	white-space: nowrap
 	&:active, &:hover
 		color: #fff
 	&:hover

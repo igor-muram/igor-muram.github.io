@@ -29,7 +29,7 @@ export default {
 
 <style lang="sass" scoped>
 .post-list
-	margin-top: 15px
+	overflow: hidden
 	&-item
 		display: inline-block
 		margin-right: 10px

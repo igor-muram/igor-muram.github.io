@@ -4,8 +4,23 @@
 
     <ui-input v-model="searchQuery" placeholder="Поиск..." />
 
-    <div class="app__buttons">
+    <div class="app__inner">
       <ui-button @click="showDialog">Создать пост</ui-button>
+
+      <div class="page__wrapper" v-if="sortedAndSearchedPosts.length > 0">
+        <div
+          v-for="pageNumber in totalPages"
+          :key="pageNumber"
+          class="page"
+          :class="{
+            active: pageNumber === page,
+          }"
+          @click="changePage(pageNumber)"
+        >
+          {{ pageNumber }}
+        </div>
+      </div>
+
       <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
     </div>
 
@@ -15,20 +30,6 @@
 
     <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
-
-    <div class="page__wrapper" v-if="sortedAndSearchedPosts.length > 0">
-      <div
-        v-for="pageNumber in totalPages"
-        :key="pageNumber"
-        class="page"
-        :class="{
-          active: pageNumber === page,
-        }"
-        @click="changePage(pageNumber)"
-      >
-        {{ pageNumber }}
-      </div>
-    </div>
   </div>
 </template>
 
@@ -124,10 +125,13 @@ export default {
 
 .app
 	padding: 20px
-	overflow: hidden
-	&__buttons
+	&__inner
+		background: #fff
+		padding: 15px 0
 		display: flex
 		justify-content: space-between
+		position: sticky
+		top: 0
 
 h1
 	margin-bottom: 20px
@@ -155,6 +159,6 @@ h1
 		background: lighten(teal, 10%)
 	&__wrapper
 		display: flex
-		margin-top: 15px
 		justify-content: center
+		margin: 0 15px
 </style>

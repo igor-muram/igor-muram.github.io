@@ -18,6 +18,9 @@ export default {
 	color: teal
 	cursor: pointer
 	display: inline-block
+	user-select: none
+	& + .button
+		margin-left: 15px
 	&--right
 		align-self: flex-end
 </style>

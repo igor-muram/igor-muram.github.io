@@ -29,4 +29,6 @@ export default {
 	display: flex
 	align-items: center
 	justify-content: space-between
+	&__buttons
+		margin-left: 15px
 </style>

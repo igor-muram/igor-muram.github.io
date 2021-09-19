@@ -1,16 +1,34 @@
 <template>
   <div class="app">
     <h1>Страница с постами</h1>
+
     <ui-input v-model="searchQuery" placeholder="Поиск..." />
+
     <div class="app__buttons">
       <ui-button @click="showDialog">Создать пост</ui-button>
       <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
     </div>
+
     <ui-dialog v-model:show="dialogVisible">
       <post-form @create="createPost" />
     </ui-dialog>
+
     <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
+
+    <div class="page__wrapper" v-if="sortedAndSearchedPosts.length > 0">
+      <div
+        v-for="pageNumber in totalPages"
+        :key="pageNumber"
+        class="page"
+        :class="{
+          active: pageNumber === page,
+        }"
+        @click="changePage(pageNumber)"
+      >
+        {{ pageNumber }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,6 +49,10 @@ export default {
       isPostsLoaded: false,
       selectedSort: '',
       searchQuery: '',
+      page: 1,
+      limit: 10,
+      totalPages: 0,
+      totalPosts: 0,
       sortOptions: [
         { value: 'title', name: 'по названию' },
         { value: 'body', name: 'по содержимому' },
@@ -48,9 +70,19 @@ export default {
     showDialog() {
       this.dialogVisible = true;
     },
+    changePage(pageNumber) {
+      this.page = pageNumber;
+    },
     async fetchPosts() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: {
+            _page: this.page,
+            _limit: this.limit,
+          },
+        });
+
+        this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit);
         this.posts = response.data;
       } catch (e) {
         alert('Во время загрузки постов произошла ошибка: ' + e);
@@ -74,6 +106,11 @@ export default {
       );
     },
   },
+  watch: {
+    page() {
+      this.fetchPosts();
+    },
+  },
 };
 </script>
 
@@ -87,6 +124,7 @@ export default {
 
 .app
 	padding: 20px
+	overflow: hidden
 	&__buttons
 		display: flex
 		justify-content: space-between
@@ -97,4 +135,26 @@ h1
 .loader
 	margin-top: 15px
 	font-size: 19px
+
+.page
+	border: 1px solid teal
+	padding: 10px
+	user-select: none
+	cursor: pointer
+	transition: all .3s ease
+	color: teal
+	& + .page
+		margin-left: 10px
+	&.active, &:active, &:hover
+		color: #fff
+	&.active
+		background: teal
+	&:hover
+		background: lighten(teal, 5%)
+	&:active
+		background: lighten(teal, 10%)
+	&__wrapper
+		display: flex
+		margin-top: 15px
+		justify-content: center
 </style>

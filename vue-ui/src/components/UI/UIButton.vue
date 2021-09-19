@@ -19,6 +19,13 @@ export default {
 	cursor: pointer
 	display: inline-block
 	user-select: none
+	transition: all .3s ease
+	&:active, &:hover
+		color: #fff
+	&:hover
+		background: lighten(teal, 5%)
+	&:active
+		background: lighten(teal, 10%)
 	& + .button
 		margin-left: 15px
 	&--right

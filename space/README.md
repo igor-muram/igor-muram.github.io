@@ -4,6 +4,8 @@ The initial design of the site has been supplemented to improve the visual appea
 
 View a [demo](https://igor-muram.github.io/space/index.html).
 
+![image](https://user-images.githubusercontent.com/54866075/134237304-84379489-61ef-457d-a5c0-a3d15723a9ac.png)
+
 ## Technologies
 
 Libraries and tools used to make up the site:

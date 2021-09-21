@@ -6,6 +6,8 @@
 
 View a [demo](https://pizza-shop-on-react.herokuapp.com).
 
+![image](https://user-images.githubusercontent.com/54866075/134236442-85d87bd5-4a65-419f-b9b0-9d1235fe5db6.png)
+
 ## Technologies
 
 Technologies and tools used to make up the site:

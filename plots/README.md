@@ -3,6 +3,8 @@ Web application dedicated to graphs of functions from mathematical analysis.
 
 View a [demo](https://igor-muram.github.io/plots/index.html).
 
+![image](https://user-images.githubusercontent.com/54866075/134237007-dbc340b0-0a61-4c61-abac-e19ecd2c511d.png)
+
 ## Technologies
 
 Libraries and tools used to make up the site:

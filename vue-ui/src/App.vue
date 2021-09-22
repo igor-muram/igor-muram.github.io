@@ -2,7 +2,7 @@
   <div class="app">
     <h1>Страница с постами</h1>
 
-    <ui-input v-model="searchQuery" placeholder="Поиск..." />
+    <ui-input v-model="searchQuery" placeholder="Поиск..." class="search-input" />
 
     <div class="app__inner">
       <ui-button @click="showDialog">Создать пост</ui-button>
@@ -161,4 +161,7 @@ h1
 		display: flex
 		justify-content: center
 		margin: 0 15px
+
+.search-input
+	margin-bottom: 0 !important
 </style>

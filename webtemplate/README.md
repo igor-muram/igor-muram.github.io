@@ -5,6 +5,8 @@ Template author: [Igor Muramshchikov](https://github.com/igor-muram).<br>
 
 View a [demo](https://igor-muram.github.io/webtemplate/index.html).<br>
 
+![image](https://user-images.githubusercontent.com/54866075/134727530-37e7a768-53fd-45b5-b520-441f5c8b9f15.png)
+
 Web Template is a starter template for quick start layout. The template includes the most frequently used tools and plugins:<br>
 
 * [Bootstrap 4 (grid и reboot)](https://bootstrap-4.ru)

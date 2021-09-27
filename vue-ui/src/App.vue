@@ -7,20 +7,6 @@
     <div class="app__inner">
       <ui-button @click="showDialog">Создать пост</ui-button>
 
-      <div class="page__wrapper" v-if="sortedAndSearchedPosts.length > 0">
-        <div
-          v-for="pageNumber in totalPages"
-          :key="pageNumber"
-          class="page"
-          :class="{
-            active: pageNumber === page,
-          }"
-          @click="changePage(pageNumber)"
-        >
-          {{ pageNumber }}
-        </div>
-      </div>
-
       <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
     </div>
 
@@ -30,6 +16,7 @@
 
     <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
+    <div class="observer" ref="observer"></div>
   </div>
 </template>
 
@@ -71,9 +58,6 @@ export default {
     showDialog() {
       this.dialogVisible = true;
     },
-    changePage(pageNumber) {
-      this.page = pageNumber;
-    },
     async fetchPosts() {
       try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
@@ -91,9 +75,36 @@ export default {
         this.isPostsLoaded = true;
       }
     },
+    async loadMorePosts() {
+      try {
+        this.page++;
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: {
+            _page: this.page,
+            _limit: this.limit,
+          },
+        });
+
+        this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit);
+        this.posts = [...this.posts, ...response.data];
+      } catch (e) {
+        alert('Во время загрузки постов произошла ошибка: ' + e);
+      }
+    },
   },
   mounted() {
     this.fetchPosts();
+    const options = {
+      rootMargin: '0px',
+      threshold: 1.0,
+    };
+    const callback = (entries, observer) => {
+      if (entries[0].isIntersecting && this.page < this.totalPages) {
+        this.loadMorePosts();
+      }
+    };
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(this.$refs.observer);
   },
   computed: {
     sortedPosts() {
@@ -107,11 +118,7 @@ export default {
       );
     },
   },
-  watch: {
-    page() {
-      this.fetchPosts();
-    },
-  },
+  watch: {},
 };
 </script>
 

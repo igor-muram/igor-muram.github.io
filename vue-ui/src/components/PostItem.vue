@@ -8,6 +8,7 @@
       <div><strong>Описание:</strong> {{ post.body }}</div>
     </div>
     <div class="post__buttons">
+      <ui-button @click="$router.push(`/posts/${post.id}`)">Подробнее</ui-button>
       <ui-button @click="$emit('remove', post)">Удалить</ui-button>
     </div>
   </div>
@@ -33,5 +34,6 @@ export default {
 	align-items: center
 	justify-content: space-between
 	&__buttons
-		margin-left: 15px
+    margin-left: 15px
+    display: flex
 </style>

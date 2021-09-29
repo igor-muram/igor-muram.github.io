@@ -16,7 +16,10 @@
 
     <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
-    <div class="observer" ref="observer"></div>
+    <div
+      class="observer"
+      v-intersection="{ function: loadMorePosts, page: this.page, totalPages: this.totalPages }"
+    ></div>
   </div>
 </template>
 
@@ -94,17 +97,6 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0,
-    };
-    const callback = (entries, observer) => {
-      if (entries[0].isIntersecting && this.page < this.totalPages) {
-        this.loadMorePosts();
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer);
   },
   computed: {
     sortedPosts() {

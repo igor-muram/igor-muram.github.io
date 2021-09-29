@@ -16,10 +16,7 @@
 
     <post-list @remove="removePost" :posts="sortedAndSearchedPosts" v-if="isPostsLoaded" />
     <div class="loader" v-else>Идет загрузка постов...</div>
-    <div
-      class="observer"
-      v-intersection="{ function: loadMorePosts, page: this.page, totalPages: this.totalPages }"
-    ></div>
+    <div class="observer" v-intersection="loadMorePosts"></div>
   </div>
 </template>
 

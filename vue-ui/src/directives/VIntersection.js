@@ -6,7 +6,7 @@ export default {
     };
     const callback = (entries, observer) => {
       if (entries[0].isIntersecting) {
-        binding.value.function();
+        binding.value();
       }
     };
     const observer = new IntersectionObserver(callback, options);

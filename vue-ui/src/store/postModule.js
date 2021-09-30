@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const postModule = {
   state: () => ({
     posts: [],
@@ -14,7 +16,7 @@ export const postModule = {
   }),
   getters: {
     sortedPosts(state) {
-      return [state.posts].sort((post1, post2) =>
+      return [...state.posts].sort((post1, post2) =>
         post1[state.selectedSort]?.localeCompare(post2[state.selectedSort]),
       );
     },
@@ -44,5 +46,40 @@ export const postModule = {
       state.totalPages = totalPages;
     },
   },
-  actions: {},
+  actions: {
+    async fetchPosts({ state, commit }) {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: {
+            _page: state.page,
+            _limit: state.limit,
+          },
+        });
+
+        commit('setTotalPages', Math.ceil(response.headers['x-total-count'] / state.limit));
+        commit('setPosts', response.data);
+      } catch (e) {
+        alert('Во время загрузки постов произошла ошибка: ' + e);
+      } finally {
+        commit('setLoading', true);
+      }
+    },
+    async loadMorePosts({ state, commit }) {
+      try {
+        commit('setPage', state.page + 1);
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: {
+            _page: state.page,
+            _limit: state.limit,
+          },
+        });
+
+        commit('setTotalPages', Math.ceil(response.headers['x-total-count'] / state.limit));
+        commit('setPosts', [...state.posts, ...response.data]);
+      } catch (e) {
+        alert('Во время загрузки постов произошла ошибка: ' + e);
+      }
+    },
+  },
+  namespaced: true,
 };

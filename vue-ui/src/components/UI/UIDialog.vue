@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import toggleMixin from '@/mixins/toggleMixin';
+
 export default {
   name: 'ui-dialog',
   mixins: [toggleMixin],

@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Страница с постами</h1>
-
     <div class="app__inner">
       <ui-input v-model="searchQuery" placeholder="Поиск..." class="search-input" />
 
@@ -23,7 +22,10 @@
 <script>
 import PostForm from '@/components/PostForm';
 import PostList from '@/components/PostList';
-import axios from 'axios';
+
+import usePosts from '@/hooks/usePosts';
+import useSortedPosts from '@/hooks/useSortedPosts';
+import useSortedAndSearchedPosts from '@/hooks/useSortedAndSearchedPosts';
 
 export default {
   components: {
@@ -32,14 +34,7 @@ export default {
   },
   data() {
     return {
-      posts: [],
       dialogVisible: false,
-      isPostsLoaded: false,
-      selectedSort: '',
-      searchQuery: '',
-      page: 1,
-      limit: 10,
-      totalPages: 0,
       sortOptions: [
         { value: 'title', name: 'по названию' },
         { value: 'body', name: 'по содержимому' },
@@ -57,54 +52,21 @@ export default {
     showDialog() {
       this.dialogVisible = true;
     },
-    async fetchPosts() {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
-          params: {
-            _page: this.page,
-            _limit: this.limit,
-          },
-        });
-
-        this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit);
-        this.posts = response.data;
-      } catch (e) {
-        alert('Во время загрузки постов произошла ошибка: ' + e);
-      } finally {
-        this.isPostsLoaded = true;
-      }
-    },
-    async loadMorePosts() {
-      try {
-        this.page++;
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
-          params: {
-            _page: this.page,
-            _limit: this.limit,
-          },
-        });
-
-        this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit);
-        this.posts = [...this.posts, ...response.data];
-      } catch (e) {
-        alert('Во время загрузки постов произошла ошибка: ' + e);
-      }
-    },
   },
-  mounted() {
-    this.fetchPosts();
-  },
-  computed: {
-    sortedPosts() {
-      return [...this.posts].sort((post1, post2) =>
-        post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]),
-      );
-    },
-    sortedAndSearchedPosts() {
-      return this.sortedPosts.filter((post) =>
-        post.title.toLowerCase().includes(this.searchQuery.toLowerCase()),
-      );
-    },
+  setup(props) {
+    const { posts, totalPages, isPostsLoaded } = usePosts(10);
+    const { selectedSort, sortedPosts } = useSortedPosts(posts);
+    const { searchQuery, sortedAndSearchedPosts } = useSortedAndSearchedPosts(sortedPosts);
+
+    return {
+      posts,
+      totalPages,
+      isPostsLoaded,
+      selectedSort,
+      sortedPosts,
+      searchQuery,
+      sortedAndSearchedPosts,
+    };
   },
 };
 </script>

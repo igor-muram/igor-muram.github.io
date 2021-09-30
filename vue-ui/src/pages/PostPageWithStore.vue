@@ -7,13 +7,6 @@
 
       <ui-button @click="showDialog">Создать пост</ui-button>
 
-      <h2>Likes: {{ $store.state.likes }}</h2>
-
-      <div>
-        <ui-button @click="$store.commit('incrementLikes')">Лайк</ui-button>
-        <ui-button @click="$store.commit('decrementLikes')">Дизлайк</ui-button>
-      </div>
-
       <ui-select v-model="selectedSort" :options="sortOptions"></ui-select>
     </div>
 
@@ -47,7 +40,6 @@ export default {
       page: 1,
       limit: 10,
       totalPages: 0,
-      totalPosts: 0,
       sortOptions: [
         { value: 'title', name: 'по названию' },
         { value: 'body', name: 'по содержимому' },
@@ -102,18 +94,7 @@ export default {
   mounted() {
     this.fetchPosts();
   },
-  computed: {
-    sortedPosts() {
-      return [...this.posts].sort((post1, post2) =>
-        post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]),
-      );
-    },
-    sortedAndSearchedPosts() {
-      return this.sortedPosts.filter((post) =>
-        post.title.toLowerCase().includes(this.searchQuery.toLowerCase()),
-      );
-    },
-  },
+  computed: {},
   watch: {},
 };
 </script>

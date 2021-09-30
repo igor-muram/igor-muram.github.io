@@ -40,7 +40,6 @@ export default {
       page: 1,
       limit: 10,
       totalPages: 0,
-      totalPosts: 0,
       sortOptions: [
         { value: 'title', name: 'по названию' },
         { value: 'body', name: 'по содержимому' },

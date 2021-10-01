@@ -26,3 +26,8 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Publication in Journal
 
 * A [scientific article](https://lomonosov-msu.ru/file/event/6339/eid6339_attach_c7e5544cb8d664334c169e5d0d9843342f3ffb8c.pdf#page=336) was written on <b><i>this app</i></b> for an journal indexed in RSCI (Russian Science Citation Index).
+
+## Main page
+
+![image](https://user-images.githubusercontent.com/54866075/135641653-a311bb76-7391-4095-8974-e67355c97ab8.png)
+

@@ -35,3 +35,8 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/135642980-b692fa02-4906-4fc3-916c-e161cb838532.png)
 
+## Basic function transformations
+
+![image](https://user-images.githubusercontent.com/54866075/135643560-df587e2a-9915-43ec-905b-517579b405e0.png)
+
+![image](https://user-images.githubusercontent.com/54866075/135643878-3b995e06-1135-4d2f-94b3-260ec9cc1c31.png)

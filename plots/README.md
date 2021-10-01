@@ -40,3 +40,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/135643560-df587e2a-9915-43ec-905b-517579b405e0.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/135643878-3b995e06-1135-4d2f-94b3-260ec9cc1c31.png)
+
+## Straight
+
+![image](https://user-images.githubusercontent.com/54866075/135655010-98f60bab-51b2-4c45-8f18-6f9e8aae602b.png)

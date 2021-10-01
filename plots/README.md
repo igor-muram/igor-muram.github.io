@@ -1,5 +1,5 @@
 # Plots project
-Web application dedicated to graphs of functions from mathematical analysis.
+Interactive web application dedicated to graphs of functions from mathematical analysis.
 
 View a [demo](https://igor-muram.github.io/plots/index.html).
 
@@ -30,4 +30,8 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Main page
 
 ![image](https://user-images.githubusercontent.com/54866075/135641653-a311bb76-7391-4095-8974-e67355c97ab8.png)
+
+## Methods of setting functions and curves
+
+![image](https://user-images.githubusercontent.com/54866075/135642980-b692fa02-4906-4fc3-916c-e161cb838532.png)
 

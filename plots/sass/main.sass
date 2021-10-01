@@ -81,9 +81,18 @@ td
 	.mjx-math, .mjx-char, .mjx-box
 		color: #333 !important
 
+[class^='col']
+	padding-left: 0
+	padding-right: 0
+
 .row
 	margin-left: 0
 	margin-right: 0
+	padding-right: 0
+	padding-left: 0
+
+.transform-container > .row
+	column-gap: 30px
 
 .math
 	font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw
@@ -252,17 +261,13 @@ button:disabled, .button.disabled
 .markdown-body
 	margin: 0 !important
 	padding: 0 !important
-	h1
-		display: none
-	&::before
+	h1, &::before
 		display: none
 
 .hamburger
 	position: absolute
 	padding: 0
-	margin: 
-		left: 13px
-		top: 16px
+	margin: 16px 15px 0 13px
 	left: 0
 	top: 0
 	z-index: 90
@@ -301,10 +306,10 @@ button:disabled, .button.disabled
 
 .top
 	position: fixed
-	bottom: 20px
+	bottom: 10px
 	right: -100px
 	&.active
-		right: 35px
+		right: 15px
 
 .next
 	right: 73px
@@ -580,11 +585,8 @@ button:disabled, .button.disabled
 	margin-right: 45px
 
 .methods-column
-	padding:
-		left: 19px
-		right: 19px
-		top: 8px
-		bottom: 10px
+	padding: 8px 19px 10px
+	margin-bottom: 15px
 
 #methodsPlot1Desc, #methodsPlot2Desc, #methodsPlot3Desc, #methodsPlot4Desc, #methodsPlot5Desc
 	margin-bottom: 0
@@ -670,10 +672,9 @@ button:disabled, .button.disabled
 
 .mirrorUDCheck, .mirrorLRCheck, .moduleUDCheck, .moduleLRCheck, .example1Check, .example2Check
 	cursor: pointer
-	padding-left: 20px
+	padding-left: 30px
 	display: block
 	position: relative
-	top: 2px
 
 .ceilMirrorUD, .ceilMirrorLR, .ceilModuleUD, .ceilModuleLR, .ceilExample1, .ceilExample2
 	position: absolute
@@ -681,7 +682,7 @@ button:disabled, .button.disabled
 	border: 2px solid #c4c9c9
 	width: 18px
 	height: 18px
-	top: 9px
+	top: 7px
 	left: 0
 	border-radius: 3px
 	transition: .2s
@@ -695,7 +696,7 @@ button:disabled, .button.disabled
 	width: 12px
 	height: 22px
 	transform-origin: 100% 100%
-	top: 4px
+	top: 3px
 	left: -5px
 
 .transform-container
@@ -708,11 +709,7 @@ button:disabled, .button.disabled
 	height: 96%
 
 .transform-column, .parametric-example-column, .straight-column, .parabola-column, .hyperbole-column, .power-column, .exponential-column, .trigonometric-column, .hyperbolic-column, .explicit-example-column
-	padding: 
-		left: 19px
-		right: 19px
-		top: 11px
-		bottom: 5px
+	padding: 11px 19px 5px
 
 .straight-container, .parabola-container, .hyperbole-container, .exponential-container, .trigonometric-container, .hyperbolic-container
 	padding-left: 50px
@@ -1041,14 +1038,12 @@ button:disabled, .button.disabled
 	margin-top: 12px
 
 .example1, .ceilExample1, .example2, .ceilExample2
-	margin-left: 15px
 	margin-bottom: 15px
 
-.ceilExample1, .ceilExample2
-	margin-top: 2px
-
 .example1Check, .example2Check
+	white-space: nowrap
 	font-size: 22px
+	margin-top: -2px
 
 #explicitExample1Plot, #explicitExample2Plot
 	height: 50vh

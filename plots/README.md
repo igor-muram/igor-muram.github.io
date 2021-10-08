@@ -117,6 +117,12 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/136564245-88ebe5d4-168d-4776-ab60-b1851e81edfb.png)
 
-## Algorithm of graphing a function
+## Algorithm of graphing an explicitly defined function
 
 ![image](https://user-images.githubusercontent.com/54866075/136570375-be808f58-3ced-4815-9c55-808c9c2fe07c.png)
+
+## First example of graphing an explicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136570794-db7d8771-bc80-4413-9ac5-7996394982c4.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136571084-e30e8135-656d-4e75-bb69-a795e6c26bcd.png)

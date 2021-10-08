@@ -78,3 +78,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Area of admissible values and continuity intervals
 
 ![image](https://user-images.githubusercontent.com/54866075/136561349-b5edf934-ef0d-4be7-9dda-be17dc6ee72b.png)
+
+## Periodicity
+
+![image](https://user-images.githubusercontent.com/54866075/136561774-6b39b666-942f-4ba4-874c-57735d2b009f.png)

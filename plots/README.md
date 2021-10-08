@@ -135,8 +135,22 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ![image](https://user-images.githubusercontent.com/54866075/136571259-7ac2215a-07c7-4795-aa5f-88068cc06c5d.png)
 
-## Algorithm of graphing a parametrically defined plane curves
+## Algorithm of graphing parametrically defined plane curves
 
 ![image](https://user-images.githubusercontent.com/54866075/136571899-7c60c74a-56df-4fbf-aca8-e789bffb652c.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136573242-cc1235f7-c714-461e-ba55-fa7730ffc574.png)
+
+## Example of graphing a parametrically defined plane curve
+
+![image](https://user-images.githubusercontent.com/54866075/136573457-edc483fa-8b0f-4095-b5cd-81e84a8f2564.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136573658-6c0c4b0f-2e27-4779-a40b-c9f6e8fdd462.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136573764-8584b906-77f1-40c8-b107-c760d6037ef4.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136573830-5f3ceb00-c7c3-4e82-90d6-8dfe19ba066a.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136573893-750a0341-215c-4b2b-885a-d38fd555f295.png)
+
+![calc](https://user-images.githubusercontent.com/54866075/136574825-b6efedc0-b627-4a26-a16d-be370bc942c4.png)

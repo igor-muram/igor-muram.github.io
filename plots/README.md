@@ -104,3 +104,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Asymptotes
 
 ![image](https://user-images.githubusercontent.com/54866075/136563537-e2e329ae-63d6-4118-8c29-a279f6807ff4.png)
+
+## Asymptotes of an explicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136563674-de283f87-4047-4fa0-b351-1129aa6a6270.png)

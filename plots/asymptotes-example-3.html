@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,32 +112,34 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1>Параметрическое задание</h1></div>
+					<div class="col-lg-10 text-center">
+						<h1>Параметрическое задание</h1>
+					</div>
 				</div>
 
 				<div class="asymptotes-example-container asymptotes-example-3-container">
 					<div class="algorithm-text text-justify">
-						Найти асимп&shy;тоты кривой 
-						<span class="blue"> 
+						Найти асимп&shy;тоты кривой
+						<span class="blue">
 							$$\:$$ $$x=t\cdot \ln t,\;\;$$
 							$$y=t\cdot \ln \left ( t + 1 \right )$$
-						</span> 
+						</span>
 						<br><br>
-						Кривая опре&shy;де&shy;лена на множестве $$\left ( 0,\:+\infty  \right )$$.
-						$$\;$$При $$$$ $$t\rightarrow 0+:$$ $$\;$$ 
-						$$x(t)\rightarrow 0\;$$ и $$\:$$ $$y(t)\rightarrow 0\;$$ 
+						Кривая опре&shy;де&shy;лена на множестве $$\left ( 0,\:+\infty \right )$$.
+						$$\;$$При $$$$ $$t\rightarrow 0+:$$ $$\;$$
+						$$x(t)\rightarrow 0\;$$ и $$\:$$ $$y(t)\rightarrow 0\;$$
 						$$\Rightarrow\;$$ асимп&shy;тот нет.
 						<br>
 						Проверим наличие наклонных асимптот:
@@ -144,8 +148,8 @@
 					<div class="row">
 						<div class="col-8 algorithm-text">
 							<br>
-							При $$$$ $$t\rightarrow +\infty:$$ $$\;\;$$ 
-							$$x(t)\rightarrow +\infty\;$$ и $$\:$$ $$y(t)\rightarrow +\infty$$. 
+							При $$$$ $$t\rightarrow +\infty:$$ $$\;\;$$
+							$$x(t)\rightarrow +\infty\;$$ и $$\:$$ $$y(t)\rightarrow +\infty$$.
 							<br><br>
 							$$k\:=\lim_{t\rightarrow +\infty}\frac{y(t)}{x(t)}=\;$$
 							$$\lim_{t\rightarrow +\infty}\frac{\ln \left ( t + 1 \right )}{\ln t}=\;$$
@@ -157,14 +161,20 @@
 							<br><br>
 						</div>
 
-						<div class="col-4"><div id="asymptotesExample3Plot" class="jxgbox"></div></div>
+						<div class="col-4">
+							<div id="asymptotesExample3Plot" class="jxgbox"></div>
+						</div>
 					</div>
 
 					<div class="algorithm-text text-justify">Ответ: $$$$ Наклонная асимп&shy;тота $$$$ $$y=x+1$$.</div>
 
 					<div class="asymptotes-example-nav">
-						<a href="asymptotes-example-2.html"><div class="col-xs-1 asymptotes-example-prev" title="Пример 2"><i class="fa fa-angle-left"></i></div></a>
-						<a href="asymptotes-example-4.html"><div class="col-xs-1 asymptotes-example-next" title="Пример 4"><i class="fa fa-angle-right"></i></div></a>
+						<a href="asymptotes-example-2.html">
+							<div class="col-xs-1 asymptotes-example-prev" title="Пример 2"><i class="fa fa-angle-left"></i></div>
+						</a>
+						<a href="asymptotes-example-4.html">
+							<div class="col-xs-1 asymptotes-example-next" title="Пример 4"><i class="fa fa-angle-right"></i></div>
+						</a>
 					</div>
 				</div>
 
@@ -177,4 +187,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

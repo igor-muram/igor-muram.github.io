@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,48 +112,67 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1 class="explicit-title">Пример 2</h1></div>
+					<div class="col-lg-10 text-center">
+						<h1 class="explicit-title">Пример 2</h1>
+					</div>
 				</div>
 
 				<div class="explicit-example-container">
 					<div class="row justify-content-center">
-						
+
 						<div class="col-xs-10 col-sm-12 col-md-10 col-xl-8 col-vl-5 col-sl-6 text-justify algorithm-text">
-							<div class="explicit-example2-text text-center ">$$f(x)=\left\{\begin{matrix}\frac{1}{9}\cdot (x-4)^3,\;\; \left | x-4 \right |< 3\\ x - 4,\;\; \left | x-4 \right |\geq 3 \end{matrix}\right.$$</div>
-							<b>1.</b>&ensp;Построить функции <span class="blue">$$\frac{1}{9}\cdot (x-4)^3$$</span> и <span class="red">$$x - 4$$</span> на одной коор&shy;ди&shy;натной плос&shy;кости.<br>
-							<b>2.</b>&ensp;Упростить нера&shy;венства $$\left | x-4 \right |< 3$$ и $$\left | x-4 \right |\geq 3$$, получив тем самым явные границы изме&shy;нения $$x$$. Из первого нера&shy;венства следует, что $$1 < x < 7$$, то есть $$x\in \left ( 1, 7 \right )$$. Из второго нера&shy;венства следует, что $$x \leq 1$$ или $$x \geq 7$$, то есть $$x\notin \left ( 1, 7 \right )$$.<br>
-							<b>3.</b>&ensp;Разбить коор&shy;ди&shy;натную плос&shy;кость на полу&shy;ченные проме&shy;жутки.<br>
-							<b>4.</b>&ensp;На каждом проме&shy;жутке оставить соот&shy;ветст&shy;вующую ему функцию и убрать другую функцию.
-							
-							<div class="explicit-example-nav">
-								<a href="explicit-example-1.html"><div class="col-xs-1 explicit-example-prev" title="Пример 1"><i class="fa fa-angle-left"></i></div></a>
-								<a href="explicit-example-3.html"><div class="col-xs-1 explicit-example-next" title="Пример 3"><i class="fa fa-angle-right"></i></div></a>
-							</div>
-						</div>
+							<div class="explicit-example2-text text-center ">$$f(x)=\left\{\begin{matrix}\frac{1}{9}\cdot (x-4)^3,\;\;
+								\left | x-4 \right |< 3\\ x - 4,\;\; \left | x-4 \right |\geq 3 \end{matrix}\right.$$</div>
+									<b>1.</b>&ensp;Построить функции <span class="blue">$$\frac{1}{9}\cdot (x-4)^3$$</span> и <span
+										class="red">$$x - 4$$</span> на одной коор&shy;ди&shy;натной плос&shy;кости.<br>
+									<b>2.</b>&ensp;Упростить нера&shy;венства $$\left | x-4 \right |< 3$$ и $$\left | x-4 \right |\geq
+										3$$, получив тем самым явные границы изме&shy;нения $$x$$. Из первого нера&shy;венства следует, что
+										$$1 < x < 7$$, то есть $$x\in \left ( 1, 7 \right )$$. Из второго нера&shy;венства следует, что $$x
+										\leq 1$$ или $$x \geq 7$$, то есть $$x\notin \left ( 1, 7 \right )$$.<br>
+										<b>3.</b>&ensp;Разбить коор&shy;ди&shy;натную плос&shy;кость на полу&shy;ченные проме&shy;жутки.<br>
+										<b>4.</b>&ensp;На каждом проме&shy;жутке оставить соот&shy;ветст&shy;вующую ему функцию и убрать
+										другую функцию.
 
-						<div class="col-xs-10 col-sm-12 col-md-10 col-xl-8 col-vl-6 col-sl-5 offset-vl-1">
-							<div class="explicit-example-column">
-								<div class="row justify-content-center">
-									<div class="col-sm-12"><div class="example2" onclick="showExample2();"><div id="ceilExample2" class="ceilExample2"></div><p class="example2Check">Показать<span class="green">$$\;\;f(x)$$</span></p></div></div>
+										<div class="explicit-example-nav">
+											<a href="explicit-example-1.html">
+												<div class="col-xs-1 explicit-example-prev" title="Пример 1"><i class="fa fa-angle-left"></i>
+												</div>
+											</a>
+											<a href="explicit-example-3.html">
+												<div class="col-xs-1 explicit-example-next" title="Пример 3"><i class="fa fa-angle-right"></i>
+												</div>
+											</a>
+										</div>
+							</div>
+
+							<div class="col-xs-10 col-sm-12 col-md-10 col-xl-8 col-vl-6 col-sl-5 offset-vl-1">
+								<div class="explicit-example-column">
+									<div class="row justify-content-center">
+										<div class="col-sm-12">
+											<div class="example2" onclick="showExample2();">
+												<div id="ceilExample2" class="ceilExample2"></div>
+												<p class="example2Check">Показать<span class="green">$$\;\;f(x)$$</span></p>
+											</div>
+										</div>
+									</div>
+									<div id="explicitExample2Plot" class="jxgbox"></div>
 								</div>
-								<div id="explicitExample2Plot" class="jxgbox"></div>
 							</div>
-						</div>
 
+						</div>
 					</div>
-				</div>
 
 			</header>
 		</div>
@@ -162,4 +183,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

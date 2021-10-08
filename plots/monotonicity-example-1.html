@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,41 +112,44 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1 class="monotonicity-title-main">Явное задание функции $$y(x)$$</h1></div>
+					<div class="col-lg-10 text-center">
+						<h1 class="monotonicity-title-main">Явное задание функции $$y(x)$$</h1>
+					</div>
 				</div>
 
 				<div class="monotonicity-example-container">
 					<div class="row">
 						<div class="col-sm-12 col-vl-8 algorithm-text">
-							<span class="blue">$$y=(x-3)^{2}\cdot e^{\left | x \right |}$$</span> 
-							<br><br> 
-							$$y=\left\{\begin{matrix}(x-3)^{2}\cdot e^{x},\;\;x\geq 0 \\ (x-3)^{2}\cdot e^{-x},\;\;x<0 \end{matrix}\right.$$ 
-							<br><br> 
-							$${\left ( \left ( x-3 \right )^{2}\cdot e^{x} \right )}'=\;$$
-							$$2\left ( x-3 \right )\cdot e^{x}+\;$$
-							$$\left ( x-3 \right )^{2}\cdot e^{x}=\;$$
-							$$\left ( x-3 \right )\left ( x-1 \right )\cdot e^{x}$$ 
-							<br>
-							$${\left ( \left ( x-3 \right )^{2}\cdot e^{-x} \right )}'=\;$$
-							$$2\left ( x-3 \right )\cdot e^{-x}-\;$$
-							$$\left ( x-3 \right )^{2}\cdot e^{-x}=\;$$
-							$$\left ( x-3 \right )\left ( 5-x \right )\cdot e^{-x}$$ 
+							<span class="blue">$$y=(x-3)^{2}\cdot e^{\left | x \right |}$$</span>
 							<br><br>
-							Следовательно,$$\;\;$$ <span class="green">$${y}'=\left\{\begin{matrix}\left ( x-3 \right )\left ( x-1 \right )\cdot e^{x},\;\;x > 0 \\ 
-							\left ( x-3 \right )\left ( 5-x \right )\cdot e^{-x},\;\;x<0 \end{matrix}\right.$$</span> 
-							<br><br>
+							$$y=\left\{\begin{matrix}(x-3)^{2}\cdot e^{x},\;\;x\geq 0 \\ (x-3)^{2}\cdot e^{-x},\;\;x<0
+								\end{matrix}\right.$$ <br><br>
+								$${\left ( \left ( x-3 \right )^{2}\cdot e^{x} \right )}'=\;$$
+								$$2\left ( x-3 \right )\cdot e^{x}+\;$$
+								$$\left ( x-3 \right )^{2}\cdot e^{x}=\;$$
+								$$\left ( x-3 \right )\left ( x-1 \right )\cdot e^{x}$$
+								<br>
+								$${\left ( \left ( x-3 \right )^{2}\cdot e^{-x} \right )}'=\;$$
+								$$2\left ( x-3 \right )\cdot e^{-x}-\;$$
+								$$\left ( x-3 \right )^{2}\cdot e^{-x}=\;$$
+								$$\left ( x-3 \right )\left ( 5-x \right )\cdot e^{-x}$$
+								<br><br>
+								Следовательно,$$\;\;$$ <span class="green">$${y}'=\left\{\begin{matrix}\left ( x-3 \right )\left ( x-1
+									\right )\cdot e^{x},\;\;x > 0 \\
+									\left ( x-3 \right )\left ( 5-x \right )\cdot e^{-x},\;\;x<0 \end{matrix}\right.$$</span>
+										<br><br>
 						</div>
 
 						<div class="col-sm-12 col-vl-4">
@@ -157,15 +162,19 @@
 					<br>
 
 					<div class="algorithm-text text-justify">
-						Ответ: $$$$ Функция $$$$<span class="blue">$$y(x)$$</span>$$$$ убывает на проме&shy;жутках 
-						$$\left ( -\infty,\: 0 \right )\cup \left ( 1,\: 3 \right )$$ 
-						и возрас&shy;тает на проме&shy;жутках 
+						Ответ: $$$$ Функция $$$$<span class="blue">$$y(x)$$</span>$$$$ убывает на проме&shy;жутках
+						$$\left ( -\infty,\: 0 \right )\cup \left ( 1,\: 3 \right )$$
+						и возрас&shy;тает на проме&shy;жутках
 						$$\left ( 0,\: 1 \right )\cup \left ( 3,\: +\infty \right )$$.
 					</div>
 
 					<div class="monotonicity-example-nav">
-						<a href="monotonicity.html"><div class="col-xs-1 monotonicity-example-prev" title="Теория"><i class="fa fa-angle-left"></i></div></a>
-						<a href="monotonicity-example-2.html"><div class="col-xs-1 monotonicity-example-next" title="Пример 2"><i class="fa fa-angle-right"></i></div></a>
+						<a href="monotonicity.html">
+							<div class="col-xs-1 monotonicity-example-prev" title="Теория"><i class="fa fa-angle-left"></i></div>
+						</a>
+						<a href="monotonicity-example-2.html">
+							<div class="col-xs-1 monotonicity-example-next" title="Пример 2"><i class="fa fa-angle-right"></i></div>
+						</a>
 					</div>
 				</div>
 
@@ -178,4 +187,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

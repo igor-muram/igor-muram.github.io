@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,38 +112,46 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="row justify-content-center" style="margin-left: 0; margin-right: 0;">
-					<div class="text-center"><h1 class="periodicity-title">Периодичность</h1></div>
+					<div class="text-center">
+						<h1 class="periodicity-title">Периодичность</h1>
+					</div>
 				</div>
 
 				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
-					<div class="text-center"><h1 class="periodicity-title">Явное задание</h1></div>
+					<div class="text-center">
+						<h1 class="periodicity-title">Явное задание</h1>
+					</div>
 				</div>
 
 				<div class="periodicity-container">
 					<div class="row">
 						<div class="text-justify algorithm-text">
-							Функция $$y=f(x)$$ явля&shy;ется пери&shy;оди&shy;ческой с периодом $$$$ $$T$$, $$$$ если $$$$ $$\forall x\;\; f(x+T) = f(x)$$. <br><br>
+							Функция $$y=f(x)$$ явля&shy;ется пери&shy;оди&shy;ческой с периодом $$$$ $$T$$, $$$$ если $$$$ $$\forall
+							x\;\; f(x+T) = f(x)$$. <br><br>
 							<h3>Пример:</h3>
-							Мини&shy;мальный период функции $$$$ $$y=sin(2x)\:$$ равен $$\:\pi$$, $$$$ так как $$$$ $$\forall x\:$$ $$sin(2(x+\pi))=\:$$ $$sin(2x+2\pi)=\:$$ $$sin(2x)$$.
+							Мини&shy;мальный период функции $$$$ $$y=sin(2x)\:$$ равен $$\:\pi$$, $$$$ так как $$$$ $$\forall x\:$$
+							$$sin(2(x+\pi))=\:$$ $$sin(2x+2\pi)=\:$$ $$sin(2x)$$.
 							<br><br>
 						</div>
 					</div>
 				</div>
 
 				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
-					<div class="text-center"><h1 class="periodicity-title">Неявное задание</h1></div>
+					<div class="text-center">
+						<h1 class="periodicity-title">Неявное задание</h1>
+					</div>
 				</div>
 
 				<div class="periodicity-container">
@@ -155,16 +165,21 @@
 				</div>
 
 				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
-					<div class="text-center"><h1 class="periodicity-title">Параметрическое задание</h1></div>
+					<div class="text-center">
+						<h1 class="periodicity-title">Параметрическое задание</h1>
+					</div>
 				</div>
 
 				<div class="periodicity-container" style="margin-bottom: 20px;">
 					<div class="row">
 						<div class="text-justify algorithm-text">
-							Если $$$$ $$\exists \tau\;\;$$ $$\forall t\in T\;\;$$ $$x(t+\tau)=\;$$ $$T_{x}+x(t),\;\;$$$$y(t+\tau)=y(t)$$, $$$$ то функция $$\;y(x)\;$$ имеет период $$\;T_{x},$$<br>
-							Если $$$$ $$\exists \tau\;\;$$ $$\forall t\in T\;\;$$ $$x(t+\tau)=x(t),\;$$ $$y(t+\tau)=T_{y}+y(t)$$, $$$$ то функция $$\;x(y)\;$$ имеет период $$\;T_{y}.$$ <br><br>
+							Если $$$$ $$\exists \tau\;\;$$ $$\forall t\in T\;\;$$ $$x(t+\tau)=\;$$
+							$$T_{x}+x(t),\;\;$$$$y(t+\tau)=y(t)$$, $$$$ то функция $$\;y(x)\;$$ имеет период $$\;T_{x},$$<br>
+							Если $$$$ $$\exists \tau\;\;$$ $$\forall t\in T\;\;$$ $$x(t+\tau)=x(t),\;$$ $$y(t+\tau)=T_{y}+y(t)$$, $$$$
+							то функция $$\;x(y)\;$$ имеет период $$\;T_{y}.$$ <br><br>
 							<h3>Пример:</h3>
-							Функция $$$$ $$x=x(y)$$, $$$$ заданная пара&shy;мет&shy;ри&shy;чес&shy;кими урав&shy;не&shy;ниями $$$$ $$x=2+sin^{3}(\pi t)$$, $$$$ $$y=2t+5$$ $$$$ 
+							Функция $$$$ $$x=x(y)$$, $$$$ заданная пара&shy;мет&shy;ри&shy;чес&shy;кими урав&shy;не&shy;ниями $$$$
+							$$x=2+sin^{3}(\pi t)$$, $$$$ $$y=2t+5$$ $$$$
 							имеет период $$$$ $$4$$, $$$$ так как $$$$ $$\exists \tau = 2\;\;$$ $$\forall t$$$$:$$ <br>
 							$$x(t+2)=\:$$ $$2+sin^{3}(\pi (t+2))=\:$$ $$2+sin^{3}(\pi t)=x(t)$$, <br>
 							$$y(t+2)=\:$$ $$2(t+2)+5=\:$$ $$4+2t+5=4+y(t)$$.
@@ -181,4 +196,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

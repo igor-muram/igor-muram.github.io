@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,44 +112,60 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="row justify-content-center">
-					<div class="col-lg-10 text-center"><h1 class="h1 exponential-title exponential-title-main exponential-h1">Показательная и логарифмическая функции</h1></div>
+					<div class="col-lg-10 text-center">
+						<h1 class="h1 exponential-title exponential-title-main exponential-h1">Показательная и логарифмическая
+							функции</h1>
+					</div>
 				</div>
 
 				<div class="exponential-container">
 					<div class="row justify-content-center">
 
-						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
-							<div id="exponentialPlot1" class="jxgbox"></div>
-							<div class="row">
-								<div class="col-12"><p id="exponentialPlot1Desc" class="text-center">$$y=a^x$$</p></div>
+						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify">
+							<div class="exponential-column">
+								<div id="exponentialPlot1" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12">
+										<p id="exponentialPlot1Desc" class="text-center">$$y=a^x$$</p>
+									</div>
+								</div>
 							</div>
-						</div></div>
+						</div>
 
-						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
-							<div id="exponentialPlot2" class="jxgbox"></div>
-							<div class="row">
-								<div class="col-12"><p id="exponentialPlot2Desc" class="text-center">$$y=log_{a}x$$</p></div>
+						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify">
+							<div class="exponential-column">
+								<div id="exponentialPlot2" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12">
+										<p id="exponentialPlot2Desc" class="text-center">$$y=log_{a}x$$</p>
+									</div>
+								</div>
 							</div>
-						</div></div>
+						</div>
 
-						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify"><div class="exponential-column">
-							<div id="exponentialPlot3" class="jxgbox"></div>
-							<div class="row">
-								<div class="col-12 plr-0"><p id="exponentialPlot3Desc" class="text-center"><span class="blue">$$y=a^x\;\;$$</span>$$и$$<span class="red">$$\;\;\:y=log_{a}x$$</span></p></div>
+						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-4 text-justify">
+							<div class="exponential-column">
+								<div id="exponentialPlot3" class="jxgbox"></div>
+								<div class="row">
+									<div class="col-12 plr-0">
+										<p id="exponentialPlot3Desc" class="text-center"><span class="blue">$$y=a^x\;\;$$</span>$$и$$<span
+												class="red">$$\;\;\:y=log_{a}x$$</span></p>
+									</div>
+								</div>
 							</div>
-						</div></div>
+						</div>
 
 					</div>
 				</div>
@@ -155,31 +173,70 @@
 				<div class="exponential-container">
 					<div class="row justify-content-center">
 
-						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-6 col-vl-4 text-justify"><div class="exponential-column">
-							<div class="exponentialPropRow exponentialPropRow1">
-								<div class="col-12"><p class="exponentialProp1 text-center">$$a^{x+z} = a^{x} \cdot a^{z};\quad$$ $$a^{x-z} = \frac{a^{x}}{a^{z}};$$</p></div>
-								<div class="col-12"><p class="exponentialProp1 text-center">$$\left(a^{x}\right)^{z} = a^{x\cdot z} = \left(a^{z}\right)^{x};\;$$</p></div>
-								<div class="col-12"><p class="exponentialProp1 text-center" style="margin-bottom: 0px;">$$(a\cdot b)^x = a^x \cdot b^x;\quad$$ $$\left(\frac{a}{b}\right)^x = \frac{a^x}{b^x};$$</p></div>
-								<div class="col-12"><p class="exponentialProp1 text-center">$$a^0 = 1;\quad$$ $$a^{-x} = \frac{1}{a^x};\quad$$ $$\sqrt[n]{a^x} = a^{\frac{x}{n}};$$</p></div>
-								<div class="col-12"><p class="exponentialProp1 last text-center">Если $$\;\;a^{x} = a^{z},\;\;$$ то $$\;\;x=z;$$</p></div>
+						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-6 col-vl-4 text-justify">
+							<div class="exponential-column">
+								<div class="exponentialPropRow exponentialPropRow1">
+									<div class="col-12">
+										<p class="exponentialProp1 text-center">$$a^{x+z} = a^{x} \cdot a^{z};\quad$$ $$a^{x-z} =
+											\frac{a^{x}}{a^{z}};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp1 text-center">$$\left(a^{x}\right)^{z} = a^{x\cdot z} =
+											\left(a^{z}\right)^{x};\;$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp1 text-center" style="margin-bottom: 0px;">$$(a\cdot b)^x = a^x \cdot
+											b^x;\quad$$ $$\left(\frac{a}{b}\right)^x = \frac{a^x}{b^x};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp1 text-center">$$a^0 = 1;\quad$$ $$a^{-x} = \frac{1}{a^x};\quad$$
+											$$\sqrt[n]{a^x} = a^{\frac{x}{n}};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp1 last text-center">Если $$\;\;a^{x} = a^{z},\;\;$$ то $$\;\;x=z;$$</p>
+									</div>
+								</div>
 							</div>
-						</div></div>
+						</div>
 
-						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-6 col-vl-4 text-justify"><div class="exponential-column">
-							<div class="exponentialPropRow exponentialPropRow2">
-								<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 18px;">$$lg{x}=log_{_{10}}{x};\quad$$ $$ln{x}=log_{e}{x};$$</p></div>
-								<div class="col-12"><p class="exponentialProp2 text-center">$$log_{a}{a}=1;\quad$$ $$a^{log_{a}{x}}=x;\quad$$ $$log_{a}{1}=0;$$</p></div>
-								<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 0px;">$$log_{a}{x^p}=p\cdot log_{a}{x};\quad$$ $$log_{a^q}{x}=\frac{1}{q}\cdot log_{a}{x};$$</p></div>
-								<div class="col-12"><p class="exponentialProp2 text-center" style="margin-bottom: 5px; margin-top: 0px;">$$log_{a}{b}=\frac{log_{c}{b}}{log_{c}{a}};\quad$$ $$log_{a}{x}=\frac{1}{log_{x}{a}};$$</p></div>
-								<div class="col-12"><p class="exponentialProp2 text-center">$$log_{a}{(x\cdot z)}=$$$$\;log_{a}{x}+log_{a}{z};$$</p></div>
-								<div class="col-12"><p class="exponentialProp2 last text-center">$$log_{a}{\left (\frac{x}{z} \right)} =$$$$\;log_{a}{x}-log_{a}{z};$$</p></div>
+						<div class="col-xs-10 col-sm-9 col-lg-7 col-xl-6 col-vl-4 text-justify">
+							<div class="exponential-column">
+								<div class="exponentialPropRow exponentialPropRow2">
+									<div class="col-12">
+										<p class="exponentialProp2 text-center" style="margin-bottom: 18px;">$$lg{x}=log_{_{10}}{x};\quad$$
+											$$ln{x}=log_{e}{x};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp2 text-center">$$log_{a}{a}=1;\quad$$ $$a^{log_{a}{x}}=x;\quad$$
+											$$log_{a}{1}=0;$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp2 text-center" style="margin-bottom: 0px;">$$log_{a}{x^p}=p\cdot
+											log_{a}{x};\quad$$ $$log_{a^q}{x}=\frac{1}{q}\cdot log_{a}{x};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp2 text-center" style="margin-bottom: 5px; margin-top: 0px;">
+											$$log_{a}{b}=\frac{log_{c}{b}}{log_{c}{a}};\quad$$ $$log_{a}{x}=\frac{1}{log_{x}{a}};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp2 text-center">$$log_{a}{(x\cdot z)}=$$$$\;log_{a}{x}+log_{a}{z};$$</p>
+									</div>
+									<div class="col-12">
+										<p class="exponentialProp2 last text-center">$$log_{a}{\left (\frac{x}{z} \right)}
+											=$$$$\;log_{a}{x}-log_{a}{z};$$</p>
+									</div>
+								</div>
 							</div>
-						</div></div>
+						</div>
 
 						<div class="col-lg-7 col-xl-4">
 							<div class="navigation">
-								<a href="power.html"><div class="elem-prev" title="Степенная функция"><i class="fa fa-angle-left"></i></div></a>
-								<a href="trigonometric-1.html"><div class="elem-next" title="Тригонометрические функции"><i class="fa fa-angle-right"></i></div></a>
+								<a href="power.html">
+									<div class="elem-prev" title="Степенная функция"><i class="fa fa-angle-left"></i></div>
+								</a>
+								<a href="trigonometric-1.html">
+									<div class="elem-next" title="Тригонометрические функции"><i class="fa fa-angle-right"></i></div>
+								</a>
 							</div>
 						</div>
 
@@ -195,4 +252,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

@@ -11,7 +11,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -22,7 +22,7 @@
 	<meta name="msapplication-TileColor" content="#ffc40d">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -33,8 +33,10 @@
 
 <body>
 
-	<div class="preloader"><div class="pulse"></div></div>
-	
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
 	<div id="my-page">
 		<div id="my-header">
 			<header class="site-header">
@@ -48,7 +50,7 @@
 						<ul>
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="developers.html">Разработчики</a></li>
-							<li><a href="methods.html">Способы задания функций и кривых</a></li>							
+							<li><a href="methods.html">Способы задания функций и кривых</a></li>
 							<li><a href="transform.html">Основные преобразования функций</a></li>
 							<li><span>Элементарные функции</span>
 								<ul>
@@ -110,13 +112,13 @@
 								</ul>
 							</li>
 							<li><span>Связь полярных и декартовых координат</span>
-                <ul>
-                  <li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
-                  <li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
-                  <li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
-                  <li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
-                </ul>
-              </li>
+								<ul>
+									<li><a href="polar-1.html">$$r=1+cos(\varphi)$$</a></li>
+									<li><a href="polar-2.html">$$r=1+sin(\varphi)$$</a></li>
+									<li><a href="polar-3.html">$$r=2cos(2\varphi)$$</a></li>
+									<li><a href="polar-4.html">$$r=2sin(2\varphi)$$</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -131,9 +133,12 @@
 				<div class="valid-container">
 					<div class="row">
 						<div class="col-xs-12 text-justify algorithm-text">
-							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D$$ $$–$$ область опре&shy;де&shy;ления функции (множество значений $$x$$, для которых $$f(x)\in \mathbb{R}$$). 
-							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. В случае case-функций к особым точкам добав&shy;ляют значения $$x$$, в которых «стыку&shy;ются» функции. 
-							Если $$x=-\infty$$ (и/или $$x=+\infty$$) явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$, то эти значения также явля&shy;ются особыми точками функции. 
+							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D$$ $$–$$
+							область опре&shy;де&shy;ления функции (множество значений $$x$$, для которых $$f(x)\in \mathbb{R}$$).
+							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. В случае case-функций к особым точкам
+							добав&shy;ляют значения $$x$$, в которых «стыку&shy;ются» функции.
+							Если $$x=-\infty$$ (и/или $$x=+\infty$$) явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$,
+							то эти значения также явля&shy;ются особыми точками функции.
 							Особые точки разби&shy;вают область опре&shy;де&shy;ления на участки непре&shy;рыв&shy;ности функции.
 						</div>
 					</div>
@@ -142,14 +147,19 @@
 				<br>
 
 				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
-					<div class="text-center"><h1 class="valid-title">Неявное задание</h1></div>
+					<div class="text-center">
+						<h1 class="valid-title">Неявное задание</h1>
+					</div>
 				</div>
 
 				<div class="valid-container">
 					<div class="row">
 						<div class="col-xs-12 text-justify algorithm-text">
-							В боль&shy;шин&shy;стве случаев невоз&shy;можно найти множество опре&shy;де&shy;ления значений (а также область значения) для неявно заданной кривой, исходя только из функ&shy;цио&shy;наль&shy;ного урав&shy;нения. 
-							Поэтому на данном этапе лишь исклю&shy;чают из даль&shy;ней&shy;шего рассмот&shy;рения значения $$x$$ и $$y$$, для которых не опре&shy;де&shy;лена $$F(x, y)$$.
+							В боль&shy;шин&shy;стве случаев невоз&shy;можно найти множество опре&shy;де&shy;ления значений (а также
+							область значения) для неявно заданной кривой, исходя только из функ&shy;цио&shy;наль&shy;ного
+							урав&shy;нения.
+							Поэтому на данном этапе лишь исклю&shy;чают из даль&shy;ней&shy;шего рассмот&shy;рения значения $$x$$ и
+							$$y$$, для которых не опре&shy;де&shy;лена $$F(x, y)$$.
 						</div>
 					</div>
 				</div>
@@ -157,16 +167,22 @@
 				<br>
 
 				<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;">
-					<div class="text-center"><h1 class="valid-title">Параметрическое задание</h1></div>
+					<div class="text-center">
+						<h1 class="valid-title">Параметрическое задание</h1>
+					</div>
 				</div>
 
 				<div class="valid-container" style="margin-bottom: 20px;">
 					<div class="row">
 						<div class="col-xs-12 text-justify algorithm-text">
-							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D=\mathbb{R} \setminus A$$ $$–$$ область опре&shy;де&shy;ления функции, 
-							$$A$$ $$–$$ множество значений пара&shy;метра $$t$$, при которых хотя бы одна из функций $$x(t)$$, $$$$ $$y(t)$$ не опре&shy;де&shy;лена или терпит разрыв. 
-							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. Если $$t=-\infty$$ (и/или $$t=+\infty$$) явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$, 
-							то эти значения также явля&shy;ются особыми точками кривой. Особые точки разби&shy;вают область опре&shy;де&shy;ления на участки непре&shy;рыв&shy;ности кривой.
+							Иссле&shy;до&shy;вание функции произ&shy;во&shy;дится на множестве $$T=\overline{D}$$, где $$D=\mathbb{R}
+							\setminus A$$ $$–$$ область опре&shy;де&shy;ления функции,
+							$$A$$ $$–$$ множество значений пара&shy;метра $$t$$, при которых хотя бы одна из функций $$x(t)$$, $$$$
+							$$y(t)$$ не опре&shy;де&shy;лена или терпит разрыв.
+							Точки $$T\setminus D$$ явля&shy;ются особыми точками кривой. Если $$t=-\infty$$ (и/или $$t=+\infty$$)
+							явля&shy;ются предель&shy;ными значе&shy;ниями множества $$D$$,
+							то эти значения также явля&shy;ются особыми точками кривой. Особые точки разби&shy;вают область
+							опре&shy;де&shy;ления на участки непре&shy;рыв&shy;ности кривой.
 						</div>
 					</div>
 				</div>
@@ -180,4 +196,5 @@
 	<script src="js/scripts.min.js"></script>
 
 </body>
+
 </html>

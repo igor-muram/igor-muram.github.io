@@ -35,6 +35,10 @@ The methodologies used in the creation of the project:
 * Grid CSS
 * BEM class naming methodology
 
-## The appearance of the site on large devices
+## Main page on large devices
 
 ![image](https://user-images.githubusercontent.com/54866075/136592765-114671c9-1e77-4b6c-9bd7-179845d52080.png)
+
+## Main page on medium and small devices
+
+![sm](https://user-images.githubusercontent.com/54866075/136596852-fc68c8f4-d362-44f6-88c5-afcd8fcd9ccd.png)

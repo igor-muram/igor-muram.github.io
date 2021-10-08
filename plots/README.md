@@ -126,3 +126,9 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136570794-db7d8771-bc80-4413-9ac5-7996394982c4.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136571084-e30e8135-656d-4e75-bb69-a795e6c26bcd.png)
+
+## Second example of graphing an explicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136571182-a7d119b7-1453-48d6-8228-9e74207e307d.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136571259-7ac2215a-07c7-4795-aa5f-88068cc06c5d.png)

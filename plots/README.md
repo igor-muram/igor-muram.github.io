@@ -82,3 +82,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Periodicity
 
 ![image](https://user-images.githubusercontent.com/54866075/136561774-6b39b666-942f-4ba4-874c-57735d2b009f.png)
+
+## Monotonicity of an explicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136562145-fc951567-cfbf-4ced-86fd-4988060eb9f7.png)

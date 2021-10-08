@@ -66,3 +66,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136549521-8cf4ceba-50eb-4590-893c-101db7a9001a.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136549706-cc288150-6adc-4ee3-9867-164143bc5de2.png)
+
+## Hyperbolic function
+
+![image](https://user-images.githubusercontent.com/54866075/136549831-af569cf6-dd21-45e7-bee1-67b7170f9ca6.png)

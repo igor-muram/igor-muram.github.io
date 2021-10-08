@@ -112,3 +112,5 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Asymptotes of a parametrically defined function
 
 ![image](https://user-images.githubusercontent.com/54866075/136563848-5ee74a0b-fbce-465f-9687-d45dfc985144.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136564057-e93327b6-8025-4fe6-b631-928fbbe30c2d.png)

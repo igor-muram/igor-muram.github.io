@@ -52,3 +52,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Hyperbole
 
 ![image](https://user-images.githubusercontent.com/54866075/136548936-b3855161-9650-4c18-9c3c-5d64afba93f8.png)
+
+## Power function
+
+![image](https://user-images.githubusercontent.com/54866075/136549196-7a0f8e20-1473-4a1b-a0ae-75cd5f70cf08.png)

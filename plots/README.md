@@ -44,3 +44,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Straight
 
 ![image](https://user-images.githubusercontent.com/54866075/135655010-98f60bab-51b2-4c45-8f18-6f9e8aae602b.png)
+
+## Parabola
+
+![image](https://user-images.githubusercontent.com/54866075/136548697-f39469ff-666d-489a-b703-42a7f2954249.png)

@@ -164,3 +164,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136576686-8a3746af-37cd-40d1-8f81-1eadc31e9ce2.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136576799-9b2e3de0-d559-4251-9e70-e6a4eb4fdd82.png)
+
+## 404 page
+
+![image](https://user-images.githubusercontent.com/54866075/136591304-87e0faab-5a87-4437-ba97-30a6a33bb253.png)

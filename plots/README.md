@@ -74,3 +74,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Some other functions
 
 ![image](https://user-images.githubusercontent.com/54866075/136550001-605f9d49-78ee-4fe2-a9f3-5594c3aadfcf.png)
+
+## Area of admissible values and continuity intervals
+
+![image](https://user-images.githubusercontent.com/54866075/136561349-b5edf934-ef0d-4be7-9dda-be17dc6ee72b.png)

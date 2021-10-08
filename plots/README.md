@@ -119,6 +119,8 @@ Site layout began with my personal starting [template](https://igor-muram.github
 
 ## Algorithm of graphing an explicitly defined function
 
+![image](https://user-images.githubusercontent.com/54866075/136571584-099cf168-1b98-49ce-9424-28fd1772e21a.png)
+
 ![image](https://user-images.githubusercontent.com/54866075/136570375-be808f58-3ced-4815-9c55-808c9c2fe07c.png)
 
 ## First example of graphing an explicitly defined function

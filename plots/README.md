@@ -116,3 +116,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136564057-e93327b6-8025-4fe6-b631-928fbbe30c2d.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136564245-88ebe5d4-168d-4776-ab60-b1851e81edfb.png)
+
+## Algorithm of graphing a function
+
+![image](https://user-images.githubusercontent.com/54866075/136570375-be808f58-3ced-4815-9c55-808c9c2fe07c.png)

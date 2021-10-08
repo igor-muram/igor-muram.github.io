@@ -70,3 +70,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Hyperbolic function
 
 ![image](https://user-images.githubusercontent.com/54866075/136549831-af569cf6-dd21-45e7-bee1-67b7170f9ca6.png)
+
+## Some other functions
+
+![image](https://user-images.githubusercontent.com/54866075/136550001-605f9d49-78ee-4fe2-a9f3-5594c3aadfcf.png)

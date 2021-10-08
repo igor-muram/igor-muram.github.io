@@ -100,3 +100,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136563022-fde83256-bb98-4b39-a191-4a4cc6ef9bf5.png)
 
 ![image](https://user-images.githubusercontent.com/54866075/136563351-da2ed6ec-8c63-4e3d-94ea-68b6fe894c60.png)
+
+## Asymptotes
+
+![image](https://user-images.githubusercontent.com/54866075/136563537-e2e329ae-63d6-4118-8c29-a279f6807ff4.png)

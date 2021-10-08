@@ -154,3 +154,13 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ![image](https://user-images.githubusercontent.com/54866075/136573893-750a0341-215c-4b2b-885a-d38fd555f295.png)
 
 ![calc](https://user-images.githubusercontent.com/54866075/136574825-b6efedc0-b627-4a26-a16d-be370bc942c4.png)
+
+## Connecting Polar and Cartesian coordinates
+
+![image](https://user-images.githubusercontent.com/54866075/136575424-3bb2f8d0-f0d8-45c3-a54f-0016fc81e380.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136575597-54f98736-461e-4426-97ab-ecc50e2ad38c.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136576686-8a3746af-37cd-40d1-8f81-1eadc31e9ce2.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136576799-9b2e3de0-d559-4251-9e70-e6a4eb4fdd82.png)

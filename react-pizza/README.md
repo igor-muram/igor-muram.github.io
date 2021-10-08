@@ -34,3 +34,7 @@ The methodologies used in the creation of the project:
 * CSS Flexbox
 * Grid CSS
 * BEM class naming methodology
+
+## The appearance of the site on large devices
+
+![image](https://user-images.githubusercontent.com/54866075/136592765-114671c9-1e77-4b6c-9bd7-179845d52080.png)

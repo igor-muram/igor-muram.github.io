@@ -60,3 +60,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Exponential function
 
 ![image](https://user-images.githubusercontent.com/54866075/136549384-d4f93729-9448-4c50-8231-d6addc2f5d40.png)
+
+## Trigonometric functions
+
+![image](https://user-images.githubusercontent.com/54866075/136549521-8cf4ceba-50eb-4590-893c-101db7a9001a.png)

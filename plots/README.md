@@ -64,3 +64,5 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Trigonometric functions
 
 ![image](https://user-images.githubusercontent.com/54866075/136549521-8cf4ceba-50eb-4590-893c-101db7a9001a.png)
+
+![image](https://user-images.githubusercontent.com/54866075/136549706-cc288150-6adc-4ee3-9867-164143bc5de2.png)

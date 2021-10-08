@@ -168,3 +168,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## 404 page
 
 ![image](https://user-images.githubusercontent.com/54866075/136591304-87e0faab-5a87-4437-ba97-30a6a33bb253.png)
+
+## Menu and searching in different states
+
+![menu](https://user-images.githubusercontent.com/54866075/136591959-ebb7bf2d-5540-432c-95a3-5d7095caec40.png)

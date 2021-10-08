@@ -94,3 +94,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Monotonicity of a parametrically defined function
 
 ![image](https://user-images.githubusercontent.com/54866075/136562776-6bd37924-d8ba-4b15-8414-27d3ee9a71bc.png)
+
+## Convexity of an explicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136563022-fde83256-bb98-4b39-a191-4a4cc6ef9bf5.png)

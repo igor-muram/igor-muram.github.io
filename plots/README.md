@@ -56,3 +56,7 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Power function
 
 ![image](https://user-images.githubusercontent.com/54866075/136549196-7a0f8e20-1473-4a1b-a0ae-75cd5f70cf08.png)
+
+## Exponential function
+
+![image](https://user-images.githubusercontent.com/54866075/136549384-d4f93729-9448-4c50-8231-d6addc2f5d40.png)

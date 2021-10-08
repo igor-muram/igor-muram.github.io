@@ -86,3 +86,8 @@ Site layout began with my personal starting [template](https://igor-muram.github
 ## Monotonicity of an explicitly defined function
 
 ![image](https://user-images.githubusercontent.com/54866075/136562145-fc951567-cfbf-4ced-86fd-4988060eb9f7.png)
+
+## Monotonicity of an implicitly defined function
+
+![image](https://user-images.githubusercontent.com/54866075/136562557-7efa3532-88ad-49ee-8d84-9894f3014251.png)
+

@@ -50,3 +50,7 @@ The methodologies used in the creation of the project:
 ## Cart on medium and small devices
 
 ![cart](https://user-images.githubusercontent.com/54866075/136671154-89e0d484-5bda-4e5e-9556-9eddd648a625.png)
+
+## Empty cart on large devices
+
+![image](https://user-images.githubusercontent.com/54866075/136671181-3d7bb75a-42d7-4a5f-b59f-951880d4195a.png)

@@ -35,6 +35,10 @@ The methodologies used in the creation of the project:
 * Grid CSS
 * BEM class naming methodology
 
+## Loading items
+
+![image](https://user-images.githubusercontent.com/54866075/136671392-b7e91a6e-fb46-4a1c-9cb9-fee0a32f1ce9.png)
+
 ## Main page on large devices
 
 ![image](https://user-images.githubusercontent.com/54866075/136592765-114671c9-1e77-4b6c-9bd7-179845d52080.png)

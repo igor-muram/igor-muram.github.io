@@ -62,7 +62,9 @@ export default function PizzaBlock({
               key={size}
               onClick={() => onSelectSize(index)}
               className={classNames({
-                active: availableSizes[activeSize] === size,
+                active:
+                  (availableSizes[activeSize] === size || sizes[activeSize] === size) &&
+                  sizes.includes(size),
                 disabled: !sizes.includes(size),
               })}>
               {size} см.

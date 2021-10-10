@@ -15,8 +15,8 @@ Layout:
 * View the [Space travel](https://igor-muram.github.io/space/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/space).
 * View the [Odigo](https://igor-muram.github.io/odigo/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/odigo).
 * View the [MartaUp](https://igor-muram.github.io/martaup/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/martaup).
-* View the [Bootstrap News](https://igor-muram.github.io/bootstrap-news/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/bootstrap-news). 
-<!-- * View the [Portfolio](https://igor-muram.github.io/portfolio/index.html). -->
+* View the [Bootstrap News](https://igor-muram.github.io/bootstrap-news/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/bootstrap-news).
+<!-- * View the [Portfolio](https://igor-muram.github.io/portfolio/index.html) ([Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/portfolio)). -->
 
 Templates:
 

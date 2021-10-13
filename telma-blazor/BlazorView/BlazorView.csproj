@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="ReactiveUI" Version="13.2.18" />
+        <PackageReference Include="ReactiveUI.Blazor" Version="13.2.18" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BlazorShared\BlazorShared.csproj" />
+        <ProjectReference Include="..\Core\Core.csproj" />
+        <ProjectReference Include="..\UIViewModels\UIViewModels.csproj" />
+        <ProjectReference Include="..\UIViewUniversal\UIViewUniversal.csproj" />
+    </ItemGroup>
+
+</Project>

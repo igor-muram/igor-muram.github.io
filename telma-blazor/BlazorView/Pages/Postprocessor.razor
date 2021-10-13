@@ -1,0 +1,43 @@
+﻿@page "/postprocessor"
+
+@inherits ComponentBase
+
+<MainForm ViewModel=@component @ref=@mainform Style=@("postprocessor") />
+
+@code
+{
+    [Inject] BlazorComponentManager Manager { get; set; }
+    [Inject] IJSRuntime JS { get; set; }
+
+    PostProcessorComponent component;
+    MainForm mainform;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        component = (PostProcessorComponent)Manager.StartComponent(TelmaComponentTypes.Postprocessor, Manager.Args, Manager.From).Result;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //JS.InvokeVoid("setTitle", "Telma Postprocessor");
+
+            mainform.AddSidePanel(typeof(SurfacePanel), typeof(PostProcessorComponent), true);
+            mainform.AddSidePanel(typeof(PostProcMainPanel), typeof(PostProcessorComponent), true);
+
+            mainform.AddUpperPanel("View", typeof(DrawSection), typeof(TelmaComponent));
+
+            mainform.AddUpperPanel("Titles panel", typeof(ValueSection), typeof(PostProcessorComponent));
+            mainform.AddUpperPanel("Titles panel", typeof(GroupSection), typeof(PostProcessorComponent));
+            mainform.AddUpperPanel("Titles panel", typeof(CommandsSection), typeof(PostProcessorComponent));
+            mainform.AddUpperPanel("Titles panel", typeof(DrawParametersSection), typeof(PostProcessorComponent));
+            mainform.AddUpperPanel("Titles panel", typeof(ValueParametersSection), typeof(PostProcessorComponent));
+        }
+
+        base.OnAfterRender(firstRender);
+    }
+
+}

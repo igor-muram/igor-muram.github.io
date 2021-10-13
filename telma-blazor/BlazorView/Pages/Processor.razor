@@ -1,0 +1,41 @@
+﻿@page "/"
+
+@inherits ComponentBase
+
+<MainForm ViewModel=@component @ref=@mainform Style=@("processor") />
+
+@code
+{
+    [Inject] BlazorComponentManager Manager { get; set; }
+    [Inject] IJSRuntime JS { get; set; }
+
+    ProcessorManagerComponent component = null;
+    MainForm mainform;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        component = (ProcessorManagerComponent)Manager.StartComponent(TelmaComponentTypes.ProcessorManager, null, null).Result;
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        JS.InvokeVoidAsync("setTitle", "Telma Processor");
+        return base.OnInitializedAsync();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            mainform.AddSidePanel(typeof(TaskPanel), typeof(ProcessorManagerComponent), true);
+            mainform.AddSidePanel(typeof(ProcessorManager), typeof(ProcessorManagerComponent), true);
+
+            mainform.AddUpperPanel("View", typeof(DrawSection), typeof(ProcessorManagerComponent));
+        }
+
+        base.OnAfterRender(firstRender);
+    }
+
+}

@@ -1,0 +1,988 @@
+@import "vars"
+@import "libs"
+@import "global"
+
+.mb-0
+	margin-bottom: 0
+
+.text-center
+	text-align: center
+
+.text-justify
+	text-align: justify
+
+.container
+	height: 100vh
+	&.pointer-none
+		pointer-events: none
+	&.processor
+		.empty-block
+			width: 377px
+		.canvas
+			width: calc(100% - 377px)
+
+.header
+	display: flex
+	background: #dde9f5
+
+.tab-link
+	font-size: 15px
+	transition: all .3s ease
+	position: relative
+	color: #000
+	padding: 5px 10px
+	user-select: none
+	background: #dde9f5
+	z-index: 3
+	cursor: pointer
+	&.active-link
+		background: #f7f8fc
+		border-top-left-radius: 7px
+		border-top-right-radius: 7px
+		cursor: default
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -2px
+			width: 100%
+			height: 2px
+			background: #f7f8fc
+	&:not(.active-link):hover
+		background: darken(#dde9f5, 10%)
+		border-top-left-radius: 7px
+		border-top-right-radius: 7px
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -2px
+			width: 100%
+			height: 2px
+			background: darken(#dde9f5, 10%)
+	&.panel-collapsed
+		&:after
+			background: transparent
+		&:hover:after
+			background: transparent
+
+.panel
+	display: none
+	align-items: center
+	background: linear-gradient(#f3f6fb 0%, #d5dde5 100%)
+	border-top: 2px solid #d0d9e3
+	border-bottom: 2px solid #d0d9e3
+	user-select: none
+	position: relative
+	&__collapse
+		width: 15px
+		height: 15px
+		position: absolute
+		right: 5px
+		bottom: 0
+		transform: rotate(180deg)
+		&:active
+			padding: 1px
+		&:not(.active)
+			&:hover
+				margin-top: -2px
+				margin-bottom: 2px
+		&.active
+			transform: rotate(0deg)
+			&:hover
+				margin-top: 2px
+				margin-bottom: -2px
+	&.panel_show
+		display: flex
+	&.collapse
+		position: fixed
+		width: 100%
+		z-index: 6
+		border-radius: 0 0 4px 4px
+		box-shadow: 11px 11px 12px 0px rgba(#000, .4)
+
+.section
+	padding: 3px 6px
+	position: relative
+	&:after
+		content: ''
+		width: 2px
+		background: #b6bcc3
+		position: absolute
+		right: -2px
+		top: 6px
+		bottom: 6px
+	&.hide
+		display: none
+	&__buttons
+		height: 94px
+		padding: 0 5px
+		display: flex
+		&-text
+			display: grid
+			grid-auto-columns: repeat(5, 1fr)
+			grid-template-rows: repeat(3, 1fr)
+			grid-column-gap: 15px
+			padding: 0 8px 20px
+			grid-auto-flow: column
+			justify-items: start
+		.button-color
+			padding: 0 4px
+		.button-text[title^="Edit font"]
+			height: 27px
+	&__title
+		text-align: center
+		color: #888
+		font-size: 13px
+		line-height: 13px
+	.form__input-wrapper
+		.button-image
+			&:last-child
+				margin-right: 5px
+	.parameters__text
+		margin-right: 6px
+		font-size: 13px
+	.parameters__input
+		height: 23px
+		font-size: 14px
+	
+.form__input, .modify__input, .parameters__input, .popup__input
+	&-short
+		max-width: 43px
+	&-middle
+		max-width: 87px
+	&-long
+		max-width: 135px
+
+.form__input
+	height: 23px
+	font-size: 14px
+
+.section__button
+	padding: 0 3px
+	border: 1px solid transparent
+	font-size: 13px
+	max-width: 101px
+	height: 90%
+	display: inline-flex
+	flex-direction: column
+	flex-wrap: nowrap
+	white-space: nowrap
+	align-items: center
+	justify-content: center
+	img
+		height: 40px
+		width: auto
+		margin: 0 auto
+		min-width: 40px
+	&:hover, &.push
+		background: linear-gradient(#b7cee8 0%, #89aad1 50%, #b7cee8 100%)
+		border-radius: 4px
+		border: 1px solid #7da7d6
+	&:active
+		background: linear-gradient(#cbdbee 0, #9cb7d8 50%, #cbdbee 100%)
+	& + .button
+		margin-left: 5px
+
+.content
+	display: flex
+	z-index: 5
+	position: relative
+
+.form
+	background: #eff8ff
+	border: 2px solid #d0d9e3
+	border-radius: 4px
+	display: flex
+	&.hide
+		display: none
+	&.unpinned
+		position: fixed
+		.form__handle
+			cursor: move
+	&-container
+		display: flex
+		flex-direction: column
+		position: fixed
+		right: 0
+		overflow: hidden
+		overflow-y: auto
+		height: calc(100vh - 117px - 34px - 50px)
+		&.panel-collapsed
+			height: calc(100vh - 34px - 50px)
+		&.left-side
+			left: 0
+			right: auto
+		&.hide
+			display: none
+	&__content
+		padding: 7px
+		width: 100%
+		position: relative
+	&__input-wrapper
+		display: flex
+		align-items: center
+		&.hide
+			display: none
+	&__inner
+		display: flex
+		align-items: center
+		&.hide
+			display: none
+		& + .form__buttons
+			margin-top: 10px
+		.form__input-wrapper + .form__input-wrapper
+			margin-left: 15px
+	&__info
+		&.hide
+			display: none
+		.form__inner
+			margin-bottom: 7px
+			&:first-child
+				margin-top: 10px
+			&:last-child
+				margin-bottom: 0
+	&__handle
+		background: #eff8ff
+		display: flex
+		flex-direction: column
+		align-items: center
+		border-left: 2px solid #d0d9e3
+		padding: 6px 2px
+		border-radius: 4px 4px 0 0
+		user-select: none
+		white-space: nowrap
+		overflow: hidden
+		width: 24px
+		&.hide
+			display: none
+		span
+			transform: rotate(90deg)
+			font-size: 12px
+			line-height: 12px
+			width: 19px
+			font-weight: 600
+	.button-text
+		border: 1px solid #000
+		background: #fff
+		box-shadow: 1px 1px 1px 0px rgba(#000, .8)
+		transition: all .2s ease
+		padding: 0 7px
+		margin-right: 5px
+		font-size: 15px
+		height: 26px
+		border-radius: 4px
+		&:hover
+			background: #eee
+		&:active
+			box-shadow: none
+
+.forms__wrapper
+	flex-grow: 0
+
+.form
+	&__close, &__pin
+		&:active
+			padding: 1px
+	&__close
+		margin-bottom: 5px
+		width: 12px
+		height: 12px
+		&:hover
+			margin-top: -2px
+			height: 14px
+			padding-bottom: 2px
+	&__pin
+		width: 15px
+		height: 15px
+		&:not(.active)
+			&:hover
+				margin-top: -2px
+				padding-bottom: 2px
+				height: 17px
+		&.active
+			transform: rotate(90deg)
+			&:hover
+				margin-right: 2px
+				margin-left: -2px
+		& + span
+			margin-top: 10px
+
+.form__buttons
+	display: flex
+	flex-wrap: nowrap
+	justify-content: space-between
+	& + .form__buttons
+		margin-top: 5px
+	& + .form__inner
+		margin-top: 13px
+	&.hide
+		display: none
+	&-green
+		.button-image
+			background: linear-gradient(135deg, #fff 0%, #7fc27f 100%)
+			&:hover
+				background: linear-gradient(135deg, #fff 0%, darken(#7fc27f, 15%) 100%)
+	&-yellow
+		.button-image
+			background: linear-gradient(135deg, #fff 0%, #d1d264 100%)
+			&:hover
+				background: linear-gradient(135deg, #fff 0%, darken(#d1d264, 15%) 100%)
+	&-red
+		.button-image
+			background: linear-gradient(135deg, #fff 0%, #ac6864 100%)
+			&:hover
+				background: linear-gradient(135deg, #fff 0%, darken(#ac6864, 15%) 100%)
+	&-orange
+		.button-image
+			background: linear-gradient(135deg, #fff 0%, #eec154 100%)
+			&:hover
+				background: linear-gradient(135deg, #fff 0%, darken(#eec154, 15%) 100%)
+	&-blue
+		.button-image
+			background: linear-gradient(135deg, #fff 0%, #247283 100%)
+			&:hover
+				background: linear-gradient(135deg, #fff 0%, lighten(#247283, 10%) 100%)
+
+.form__inputs
+	display: flex
+	justify-content: space-between
+	max-width: 235px
+	margin-bottom: 15px
+
+.inputs__inner
+	display: flex
+
+.modify
+	display: flex
+	align-items: center
+	border: 1px solid #000
+	padding: 6px
+	background: #fff
+	transition: all .3s ease
+	border-radius: 5px
+	span, .parameters__text
+		font-size: 13px
+		white-space: nowrap
+		margin-right: 5px
+	&__input
+		width: 60px
+		line-height: 16px
+		&:focus
+			border: 1px solid #7da7d6
+		& + .parameters__text
+			margin-left: 5px
+		&-name
+			margin-right: 5px
+			width: 124px
+		&-color
+			padding: 0
+			border: none
+			cursor: pointer
+			background: transparent
+			&:focus
+				border: none
+				outline: none
+	&__change, &__create, &__remove
+		width: 17px
+		height: 17px
+		transition: all .3s ease
+		padding: 2px
+		&:hover
+			background: linear-gradient(#dee8f4 0, #aec4df 50%, #dee8f4 100%)
+		&:active
+			border: 1px solid #7da7d6
+			background: linear-gradient(#cbdbee 0, #9cb7d8 50%, #cbdbee 100%)
+	&__remove
+		margin-right: 8px
+	& + .modify
+		margin-top: 5px
+
+.modify__input, .modify__input-name, .modify__input-color
+	&.hide
+		display: none
+
+.table
+	background: #fff
+	&.hide
+		display: none
+	&__input
+		max-width: 50px
+		border: none
+		padding: 0
+		&.hide
+			display: none
+	&__create, &__remove
+		width: 17px
+		height: 17px
+		transition: all .3s ease
+		padding: 2px
+		&:hover
+			background: linear-gradient(#dee8f4 0, #aec4df 50%, #dee8f4 100%)
+		&:active
+			border: 1px solid #7da7d6
+			background: linear-gradient(#cbdbee 0, #9cb7d8 50%, #cbdbee 100%)
+
+.form-mouse
+	.coords, .checkbox-wrapper
+		display: flex
+		justify-content: space-between
+		max-width: 317px
+	.coords
+		span
+			font-size: 15px
+		.coord
+			width: 80px
+			&:last-child
+				width: 30px
+	.checkbox-wrapper
+		margin-top: 5px
+		margin-bottom: 7px
+		.empty
+			width: 30px
+	.expander
+		.checkbox-container
+			max-width: 104px
+			.parameters__input
+				height: 23px
+				width: 45px
+				pointer-events: auto
+				margin: 0
+				display: block
+				&.hide
+					display: none
+			.parameters__text
+				margin-right: 7px
+
+.quantity
+	position: relative
+	display: block
+	&.hide
+		display: none
+	&-button
+		user-select: none
+		position: relative
+		cursor: pointer
+		width: 14px
+		height: 10px
+		display: flex
+		align-items: center
+		justify-content: center
+		background: #fff
+		border: 1px solid #000
+		padding: 0 2px
+		transition: all .3s ease
+		&:hover
+			background: #ddd
+		&:active
+			background: #999
+		&.quantity-up
+			position: absolute
+			right: -16px
+			top: 0
+			border-bottom: none
+			border-radius: 5px 5px 0 0
+			img
+				transform: rotate(180deg)
+		&.quantity-down
+			position: absolute
+			right: -16px
+			top: 10px
+			border-top: none
+			border-radius: 0 0 5px 5px
+
+.parameters
+	border: 2px solid #d0d9e3
+	margin-top: 23px
+	padding: 0 8px 8px
+	&.hide
+		display: none
+	&__title
+		display: flex
+		align-items: center
+		margin-top: -14px
+		margin-bottom: 10px
+		white-space: nowrap
+	&__header
+		padding-right: 7px
+		background: #eff8ff
+		padding-left: 7px
+	&__buttons
+		display: flex
+		padding-right: 10px
+		background: #eff8ff
+	.button-image
+		border-radius: 5px
+		&:active
+			box-shadow: 2px 2px 3px 0px rgba(#000, .8)
+	&__text
+		margin-right: 5px
+		font-size: 14px
+		white-space: nowrap
+		&:last-child
+			margin-right: 0
+		&.hide
+			display: none
+		span
+			font-size: inherit
+		&[data-text=""]
+			margin-right: 0
+			padding-right: 0
+	&__input
+		height: 26px
+		font-size: 14px
+		& + .parameters__text
+			margin-left: 5px
+	.checkbox
+		margin-right: 5px
+		&.with_input
+			margin-top: -5px
+		&[data-text^='Fix end point']
+			margin-right: 10px
+	.button-text
+		border: 1px solid #000
+		background: #fff
+		box-shadow: 1px 1px 1px 0px rgba(#000, .8)
+		transition: all .2s ease
+		padding: 0 7px
+		margin-right: 5px
+		font-size: 15px
+		height: 26px
+		border-radius: 4px
+		&:hover
+			background: #eee
+		&:active
+			box-shadow: none
+
+.form-main
+	.form__buttons
+		max-width: 235px
+		& + .form__inner
+			margin: 15px 0
+	.form__inner
+		max-width: 235px
+		justify-content: space-between
+		.parameters__input[type="number"]
+			width: 35px
+			text-align: center
+		.form__input-wrapper + .form__input-wrapper
+			margin-left: 5px
+	.expander + .expander
+		margin-top: 5px
+
+.form-file
+	.form__buttons
+		max-width: 277px
+	label[for='form-new-file']
+		margin-left: 0
+		&:active
+			margin-left: 3px
+
+.form-variables
+	.table
+		width: 100%
+		td
+			width: 25%
+
+.form-variables, .form-scale
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	.form__title
+		display: none
+		&.show
+			display: inline
+
+.form-manager
+	.form__input-wrapper
+		& + .parameters__text
+			margin-left: 5px
+
+.form-task, .form-surface
+	white-space: nowrap
+	text-overflow: ellipsis
+	.form__inner
+		&.hide
+			display: none
+		&:last-child
+			margin-bottom: 0
+		&-grid
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			grid-auto-rows: repeat(5, 1fr)
+			grid-column-gap: 15px
+			grid-row-gap: 10px
+			grid-auto-flow: row
+			max-width: 350px
+			&.hide
+				display: none
+			.form__input-wrapper
+				margin-left: 0
+
+.form-task
+	.form__inner
+		margin-bottom: 7px
+
+.form-surface
+	.select-box
+		.option
+			&[data-name='-1']
+				display: none
+	.form__buttons, .form__inner
+		& + .form__inner
+			margin-top: 12px
+	.color-palette
+		margin-top: 15px
+		.value
+			display: flex
+			align-items: center
+			&__color
+				width: 200px
+				height: 45px
+				margin-right: 10px
+				display: flex
+			&__text, &__title
+				font-size: 18px
+				font-weight: 600
+	.form__buttons + .form__inner
+		margin-top: 15px
+
+.form-task
+	.parameters
+		&__text
+			font-size: 15px
+			margin-right: 0
+			padding-right: 5px
+	.modify__change
+		margin-left: 5px
+	.modify__remove
+		margin-right: 0
+	.expander
+		max-width: 100%
+		width: 100%
+		display: inline-flex
+		.block__collapse
+			padding: 11px 10px 10px
+			font-size: 15px
+			border: 2px solid #d0d9e3
+			border-top: none
+			border-bottom-left-radius: 5px
+			border-bottom-right-radius: 5px
+			margin-top: -1px
+			.select, .select-box .selected
+				height: 24px
+				padding: 0 23px 0 5px
+			label[for='mesh-open-file']
+				margin-left: 0
+				&:active
+					margin-left: 3px
+			.block__heading
+				margin-top: 5px
+		.block__heading
+			overflow: visible
+			display: flex
+			align-items: center
+			font-weight: normal
+			position: relative
+			height: 36px
+			&:after
+				top: 13px
+		.form__input, .modify__input, .parameters__input
+			height: 24px
+			line-height: 16px
+		.modify__input
+			font-size: 14px
+			&:focus
+				border: 1px solid #666
+			&-name
+				width: 87px
+				margin-right: 0
+		.checkbox
+			display: flex
+			align-items: center
+			height: 24px
+			&.hide
+				display: none
+			.check
+				margin-right: 4px
+				top: -4px
+				svg
+					stroke: #555
+		.select
+			font-size: 14px
+			&.hide
+				display: none
+
+.form-file, .form-selection, .form-manager, .form-task
+	span
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+
+.form-mouse, .form-variables
+	min-width: 317px
+
+.form-selection
+	.form__content
+		display: flex
+		flex-direction: column
+	.form__inner
+		& > .form__buttons
+			max-width: 180px
+			margin-right: 20px
+	.form__buttons
+		max-width: 340px
+	.expander-vertical
+		.form__input-wrapper
+			margin-bottom: 3px
+
+.floating-list
+	border: 1px solid #999
+	position: fixed
+	top: 0
+	right: 0
+	box-shadow: 8px 8px 12px 0px rgba(#000, .4)
+	background: #f5f5f5
+	width: 213px
+	border-radius: 5px
+	visibility: hidden
+	opacity: 0
+	transition: all .2s ease
+	overflow: hidden
+	z-index: 20
+	&.active
+		visibility: visible
+		opacity: 1
+	.checkbox
+		width: 100%
+		padding: 0 10px 35px
+		font-size: 14px
+		&:last-child
+			padding-bottom: 40px
+		&-container
+			flex-direction: column
+
+.floating-list__button
+	font-size: 14px
+	color: #333
+	width: 100%
+	text-align: left
+	padding: 10px
+	border-color: transparent
+	position: relative
+	cursor: pointer
+	transition: all .3s ease
+	&-underline
+		border-bottom: 1px solid #d7d7d7
+	&:hover, &.push
+		background: #d7d7d7
+	&:active
+		background: lighten(#d7d7d7, 5%)
+
+#list-move, #list-copy
+	width: 233px
+
+#list-curve
+	width: 184px
+
+.form__control-wrapper
+	display: flex
+	flex-direction: column
+	flex-grow: 1
+	position: relative
+
+.canvas
+	height: calc(100vh - 117px - 34px - 50px)
+	width: calc(100% - 317px)
+	cursor: crosshair
+	&.panel-collapsed
+		height: calc(100vh - 34px - 50px)
+
+.empty-block
+	z-index: -1
+	width: 317px
+	width: auto
+
+#canvas2D
+	position: absolute
+	top: 0
+	left: 0
+	background: transparent
+
+.footer
+	padding: 0 15px
+	display: flex
+	align-items: center
+	background: #ddd
+	border-top: 2px solid #b6bcc3
+	height: 50px
+	position: relative
+	.coords
+		margin-right: 21px
+		margin-left: 15px
+		height: 48px
+		span
+			line-height: 20px
+			font-size: 15px
+		.coord
+			width: 92px
+			padding: 14px 6px
+			height: 100%
+			text-align: center
+			& + .coord
+				margin-left: 11px
+			&.fixed
+				background: #ff6e6e
+	.hand
+		display: flex
+		align-items: center
+		user-select: none
+		height: 100%
+		outline: none
+		border: none
+		border-left: 2px solid #b6bcc3
+		border-right: 2px solid #b6bcc3
+		background: #f1edec
+		transition: all .2s ease
+		padding-right: 11px
+		padding-left: 11px
+		.button
+			margin-top: -3px
+		.parameters__text
+			font-size: 15px
+			margin-left: 9px
+		&.active
+			background: darken(#ddd, 20%)
+
+.coords
+	.coord
+		white-space: nowrap
+		display: inline-block
+
+.popup
+	position: fixed
+	visibility: hidden
+	opacity: 0
+	transition: opacity .4s, visibility .4s
+	z-index: 100
+	background-color: transparent
+	box-shadow: 0 5px 25px rgba(#000, .4)
+	border-radius: 10px
+	border: 1px solid #356aa0
+	pointer-events: auto
+	min-width: 250px
+	&.active
+		visibility: visible
+		opacity: 1
+		transition: opacity .4s, visibility .4s
+	.select-box
+		& + .button, & + .parameters__text
+			margin-top: 8px
+		.option.active
+			background: linear-gradient(#b7cee8 0%, #89aad1 50%, #b7cee8 100%)
+	.parameters__text 
+		& + .select, & + .select-box
+			margin-top: 8px
+	.form__input-wrapper
+		.parameters__text 
+			& + .select, & + .select-box
+				margin-top: 0
+
+.popup__handle
+	padding: 7px 10px 7px 36px
+	font-size: 16px
+	background-color: #ededed
+	cursor: move
+	user-select: none
+	position: relative
+	display: flex
+	align-items: center
+	border-radius: 10px 10px 0 0
+	&::before
+		content: ''
+		background-image: url(../img/icon.jpg)
+		background-repeat: no-repeat
+		background-position: left center
+		background-size: 1em
+		position: absolute
+		top: 11px
+		left: 10px
+		width: 1em
+		height: 1em
+		border-radius: 5px
+
+.popup__close
+	cursor: pointer
+	width: 24px
+	height: 24px
+	padding: 5px
+	background: none
+	border: 0
+	position: absolute
+	top: 8px
+	right: 10px
+	user-select: none
+
+.popup__content
+	padding: 12px
+	border-radius: 0 0 10px 10px
+	border: 0
+	background-color: #fff
+	.button
+		font-size: 15px
+		min-width: 60px
+		padding: 6px 8px
+		border: 1px solid #85888d
+		transition: all .2s ease
+		&:hover
+			background: #85888d
+			color: #fff
+		&:active
+			background: lighten(#787b80, 15%)
+
+.popup
+	.form__inner
+		.form__input-wrapper
+			margin-bottom: 0
+	&__input
+		height: 26px
+		font-size: 14px
+	.parameters__text
+		font-size: 15px
+	.textarea
+		height: 100%
+		margin-left: 20px
+
+.popup__buttons
+	display: flex
+	justify-content: space-around
+	padding-top: 15px
+
+.parameters, .popup
+	.form__input-wrapper
+		margin-bottom: 8px
+		&:last-child
+			margin-bottom: 0
+		&.with_point
+			align-items: start
+			.parameters__text.point-title
+				margin-top: 5px
+
+.select
+	&-top
+		.options-container
+			top: auto
+			bottom: 0
+			transform: translateY(-29px)
+	&-right
+		.options-container
+			right: 0
+	&-coords
+		width: 50px
+		margin-right: 21px
+
+
+
+
+
+@import "media" // Always at the end

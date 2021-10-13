@@ -1,0 +1,40 @@
+﻿@page "/"
+
+@inherits ComponentBase
+
+<MainForm ViewModel=@component @ref=@mainform Style=@("preprocessor") />
+
+@code
+{
+    [Inject] BlazorComponentManager Manager { get; set; }
+    [Inject] IJSInProcessRuntime JS { get; set; }
+
+    TelbaseComponent component;
+    MainForm mainform;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        component = (TelbaseComponent)Manager.StartComponent(TelmaComponentTypes.Preprocessor2D, null, null).Result;
+        JS.InvokeVoid("setTitle", "Telma Preprocessor");
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            mainform.AddSidePanel(typeof(VariablesPanel), typeof(VariableContextWrapper), true);
+            mainform.AddSidePanel(typeof(TelbasePanel), typeof(TelbaseComponent), true);
+
+            mainform.AddUpperPanel("Base Plane", typeof(CreateSection), typeof(TelbaseComponent));
+            mainform.AddUpperPanel("Base Plane", typeof(AddSection), typeof(TelbaseComponent));
+            mainform.AddUpperPanel("Base Plane", typeof(SelectionSection), typeof(TelbaseComponent));
+            mainform.AddUpperPanel("Base Plane", typeof(CommandSection), typeof(TelbaseComponent));
+            mainform.AddUpperPanel("Base Plane", typeof(EditSection), typeof(TelbaseComponent));
+        }
+
+        base.OnAfterRender(firstRender);
+    }
+
+}

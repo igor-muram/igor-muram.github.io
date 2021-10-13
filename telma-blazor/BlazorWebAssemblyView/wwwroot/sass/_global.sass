@@ -1,0 +1,749 @@
+html
+	box-sizing: border-box
+	overflow-x: hidden
+	font-size: 14px
+	height: 100vh
+
+*
+	-webkit-tap-highlight-color: transparent
+	user-select: none
+	&:focus
+		outline: none
+	&::-webkit-scrollbar
+		width: 10px
+		border-radius: 10px
+		background-color: transparent
+	&::-webkit-scrollbar-thumb 
+		background: #787b80
+		border-radius: 10px
+
+*, *:before, *:after
+	box-sizing: inherit
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 1rem
+	min-width: 320px
+	min-height: 320px
+	max-width: 100%
+	position: relative
+	line-height: 24px
+	font-family: $default-font
+	font-weight: 400
+	color: $text
+	margin: 0
+	padding: 0
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		user-select: text
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+p
+	font-family: $default-font, sans-serif
+	font-size: 1.25rem
+	margin: 5px 0
+	line-height: 1.5
+	&:first-child
+		margin-top: 0
+
+span
+	font-family: $default-font, sans-serif
+	font-size: 1.3125rem
+	line-height: 1.7
+
+a, a:hover
+	text-decoration: none
+	display: inline-block
+
+i
+	margin-right: 15px
+
+img
+	display: flex
+	max-width: 100%
+	height: auto
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+input
+	display: block
+	padding: 4px 6px
+	width: 100%
+	border-radius: 4px
+	&[type="file"]
+		display: none
+	&[type="number"]
+		-moz-appearance: textfield
+		outline: none
+		&::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+			-webkit-appearance: none
+			margin: 0
+		&:hover, &:focus
+			-moz-appearance: number-input
+
+section
+	background-color: #fff
+	
+h1, .h1
+	line-height: 1.2
+	margin-top: 12px
+	margin-bottom: 12px
+	font-size: 1.875rem
+	&.hide
+		display: none
+
+h2
+	text-align: center
+	margin-bottom: 15px
+	line-height: 1.2
+	&.hide
+		display: none
+
+h3, h4, h5, h6
+	margin-top: 0
+	margin-bottom: 7px
+	&.hide
+		display: none
+
+b, strong
+	font-weight: bold
+
+table, th, td
+	border-collapse: collapse
+
+th, td
+	border: 1px solid #333333
+	padding: 0 9px
+
+tr.hide
+	display: none
+
+table
+	border: 2px solid #333333
+	& + h4
+		margin-top: 10px
+
+td 
+  text-align: center
+
+ul, ol, li
+	font-size: 1.25rem
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.hide
+	display: none !important
+
+.button
+	outline: none
+	background: transparent
+	cursor: pointer
+	user-select: none
+	border-radius: 4px
+	&.hide
+		display: none
+	&-icon
+		padding: 0
+		border: 1px solid transparent
+		transition: all .3s ease
+	&-outline
+		border-radius: 7px
+		text-align: center
+		border: 1px solid #000
+		box-shadow: 4px 4px 3px 0px rgba(#000, .8)
+		transition: all .2s ease
+		display: inline-block
+		padding: 3px 5px
+		height: 32px
+		margin-left: 5px
+		background: linear-gradient(#fff 0%, #c5c5e2 100%)
+		&:first-child
+			margin-left: 0
+		&:hover
+			background: linear-gradient(#fff 0%, darken(#c5c5e2, 10%) 100%)
+		&.push, &:active
+			box-shadow: 2px 2px 3px 0px rgba(#000, .8)
+			padding: 1px 3px
+			margin-top: 3px
+			height: 29px
+			margin-left: 9px
+			&:first-child
+				margin-left: 4px
+	&-image
+		width: 35px
+		height: 35px
+		overflow: hidden
+		padding: 0
+		margin-left: 5px
+		border-radius: 7px
+		border: 1px solid #000
+		box-shadow: 4px 4px 3px 0px rgba(#000, .8)
+		transition: all .2s ease
+		background: linear-gradient(135deg, #fff 0%, #c5c5e2 100%)
+		&:hover
+			background: linear-gradient(135deg, #fff 0%, darken(#c5c5e2, 10%) 100%)
+		&:first-child
+			margin-left: 0
+		&.hide + .button-image
+			margin-left: 0
+			&.push, &:active
+				margin-left: 3px
+		&.push, &:active
+			box-shadow: 2px 2px 3px 0px rgba(#000, .8)
+			width: 32px
+			height: 32px
+			margin-top: 3px
+			margin-left: 8px
+			&:first-child
+				margin-left: 3px
+		&-tiny
+			width: 22px
+			height: 22px
+			&.push, &:active
+				width: 19px
+				height: 19px
+		&-small
+			width: 24px
+			height: 24px
+			&.push, &:active
+				width: 21px
+				height: 21px
+		&-middle
+			width: 28px
+			height: 28px
+			&.push, &:active
+				width: 25px
+				height: 25px
+	&-text
+		border: 1px solid transparent
+		padding: 2px 4px
+		font-size: 13px
+		color: #333
+		white-space: nowrap
+		&:hover, &.push
+			background: linear-gradient(#b7cee8 0%, #89aad1 50%, #b7cee8 100%)
+			border-radius: 4px
+			border: 1px solid darken(#a4c1e2, 10%)
+		&:active
+			background: linear-gradient(#cbdbee 0, #9cb7d8 50%, #cbdbee 100%)
+	&-color
+		display: flex
+		align-items: center
+		white-space: nowrap
+		span
+			font-size: 13px
+			margin-right: 5px
+		input[type=color]
+			padding: 0
+			width: 22px
+			height: 25px
+			background: transparent
+			border: none
+			cursor: pointer
+	&-expand_form
+		display: flex
+		flex-direction: column
+		align-items: center
+		border: 2px solid #d0d9e3
+		border-radius: 5px 0 0 5px
+		z-index: 20
+		position: fixed
+		top: 151px
+		right: 0
+		background: #fff
+		padding: 6px 2px 6px 6px 
+		height: 165px
+		transition: all .3s ease
+		display: none
+		&:hover
+			background: #d7d7d7
+		&:active
+			background: lighten(#d7d7d7, 10%)
+		&.active
+			display: flex
+		&.left-side
+			left: 0
+			border-radius: 0 5px 5px 0
+			padding: 6px 6px 6px 2px 
+			width: 26px
+			img
+				transform: rotate(-90deg)
+				margin-right: 0
+				margin-left: 1px
+			span
+				transform: rotate(-90deg)
+				margin-top: 112px
+		img
+			width: 13px
+			height: 13px
+			transform: rotate(90deg)
+			margin-bottom: 3px
+			margin-right: 1px
+			pointer-events: none
+		span
+			transform: rotate(90deg)
+			white-space: nowrap
+			font-size: 14px
+			width: 14px
+			font-weight: 600
+			pointer-events: none
+
+button:disabled, .button.disabled
+	color: #999
+	cursor: default
+	pointer-events: none
+	img, input
+		opacity: .4
+
+.expander
+	user-select: none
+	max-width: 372px
+	&.hide
+		display: none
+
+.block
+	font-size: 13px
+	position: relative
+	&__heading
+		cursor: pointer
+		display: block
+		font-weight: 600
+		padding: 3px 15px 3px 30px
+		border: 1px solid red
+		text-overflow: ellipsis
+		white-space: nowrap
+		background: linear-gradient(#dee8f4 0, #aec4df 50%, #dee8f4 100%)
+		border-radius: 4px
+		border: 1px solid #7da7d6
+		transition: all .3s ease
+		font-size: 15px
+		&:hover
+			background: linear-gradient(#cbdbee 0, #9cb7d8 50%, #cbdbee 100%)
+		&:after
+			content: ''
+			background-image: url(../img/arrow-down.svg)
+			background-repeat: no-repeat
+			background-position: 0 0
+			background-size: 10px
+			width: 10px
+			height: 10px
+			position: absolute
+			top: 11px
+			left: 10px
+			transition: all .2s ease
+		&.active
+			&:after
+				transform: rotate(180deg)
+	&__collapse
+		display: none
+		text-align: justify
+		padding-top: 5px
+		&.active
+			display: block
+	&[data-text^='input']
+		max-width: 245px
+		.block__heading
+			&:after
+				top: 13px
+
+.expander-vertical
+	.block
+		display: flex
+		align-items: center
+		&__heading
+			display: flex
+			flex-direction: column
+			align-items: center
+			padding: 5px 2px
+			width: 22px
+			justify-content: space-between
+			margin-right: 12px
+			overflow: visible
+			span
+				pointer-events: none
+				font-size: 10px
+				transform: rotate(-90deg)
+				width: 100%
+				text-overflow: clip
+				overflow: visible
+				margin-top: 10px
+			img
+				width: 7px
+				height: 7px
+				margin-bottom: 12px
+				transform: rotate(-90deg)
+				transition: all .2s ease
+				pointer-events: none
+			&.active
+				img
+					transform: rotate(90deg)
+				&:after
+					display: none
+			&:after
+				display: none
+		&__collapse
+			align-items: center
+			justify-content: space-between
+			padding: 0
+
+.checkbox
+	&-container
+		display: flex
+		align-items: center
+		&.disabled
+			cursor: default
+			pointer-events: none
+			opacity: 0.5
+		&.hide
+			display: none
+		.parameters
+			&__input
+				width: 27px
+				padding: 1px 2px
+				pointer-events: auto
+				margin-bottom: 23px
+				height: auto
+			&__text
+				font-size: 15px
+				margin-right: 1px
+				display: block
+				user-select: none
+				cursor: pointer
+				&.hide
+					display: none
+
+// .checkbox
+// 	cursor: pointer
+// 	font-size: 15px
+// 	user-select: none
+// 	height: 32px
+// 	white-space: nowrap
+// 	&.disabled
+// 		color: #b0b0b0
+// 		cursor: default
+// 		pointer-events: none
+// 	.check
+// 		position: relative
+// 		width: 20px
+// 		height: 20px
+// 		transform: translate3d(0, 0, 0)
+// 		top: 4px
+// 		margin-right: 5px
+// 		svg
+// 			position: relative
+// 			z-index: 1
+// 			fill: none
+// 			stroke-linecap: round
+// 			stroke-linejoin: round
+// 			stroke: #c4c9c9
+// 			stroke-width: 1.5
+// 			transform: translate3d(0, 0, 0)
+// 			transition: all .2s ease
+// 			path
+// 				stroke-dasharray: 60
+// 				stroke-dashoffset: 0
+// 			polyline
+// 				transform: scale(1.05)
+// 				stroke-dasharray: 22
+// 				stroke-dashoffset: 66
+// 		&.is-checked
+// 			svg
+// 				stroke: #555
+// 				path
+// 					stroke-dashoffset: 60
+// 					transition: all .3s linear
+// 				polyline
+// 					stroke-dashoffset: 42
+// 					transition: all .2s linear
+// 					transition-delay: .15s
+// 	&:hover 
+// 		.check
+// 			svg
+// 				stroke: #555
+// 	&-small
+// 		font-size: 13px
+// 		display: flex
+// 		align-items: center
+// 		height: 27px
+// 		.check
+// 			margin-right: 2px
+// 			top: -3px
+// 			svg
+// 				transform: translate3d(0, 0, 0) scale(.8)
+
+.input-checkbox
+	visibility: hidden
+	opacity: 0
+	width: 0
+	height: 0
+	&:checked + label.checkbox
+		.check
+			svg
+				stroke: #555
+				path
+					stroke-dashoffset: 60
+					transition: all .3s linear
+				polyline
+					stroke-dashoffset: 42
+					transition: all .2s linear
+					transition-delay: .15s
+
+.checkbox
+	cursor: pointer
+	font-size: 15px
+	user-select: none
+	height: 32px
+	white-space: nowrap
+	.check
+		position: relative
+		width: 20px
+		height: 20px
+		transform: translate3d(0, 0, 0)
+		top: 4px
+		margin-right: 3px
+		overflow: visible
+		svg
+			position: relative
+			z-index: 1
+			fill: none
+			stroke-linecap: round
+			stroke-linejoin: round
+			stroke: #c4c9c9
+			stroke-width: 1.5
+			transform: translate3d(0, 0, 0)
+			transition: all .2s ease
+			path
+				stroke-dasharray: 60
+				stroke-dashoffset: 0
+			polyline
+				transform: scale(1.05)
+				stroke-dasharray: 22
+				stroke-dashoffset: 66
+	&:hover 
+		.check
+			svg
+				stroke: #555
+	&-small
+		font-size: 13px
+		display: flex
+		align-items: center
+		height: 27px
+		.check
+			margin-right: 2px
+			top: -3px
+			svg
+				transform: translate3d(0, 0, 0) scale(.8)
+
+.select-box 
+	display: flex
+	flex-direction: column
+	cursor: pointer
+	position: relative
+	border: 1px solid #555
+	white-space: nowrap
+	border-radius: 5px
+	background: #fff
+	user-select: none
+	min-height: 26px
+	&-img
+		min-height: 39px
+	&.disabled
+		cursor: default
+		pointer-events: none
+		opacity: 0.5
+	&.hide
+		display: none
+	.options-container
+		max-height: 0
+		opacity: 0
+		min-width: 100%
+		transition: all .2s
+		border-radius: 4px
+		overflow: hidden
+		position: absolute
+		background: #fff
+		border: 1px solid #555
+		z-index: 8
+		top: 0
+		bottom: auto
+		transform: translateY(29px)
+		overflow-y: auto
+		&-img
+			transform: translateY(41px)
+		&.active
+			max-height: 360px
+			opacity: 1
+			& + .selected::after
+				transform: translateY(-50%) rotateX(180deg)
+	&-right
+		.options-container
+			right: 0
+
+.select-box
+	.option
+		cursor: pointer
+		padding: 1px 5px
+		transition: all .2s ease
+		border-radius: 5px
+		img
+			width: 35px
+			height: auto
+		.radio
+			display: none
+		label
+			cursor: pointer
+		&:hover 
+			background: linear-gradient(#b7cee8 0%, #89aad1 50%, #b7cee8 100%)
+
+.selected
+	border-radius: 4px
+	padding: 1px 25px 1px 5px
+	position: relative
+	min-height: 26px
+	&-img
+		min-height: 37px
+	img
+		width: 35px
+		height: auto
+	.radio
+		display: none
+	label
+		cursor: pointer
+	&::after
+		content: ''
+		background-image: url(../img/arrow-down.svg)
+		background-repeat: no-repeat
+		background-position: 0 0
+		background-size: 10px
+		width: 10px
+		height: 10px
+		position: absolute
+		font-size: 15px
+		right: 5px
+		top: 50%
+		transform: translateY(-50%)
+		transition: all .3s
+
+.select 
+	display: flex
+	cursor: pointer
+	border: 1px solid #555
+	white-space: nowrap
+	border-radius: 5px
+	user-select: none
+	line-height: 24px
+	padding: 1px 23px 1px 5px
+	-moz-appearance: none
+	-webkit-appearance: none
+	appearance: none
+	background-color: #fff
+	background-image: url(../img/arrow-down.svg), linear-gradient(to bottom, #fff 0%, #fff 100%)
+	background-repeat: no-repeat, repeat
+	background-position: right 7px top 53%, 0 0
+	background-size: 9px, 100%
+	&.disabled
+		cursor: default
+		pointer-events: none
+		opacity: 0.5
+	&.hide
+		display: none
+	&::-ms-expand 
+		display: none
+	&:hover 
+		border-color: #888
+	&:focus
+		outline: none
+
+.textarea
+	resize: none
+	min-width: 180px
+	border-radius: 5px
+	padding: 5px
+	white-space: nowrap
+	overflow-x: hidden
+	line-height: 22px
+	&.hide
+		display: none
+
+$radioSize: 18px
+$radioBorder: #c4c9c9
+$radioActive: #555
+
+.radio
+	display: flex
+	align-items: center
+	cursor: pointer
+	&.hide
+		display: none
+	& + .radio
+		margin-top: 15px
+	&.disabled
+		pointer-events: none
+		opacity: 0.5
+	input
+		display: none
+		& + span 
+			line-height: $radioSize
+			height: $radioSize
+			padding-left: $radioSize
+			font-size: 15px
+			position: relative
+			&:not(:empty) 
+				padding-left: $radioSize + 8
+			&:before, &:after 
+				content: ''
+				width: $radioSize
+				height: $radioSize
+				border-radius: 50%
+				left: 0
+				top: 0
+				position: absolute
+			&:before 
+				background: $radioBorder
+				transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2)
+			&:after 
+				background: #fff
+				transform: scale(.78)
+				transition: transform .6s cubic-bezier(.175, .885, .32, 1.4)
+			&:hover
+				&:before 
+					transform: scale(.92)
+					background: $radioActive
+				&:after 
+					transform: scale(.72)
+		&:checked + span 
+			&:before
+				background: #fff
+				border: 2px solid $radioBorder
+			&:after 
+				transform: scale(.4)
+				transition: transform .3s ease
+				background: $radioActive
+			&:hover
+				&:before 
+					transform: scale(.92)
+	&-small
+		input + span
+			font-size: 13px
+			line-height: $radioSize * .8
+			height: $radioSize * .8
+			padding-left: $radioSize * .8
+			&:not(:empty) 
+				padding-left: ($radioSize + 8) * .8
+			&:before, &:after
+				width: $radioSize * .8
+				height: $radioSize * .8

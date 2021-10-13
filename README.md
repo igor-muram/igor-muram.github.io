@@ -8,6 +8,7 @@ Web apps:
 
 * View the [Virtual physical laboratory](https://golab.nstu.ru) — [Repository](https://github.com/igor-muram/WebPhysics).
 * View the [Plots](https://igor-muram.github.io/plots/index.html) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/plots).
+* Telma (ASP.NET Core Blazor) — [Repository](https://github.com/igor-muram/igor-muram.github.io/tree/master/telma-blazor).
 
 Layout:
 

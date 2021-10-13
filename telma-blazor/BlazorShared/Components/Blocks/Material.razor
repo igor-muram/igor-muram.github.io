@@ -1,0 +1,64 @@
+﻿@inherits ReactiveComponentBase<VolumeMaterialWrapper>
+
+<Expander>
+    <Heading>
+        <Wrapper>
+            <TextInput Text="Name =" SizeType=@InputSize.Middle Source=@ViewModel.Name />
+        </Wrapper>
+
+        <Wrapper>
+            <ColorPicker Source=@ViewModel.Color OnChange=@OnMaterialColorChange />
+        </Wrapper>
+    </Heading>
+    <Content>
+        <FormInner FormInnerType=@FormInnerType.Grid>
+            <Wrapper IsVisible=@ViewModel.IsTotalVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-total-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="Total" IsEnabled=@ViewModel.IsTotalChangePossible Source=@ViewModel.IsTotal OnChange=@OnTotalChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsScalarVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-scalar-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="Scalar" IsEnabled=@ViewModel.IsScalarChangePossible Source=@ViewModel.IsScalar OnChange=@OnScalarChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsBEMVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-bem-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="BEM" IsEnabled=@ViewModel.IsBEMChangePossible Source=@ViewModel.IsBEM OnChange=@OnBEMChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsExternalVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-external-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="External" IsEnabled=@ViewModel.IsExternalChangePossible Source=@ViewModel.IsExternal OnChange=@OnExternalChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsHysteresisVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-hysteresis-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="Hysteresis" IsEnabled=@ViewModel.IsHysteresisChangePossible Source=@ViewModel.IsHysteresis OnChange=@OnHysteresisChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsAnisotropyVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-anisotropy-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="Anisotropy" IsEnabled=@ViewModel.IsAnisotropyChangePossible Source=@ViewModel.IsAnisotropy OnChange=@OnAnisotropyChange />
+            </Wrapper>
+
+            <Wrapper IsVisible=@ViewModel.IsMultipoleVisible>
+                <Checkbox Id="@(ParentViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower() + "-material-multipole-" + ViewModel.Name.Replace(" ", "-").Replace("_", "0").ToLower())" Text="Multipole" IsEnabled=@ViewModel.IsMultipoleChangePossible Source=@ViewModel.IsMultipole OnChange=@OnMultipoleChange />
+            </Wrapper>
+        </FormInner>
+
+        @foreach (var coeff in ViewModel.Coefs)
+        {
+            <Property ViewModel=@coeff />
+        }
+    </Content>
+</Expander>
+
+@code
+{
+    [Parameter] public ProblemItemWrapper ParentViewModel { get; set; }
+
+    void OnMaterialColorChange(Color color) => ViewModel.Color = color;
+
+    void OnTotalChange(bool value) => ViewModel.IsTotal = value;
+    void OnScalarChange(bool value) => ViewModel.IsScalar = value;
+    void OnBEMChange(bool value) => ViewModel.IsBEM = value;
+    void OnExternalChange(bool value) => ViewModel.IsExternal = value;
+    void OnHysteresisChange(bool value) => ViewModel.IsHysteresis = value;
+    void OnAnisotropyChange(bool value) => ViewModel.IsAnisotropy = value;
+    void OnMultipoleChange(bool value) => ViewModel.IsMultipole = value;
+}

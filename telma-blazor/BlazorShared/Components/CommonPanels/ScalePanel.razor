@@ -1,0 +1,16 @@
+﻿@inherits ReactiveComponentBase<TelmaComponentUIAggregator>
+
+<Panel Id="scale" Title="Scale">
+    <FormButtons ButtonsColor=@ButtonsColor.Blue>
+        <Wrapper>
+            <ImageButton Title="Zoom in by 2 (Ctrl + Down)" Image="img/buttons/view/ZoomInBy2.svg" Command=@ViewModel.OnZoomInBy2 />
+            <ImageButton Title="Zoom out by 2 (Alt + Down)" Image="img/buttons/view/ZoomOutBy2.svg" Command=@ViewModel.OnZoomOutBy2 />
+            <ImageButton Title="Zoom extent (Divide)" Image="img/buttons/view/ZoomExtent.svg" Command=@ViewModel.OnZoomExtent />
+            <ImageButton Title="Zoom extent around zero (Multiply)" Image="img/buttons/view/ZoomExtentAroundZero.svg" Command=@ViewModel.OnZoomExtentAroundZero />
+            <ImageButton Title="Zero center (Clear)" Image="img/buttons/view/ZeroCenter.svg" Command=@ViewModel.OnZeroCenter />
+            <ImageButton Title="Zoom by mouse (Add)" Image="img/buttons/view/ZoomByMouse.svg" Command=@ViewModel.OnZoomByMouse />
+            <ImageButton Title="Unzoom (Subtract)" Image="img/buttons/view/Unzoom.svg" Command=@ViewModel.OnUnzoom />
+            <ImageButton Title="Force repaint (Ctrl + R)" Image="img/buttons/view/ForceRepaint.svg" Command=@ViewModel.OnRepaintAll />
+        </Wrapper>
+    </FormButtons>
+</Panel>

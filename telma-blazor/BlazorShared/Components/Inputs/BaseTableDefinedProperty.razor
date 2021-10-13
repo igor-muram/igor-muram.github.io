@@ -1,0 +1,20 @@
+﻿@inherits ReactiveComponentBase<Telma.ProjectSystem.BaseTableDefinedProperty>
+
+<Table IsVisible=@IsVisible>
+    <Row>
+        <Column Text=@ViewModel.ArgumentName />
+        <Column Text=@ViewModel.ValueName />
+    </Row>
+    @foreach (var element in ViewModel.Table)
+    {
+        <Row>
+            <Column Text=@element.Time.ToString() />
+            <Column Text=@element.Value />
+        </Row>
+    }
+</Table>
+
+@code
+{
+    [Parameter] public bool IsVisible { get; set; } = true;
+}

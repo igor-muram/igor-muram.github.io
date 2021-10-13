@@ -1,0 +1,42 @@
+﻿<div class="checkbox-container @(IsEnabled ? "" : "disabled") @(IsVisible ? "" : "hide")">
+    <input type="checkbox" class="input-checkbox" id=@Id @onchange=@OnChangeImpl checked=@Source />
+    <label class="checkbox @CheckboxSizeMap[CheckboxSize] @CheckboxTypeMap[CheckboxType]" for=@Id data-text=@Text>
+        <span class="check">
+            <svg width="18px" height="18px" viewBox="0 0 18 18">
+                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                <polyline points="0 8 6 13 14 3"></polyline>
+            </svg>
+        </span>
+        @Text
+    </label>
+
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public bool Source { get; set; } = false;
+    [Parameter] public RenderFragment ChildContent { get; set; } = null;
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public Action<bool> OnChange { get; set; }
+    [Parameter] public CheckboxType CheckboxType { get; set; } = CheckboxType.Default;
+    [Parameter] public bool IsEnabled { get; set; } = true;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    Dictionary<CheckboxType, string> CheckboxTypeMap = new Dictionary<CheckboxType, string>()
+    {
+        [CheckboxType.Input] = "with_input",
+        [CheckboxType.Default] = ""
+    };
+
+    [Parameter] public CheckboxSize CheckboxSize { get; set; } = CheckboxSize.Default;
+
+    Dictionary<CheckboxSize, string> CheckboxSizeMap = new Dictionary<CheckboxSize, string>()
+    {
+        [CheckboxSize.Small] = "checkbox-small",
+        [CheckboxSize.Default] = ""
+    };
+
+    void OnChangeImpl(ChangeEventArgs args) => OnChange?.Invoke((bool)args.Value);
+}

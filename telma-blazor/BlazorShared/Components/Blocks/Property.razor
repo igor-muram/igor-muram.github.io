@@ -1,0 +1,44 @@
+﻿@inherits ReactiveComponentBase<MaterialPropertyWrapper>
+
+@if (ViewModel.IsLoadVisible)
+{
+    <FormInner>
+        <Wrapper>
+            <BaseTableDefinedProperty ViewModel=@((Telma.ProjectSystem.BaseTableDefinedProperty)(ViewModel.Property)) />
+        </Wrapper>
+
+        <Wrapper IsVisible=@ViewModel.IsConvertToOtherVisible>
+            <TextButton Text="Curve" Title="Curve" Command=@ViewModel.ConvertToOther />
+        </Wrapper>
+    </FormInner>
+
+    <FormInner>
+        <Wrapper IsVisible=@ViewModel.IsConvertToTextVisible>
+            <TextButton Text="Expression" Title="Expression" Command=@ViewModel.ConvertToTextDefined />
+        </Wrapper>
+
+        <Wrapper IsVisible=@ViewModel.IsViewVisible>
+            <TextButton Text="View" Title="View" />
+        </Wrapper>
+
+        <Wrapper IsVisible=@ViewModel.IsLoadVisible>
+            <TextButton Text="Load" Title="Load" />
+        </Wrapper>
+    </FormInner>
+}
+else
+{
+    <FormInner>
+        <Wrapper>
+            <TextProperty Text=@ViewModel.Name SizeType=@InputSize.Middle ViewModel=@((Telma.ProjectSystem.BaseTextDefinedProperty)(ViewModel.Property)) />
+        </Wrapper>
+
+        <Wrapper>
+            <TextButton Text="Curve" Title="Curve" Command=@ViewModel.ConvertToOther IsVisible=@ViewModel.IsConvertToOtherVisible />
+        </Wrapper>
+
+        <Wrapper>
+            <TextButton Text="Expression" Title="Expression" Command=@ViewModel.ConvertToTextDefined IsVisible=@ViewModel.IsConvertToTextVisible />
+        </Wrapper>
+    </FormInner>
+}

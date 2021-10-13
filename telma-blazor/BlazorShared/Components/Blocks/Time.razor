@@ -1,0 +1,82 @@
+@inherits ReactiveComponentBase<TimeParameters>
+
+<FormInner FormInnerType=@FormInnerType.Grid IsVisible=@(!ViewModel.IsTimeHarmonicMode)>
+    <DoubleInput Text="Start time:" SizeType=@InputSize.Middle Source=@ViewModel.StartTime OnChange=@OnStartTimeChange />
+    <DoubleInput Text="Stop time:" SizeType=@InputSize.Middle Source=@ViewModel.StopTime OnChange=@OnStopTimeChange />
+    <IntInput Text="Skip calc:" SizeType=@InputSize.Middle Source=@ViewModel.TimeCalcSkip OnChange=@OnSkipCalcChange Min="0" />
+    <IntInput Text="Skip save:" SizeType=@InputSize.Middle Source=@ViewModel.TimeSaveSkip OnChange=@OnSkipSaveChange Min="0" />
+    <IntInput Text="Skip res:" SizeType=@InputSize.Middle Source=@ViewModel.TimeCalcResSkip OnChange=@OnSkipResChange Min="0" />
+    <IntInput Text="Layers:" SizeType=@InputSize.Middle Source=@ViewModel.TimeLayers OnChange=@OnLayersChange Min="2" Max="4" />
+</FormInner>
+
+<FormInner FormInnerType=@FormInnerType.Grid>
+    <Checkbox Text="Is explicit time scheme" Id=@(ParentViewModel.Problem.Name.Replace(" ", "-").Replace("_", "0") + "-explicit-time-scheme") Source=@ViewModel.IsExplicit OnChange=@OnExplicitChange />
+    <Checkbox Text="Is Harmonic mode" Id=@(ParentViewModel.Problem.Name.Replace(" ", "-").Replace("_", "0") + "-harmonic-mode") Source=@ViewModel.IsTimeHarmonicMode OnChange=@OnHarmonicChange />
+</FormInner>
+
+<Label TitleType=@TitleType.Title Text="Time segments:" IsVisible=@(!ViewModel.IsTimeHarmonicMode) />
+<Label TitleType=@TitleType.Title Text="Harmonic time parameters:" IsVisible=@ViewModel.IsTimeHarmonicMode />
+
+<Table IsVisible=@(!ViewModel.IsTimeHarmonicMode)>
+    <Row>
+        <Column Text="Begin time" />
+        <Column Text="End time" />
+        <Column Text="Internal" />
+        <Column Text="Coefficient" />
+        <Column Text="Create" />
+        <Column Text="Remove" />
+    </Row>
+    @foreach (var element in ParentViewModel.MeshTimeElements)
+    {
+        <TimeItem ViewModel=@element ParentComponent=@this />
+    }
+</Table>
+
+<Label TitleType=@TitleType.Title Text="Selected segment info:" IsVisible=@(!ViewModel.IsTimeHarmonicMode) />
+
+<FormInner FormInnerType=@FormInnerType.Grid IsVisible=@(!ViewModel.IsTimeHarmonicMode)>
+    <DoubleInput Text="First step:" SizeType=@InputSize.Middle Source=@(SelectedItem != null ? SelectedItem.Stepbeg : 0) IsReadonly="true" />
+    <DoubleInput Text="Last step:" SizeType=@InputSize.Middle Source=@(SelectedItem != null ? SelectedItem.Stepend : 0) IsReadonly="true" />
+</FormInner>
+
+<FormInner IsVisible=@ViewModel.IsTimeHarmonicMode>
+    <DoubleInput Text="Frequency:" SizeType=@InputSize.Short Source=@ViewModel.Frequency OnChange=@OnFrequencyChange />
+</FormInner>
+
+<FormInner IsVisible=@ViewModel.IsTimeHarmonicMode>
+    <IntInput Text="Number of periods:" SizeType=@InputSize.Short Source=@ViewModel.NumberOfPeriods OnChange=@OnNumberOfPeriodsChange Min="0" />
+</FormInner>
+
+<FormInner IsVisible=@ViewModel.IsTimeHarmonicMode>
+    <IntInput Text="Times per period:" SizeType=@InputSize.Short Source=@ViewModel.TimesPerPeriod OnChange=@OnTimesPerPeriodChange Min="0" />
+</FormInner>
+
+@code
+{
+    [Parameter] public ProblemSettingsWrapper ParentViewModel { get; set; }
+
+    MeshTimeElementWrapper selectedItem = null;
+    public MeshTimeElementWrapper SelectedItem
+    {
+        get => selectedItem;
+        set
+        {
+            selectedItem = value;
+            StateHasChanged();
+        }
+    }
+
+    void OnStartTimeChange(ParameterFloat value) => ViewModel.StartTime = value;
+    void OnStopTimeChange(ParameterFloat value) => ViewModel.StopTime = value;
+    void OnSkipCalcChange(int value) => ViewModel.TimeCalcSkip = value;
+    void OnSkipSaveChange(int value) => ViewModel.TimeSaveSkip = value;
+    void OnSkipResChange(int value) => ViewModel.TimeCalcResSkip = value;
+    void OnLayersChange(int value) => ViewModel.TimeLayers = value;
+
+    void OnExplicitChange(bool value) => ViewModel.IsExplicit = value;
+    void OnHarmonicChange(bool value) => ViewModel.IsTimeHarmonicMode = value;
+
+    void OnFrequencyChange(ParameterFloat value) => ViewModel.Frequency = value;
+    void OnNumberOfPeriodsChange(int value) => ViewModel.NumberOfPeriods = value;
+    void OnTimesPerPeriodChange(int value) => ViewModel.TimesPerPeriod = value;
+}

@@ -1,0 +1,36 @@
+﻿<div class="expander @ExpanderTypeMap[ExpanderType] @(IsVisible ? "" : "hide")">
+    <div class="expander__block block" data-text=@HeaderType>
+        <div class="block__heading" @onclick=@(() => IsExpanded = !IsExpanded)>
+            @if (ExpanderType == ExpanderType.Horizontal)
+            {
+                @Heading
+            }
+            else
+            {
+                <img src="img/arrow-down.svg">
+                <span>@Text</span>
+            }
+        </div>
+
+        <div class="block__collapse @(IsExpanded ? "active" : "")">
+            @Content
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public string HeaderType { get; set; } = "";
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public bool IsExpanded { get; set; } = false;
+    [Parameter] public RenderFragment Heading { get; set; }
+    [Parameter] public RenderFragment Content { get; set; }
+    [Parameter] public ExpanderType ExpanderType { get; set; } = ExpanderType.Horizontal;
+
+    Dictionary<ExpanderType, string> ExpanderTypeMap = new Dictionary<ExpanderType, string>()
+    {
+        [ExpanderType.Vertical] = "expander-vertical",
+        [ExpanderType.Horizontal] = ""
+    };
+}

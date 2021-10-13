@@ -1,0 +1,21 @@
+﻿<div class="parameters" id="parameters-@Id">
+    <div class="parameters__title">
+        <div class="parameters__header">@Title</div>
+        <div class="parameters__buttons">
+            <ImageButton ButtonSize=@ButtonSize.Tiny Title="Apply" Image="img/buttons/selection-form/Ok.svg" />
+            <ImageButton ButtonSize=@ButtonSize.Tiny Title="Cancel" Image="img/buttons/selection-form/Cancel.svg" />
+        </div>
+    </div>
+
+    <div class="parameters__content">
+        @ChildContent
+    </div>
+</div>
+
+
+@code
+{
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

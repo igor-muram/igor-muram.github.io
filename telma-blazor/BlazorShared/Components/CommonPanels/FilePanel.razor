@@ -1,0 +1,13 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Panel Id="file">
+    <FormButtons ButtonsColor=@ButtonsColor.Green>
+        <ImageButton Title="New file (Ctrl + N)" Image="img/buttons/file-form/New.svg" />
+        <ImageButton Title="Open file (Ctrl + O)" Image="img/buttons/file-form/Import.svg" Command=@Open />
+        <ImageButton Title="Save file (Ctrl + S)" Image="img/buttons/file-form/Save.svg" Command=@Save />
+        <ImageButton Title="Save file as ..." Image="img/buttons/file-form/SaveAs.svg" />
+        <ImageButton Title="Print (Ctrl + P)" Image="img/buttons/file-form/Print.svg" />
+        <ImageButton Title="Undo (Ctrl + Z)" Image="img/buttons/file-form/Undo.svg" Command=@ViewModel.Undo />
+        <ImageButton Title="Redo (Ctrl + Alt + Z)" Image="img/buttons/file-form/Redo.svg" Command=@ViewModel.Redo />
+    </FormButtons>
+</Panel>

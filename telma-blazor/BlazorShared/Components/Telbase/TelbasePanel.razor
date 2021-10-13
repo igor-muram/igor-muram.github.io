@@ -1,0 +1,90 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Panel Id="main" Title="TelBase main">
+    <FormButtons ButtonsColor=@ButtonsColor.Green>
+        <ImageButton CanPush="true" Title="Create line segment (Ctrl + I)" Image="img/buttons/main-form/Create/CreateLineSegment.svg" Command=@ViewModel.OnCreateLine IsPushed=@service.IsAddLineMode />
+        <ImageButton CanPush="true" Title="Create arc segment (Ctrl + A)" Image="img/buttons/main-form/Create/CreateArcSegment.svg" Command=@ViewModel.OnCreateArc IsPushed=@service.IsAddArcMode />
+        <ImageButton Title="Create curve mode" Image="img/buttons/main-form/Create/CreateCurveMode.svg" IsPushed=@service.IsAddCurveMode />
+
+        <FloatingList Id="list-curve">
+            <ListButton Title="Create hyperbolic segment" Text="Hyperbolic" Command=@ViewModel.OnCreateHiperbolic />
+            <ListButton Title="Create quadrupole hyperbolic segment" Text="Quadrupole hyperbolic" Command=@ViewModel.OnCreateQuadrupoleHiperbolic />
+        </FloatingList>
+
+        <ImageButton CanPush="true" Title="Create point on boundary (Ctrl + 4)" Image="img/buttons/main-form/Create/CreatePointOnBoundary.svg" Command=@ViewModel.OnCreatePointOnBoundary IsPushed=@service.IsAddPointOnBoundaryMode />
+        <ImageButton CanPush="true" Title="Create nail segment (Ctrl + 5)" Image="img/buttons/main-form/Create/CreateNailSegment.svg" Command=@ViewModel.OnCreateNail IsPushed=@service.IsAddNailMode />
+        <ImageButton CanPush="true" Title="Create group (Ctrl + G)" Image="img/buttons/main-form/Create/CreateGroup.svg" Command=@ViewModel.OnCreateGroup IsPushed=@service.IsAddGroupMode />
+    </FormButtons>
+
+    <FormButtons ButtonsColor=@ButtonsColor.Yellow>
+        <ImageButton Title="Check intersections (F7)" Image="img/buttons/main-form/Change/Check.svg" Command=@ViewModel.OnCheckIntersections />
+        <ImageButton Title="Remove node (Ctrl + 7)" Image="img/buttons/main-form/Change/RemoveNode.svg" Command=@ViewModel.OnRemoveNode />
+        <ImageButton Title="Swap internal nodes (Ctrl + Oem3)" Image="img/buttons/main-form/Change/Swap.svg" Command=@ViewModel.OnSwap />
+        <ImageButton Title="Swap internal nodes along axis" Image="img/buttons/main-form/Change/SwapXY.svg" Command=@ViewModel.OnSwapXY />
+        <ImageButton Title="Double mesh (Ctrl + 2)" Image="img/buttons/main-form/Change/Double.svg" Command=@ViewModel.OnDouble />
+        <ToggleImageButton Title="Color material view" Image="img/buttons/main-form/Change/Ink.svg" Command=@ViewModel.PlaneView.FilledDraw IsPushed=@(ViewModel.PlaneView.FilledDraw.IsChecked == true) />
+    </FormButtons>
+
+    <FormButtons ButtonsColor=@ButtonsColor.Red>
+        <ImageButton Title="Set max step" Image="img/buttons/main-form/Build/SetMaxStep.svg" Command=@ViewModel.OnSetBoundaryMaxStep />
+        <ImageButton Title="Set min step" Image="img/buttons/main-form/Build/SetMinStep.svg" Command=@ViewModel.OnSetBoundaryMinStep />
+        <ImageButton Title="Set equal max step" Image="img/buttons/main-form/Build/GE.svg" Command=@ViewModel.OnSetBoundaryEqualMaxNode />
+        <ImageButton Title="Set equal min step" Image="img/buttons/main-form/Build/LE.svg" Command=@ViewModel.OnSetBoundaryEqualMinNode />
+        <ImageButton Title="Create mesh in polygon" Image="img/buttons/main-form/Build/AddBySurface.svg" Command=@ViewModel.OnCreateMeshInPolygon />
+        <ImageButton Title="Build mesh (F5)" Image="img/buttons/main-form/Build/Build.svg" Command=@ViewModel.OnBuild />
+    </FormButtons>
+
+    <FormButtons ButtonsColor=@ButtonsColor.Orange>
+        <ImageButton CanPush="true" Title="Set node selection mode (Alt + N)" Image="img/buttons/main-form/Select/SelectNode.svg" Command=@ViewModel.OnSetModeNodal IsPushed=@service.IsNodeMode />
+        <ImageButton CanPush="true" Title="Set boundary selection mode (Alt + B)" Image="img/buttons/main-form/Select/SelectBound.svg" Command=@ViewModel.OnSetModeBoundary IsPushed=@service.IsBoundaryMode />
+        <ImageButton CanPush="true" Title="Set position points selection mode" Image="img/buttons/main-form/Select/EditCurvePoints.svg" Command=@ViewModel.OnSetModePositionPoints IsPushed=@service.IsPositionPointMode />
+        <ImageButton CanPush="true" Title="Set nail selection mode (Alt + 5)" Image="img/buttons/main-form/Select/SelectNail.svg" Command=@ViewModel.OnSetModeNail IsPushed=@service.IsNailMode />
+        <ImageButton CanPush="true" Title="Set polygon selection mode (Alt + 6)" Image="img/buttons/main-form/Select/SelectPoly.svg" Command=@ViewModel.OnSetModePolygon IsPushed=@service.IsPolygonMode />
+        <ImageButton CanPush="true" Title="Set group selection mode (Alt + G)" Image="img/buttons/main-form/Select/SelectGroup.svg" Command=@ViewModel.OnSetModeGroup IsPushed=@service.IsGroupMode />
+    </FormButtons>
+
+    <FormInner>
+        <Wrapper>
+            <IntInput Source=@service.SelectedNodesNumber IsReadonly="true" />
+            <IntInput Source=@service.SelectedBoundariesNumber IsReadonly="true" />
+        </Wrapper>
+
+        <Wrapper>
+            <IntInput Source=@service.SelectedNailsNumber IsReadonly="true" />
+            <IntInput Source=@service.SelectedPolygonsNumber IsReadonly="true" />
+            <IntInput Source=@service.SelectedGroupsNumber IsReadonly="true" />
+        </Wrapper>
+    </FormInner>
+
+    <Expander>
+        <Heading>Materials</Heading>
+        <Content>
+            @if (MaterialCollection != null)
+            {
+                @foreach (var mat in MaterialCollection)
+                {
+                    <Container Classes="modify">
+                        <EditableListItem Value=@mat.DisplayName AddElementEvent=@AddMaterialEvent DeleteElementEvent=@DeleteMaterialEvent EditElementEvent=@EditMaterialEvent />
+                        <ColorPicker Source=@mat.Color OnChange=@((color) => MaterialColorEdit(mat.DisplayName, color)) />
+                    </Container>
+                }
+            }
+        </Content>
+    </Expander>
+
+    <Expander>
+        <Heading>Boundary conditions</Heading>
+        <Content>
+            @if (BoundaryCollection != null)
+            {
+                @foreach (var boundary in BoundaryCollection)
+                {
+                    <Container Classes="modify">
+                        <EditableListItem Value=@boundary.DisplayName AddElementEvent=@AddBoundaryEvent DeleteElementEvent=@DeleteBoundaryEvent EditElementEvent=@EditBoundaryEvent />
+                        <ColorPicker Source=@boundary.Color OnChange=@((color) => BoundaryColorEdit(boundary.DisplayName, color)) />
+                    </Container>
+                }
+            }
+        </Content>
+    </Expander>
+</Panel>

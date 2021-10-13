@@ -1,0 +1,48 @@
+﻿<div class="select-box @OrientationMap[Orientation] @SideMap[Side]" title=@Title>
+    <div class="options-container @(IsActive ? "active" : "")" @onclick=@OnClick @onclick:stopPropagation="true">
+        @if (Source != null)
+        {
+            @foreach (var value in Source)
+            {
+                <div class="option" data-name=@value @onclick=@(() => OnChangeImpl(value))>
+                    <input type="radio" class="radio" />
+                    <label>@value</label>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="selected" @onclick=@OnClick @onclick:stopPropagation="true">@Selected</div>
+</div>
+
+@code
+{
+    [Parameter] public IEnumerable<string> Source { get; set; }
+    [Parameter] public Action<string> OnChange { get; set; }
+    [Parameter] public string Selected { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+
+    [Parameter] public Orientation Orientation { get; set; } = Orientation.Bottom;
+    [Parameter] public Side Side { get; set; } = Side.Left;
+
+    Dictionary<Orientation, string> OrientationMap = new Dictionary<Orientation, string>()
+    {
+        [Orientation.Top] = "select-top",
+        [Orientation.Bottom] = ""
+    };
+
+    Dictionary<Side, string> SideMap = new Dictionary<Side, string>()
+    {
+        [Side.Right] = "select-right",
+        [Side.Left] = ""
+    };
+
+    bool IsActive { get; set; } = false;
+    void OnClick() => IsActive = !IsActive;
+
+    void OnChangeImpl(string value)
+    {
+        Selected = value;
+        OnChange?.Invoke(value);
+    }
+}

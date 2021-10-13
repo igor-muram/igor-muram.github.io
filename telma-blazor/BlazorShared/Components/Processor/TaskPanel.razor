@@ -1,0 +1,41 @@
+﻿@inherits ReactiveComponentBase<ProcessorManagerComponent>
+
+<Panel Id="task" Title="Task panel">
+    <FormInner>
+        <Expander>
+            <Heading>Problems</Heading>
+            <Content>
+                @foreach (var problem in ViewModel.ProjectModel.AvailableProblems)
+                {
+                    <ProblemItem ViewModel=@problem />
+                }
+            </Content>
+        </Expander>
+    </FormInner>
+    <FormInner>
+        <Expander>
+            <Heading>Result producers</Heading>
+            <Content>
+                @*@foreach (var producer in ViewModel.ProjectModel.AvailableResultProducers)
+                    {
+                        <ResultProducerItem ViewModel=@producer />
+                    }*@
+            </Content>
+        </Expander>
+    </FormInner>
+</Panel>
+
+@code
+{
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+        if (firstRender)
+        {
+            ViewModel.ProjectModel.Project.ProblemsConnect.Subscribe(_ => InvokeAsync(() => StateHasChanged()));
+        }
+
+        base.OnAfterRender(firstRender);
+
+    }
+}

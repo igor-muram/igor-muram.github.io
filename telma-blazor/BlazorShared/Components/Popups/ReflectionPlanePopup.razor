@@ -1,0 +1,55 @@
+﻿<Popup Id="reflection-plane" Title="Reflection plane">
+    <FormInner>
+        <Container>
+            <ImageSelect Selected="0"
+                         Source=@(new Dictionary<int, (string, string)>()
+                                     {
+                                         [0] = ("Manual projection", "img/projection/ManualProection.png"),
+                                         [1] = ("XY projection", "img/projection/Front.png"),
+                                         [2] = ("XZ projection", "img/projection/Bottom.png"),
+                                         [3] = ("YZ projection", "img/projection/YZ.png"),
+                                         [4] = ("Back (-XY) projection", "img/projection/Back.png"),
+                                         [5] = ("Back (-Y-X) projection", "img/projection/Back1.png"),
+                                         [6] = ("Back (X-Y) projection", "img/projection/Back2.png"),
+                                         [7] = ("Back (YX) projection", "img/projection/Back3.png"),
+                                         [8] = ("Front (XY) projection", "img/projection/Front.png"),
+                                         [9] = ("Front (-YX) projection", "img/projection/Front1.png"),
+                                         [10] = ("Front (-X-Y) projection", "img/projection/Front2.png"),
+                                         [11] = ("Front (Y-X) projection", "img/projection/Front3.png"),
+                                         [12] = ("Left (ZY) projection", "img/projection/Left.png"),
+                                         [13] = ("Left (-YZ) projection", "img/projection/Left1.png"),
+                                         [14] = ("Left (-Z-Y) projection", "img/projection/Left2.png"),
+                                         [15] = ("Left (Y-Z) projection", "img/projection/Left3.png"),
+                                         [16] = ("Right (-ZY) projection", "img/projection/Right.png"),
+                                         [17] = ("Right (-Y-Z) projection", "img/projection/Right1.png"),
+                                         [18] = ("Right (Z-Y) projection", "img/projection/Right2.png"),
+                                         [19] = ("Right (YZ) projection", "img/projection/Right3.png"),
+                                         [20] = ("Top (X-Z) projection", "img/projection/Top.png"),
+                                         [21] = ("Top (ZX) projection", "img/projection/Top1.png"),
+                                         [22] = ("Top (-XZ) projection", "img/projection/Top2.png"),
+                                         [23] = ("Top (-Z-X) projection", "img/projection/Top3.png"),
+                                         [24] = ("Bottom (XZ) projection", "img/projection/Bottom.png"),
+                                         [25] = ("Bottom (Z-X) projection", "img/projection/Bottom1.png"),
+                                         [26] = ("Bottom (-ZX) projection", "img/projection/Bottom2.png"),
+                                         [27] = ("Bottom (-X-Z) projection", "img/projection/Bottom3.png"),
+                                         [28] = ("RZ projection", "img/projection/Bottom.png"),
+                                         [29] = ("Isometric projection", "img/projection/Isometric1.png"),
+                                         [30] = ("Isometric projection", "img/projection/Isometric2.png"),
+                                         [31] = ("Isometric projection", "img/projection/Isometric3.png"),
+                                         [32] = ("Isometric projection", "img/projection/Isometric4.png"),
+                                         [33] = ("Isometric projection", "img/projection/Isometric5.png"),
+                                         [34] = ("Isometric projection", "img/projection/Isometric6.png"),
+                                         [35] = ("Isometric projection", "img/projection/Isometric7.png"),
+                                         [36] = ("Isometric projection", "img/projection/Isometric8.png")
+                                     }) />
+
+            <TextButton Text="Reset as selected" />
+        </Container>
+
+        <Wrapper>
+            <Textarea Rows="3" Source="Zero: Vec(1.04, -0.19, 0)
+X: Vec(-0.6, -0.8, 0)
+Y: Vec(0, 0, 1)" />
+        </Wrapper>
+    </FormInner>
+</Popup>

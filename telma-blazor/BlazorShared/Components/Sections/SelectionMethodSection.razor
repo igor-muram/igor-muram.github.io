@@ -1,0 +1,7 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Selection method">
+    <SectionButton CanPush="true" Title="Set add selection mode" Image="img/buttons/mode/add.svg" Text="Add" Command=@OnSetSelMethod IsPushed=@service.SelectionMethodSelect />
+    <SectionButton CanPush="true" Title="Set remove selection mode" Image="img/buttons/mode/remove.svg" Text="Remove" Command=@OnSetUnselMethod IsPushed=@service.SelectionMethodUnselect />
+    <SectionButton CanPush="true" Title="Set inverse selection mode" Image="img/buttons/mode/inverse.svg" Text="Inverse" Command=@OnSetInvMethod IsPushed=@service.SelectionMethodInverse />
+</Section>

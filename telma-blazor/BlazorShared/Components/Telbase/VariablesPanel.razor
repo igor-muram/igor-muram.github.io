@@ -1,0 +1,21 @@
+﻿@inherits ReactiveComponentBase<VariableContextWrapper>
+
+<Panel Id="variables" Title="Variables">
+    <Expander>
+        <Heading>Variables</Heading>
+        <Content>
+            <Table>
+                <Row>
+                    <Column Text="Name" />
+                    <Column Text="Value" />
+                    <Column Text="Create" />
+                    <Column Text="Remove" />
+                </Row>
+                @*@foreach (var variable in ViewModel.Variables)
+                    {
+                        <Variable ViewModel=@variable />
+                    }*@
+            </Table>
+        </Content>
+    </Expander>
+</Panel>

@@ -1,0 +1,21 @@
+﻿<div class="panel__section section @(IsVisible ? "" : "hide")">
+    <div class="section__buttons @SectionTypeMap[SectionType]">
+        @ChildContent
+    </div>
+    <div class="section__title">@Title</div>
+</div>
+
+
+@code
+{
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public SectionType SectionType { get; set; } = SectionType.Default;
+
+    Dictionary<SectionType, string> SectionTypeMap = new Dictionary<SectionType, string>()
+    {
+        [SectionType.Text] = "section__buttons-text",
+        [SectionType.Default] = ""
+    };
+}

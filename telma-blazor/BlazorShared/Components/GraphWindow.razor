@@ -1,0 +1,59 @@
+﻿@inherits ReactiveComponentBase<TelmaComponentUIAggregator>
+
+<canvas id="canvas" class="canvas" style="width: 1368px;" oncontextmenu="return false"></canvas>
+<canvas id="canvas2D" class="canvas" style="width: 1368px;" oncontextmenu="return false" @onmousedown=@OnMouseDown @onmousemove="@OnMouseMove" @onmouseup="@OnMouseUp" @onmousewheel="@OnMouseWheel"></canvas>
+
+@code
+{
+    public void OnMouseMove(MouseEventArgs e)
+    {
+        OnMouseMoveImpl(e.ClientX - BoundingRect.X, e.ClientY - BoundingRect.Y);
+    }
+
+    public async void OnMouseDown(MouseEventArgs e)
+    {
+        ButtonState state = ButtonState.Nothing;
+
+        switch (e.Button)
+        {
+            case 0:
+                state = ButtonState.Left;
+                break;
+            case 1:
+                state = ButtonState.Middle;
+                break;
+            case 2:
+                state = ButtonState.Right;
+                break;
+        }
+
+        await this.OnMouseDownImpl(state, e.ClientX - BoundingRect.X, e.ClientY - BoundingRect.Y);
+    }
+
+    public async void OnMouseUp(MouseEventArgs e)
+    {
+        ButtonState state = ButtonState.Nothing;
+
+        switch (e.Button)
+        {
+            case 0:
+                state = ButtonState.Left;
+                break;
+            case 1:
+                state = ButtonState.Middle;
+                break;
+            case 2:
+                state = ButtonState.Right;
+                break;
+        }
+
+        await this.OnMouseUpImpl(state, e.ClientX - BoundingRect.X, e.ClientY - BoundingRect.Y);
+    }
+
+    public async void OnMouseWheel(WheelEventArgs e)
+    {
+        Console.WriteLine(e.DeltaY);
+        var mw = ((IGraphWindow?)this)?.OnMouseWheel;
+        if (mw != null) await mw.Command.Execute((int)e.DeltaY);
+    }
+}

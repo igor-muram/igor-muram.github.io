@@ -1,0 +1,22 @@
+@inherits ReactiveComponentBase<TelmaComponentUIAggregator>
+
+<footer class="footer">
+    <DictionarySelect Selected=@ViewModel.MouseCoorType.ToString() OnChange=@OnCoorTypeChange Orientation=@Orientation.Top
+                      Source=@(new Dictionary<string, string>() { ["mcGlobalDecart"] = "GC", ["mcLocalDecart"] = "LC", ["mcLocalPolar"] = "LP" }) />
+
+    <Container Classes="coords">
+        <Coordinate Text=@(service.XMouseLabel + ": ") Source=@($"{service.MouseX:G5}") IsFixed=@service.IsFixX />
+        <Coordinate Text=@(service.YMouseLabel + ": ") Source=@($"{service.MouseY:G5}") IsFixed=@service.IsFixY />
+        <Coordinate Text=@(service.ZMouseLabel + ": ") Source=@($"{service.MouseZ:G5}") IsFixed=@service.IsFixZ />
+    </Container>
+
+    <Container Classes="hand">
+        <ToggleImageButton Title="New file (Ctrl + N)" Image="img/buttons/hand.svg" />
+        <Label Text="Selected: 0" />
+    </Container>
+</footer>
+
+@code
+{
+    void OnCoorTypeChange(string value) => ViewModel.MouseCoorType = (Telma.UniversalUI.MouseCoorTypes)Enum.Parse(typeof(Telma.UniversalUI.MouseCoorTypes), value);
+}

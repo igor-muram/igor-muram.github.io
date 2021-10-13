@@ -1,0 +1,48 @@
+@inherits ReactiveComponentBase<ArcBoundaryEdit>
+
+<Parameters Title="Arc segment boundary" Id="arc">
+    <DoubleInput Text="Coefficient =" Source=@ViewModel.Coeff OnChange=@OnCoeffChange SizeType=@InputSize.Short />
+    <IntInput Text="Internal =" Source=@ViewModel.Internal SizeType=@InputSize.Short OnChange=@OnInternalChange />
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox OnChange=@OnFixStartChange Id="arc-fix-start" Text="Fix start point:" Source=@ViewModel.FixedBeg />
+        <PointInput Source=@ViewModel.BegPoint.As3D() OnChange=@OnBegPointChange />
+    </Wrapper>
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox OnChange=@OnFixEndChange Id="arc-fix-end" Text="Fix end point:" Source=@ViewModel.FixedEnd />
+        <PointInput Source=@ViewModel.EndPoint.As3D() OnChange=@OnEndPointChange />
+    </Wrapper>
+
+    <DoubleInput Text="Segment length:" Source=@ViewModel.Length SizeType=@InputSize.Middle OnChange=@OnLengthChange />
+
+    <Wrapper>
+        <Label Text="Condition:" />
+        <Select Selected=@ViewModel.ConditionName Source=@BoundaryNames OnChange=@OnBoundaryChange />
+    </Wrapper>
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Label TitleType=@TitleType.Point Text="Arc point:" />
+        <PointInput Source=@ViewModel.Arcp.As3D() OnChange=@OnArcPointChange />
+    </Wrapper>
+
+    <ParameterPoint2DInput Text="Arc center:" Source=@ViewModel.ArcCenter SizeType=@InputSize.Long IsReadonly="true" />
+    <DoubleInput Text="Arc radius:" Source=@ViewModel.ArcR SizeType=@InputSize.Middle OnChange=@OnArcRadiusChange />
+</Parameters>
+
+@code
+{
+    [Parameter] public IEnumerable<string> BoundaryNames { get; set; }
+
+    void OnCoeffChange(ParameterFloat value) => ViewModel.Coeff = value;
+    void OnLengthChange(ParameterFloat value) => ViewModel.Length = value;
+    void OnArcRadiusChange(ParameterFloat value) => ViewModel.ArcR = value;
+    void OnInternalChange(int value) => ViewModel.Internal = value;
+    void OnBoundaryChange(string value) => ViewModel.ConditionName = value;
+
+    void OnFixStartChange(bool value) => ViewModel.FixedBeg = value;
+    void OnBegPointChange(ParameterPoint3D value) => ViewModel.BegPoint = value.As2D();
+    void OnFixEndChange(bool value) => ViewModel.FixedEnd = value;
+    void OnEndPointChange(ParameterPoint3D value) => ViewModel.EndPoint = value.As2D();
+    void OnArcPointChange(ParameterPoint3D value) => ViewModel.Arcp = value.As2D();
+}

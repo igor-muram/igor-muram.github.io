@@ -1,0 +1,13 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<td @onclick=@OnClick>
+    @Text
+    @ChildContent
+</td>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; } = null;
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public EventCallback OnClick { get; set; }
+}

@@ -1,0 +1,117 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Container Classes=@("container " + Style)>
+    <TabControl ActivePageName="Edit">
+        @foreach (var pair in upperPanels)
+        {
+            <TabPage Title=@pair.Key>
+                @foreach (var panel in pair.Value)
+                {
+                    @RenderPanel(panel.panelType, panel.viewModelType)
+                }
+            </TabPage>
+        }
+    </TabControl>
+
+    <!-- Content start -->
+    <Container Classes="content">
+        <GraphWindow ViewModel=@aggregator @ref="window" />
+
+        <Container Classes="button button-expand_form">
+            <img src="img/arrow-down.svg">
+            <span>Expand form panel</span>
+        </Container>
+
+        <Container Classes="empty-block" />
+
+        <Container Classes="form-container">
+            <Container Classes="forms__wrapper">
+                @foreach (var pair in sidePanels)
+                {
+                    if (pair.isActive)
+                    {
+                        @RenderPanel(pair.panelType, pair.viewModelType);
+                    }
+                }
+            </Container>
+
+            <Container Classes="floating-list__wrapper form__control-wrapper">
+                <FloatingList Id="form__control">
+                    <ListButton ButtonType=@ListButtonType.Underline Text="Collapse panel" />
+                    <ListButton ButtonType=@ListButtonType.Underline Text="Move panel to opposite side" />
+
+                    <Checkbox Id="control-form-main" Text="TelBase main" />
+                    <Checkbox Id="control-form-telbase-file" Text="File panel" />
+                    <Checkbox Id="control-form-variables" Text="Variables" />
+                    <Checkbox Id="control-form-scale" Text="Scale" />
+                    <Checkbox Id="control-form-mouse" Text="Mouse" />
+                    <Checkbox Id="control-form-selection" Text="Selection panel" />
+                </FloatingList>
+            </Container>
+        </Container>
+    </Container>
+
+    <!-- Content end -->
+    <!-- Footer start -->
+    <Footer ViewModel=@aggregator />
+    <!-- Footer end -->
+    <!-- Popup save file start -->
+    <SaveFilePopup />
+    <!-- Popup save file name end -->
+    <!-- Popup load file start -->
+    <LoadFilePopup />
+    <!-- Popup load file end -->
+    <!-- Popup define point start -->
+    <DefinePointPopup />
+    <!-- Popup define point end -->
+    <!-- Popup define line start -->
+    <DefineLinePopup />
+    <!-- Popup define line end -->
+    <!-- Popup reflection plane start -->
+    <ReflectionPlanePopup />
+    <!-- Popup reflection plane end -->
+    <!-- Popup coordinates start -->
+    <CoordinatesPopup />
+    <!-- Popup coordinates end -->
+</Container>
+
+@code
+{
+    RenderFragment RenderPanel(Type PanelType, Type ViewModelType)
+    {
+        RenderFragment RenderFragment = Builder =>
+        {
+            Builder.OpenComponent(0, PanelType);
+
+            switch (ViewModelType.Name)
+            {
+                case "TelmaComponent":
+                    Builder.AddAttribute(1, "ViewModel", ViewModel);
+                    break;
+                case "TelbaseComponent":
+                    Builder.AddAttribute(1, "ViewModel", (TelbaseComponent)ViewModel);
+                    break;
+                case "PostProcessorComponent":
+                    Builder.AddAttribute(1, "ViewModel", (PostProcessorComponent)ViewModel);
+                    break;
+                case "ProcessorManagerComponent":
+                    Builder.AddAttribute(1, "ViewModel", (ProcessorManagerComponent)ViewModel);
+                    break;
+                case "TelmaComponentUIAggregator":
+                    Builder.AddAttribute(1, "ViewModel", aggregator);
+                    break;
+                default:
+                    break;
+            }
+
+            if (PanelType == typeof(SelectionPanel) || PanelType == typeof(TelbasePanel) ||
+                PanelType == typeof(OtherSection) || PanelType == typeof(WorkModeSection) || PanelType == typeof(SelectorSection) ||
+                PanelType == typeof(SelectionMethodSection) || PanelType == typeof(MouseModeSection))
+                Builder.AddAttribute(2, "Aggregator", aggregator);
+
+            Builder.CloseComponent();
+        };
+
+        return RenderFragment;
+    }
+}

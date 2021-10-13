@@ -1,0 +1,9 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Section Title="Create">
+    <SectionButton CanPush="true" Title="Create line segment (Ctrl + I)" Image="img/buttons/base-plane/CreateLineSegment.svg" Text="Line" Command=@ViewModel.OnCreateLine IsPushed=@service.IsAddLineMode />
+    <SectionButton CanPush="true" Title="Create arc segment (Ctrl + A)" Image="img/buttons/base-plane/CreateArcSegment.svg" Text="Arc" Command=@ViewModel.OnCreateArc IsPushed=@service.IsAddArcMode />
+    <SectionButton CanPush="true" Title="Create group (Ctrl + G)" Image="img/buttons/base-plane/CreateGroup.svg" Text="Group" Command=@ViewModel.OnCreateGroup IsPushed=@service.IsAddGroupMode />
+    <SectionButton CanPush="true" Title="Create nail segment (Ctrl + 5)" Image="img/buttons/base-plane/CreateNailSegment.svg" Text="Nail" Command=@ViewModel.OnCreateNail IsPushed=@service.IsAddNailMode />
+    <SectionButton CanPush="true" Title="Create point on boundary (Ctrl + 4)" Image="img/buttons/base-plane/CreatePointOnBoundary.svg" Text="Point on" Text2="boundary" Command=@ViewModel.OnCreatePointOnBoundary IsPushed=@service.IsAddPointOnBoundaryMode />
+</Section>

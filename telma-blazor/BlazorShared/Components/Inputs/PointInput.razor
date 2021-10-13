@@ -1,0 +1,25 @@
+<Expander HeaderType="input" IsVisible=@IsVisible>
+    <Heading>
+        <ParameterPoint3DInput OnChange=@OnPointChange Source=@PointValue SizeType=@InputSize.Long IsReadonly=@IsReadonly />
+    </Heading>
+    <Content>
+        <ParameterPoint3DInput Text="Local cartesian:" OnChange=@OnLocalDecartChange Source=@LocalDecart SizeType=@InputSize.Long IsReadonly=@IsReadonly />
+        <ParameterPoint2DInput Text="Local polar:" OnChange=@OnLocalPolarChange Source=@LocalPolar SizeType=@InputSize.Long IsReadonly=@IsReadonly />
+        <ParameterPoint3DInput Text="Window local zero:" OnChange=@OnLocalZeroChange Source=@LocalZero SizeType=@InputSize.Long IsReadonly=@IsReadonly />
+    </Content>
+</Expander>
+
+@code
+{
+    [Parameter] public Action<ParameterPoint3D> OnChange { get; set; }
+    [Parameter] public bool IsReadonly { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    void OnPointChange(ParameterPoint3D value) => PointValue = value;
+
+    void OnLocalDecartChange(ParameterPoint3D value) => LocalDecart = value;
+
+    void OnLocalPolarChange(ParameterPoint2D value) => LocalPolar = value;
+
+    void OnLocalZeroChange(ParameterPoint3D value) => LocalZero = value;
+}

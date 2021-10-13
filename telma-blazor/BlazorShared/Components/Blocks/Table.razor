@@ -1,0 +1,11 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<table class="table @(IsVisible ? "" : "hide")">
+    @ChildContent
+</table>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+}

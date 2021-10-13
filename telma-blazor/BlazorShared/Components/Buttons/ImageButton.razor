@@ -1,0 +1,53 @@
+﻿@switch (ButtonType)
+{
+    case ImageButtonType.Icon:
+        <button class="button button-icon @Class @(OnClickEvent.HasDelegate ? "" : "disabled") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClickEvent @onclick:stopPropagation="true">
+            <img src=@Image alt=@Title />
+        </button>
+        break;
+    case ImageButtonType.Default:
+        <button class="button button-image @ButtonSizeMap[ButtonSize] @(CanPush && IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">
+            <img src=@Image>
+        </button>
+        break;
+    default:
+        break;
+}
+
+@code
+{
+    [Parameter] public string Image { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public EventCallback OnClickEvent { get; set; }
+
+    [Parameter] public ImageButtonType ButtonType { get; set; } = ImageButtonType.Default;
+    [Parameter] public ButtonSize ButtonSize { get; set; } = ButtonSize.Big;
+
+    [Parameter] public bool CanPush { get; set; } = false;
+    [Parameter] public bool IsPushed { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    Dictionary<ButtonSize, string> ButtonSizeMap = new Dictionary<ButtonSize, string>()
+    {
+        [ButtonSize.Tiny] = "button-image-tiny",
+        [ButtonSize.Small] = "button-image-small",
+        [ButtonSize.Middle] = "button-image-middle",
+        [ButtonSize.Big] = ""
+    };
+
+    bool Disabled => Command != null ? !Command.CanExecute(null) : true;
+
+    [Parameter] public ITelmaCommand Command { get; set; }
+
+    void OnClick() => Command?.Execute(null);
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Command != null)
+            Command.CanExecuteChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    }
+}
+

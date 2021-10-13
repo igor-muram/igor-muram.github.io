@@ -1,0 +1,10 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Section Title="Selection">
+    <SectionButton CanPush="true" Title="Set node selection mode (Alt + N)" Image="img/buttons/base-plane/SelectNode.svg" Text="Node" Command=@ViewModel.OnSetModeNodal IsPushed=@service.IsNodeMode />
+    <SectionButton CanPush="true" Title="Set boundary selection mode (Alt + B)" Image="img/buttons/base-plane/CreateLineSegment.svg" Text="Boundary" Command=@ViewModel.OnSetModeBoundary IsPushed=@service.IsBoundaryMode />
+    <SectionButton CanPush="true" Title="Set position points selection mode" Image="img/buttons/base-plane/EditCurvePoints.svg" Text="Position" Text2="points" Command=@ViewModel.OnSetModePositionPoints IsPushed=@service.IsPositionPointMode />
+    <SectionButton CanPush="true" Title="Set nail selection mode (Alt + 5)" Image="img/buttons/base-plane/SelectNail.svg" Text="Nail" Command=@ViewModel.OnSetModeNail IsPushed=@service.IsNailMode />
+    <SectionButton CanPush="true" Title="Set polygon selection mode (Alt + 6)" Image="img/buttons/base-plane/SelectPoly.svg" Text="Polygon" Command=@ViewModel.OnSetModePolygon IsPushed=@service.IsPolygonMode />
+    <SectionButton CanPush="true" Title="Set group selection mode (Alt + G)" Image="img/buttons/base-plane/SelectGroup.svg" Text="Group" Command=@ViewModel.OnSetModeGroup IsPushed=@service.IsGroupMode />
+</Section>

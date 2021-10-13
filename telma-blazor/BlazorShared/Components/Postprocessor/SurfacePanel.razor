@@ -1,0 +1,68 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Panel Id="surface" Title="Surface panel" IsTitleVisible=@(ViewModel.ActiveSurfaceView.GradeDraw.IsChecked == true)>
+    <FormButtons>
+        <Wrapper>
+            <ToggleImageButton Title="Set grade draw mode" Image="img/buttons/postprocessor-form/Grade.svg" Command=@ViewModel.GradeDraw IsPushed=@(ViewModel.GradeDraw.IsChecked == true) />
+            <ToggleImageButton Title="Set isolines draw mode" Image="img/buttons/postprocessor-form/Isolines.svg" Command=@ViewModel.IsolinesDraw IsPushed=@(ViewModel.IsolinesDraw.IsChecked == true) />
+            <ToggleImageButton Title="Set material draw mode" Image="img/buttons/postprocessor-form/Material.svg" Command=@ViewModel.MaterialDraw IsPushed=@(ViewModel.MaterialDraw.IsChecked == true) />
+            <ToggleImageButton Title="Set mesh draw mode" Image="img/buttons/postprocessor-form/Preprocessor.svg" Command=@ViewModel.MeshDraw IsPushed=@(ViewModel.MeshDraw.IsChecked == true) />
+            <ImageButton Title="Save surfaces" Image="img/buttons/postprocessor-form/Save.svg" />
+            <ImageButton Title="Load surfaces" Image="img/buttons/postprocessor-form/Load.svg" />
+        </Wrapper>
+    </FormButtons>
+
+    <FormButtons IsVisible=@ViewModel.Is3DComponent>
+        <Wrapper>
+            <ImageButton Title="Add surface by plane section" Image="img/buttons/processor-form/AddLine.svg" Command=@ViewModel.OnAddByLine />
+            <ImageButton Title="Add surface between materials" Image="img/buttons/processor-form/AddSurface.svg" Command=@ViewModel.OnAddBymaterials />
+            <ImageButton Title="Edit surface" Image="img/buttons/processor-form/Edit.svg" Command=@OnEditSurfaceProperties />
+            <ImageButton Title="Delete surfaces" Image="img/buttons/processor-form/Delete.svg" Command=@OnDeleteSurface />
+        </Wrapper>
+    </FormButtons>
+
+    <FormInner IsVisible=@ViewModel.Is3DComponent>
+        <Select Selected=@ViewModel.CurrentSurfaceView Source=@ActiveSurfaceGroup OnChange=@OnSurfaceViewChange />
+    </FormInner>
+
+    <ScalarValueSelector @ref="valueSelector" IsVisible=@(ViewModel.ActiveSurfaceView.GradeDraw.IsChecked == true) />
+
+    <FormInner IsVisible=@(ViewModel.ActiveSurfaceView.GradeDraw.IsChecked == true)>
+        <Wrapper>
+            <DoubleInput Text="Min:" SizeType=@InputSize.Middle Source=@CGvalIsolineMin OnChange=@OnCGvalIsolineMinChange />
+        </Wrapper>
+        <Wrapper>
+            <DoubleInput Text="Max" SizeType=@InputSize.Middle Source=@CGvalIsolineMax OnChange=@OnCGvalIsolineMaxChange />
+        </Wrapper>
+    </FormInner>
+
+    <FormButtons IsVisible=@(ViewModel.ActiveSurfaceView.GradeDraw.IsChecked == true)>
+        <Wrapper>
+            <ImageButton Title="Reset min/max and set linear grade" Image="img/buttons/postprocessor-form/LinearGrade.svg" Command=@ViewModel.OnLinearGrade />
+            <ImageButton Title="Swap palette" Image="img/buttons/postprocessor-form/SwapPalette.svg" Command=@ViewModel.OnSwapGrade />
+            <ImageButton Title="Save palette" Image="img/buttons/postprocessor-form/Save.svg" />
+            <ImageButton Title="Load palette" Image="img/buttons/postprocessor-form/Load.svg" />
+        </Wrapper>
+    </FormButtons>
+
+    @if (ColorValueMap != null)
+    {
+        <Container Classes="color-palette" IsVisible=@(ViewModel.ActiveSurfaceView.GradeDraw.IsChecked == true)>
+            @foreach (var pair in ColorValueMap.Reverse())
+            {
+                <Container Classes="value">
+                    <Container Classes="value__color" Style=@("background-color: " + "#" + pair.Key.R.ToString("X2") + pair.Key.G.ToString("X2") + pair.Key.B.ToString("X2")) />
+                    <Container Classes="value__text">@pair.Value</Container>
+                </Container>
+            }
+        </Container>
+    }
+</Panel>
+
+@code
+{
+    void OnSurfaceViewChange(string value) => ViewModel.CurrentSurfaceView = value;
+
+    void OnCGvalIsolineMinChange(ParameterFloat value) => CGvalIsolineMin = value;
+    void OnCGvalIsolineMaxChange(ParameterFloat value) => CGvalIsolineMax = value;
+}

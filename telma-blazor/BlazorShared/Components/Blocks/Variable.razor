@@ -1,0 +1,22 @@
+@inherits ReactiveComponentBase<ParameterVariable>
+
+<Row>
+    <Column>
+        <TextInput InputType=@InputType.Table Source=@ViewModel.Name OnChange=@OnVariableNameChange />
+    </Column>
+    <Column>
+        <TextInput InputType=@InputType.Table Source=@ViewModel.CompilableString OnChange=@OnVariableStringChange />
+    </Column>
+    <Column>
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="table__create" Title="Create new element" Image="img/plus.svg" />
+    </Column>
+    <Column>
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="table__remove" Title="Remove selected element" Image="img/close.svg" />
+    </Column>
+</Row>
+
+@code
+{
+    void OnVariableNameChange(string value) => ViewModel.Name = value;
+    void OnVariableStringChange(string value) => ViewModel.CompilableString = value;
+}

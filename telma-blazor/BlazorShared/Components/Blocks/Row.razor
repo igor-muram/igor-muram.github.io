@@ -1,0 +1,14 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<tr class="@(IsVisible ? "" : "hide")" @onclick=@OnClick>
+    @Text
+    @ChildContent
+</tr>
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; } = null;
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public EventCallback OnClick { get; set; }
+}

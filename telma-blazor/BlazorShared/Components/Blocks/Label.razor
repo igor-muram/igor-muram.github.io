@@ -1,0 +1,24 @@
+@switch (TitleType)
+{
+    case TitleType.Point:
+        <div class="parameters__text point-title @(IsVisible ? "" : "hide")" data-text=@Text>@Text</div>
+        break;
+    case TitleType.Title:
+        <h4 class="@(IsVisible ? "" : "hide")" data-text=@Text>@Text</h4>
+        break;
+    case TitleType.Default:
+        <div class="parameters__text @(IsVisible ? "" : "hide")" data-text=@Text @onclick=@OnClick>
+            @Text
+            @ChildContent
+        </div>
+        break;
+}
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; } = null;
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public TitleType TitleType { get; set; } = TitleType.Default;
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public EventCallback OnClick { get; set; }
+}

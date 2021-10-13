@@ -1,0 +1,19 @@
+﻿<div class="popup" id="drag-@Id">
+    <div id="handle-@Id" class="popup__handle">@Title</div>
+
+    <button class="popup__close">
+        <img src="img/close.svg" alt="Close" />
+    </button>
+
+    <div class="popup__content">
+        @ChildContent
+    </div>
+</div>
+
+
+@code
+{
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

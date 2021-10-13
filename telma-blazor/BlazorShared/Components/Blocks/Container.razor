@@ -1,0 +1,11 @@
+<div class=@(Classes + (IsVisible ? "" : " hide")) oncontextmenu="return false;" style=@Style>
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public string Classes { get; set; } = "";
+    [Parameter] public string Style { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+}

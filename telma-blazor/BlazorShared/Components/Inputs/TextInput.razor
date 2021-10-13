@@ -1,0 +1,43 @@
+﻿@switch (InputType)
+{
+    case InputType.Table:
+        <input class="table__input @(IsVisible ? "" : "hide")" style=@(ValidationError ? "border: 1px solid #ff0000;" : "") type="text" onPaste="return false" value=@Source @onchange=@OnChangeImpl readonly=@IsReadonly>
+        break;
+    case InputType.Default:
+        <Wrapper IsVisible=@IsVisible>
+            <Label Text=@Text />
+            <input class="parameters__input @SizeTypeMap[SizeType]" style=@(ValidationError ? "border: 1px solid #ff0000;" : "") type="text" onPaste="return false" value=@Source @onchange=@OnChangeImpl @onclick:stopPropagation="true" readonly=@IsReadonly>
+        </Wrapper>
+        break;
+    default:
+        break;
+}
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Source { get; set; }
+    [Parameter] public Action<string> OnChange { get; set; }
+
+    [Parameter] public InputSize SizeType { get; set; } = InputSize.Stretch;
+    [Parameter] public InputType InputType { get; set; } = InputType.Default;
+
+    [Parameter] public bool IsReadonly { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    Dictionary<InputSize, string> SizeTypeMap = new Dictionary<InputSize, string>()
+    {
+        [InputSize.Short] = "parameters__input-short",
+        [InputSize.Middle] = "parameters__input-middle",
+        [InputSize.Long] = "parameters__input-long",
+        [InputSize.Stretch] = ""
+    };
+
+    bool ValidationError;
+
+    void OnChangeImpl(ChangeEventArgs args)
+    {
+        Source = (string)args.Value;
+        OnChange?.Invoke(Source);
+    }
+}

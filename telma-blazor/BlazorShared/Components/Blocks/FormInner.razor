@@ -1,0 +1,18 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<div class="form__inner @(IsVisible ? "" : "hide") @FormInnerTypeMap[FormInnerType]">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public FormInnerType FormInnerType { get; set; } = FormInnerType.Flex;
+
+    Dictionary<FormInnerType, string> FormInnerTypeMap = new Dictionary<FormInnerType, string>()
+    {
+        [FormInnerType.Grid] = "form__inner-grid",
+        [FormInnerType.Flex] = ""
+    };
+}

@@ -1,0 +1,133 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Panel Id="selection" Title="Selection panel">
+    <FormInner>
+        <FormButtons>
+            <Wrapper>
+                <ImageButton Title="Select all objects of current type (Ctrl + L)" Image="img/buttons/selection-form/all.svg" Command=@Aggregator.SelectAll />
+            </Wrapper>
+
+            <Wrapper>
+                <ImageButton Title="Delete selected objects (Delete)" Image="img/buttons/selection-form/delete.svg" Command=@ViewModel.DeleteObjects />
+            </Wrapper>
+
+            <Wrapper>
+                <ImageButton Title="Move selected objects" Image="img/buttons/selection-form/move.svg" />
+
+                <FloatingList Id="list-move">
+                    <ListButton Title="Move selected by vector" Text="Move by vector" Command=@ViewModel.OnMoveVector />
+                    <ListButton Title="Move selected around point" Text="Move around point" Command=@ViewModel.OnMoveAroundPoint />
+                    <ListButton Title="Move selected around zero" Text="Move around zero" Command=@ViewModel.OnMoveAroundZero />
+                    <ListButton Title="Move selected by reflection" Text="Move by reflection" Command=@ViewModel.OnMoveReflection />
+                    <ListButton Title="Move selected by scale" Text="Move by scale" Command=@ViewModel.OnMoveScale />
+                    <ListButton Title="Move selected by radial scale" Text="Move by radial scale" Command=@ViewModel.OnMoveRadialScaleFromZero />
+                    <ListButton Title="Move selected by radial scale from point" Text="Move by radial scale from point" Command=@ViewModel.OnMoveRadialScaleFromPoint />
+                </FloatingList>
+
+                <ImageButton Title="Copy selected objects" Image="img/buttons/selection-form/copy.svg" />
+
+                <FloatingList Id="list-copy">
+                    <ListButton Title="Copy selected by vector" Text="Copy by vector" Command=@ViewModel.OnCopyVector />
+                    <ListButton Title="Copy selected around point" Text="Copy around point" Command=@ViewModel.OnCopyAroundPoint />
+                    <ListButton Title="Copy selected around zero" Text="Copy around zero" Command=@ViewModel.OnCopyAroundZero />
+                    <ListButton Title="Copy selected by reflection" Text="Copy by reflection" Command=@ViewModel.OnCopyReflection />
+                    <ListButton Title="Copy selected by scale" Text="Copy by scale" Command=@ViewModel.OnCopyScale />
+                    <ListButton Title="Copy selected by radial scale" Text="Copy by radial scale" Command=@ViewModel.OnCopyRadialScaleFromZero />
+                    <ListButton Title="Copy selected by radial scale from point" Text="Copy by radial scale from point" Command=@ViewModel.OnCopyRadialScaleFromPoint />
+                </FloatingList>
+            </Wrapper>
+        </FormButtons>
+
+        <Expander ExpanderType=@ExpanderType.Vertical Text="Modes">
+            <Content>
+                <FormButtons>
+                    <Wrapper>
+                        <ImageButton CanPush="true" Title="Set single selection mode" Image="img/buttons/mode/single.svg" Command=@OnSetSingleMode IsPushed=@service.IsSingleMode />
+                        <ImageButton CanPush="true" Title="Set group selection mode" Image="img/buttons/mode/group.svg" Command=@OnSetGroupMode IsPushed=@service.IsGroupMode />
+                    </Wrapper>
+
+                    <Wrapper>
+                        <ImageButton CanPush="true" Title="Set point selector mode" Image="img/buttons/mode/point.svg" Command=@OnSetPointSelector IsPushed=@service.IsPointSelector />
+                        <ImageButton CanPush="true" Title="Set rectangle selector mode" Image="img/buttons/mode/rect.svg" Command=@OnSetRectSelector IsPushed=@service.IsRectSelector />
+                        <ImageButton CanPush="true" Title="Set circle selector mode" Image="img/buttons/mode/circle.svg" Command=@OnSetCircleSelector IsPushed=@service.IsCircleSelector />
+                    </Wrapper>
+
+                    <Wrapper>
+                        <ImageButton CanPush="true" Title="Set add selection mode" Image="img/buttons/mode/add.svg" Command=@OnSetSelMethod IsPushed=@service.SelectionMethodSelect />
+                        <ImageButton CanPush="true" Title="Set remove selection mode" Image="img/buttons/mode/remove.svg" Command=@OnSetUnselMethod IsPushed=@service.SelectionMethodUnselect />
+                        <ImageButton CanPush="true" Title="Set inverse selection mode" Image="img/buttons/mode/inverse.svg" Command=@OnSetInvMethod IsPushed=@service.SelectionMethodInverse />
+                    </Wrapper>
+                </FormButtons>
+            </Content>
+        </Expander>
+    </FormInner>
+
+    @foreach (var wrapper in ViewModel.Wrappers)
+    {
+        @RenderWrapper(wrapper);
+    }
+</Panel>
+
+@code
+{
+    RenderFragment RenderWrapper(ITelmaViewWrapperBase Wrapper)
+    {
+        RenderFragment RenderFragment = Builder =>
+        {
+            switch (Wrapper)
+            {
+                case SegmentBoundaryEdit SegmentWrapper:
+                    Builder.OpenComponent(0, typeof(LineParameters));
+                    Builder.AddAttribute(1, "ViewModel", SegmentWrapper);
+                    Builder.AddAttribute(2, "BoundaryNames", BoundaryNames);
+                    Builder.CloseComponent();
+                    break;
+
+                case NailEdit NailWrapper:
+                    Builder.OpenComponent(0, typeof(NailParameters));
+                    Builder.AddAttribute(1, "ViewModel", NailWrapper);
+                    Builder.AddAttribute(2, "MaterialNames", MaterialNames);
+                    Builder.CloseComponent();
+                    break;
+
+                case ArcBoundaryEdit ArcWrapper:
+                    Builder.OpenComponent(0, typeof(ArcParameters));
+                    Builder.AddAttribute(1, "ViewModel", ArcWrapper);
+                    Builder.AddAttribute(2, "BoundaryNames", BoundaryNames);
+                    Builder.CloseComponent();
+                    break;
+
+                case HyperbolicBoundaryEdit HyperbolicWrapper:
+                    Builder.OpenComponent(0, typeof(HyperbolicParameters));
+                    Builder.AddAttribute(1, "ViewModel", HyperbolicWrapper);
+                    Builder.CloseComponent();
+                    break;
+
+                case QuadrupoleHyperbolicBoundaryEdit QuadrupoleWrapper:
+                    Builder.OpenComponent(0, typeof(QuadrupoleParameters));
+                    Builder.AddAttribute(1, "ViewModel", QuadrupoleWrapper);
+                    Builder.AddAttribute(2, "BoundaryNames", BoundaryNames);
+                    Builder.CloseComponent();
+                    break;
+
+                case NodeEdit NodeWrapper:
+                    Builder.OpenComponent(0, typeof(NodeSelectionParameters));
+                    Builder.AddAttribute(1, "ViewModel", NodeWrapper);
+                    Builder.CloseComponent();
+                    break;
+
+                case MultyBoundaryEdit MultyWrapper:
+                    Builder.OpenComponent(0, typeof(BoundariesEdit));
+                    Builder.AddAttribute(1, "ViewModel", MultyWrapper);
+                    Builder.AddAttribute(2, "BoundaryNames", BoundaryNames);
+                    Builder.CloseComponent();
+                    break;
+
+                default:
+                    break;
+            }
+        };
+
+        return RenderFragment;
+    }
+}

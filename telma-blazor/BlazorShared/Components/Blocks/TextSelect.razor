@@ -1,0 +1,29 @@
+﻿<div class="select-box @(IsVisible ? "" : "hide")">
+    @if (Source != null)
+    {
+        @foreach (var value in Source)
+        {
+            <div class="option @(Selected == value ? "active" : "")" data-name=@value @onclick=@(() => OnChangeImpl(value))>
+                <input type="radio" class="radio" />
+                <label>@value</label>
+            </div>
+        }
+    }
+</div>
+
+<Label Text=@(Selected != "" && IsVisible ? Text + Selected : "") />
+
+@code
+{
+    [Parameter] public IEnumerable<string> Source { get; set; }
+    [Parameter] public Action<string> OnChange { get; set; }
+    [Parameter] public string Selected { get; set; } = "";
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public string Text { get; set; } = "";
+
+    void OnChangeImpl(string value)
+    {
+        Selected = value;
+        OnChange?.Invoke(value);
+    }
+}

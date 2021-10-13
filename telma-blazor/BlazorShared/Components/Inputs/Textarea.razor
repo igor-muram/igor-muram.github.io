@@ -1,0 +1,18 @@
+﻿<textarea class="textarea @(IsVisible ? "" : "hide")" rows=@Rows cols=@Columns @onclick:stopPropagation="true" @onchange=@OnChangeImpl readonly=@IsReadonly>@Source</textarea>
+
+@code
+{
+    [Parameter] public string Source { get; set; } = "";
+    [Parameter] public int Rows { get; set; } = 10;
+    [Parameter] public int Columns { get; set; } = 1;
+    [Parameter] public Action<string> OnChange { get; set; }
+
+    [Parameter] public bool IsReadonly { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    void OnChangeImpl(ChangeEventArgs args)
+    {
+        Source = (string)args.Value;
+        OnChange?.Invoke(Source);
+    }
+}

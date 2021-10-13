@@ -1,0 +1,45 @@
+﻿<div class="select-box select-box-img @OrientationMap[Orientation] @SideMap[Side]" title=@Title>
+    <div class="options-container options-container-img @(IsActive ? "active" : "")" @onclick=@OnClick @onclick:stopPropagation="true">
+        @foreach (var pair in Source)
+        {
+            <div class="option" data-name=@pair.Key @onclick=@(() => OnChangeImpl(pair.Key)) title=@pair.Value.Item1>
+                <input type="radio" class="radio" />
+                <label><img src=@pair.Value.Item2 /></label>
+            </div>
+        }
+    </div>
+
+    <div class="selected selected-img" @onclick=@OnClick @onclick:stopPropagation="true"><img src=@Source[Selected].Item2></div>
+</div>
+
+@code
+{
+    [Parameter] public Dictionary<int, (string, string)> Source { get; set; }
+    [Parameter] public Action<int> OnChange { get; set; }
+    [Parameter] public int Selected { get; set; } = 0;
+    [Parameter] public string Title { get; set; } = "";
+
+    [Parameter] public Orientation Orientation { get; set; } = Orientation.Bottom;
+    [Parameter] public Side Side { get; set; } = Side.Left;
+
+    Dictionary<Orientation, string> OrientationMap = new Dictionary<Orientation, string>()
+    {
+        [Orientation.Top] = "select-top",
+        [Orientation.Bottom] = ""
+    };
+
+    Dictionary<Side, string> SideMap = new Dictionary<Side, string>()
+    {
+        [Side.Right] = "select-right",
+        [Side.Left] = ""
+    };
+
+    bool IsActive { get; set; } = false;
+    void OnClick() => IsActive = !IsActive;
+
+    void OnChangeImpl(int value)
+    {
+        Selected = value;
+        OnChange?.Invoke(value);
+    }
+}

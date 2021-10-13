@@ -1,0 +1,15 @@
+﻿<Container Classes="quantity" IsVisible=@IsVisible>
+    <IntInput Source=@Source OnChange=@OnChange Min=@Min Max=@Max />
+    <button class="quantity-button quantity-up" @onclick=@(() => { if (Source + Step <= Max) Source += Step; OnChange?.Invoke(Source); })><img src="img/arrow-down.svg"></button>
+    <button class="quantity-button quantity-down" @onclick=@(() => { if (Source - Step >= Min) Source -= Step; OnChange?.Invoke(Source); })><img src="img/arrow-down.svg"></button>
+</Container>
+
+@code
+{
+    [Parameter] public int Source { get; set; } = 0;
+    [Parameter] public int Min { get; set; } = -10000;
+    [Parameter] public int Max { get; set; } = 10000;
+    [Parameter] public int Step { get; set; } = 1;
+    [Parameter] public Action<int> OnChange { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+}

@@ -1,0 +1,26 @@
+﻿@inherits ReactiveComponentBase<IValueselectable>
+
+<FormInner IsVisible=@IsVisible>
+    <Label Text="Value:" />
+
+    <Select Selected=@ValueName Source=@AvailableValues OnChange=@OnValueChanged />
+
+    <ImageButton Title="Apply" ButtonSize=@ButtonSize.Small Command="Apply" Image="img/buttons/selection-form/Ok.svg" />
+    <ImageButton Title="Cancel" ButtonSize=@ButtonSize.Small Image="img/buttons/selection-form/Cancel.svg" />
+</FormInner>
+
+<FormInner IsVisible=@(IsVisible && IsVector)>
+    <Label Text="Component:" />
+
+    <DictionarySelect Selected=@VectorComponent.ToString()
+                      Source=@(new Dictionary<string, string>() { ["-1"] = "", ["0"] = "X", ["1"] = "Y", ["2"] = "Z", ["3"] = "Scalar" })
+                      OnChange=@OnVectorComponentChange />
+</FormInner>
+
+@code
+{
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    void OnValueChanged(string value) => ValueName = value;
+    void OnVectorComponentChange(string value) => VectorComponent = int.Parse(value, System.Globalization.NumberStyles.Any);
+}

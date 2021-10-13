@@ -1,0 +1,31 @@
+﻿<button class="button floating-list__button @ButtonTypeMap[ButtonType] @(CanPush && IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">@Text</button>
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public ListButtonType ButtonType { get; set; } = ListButtonType.Default;
+    [Parameter] public bool CanPush { get; set; } = false;
+    [Parameter] public bool IsPushed { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    bool Disabled => Command != null ? !Command.CanExecute(null) : true;
+
+    [Parameter] public ITelmaCommand Command { get; set; }
+
+    void OnClick() => Command?.Execute(null);
+
+    Dictionary<ListButtonType, string> ButtonTypeMap = new Dictionary<ListButtonType, string>()
+    {
+        [ListButtonType.Underline] = "floating-list__button-underline",
+        [ListButtonType.Default] = ""
+    };
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Command != null)
+            Command.CanExecuteChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    }
+}

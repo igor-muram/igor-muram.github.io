@@ -1,0 +1,53 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Section Title="Value parameters" SectionType=@SectionType.Text IsVisible=@(ViewModel.TitleDraw.IsChecked == true)>
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="X" Id="value-x" Source=@ViewModel.ActiveTitleView.IsXDraw OnChange=@OnXChange />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Y" Id="value-y" Source=@ViewModel.ActiveTitleView.IsYDraw OnChange=@OnYChange />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Z" Id="value-z" Source=@ViewModel.ActiveTitleView.IsZDraw OnChange=@OnZChange />
+
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="X component" Id="value-x-component" Source=@ViewModel.ActiveTitleView.IsValueXDraw OnChange=@OnXComponentChange IsVisible=@ViewModel.ActiveTitleView.IsVectorValue />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Y component" Id="value-y-component" Source=@ViewModel.ActiveTitleView.IsValueYDraw OnChange=@OnYComponentChange IsVisible=@ViewModel.ActiveTitleView.IsVectorValue />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Z component" Id="value-z-component" Source=@ViewModel.ActiveTitleView.IsValueZDraw OnChange=@OnZComponentChange IsVisible=@ViewModel.ActiveTitleView.IsVectorValue />
+
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Scalar" Id="value-scalar" Source=@ViewModel.ActiveTitleView.IsValueScalarDraw OnChange=@OnScalarChange IsVisible=@ViewModel.ActiveTitleView.IsVectorValue />
+
+    <IntInput Text="Value precision:" Source=@ViewModel.ActiveTitleView.ResultDrawPrecision OnChange=@OnValuePrecisionChange SizeType=@InputSize.Short />
+    <IntInput Text="Coordinate precision:" Source=@ViewModel.ActiveTitleView.CoorDrawPrecision OnChange=@OnCoordinatePrecisionChange SizeType=@InputSize.Short />
+
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Draw value name" Id="value-draw-name" Source=@ViewModel.ActiveTitleView.IsDrawValueName OnChange=@OnDrawValueNameChange />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Draw coor exponential" Id="value-draw-coor-exp" Source=@ViewModel.ActiveTitleView.IsCoorDrawExponential OnChange=@OnCoorExpChange />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Draw value exponential" Id="value-draw-value-exp" Source=@ViewModel.ActiveTitleView.IsResultDrawExponential OnChange=@OnValueExpChange />
+
+    <IntInput Text="Dx:" Source=@ViewModel.ActiveTitleView.Dx OnChange=@OnDxChange SizeType=@InputSize.Short />
+    <IntInput Text="Dy:" Source=@ViewModel.ActiveTitleView.Dy OnChange=@OnDyChange SizeType=@InputSize.Short />
+
+    <Wrapper IsVisible=@ViewModel.IsActiveTitleSelectorVisible>
+        <Label Text="Title:" />
+        <Select Selected=@ViewModel.CurrentTitlesView Source=@ActiveTitleGroup OnChange=@OnTitlesViewChange />
+    </Wrapper>
+</Section>
+
+@code
+{
+    void OnXChange(bool value) => ViewModel.ActiveTitleView.IsXDraw = value;
+    void OnYChange(bool value) => ViewModel.ActiveTitleView.IsYDraw = value;
+    void OnZChange(bool value) => ViewModel.ActiveTitleView.IsZDraw = value;
+
+    void OnXComponentChange(bool value) => ViewModel.ActiveTitleView.IsValueXDraw = value;
+    void OnYComponentChange(bool value) => ViewModel.ActiveTitleView.IsValueYDraw = value;
+    void OnZComponentChange(bool value) => ViewModel.ActiveTitleView.IsValueZDraw = value;
+
+    void OnScalarChange(bool value) => ViewModel.ActiveTitleView.IsValueScalarDraw = value;
+
+    void OnValuePrecisionChange(int value) => ViewModel.ActiveTitleView.ResultDrawPrecision = value;
+    void OnCoordinatePrecisionChange(int value) => ViewModel.ActiveTitleView.CoorDrawPrecision = value;
+
+    void OnDrawValueNameChange(bool value) => ViewModel.ActiveTitleView.IsDrawValueName = value;
+    void OnCoorExpChange(bool value) => ViewModel.ActiveTitleView.IsCoorDrawExponential = value;
+    void OnValueExpChange(bool value) => ViewModel.ActiveTitleView.IsResultDrawExponential = value;
+
+    void OnDxChange(int value) => ViewModel.ActiveTitleView.Dx = value;
+    void OnDyChange(int value) => ViewModel.ActiveTitleView.Dy = value;
+
+    void OnTitlesViewChange(string value) => ViewModel.CurrentTitlesView = value;
+}

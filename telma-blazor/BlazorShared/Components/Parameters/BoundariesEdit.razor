@@ -1,0 +1,31 @@
+@inherits ReactiveComponentBase<MultyBoundaryEdit>
+
+<Parameters Title="Boundaries edit" Id="boundaries-edit">
+    <Wrapper>
+        <Checkbox CheckboxType=@CheckboxType.Input Text="Coefficient:" Id="boundaries-coeff" OnChange=@OnCoeffCheckboxChange Source=@ViewModel.IsCoeff />
+        <DoubleInput SizeType=@InputSize.Short Source=@ViewModel.Coeff OnChange=@OnCoeffChange />
+    </Wrapper>
+
+    <Wrapper>
+        <Checkbox CheckboxType=@CheckboxType.Input Text="Internal:" Id="boundaries-internal" OnChange=@OnInternalCheckboxChange Source=@ViewModel.IsInternal />
+        <IntInput SizeType=@InputSize.Short Source=@ViewModel.Internal OnChange=@OnInternalChange />
+    </Wrapper>
+
+    <Wrapper>
+        <Checkbox CheckboxType=@CheckboxType.Input Text="Condition:" Id="boundaries-condition" OnChange=@OnConditionCheckboxChange Source=@ViewModel.IsCondition />
+        <Select Selected=@ViewModel.ConditionName Source=@BoundaryNames OnChange=@OnBoundaryChange />
+    </Wrapper>
+</Parameters>
+
+@code
+{
+    [Parameter] public IEnumerable<string> BoundaryNames { get; set; }
+
+    void OnCoeffChange(ParameterFloat value) => ViewModel.Coeff = value;
+    void OnInternalChange(int value) => ViewModel.Internal = value;
+    void OnBoundaryChange(string value) => ViewModel.ConditionName = value;
+
+    void OnCoeffCheckboxChange(bool value) => ViewModel.IsCoeff = value;
+    void OnInternalCheckboxChange(bool value) => ViewModel.IsInternal = value;
+    void OnConditionCheckboxChange(bool value) => ViewModel.IsCondition = value;
+}

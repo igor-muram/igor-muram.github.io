@@ -1,0 +1,11 @@
+<span class="coord @(IsFixed ? "fixed" : "")">
+    <span>@Text </span>
+    <span>@Source</span>
+</span>
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Source { get; set; } = "";
+    [Parameter] public bool IsFixed { get; set; } = false;
+}

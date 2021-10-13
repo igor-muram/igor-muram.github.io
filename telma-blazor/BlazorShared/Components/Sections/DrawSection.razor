@@ -1,0 +1,5 @@
+﻿@inherits ReactiveComponentBase<ProcessorManagerComponent>
+
+<Section Title="Draw" IsVisible=@ViewModel.ScreenProblem.Is3D>
+    <ToggleSectionButton Title="Draw symmetry" Image="img/buttons/view/CutLeftAll.svg" Text="Draw" Text2="symmetry" Command=@ViewModel.SymmetryDraw IsPushed=@(ViewModel.SymmetryDraw.IsChecked == true) />
+</Section>

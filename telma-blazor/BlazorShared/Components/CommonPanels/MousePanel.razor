@@ -1,0 +1,62 @@
+﻿@inherits ReactiveComponentBase<TelmaComponentUIAggregator>
+
+<Panel Id="mouse" Title="Mouse">
+    <Container Classes="coords">
+        <Coordinate Text=@(service.XMouseLabel + ": ") Source=@($"{service.MouseX:G5}") />
+        <Coordinate Text=@(service.YMouseLabel + ": ") Source=@($"{service.MouseY:G5}") />
+        <Coordinate Text=@(service.ZMouseLabel + ": ") Source=@($"{service.MouseZ:G5}") />
+    </Container>
+
+    <Container Classes="checkbox-wrapper">
+        <Checkbox Text="Log" Id="mouse-log-x" Source=@LogScaleX OnChange=@OnLogScaleXChange>
+            <Label Text="10" IsVisible=@LogScaleX OnClick=@(() => LogScaleX = !LogScaleX) />
+            <Quantity IsVisible=@LogScaleX Source=@IXLogOrder OnChange=@OnIXLogOrderChange />
+        </Checkbox>
+
+        <Checkbox Text="Log" Id="mouse-log-y" Source=@LogScaleY OnChange=@OnLogScaleYChange>
+            <Label Text="10" IsVisible=@LogScaleY OnClick=@(() => LogScaleY = !LogScaleY) />
+            <Quantity IsVisible=@LogScaleY Source=@IYLogOrder OnChange=@OnIYLogOrderChange />
+        </Checkbox>
+
+        <Container Classes="empty" Style=@("width: " + (LogScaleX && !LogScaleY ? "76px; " : "30px; ") + "margin-right: " + (!LogScaleX && LogScaleY ? "-44px;" : "0;")) />
+    </Container>
+
+    <Expander>
+        <Heading>Fix panel</Heading>
+        <Content>
+            <Checkbox Text=@("Fix " + service.XMouseLabel) Id="mouse-fix-x" Source=@service.IsFixX OnChange=@OnFixXChange>
+                <DoubleInput IsVisible=@service.IsFixX Source=@ViewModel.FixedValue OnChange=@OnFixValueChange />
+            </Checkbox>
+            <Checkbox Text=@("Fix " + service.YMouseLabel) Id="mouse-fix-y" Source=@service.IsFixY OnChange=@OnFixYChange>
+                <DoubleInput IsVisible=@service.IsFixY Source=@ViewModel.FixedValue OnChange=@OnFixValueChange />
+            </Checkbox>
+            <Checkbox Text=@("Fix " + service.ZMouseLabel) Id="mouse-fix-z" Source=@service.IsFixZ OnChange=@OnFixZChange>
+                <DoubleInput IsVisible=@service.IsFixZ Source=@ViewModel.FixedValue OnChange=@OnFixValueChange />
+            </Checkbox>
+        </Content>
+    </Expander>
+</Panel>
+
+@code
+{
+    void OnLogScaleXChange(bool value)
+    {
+        LogScaleX = value;
+        StateHasChanged();
+    }
+
+    void OnLogScaleYChange(bool value)
+    {
+        LogScaleY = value;
+        StateHasChanged();
+    }
+
+    void OnIXLogOrderChange(int value) => IXLogOrder = value;
+    void OnIYLogOrderChange(int value) => IYLogOrder = value;
+
+    void OnFixXChange(bool value) => IsFixX = value;
+    void OnFixYChange(bool value) => IsFixY = value;
+    void OnFixZChange(bool value) => IsFixZ = value;
+
+    void OnFixValueChange(ParameterFloat value) => ViewModel.FixedValue = value;
+}

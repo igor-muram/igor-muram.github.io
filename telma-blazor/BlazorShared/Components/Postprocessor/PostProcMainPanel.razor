@@ -1,0 +1,25 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Panel Id="post-proc-main">
+    <FormInner>
+        <Wrapper>
+            <ImageButton Title="Animate time dependent results" Image="img/buttons/postprocessor-form/Animate.png" />
+        </Wrapper>
+
+        <Wrapper IsVisible=@ViewModel.IsTimeModeAvailable>
+            <IntInput Text="Text # =" SizeType=@InputSize.Short Source=@ViewModel.TimeNumber OnChange=@OnTimeNumberChange Min="1" />
+            <ImageButton Title="Apply" ButtonSize=@ButtonSize.Small Image="img/buttons/selection-form/Ok.svg" />
+        </Wrapper>
+
+        <Wrapper IsVisible=@ViewModel.IsTimeModeAvailable>
+            <DoubleInput Text="t =" SizeType=@InputSize.Middle Source=@ViewModel.TimeValue OnChange=@OnTimeValueChange />
+            <ImageButton Title="Apply" ButtonSize=@ButtonSize.Small Image="img/buttons/selection-form/Ok.svg" />
+        </Wrapper>
+    </FormInner>
+</Panel>
+
+@code
+{
+    void OnTimeNumberChange(int value) => ViewModel.TimeNumber = value;
+    void OnTimeValueChange(ParameterFloat value) => ViewModel.TimeValue = value;
+}

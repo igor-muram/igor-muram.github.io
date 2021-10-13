@@ -1,0 +1,8 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Other">
+    <SectionButton Title="Undo (Ctrl + Z)" Image="img/buttons/edit/undo.svg" Text="Undo" Command=@ViewModel.Undo />
+    <SectionButton Title="Redo (Ctrl + Alt + Z)" Image="img/buttons/edit/redo.svg" Text="Redo" Command=@ViewModel.Redo />
+    <SectionButton Title="Delete selected objects (Delete)" Image="img/buttons/edit/delete.svg" Text="Delete" Command=@ViewModel.DeleteObjects />
+    <SectionButton Title="Select all objects of current type (Ctrl + L)" Image="img/buttons/edit/all.svg" Text="Select" Text2="all" Command=@Aggregator.SelectAll />
+</Section>

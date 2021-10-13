@@ -1,0 +1,29 @@
+﻿<button class="button section__button @(CanPush && IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">
+    <img src=@Image>
+    @Text<br>@Text2
+</button>
+
+@code
+{
+    [Parameter] public string Image { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Text2 { get; set; } = " ";
+    [Parameter] public bool CanPush { get; set; } = false;
+    [Parameter] public bool IsPushed { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    bool Disabled => Command != null ? !Command.CanExecute(null) : true;
+
+    [Parameter] public ITelmaCommand Command { get; set; }
+
+    void OnClick() => Command?.Execute(null);
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Command != null)
+            Command.CanExecuteChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    }
+}

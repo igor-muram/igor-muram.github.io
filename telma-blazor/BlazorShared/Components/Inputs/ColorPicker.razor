@@ -1,0 +1,25 @@
+﻿@using System.Globalization
+
+<Label Text="Color = " IsVisible=@IsVisible />
+<input class="modify__input modify__input-color @(IsVisible ? "" : "hide")" type="color" value=@($"#{Source.R:X2}{Source.G:X2}{Source.B:X2}") @onchange=@OnChangeImpl>
+
+@code
+{
+    [Parameter] public Color Source { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public Action<Color> OnChange { get; set; }
+
+    void OnChangeImpl(ChangeEventArgs args)
+    {
+        string HexColor = (string)args.Value;
+
+        HexColor = HexColor.Substring(1);
+
+        byte R = byte.Parse(HexColor.Substring(0, 2), NumberStyles.HexNumber);
+        byte G = byte.Parse(HexColor.Substring(2, 2), NumberStyles.HexNumber);
+        byte B = byte.Parse(HexColor.Substring(4, 2), NumberStyles.HexNumber);
+
+        Color Color = Color.FromRGBA(R, G, B, 255);
+        OnChange?.Invoke(Color);
+    }
+}

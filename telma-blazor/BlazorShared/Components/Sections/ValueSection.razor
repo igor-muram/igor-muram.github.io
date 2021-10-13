@@ -1,0 +1,12 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Section Title="Value" IsVisible=@(ViewModel.TitleDraw.IsChecked == true)>
+    <Wrapper>
+        <Label Text="Value:" />
+
+        <Select Selected=@("V") Source=@(new string[2] { "V", "B" }) />
+
+        <ImageButton Title="Apply" ButtonSize=@ButtonSize.Small Image="img/buttons/selection-form/Ok.svg" />
+        <ImageButton Title="Cancel" ButtonSize=@ButtonSize.Small Image="img/buttons/selection-form/Cancel.svg" />
+    </Wrapper>
+</Section>

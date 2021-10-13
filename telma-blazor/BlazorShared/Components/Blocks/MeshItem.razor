@@ -1,0 +1,49 @@
+﻿@inherits ReactiveComponentBase<MeshWrapper>
+
+<Expander>
+    <Heading>
+        <Wrapper>
+            <EditableListItem Text="Mesh name:" Value=@ViewModel.Problem.ProblemItem.Mesh AddElementEvent=@AddMeshEvent DeleteElementEvent=@DeleteMeshEvent EditElementEvent=@EditMeshEvent />
+        </Wrapper>
+
+        <Wrapper>
+            <Label Text="Mesh:" />
+            <Select Selected=@ViewModel.Name Source=@ParentViewModel.Project.AvailableMeshes OnChange=@OnMeshChange />
+        </Wrapper>
+
+        <Wrapper>
+            <ImageButton Title="Build mesh (F5)" ButtonSize=@ButtonSize.Tiny Image="img/buttons/main-form/Build/Build.svg" Command=@ViewModel.CreateMesh />
+            <ImageButton ButtonSize=@ButtonSize.Tiny Title="Edit mesh" Image="img/buttons/file-form/Preprocessor.svg" />
+        </Wrapper>
+
+        <Wrapper>
+            <IntInput Text="Mesh refinement:" SizeType=@InputSize.Short Source=@ViewModel.MeshItem.MeshRefinements OnChange=@OnMeshRefinementsChange Min="0" Max="3" />
+        </Wrapper>
+    </Heading>
+    <Content>
+        <FormInner>
+            <Wrapper>
+                <Label Text="Type:" />
+                <Select Selected=@ViewModel.MeshItem.Type Source=@ViewModel.Problem.EnabledMeshes OnChange=@OnMeshTypeChange />
+            </Wrapper>
+
+            <Wrapper>
+                <TextInput SizeType=@InputSize.Long Source=@ViewModel.MeshItem.File IsReadonly="true" />
+            </Wrapper>
+
+            <Wrapper>
+                <ImageButton Title="Open file (Ctrl + O)" ButtonSize=@ButtonSize.Middle Image="img/buttons/file-form/Import.svg" />
+            </Wrapper>
+        </FormInner>
+    </Content>
+</Expander>
+
+@code
+{
+    [Parameter] public ProblemItemWrapper ParentViewModel { get; set; }
+
+    void OnMeshRefinementsChange(int value) => ViewModel.MeshItem.MeshRefinements = value;
+
+    void OnMeshTypeChange(string value) => ViewModel.MeshItem.Type = value;
+    void OnMeshChange(string value) => ParentViewModel.ProblemItem.Mesh = value;
+}

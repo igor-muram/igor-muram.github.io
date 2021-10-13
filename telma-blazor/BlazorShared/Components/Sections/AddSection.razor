@@ -1,0 +1,8 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Section Title="Add" SectionType=@SectionType.Text>
+    <TextButton Title="Create hyperbolic segment" Text="Hyperbolic" Command=@ViewModel.OnCreateHiperbolic />
+    <TextButton Title="Create polygonal XY segment" Text="Polygonal XY" Command=@ViewModel.OnCreatePolygonXY3 />
+    <TextButton Title="Create polygonal Rφ segment" Text="Polygonal Rφ" Command=@ViewModel.OnCreatePolygonRFi3 />
+    <TextButton Title="Create quadrupole hyperbolic segment" Text="Quadrupole hyperbolic" Command=@ViewModel.OnCreateQuadrupoleHiperbolic />
+</Section>

@@ -1,0 +1,35 @@
+@inherits ReactiveComponentBase<NailEdit>
+
+<Parameters Title="Material nail" Id="nail">
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Label TitleType=@TitleType.Point Text="Position:" />
+        <PointInput Source=@ViewModel.Node.As3D() OnChange=@OnNodePointChange />
+    </Wrapper>
+
+    <Wrapper>
+        <Label Text="Mesh mode:" />
+        <DictionarySelect Selected=@ViewModel.Code.ToString() OnChange=@OnMeshCodeChange
+                          Source=@(new Dictionary<string, string>() { ["0"] = "Default", ["1"] = "Without correction" }) />
+    </Wrapper>
+
+    <Wrapper>
+        <Label Text="Element order:" />
+        <DictionarySelect Selected=@ViewModel.Order.ToString() OnChange=@OnOrderChange
+                          Source=@(new Dictionary<string, string>() { ["0"] = "Linear", ["1"] = "Quadratic", ["2"] = "Cubic" }) />
+    </Wrapper>
+
+    <Wrapper>
+        <Label Text="Material:" />
+        <Select Selected=@ViewModel.MaterialName Source=@MaterialNames OnChange=@OnMaterialChange />
+    </Wrapper>
+</Parameters>
+
+@code
+{
+    [Parameter] public IEnumerable<string> MaterialNames { get; set; }
+
+    void OnMaterialChange(string value) => ViewModel.MaterialName = value;
+    void OnMeshCodeChange(string value) => ViewModel.Code = int.Parse(value, System.Globalization.NumberStyles.Any);
+    void OnOrderChange(string value) => ViewModel.Order = int.Parse(value, System.Globalization.NumberStyles.Any);
+    void OnNodePointChange(ParameterPoint3D value) => ViewModel.Node = value.As2D();
+}

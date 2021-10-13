@@ -1,0 +1,12 @@
+﻿@inherits ReactiveComponentBase<TelmaComponentUIAggregator>
+
+<Section Title="Scaling">
+    <SectionButton Title="Zoom in by 2 (Ctrl + Down)" Image="img/buttons/view/ZoomInBy2.svg" Text="Zoom" Text2="in by 2" Command=@ViewModel.OnZoomInBy2 />
+    <SectionButton Title="Zoom out by 2 (Alt + Down)" Image="img/buttons/view/ZoomOutBy2.svg" Text="Zoom" Text2="out by 2" Command=@ViewModel.OnZoomOutBy2 />
+    <SectionButton Title="Zoom extent around zero (Multiply)" Image="img/buttons/view/ZoomExtentAroundZero.svg" Text="Zoom extent" Text2="around zero" Command=@ViewModel.OnZoomExtentAroundZero />
+    <SectionButton Title="Zoom extent (Divide)" Image="img/buttons/view/ZoomExtent.svg" Text="Zoom" Text2="extent" Command=@ViewModel.OnZoomExtent />
+    <SectionButton Title="Zoom by mouse (Add)" Image="img/buttons/view/ZoomByMouse.svg" Text="Zoom" Text2="by mouse" Command=@ViewModel.OnZoomByMouse />
+    <SectionButton Title="Zero center (Clear)" Image="img/buttons/view/ZeroCenter.svg" Text="Zero" Text2="center" Command=@ViewModel.OnZeroCenter />
+    <SectionButton Title="Unzoom (Subtract)" Image="img/buttons/view/Unzoom.svg" Text="Unzoom" Command=@ViewModel.OnUnzoom />
+    <SectionButton Title="Force repaint (Ctrl + R)" Image="img/buttons/view/ForceRepaint.svg" Text="Force" Text2="repaint" Command=@ViewModel.OnRepaintAll />
+</Section>

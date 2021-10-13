@@ -1,0 +1,33 @@
+﻿<Label Text=@Text IsVisible=@IsVisible />
+<input class="modify__input modify__input-name modify__input-material @(IsVisible ? "" : "hide")" type="text" @bind-value=@Value @onclick:stopPropagation="true">
+<ImageButton ButtonType=@ImageButtonType.Icon Class="modify__change" Title="Change element name" OnClickEvent=@ChangeElement Image="img/check.svg" IsVisible=@(IsVisible && IsEditButtonVisible) />
+<ImageButton ButtonType=@ImageButtonType.Icon Class="modify__create" Title="Create new element" OnClickEvent=@CreateElement Image="img/plus.svg" IsVisible=@(IsVisible && IsAddButtonVisible) />
+<ImageButton ButtonType=@ImageButtonType.Icon Class="modify__remove" Title="Remove selected element" OnClickEvent=@DeleteElement Image="img/close.svg" IsVisible=@(IsVisible && IsDeleteButtonVisible) />
+
+@code
+{
+    [Parameter] public string Value { get; set; } = "";
+    [Parameter] public string Text { get; set; } = "Name =";
+
+    [Parameter] public Action<EditableListItemData> AddElementEvent { get; set; }
+    [Parameter] public Action<EditableListItemData> EditElementEvent { get; set; }
+    [Parameter] public Action<EditableListItemData> DeleteElementEvent { get; set; }
+
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public bool IsAddButtonVisible { get; set; } = true;
+    [Parameter] public bool IsEditButtonVisible { get; set; } = true;
+    [Parameter] public bool IsDeleteButtonVisible { get; set; } = true;
+
+    string OldValue;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        OldValue = Value;
+    }
+
+    void ChangeElement() => EditElementEvent?.Invoke(new EditableListItemData { OldValue = OldValue, NewValue = Value });
+    void CreateElement() => AddElementEvent?.Invoke(new EditableListItemData { OldValue = OldValue, NewValue = Value });
+    void DeleteElement() => DeleteElementEvent?.Invoke(new EditableListItemData { OldValue = OldValue, NewValue = Value });
+}
+

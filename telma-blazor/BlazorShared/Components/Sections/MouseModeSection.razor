@@ -1,0 +1,5 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Mouse mode">
+    <ToggleSectionButton Title="Traditional mouse mode instead of Telma mode" Image="img/buttons/mode/usb-mouse.svg" Text="Traditional" Text2="mouse" Command=@Aggregator.TraditionalMouse IsPushed=@(Aggregator.TraditionalMouse.IsChecked == true) />
+</Section>

@@ -1,0 +1,15 @@
+﻿@inherits ReactiveComponentBase<Telma.ProjectSystem.BaseTextDefinedProperty>
+
+<TextInput Text=@Text SizeType=@SizeType Source=@ViewModel.Text OnChange=@OnChangeImpl IsVisible=@IsVisible IsReadonly=@IsReadonly />
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+
+    [Parameter] public InputSize SizeType { get; set; } = InputSize.Stretch;
+
+    [Parameter] public bool IsReadonly { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    void OnChangeImpl(string value) => ViewModel.Text = value;
+}

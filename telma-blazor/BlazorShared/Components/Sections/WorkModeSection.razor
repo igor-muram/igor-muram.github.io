@@ -1,0 +1,6 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Work mode">
+    <SectionButton CanPush="true" Title="Set single selection mode" Image="img/buttons/mode/single.svg" Text="Single" Text2="selection mode" Command=@OnSetSingleMode IsPushed=@service.IsSingleMode />
+    <SectionButton CanPush="true" Title="Set group selection mode" Image="img/buttons/mode/group.svg" Text="Group" Text2="selection mode" Command=@OnSetGroupMode IsPushed=@service.IsGroupMode />
+</Section>

@@ -1,0 +1,25 @@
+﻿@inject IFileService FileService
+@inject IJSRuntime JSInterop
+
+<Popup Id="load-name" Title="File directory">
+    <Label Text="Choose a file:" />
+
+    <TextSelect Source=@FileService.DirectoryFiles OnChange=@((value) => FileService.Filename = value) Selected=@FileService.Filename Text="Selected file: " />
+
+    <Container Classes="popup__buttons">
+        <TextButton ButtonType=@TextButtonType.Popup Text="Load" OnClickEvent=@(() => Load()) />
+        <TextButton ButtonType=@TextButtonType.Popup Text="Cancel" OnClickEvent=@(() => Cancel()) />
+    </Container>
+</Popup>
+
+@code
+{
+    protected override void OnInitialized() => FileService.OnDirectoryFilesChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    async void Load()
+    {
+        await JSInterop.InvokeVoidAsync("ClosePopup", "load-name");
+        await FileService.LoadAsync();
+    }
+
+    async void Cancel() => await JSInterop.InvokeVoidAsync("ClosePopup", "load-name");
+}

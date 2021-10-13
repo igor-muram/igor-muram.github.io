@@ -1,0 +1,19 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<div class="form__input-wrapper @(IsVisible ? "" : "hide") @WrapperTypeMap[WrapperType]">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    [Parameter] public WrapperType WrapperType { get; set; } = WrapperType.Default;
+
+    Dictionary<WrapperType, string> WrapperTypeMap = new Dictionary<WrapperType, string>()
+    {
+        [WrapperType.Point] = "with_point",
+        [WrapperType.Default] = ""
+    };
+}

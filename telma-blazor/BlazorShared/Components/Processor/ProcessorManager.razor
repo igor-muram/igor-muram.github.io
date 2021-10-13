@@ -1,0 +1,68 @@
+﻿@inherits ReactiveComponentBase<ProcessorManagerComponent>
+
+<Panel Id="manager" Title="Processor manager">
+    <FormButtons>
+        <Wrapper>
+            <TextButton ButtonType=@TextButtonType.Outline Text="Start calculation" Command=@ViewModel.StartCalculation />
+            <TextButton ButtonType=@TextButtonType.Outline Text="Stop calculation" Command=@ViewModel.StopCalculation />
+            <TextButton ButtonType=@TextButtonType.Outline Text="Stop next time" Command=@ViewModel.StopNextTime />
+        </Wrapper>
+    </FormButtons>
+
+    <FormInner>
+        <Label Text="Active:" />
+        <Select Selected=@("") Source=@ViewModel.ProjectModel.AvailableProblems.Select(p => p.Name) OnChange=@OnProblemNameChange />
+    </FormInner>
+
+    <FormButtons>
+        <Wrapper>
+            <ToggleImageButton Title="Draw symmetry" Image="img/buttons/processor-form/CutLeftAll.svg" Command=@ViewModel.SymmetryDraw IsVisible=@ViewModel.ScreenProblem.Is3D IsPushed=@(ViewModel.SymmetryDraw.IsChecked == true) />
+            <ToggleImageButton Title="Set material draw mode" Image="img/buttons/processor-form/Material.svg" Command=@ViewModel.ActiveSurfaceView?.MaterialDraw IsPushed=@(ViewModel.ActiveSurfaceView?.MaterialDraw.IsChecked == true) />
+            <ToggleImageButton Title="Set mesh draw mode" Image="img/buttons/processor-form/Preprocessor.svg" Command=@ViewModel.ActiveSurfaceView?.MeshDraw IsPushed=@(ViewModel.ActiveSurfaceView?.MeshDraw.IsChecked == true) />
+            <ImageButton Title="Save surfaces" Image="img/buttons/processor-form/Save.svg" />
+            <ImageButton Title="Load surfaces" Image="img/buttons/processor-form/Load.svg" />
+        </Wrapper>
+    </FormButtons>
+
+    <FormButtons IsVisible=@ViewModel.ScreenProblem.Is3D>
+        <Wrapper>
+            <ImageButton Title="Add surface by plane section" Image="img/buttons/processor-form/AddLine.svg" Command=@ViewModel.OnAddByLine />
+            <ImageButton Title="Add surface between materials" Image="img/buttons/processor-form/AddSurface.svg" Command=@ViewModel.OnAddBymaterials />
+            <ImageButton Title="Edit surface" Image="img/buttons/processor-form/Edit.svg" Command=@OnEditSurfaceProperties />
+            <ImageButton Title="Delete surfaces" Image="img/buttons/processor-form/Delete.svg" Command=@OnDeleteSurface />
+        </Wrapper>
+    </FormButtons>
+
+    <FormInner IsVisible=@ViewModel.ScreenProblem.Is3D>
+        <Select Selected=@ViewModel.CurrentSurfaceView Source=@ActiveSurfaceGroup OnChange=@OnSurfaceViewChange />
+    </FormInner>
+
+    <Container Classes="form__info" IsVisible=@RunningVisibility>
+        <FormInner>
+            <TextInput Text="Solving problem:" SizeType=@InputSize.Middle Source=@ViewModel.SolvingProblem IsReadonly="true" />
+        </FormInner>
+
+        <FormInner>
+            <Wrapper>
+                <IntInput Text="Run information:" SizeType=@InputSize.Short Source=@RunningSeconds IsReadonly="true" />
+                <Label Text="processing seconds" />
+            </Wrapper>
+        </FormInner>
+
+        <FormInner>
+            <DoubleInput Text="Problem time" SizeType=@InputSize.Short Source=@Valtime IsReadonly="true" />
+            <IntInput Text="Problem time #" SizeType=@InputSize.Short Source=@Ntime IsReadonly="true" />
+        </FormInner>
+
+        <FormInner>
+            <DoubleInput Text="Last SLAE residual" SizeType=@InputSize.Middle Source=@Residual IsReadonly="true" />
+            <IntInput Text="Iterations" SizeType=@InputSize.Short Source=@Iter IsReadonly="true" />
+        </FormInner>
+    </Container>
+</Panel>
+
+@code
+{
+    void OnProblemNameChange(string value) => ViewModel.ScreenProblem = ViewModel.ProjectModel.AvailableProblems.FirstOrDefault(p => p.Name == value);
+    void OnSurfaceViewChange(string value) => ViewModel.CurrentSurfaceView = value;
+}

@@ -1,0 +1,10 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Section Title="Command">
+    <SectionButton Title="Check intersections (F7)" Image="img/buttons/base-plane/Check.svg" Text="Check" Text2="intersections" Command=@ViewModel.OnCheckIntersections />
+    <SectionButton Title="Remove node (Ctrl + 7)" Image="img/buttons/base-plane/RemoveNode.svg" Text="Remove" Text2="node" Command=@ViewModel.OnRemoveNode />
+    <SectionButton Title="Swap internal nodes (Ctrl + Oem3)" Image="img/buttons/base-plane/Swap.svg" Text="Swap" Command=@ViewModel.OnSwap />
+    <SectionButton Title="Swap internal nodes along axis" Image="img/buttons/base-plane/SwapXY.svg" Text="Swap" Command=@ViewModel.OnSwapXY />
+    <SectionButton Title="Double mesh (Ctrl + 2)" Image="img/buttons/base-plane/Double.svg" Text="Double" Command=@ViewModel.OnDouble />
+    <SectionButton Title="Build mesh (F5)" Image="img/buttons/base-plane/Build.svg" Text="Build" Command=@ViewModel.OnBuild />
+</Section>

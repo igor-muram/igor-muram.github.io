@@ -1,0 +1,26 @@
+﻿<label class="radio @(IsEnabled ? "" : "disabled") @(IsVisible ? "" : "hide") @RadioButtonSizeMap[RadioButtonSize]">
+    <input type="radio" name=@Name value=@Text checked=@Source @onchange=@OnChangeImpl>
+    <span>@Text</span>
+    @ChildContent
+</label>
+
+@code
+{
+    [Parameter] public bool Source { get; set; } = false;
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Name { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; } = null;
+    [Parameter] public Action<bool> OnChange { get; set; }
+    [Parameter] public bool IsEnabled { get; set; } = true;
+    [Parameter] public bool IsVisible { get; set; } = true;
+
+    [Parameter] public RadioButtonSize RadioButtonSize { get; set; } = RadioButtonSize.Default;
+
+    Dictionary<RadioButtonSize, string> RadioButtonSizeMap = new Dictionary<RadioButtonSize, string>()
+    {
+        [RadioButtonSize.Small] = "radio-small",
+        [RadioButtonSize.Default] = ""
+    };
+
+    void OnChangeImpl(ChangeEventArgs args) => OnChange?.Invoke((bool)args.Value);
+}

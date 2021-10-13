@@ -1,0 +1,56 @@
+﻿@inherits ComponentBase
+
+<CascadingValue Value="this">
+    <Container Classes="header">
+        @foreach (TabPage tabPage in Pages)
+        {
+            if (tabPage == ActivePage)
+            {
+                <div class="tab-link active-link">@tabPage.Title</div>
+            }
+            else
+            {
+                <div class="tab-link" @onclick=@(() => ActivatePage(tabPage))>@tabPage.Title</div>
+            }
+        }
+    </Container>
+
+    @ChildContent
+</CascadingValue>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string ActivePageName { get; set; }
+
+    public TabPage ActivePage { get; set; }
+    List<TabPage> Pages = new List<TabPage>();
+
+    public void AddPage(TabPage tabPage)
+    {
+        Pages.Add(tabPage);
+        if (Pages.Count == 1)
+            ActivePage = tabPage;
+        StateHasChanged();
+    }
+
+    void ActivatePage(TabPage page) => ActivePage = page;
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (Pages.Select(p => p.Title).Contains(ActivePageName))
+            {
+                ActivatePage(Pages.Find(t => t.Title == ActivePageName));
+                StateHasChanged();
+            }
+        }
+
+        base.OnAfterRender(firstRender);
+#if DEBUG
+        Console.WriteLine("TabControl_OnAfterRender");
+#endif
+    }
+}

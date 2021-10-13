@@ -1,0 +1,44 @@
+﻿<button class="button button-image @ButtonSizeMap[ButtonSize] @(IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">
+    <img src=@Image>
+</button>
+
+@code
+{
+    [Parameter] public string Image { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public bool IsPushed { get; set; } = false;
+    [Parameter] public ButtonSize ButtonSize { get; set; } = ButtonSize.Big;
+
+    Dictionary<ButtonSize, string> ButtonSizeMap = new Dictionary<ButtonSize, string>()
+    {
+        [ButtonSize.Tiny] = "button-image-tiny",
+        [ButtonSize.Small] = "button-image-small",
+        [ButtonSize.Middle] = "button-image-middle",
+        [ButtonSize.Big] = ""
+    };
+
+    bool Disabled => Command != null ? !Command.CanExecute(null) : true;
+
+    [Parameter] public TelmaCheckCommand Command { get; set; }
+
+    void OnClick()
+    {
+        if (Command.IsChecked != null)
+        {
+            Command.IsChecked = !Command.IsChecked;
+            IsPushed = !IsPushed;
+        }
+
+        Command?.Execute(IsPushed);
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Command != null)
+            Command.CanExecuteChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    }
+}
+

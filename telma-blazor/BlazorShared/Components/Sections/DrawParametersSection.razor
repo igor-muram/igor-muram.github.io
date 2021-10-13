@@ -1,0 +1,19 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Section Title="Draw parameters" SectionType=@SectionType.Text IsVisible=@(ViewModel.TitleDraw.IsChecked == true)>
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Bounded" Id="bounded" Source=@ViewModel.ActiveTitleView.IsBounded OnChange=@OnBoundedChange />
+    <Checkbox CheckboxSize=@CheckboxSize.Small Text="Filled" Id="filled" Source=@ViewModel.ActiveTitleView.IsFilled OnChange=@OnFilledChange />
+
+    <Container />
+
+    <TextButton ButtonType=@TextButtonType.Color Id="fill-color" Text="Fill color" Title="Fill color" />
+    <TextButton ButtonType=@TextButtonType.Color Id="text-color" Text="Text color" Title="Text color" Source="#000000" />
+
+    <TextButton Title="Edit font" Text="Edit font" />
+</Section>
+
+@code
+{
+    void OnBoundedChange(bool value) => ViewModel.ActiveTitleView.IsBounded = value;
+    void OnFilledChange(bool value) => ViewModel.ActiveTitleView.IsFilled = value;
+}

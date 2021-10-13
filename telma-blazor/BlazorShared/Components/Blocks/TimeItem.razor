@@ -1,0 +1,32 @@
+@inherits ReactiveComponentBase<MeshTimeElementWrapper>
+
+<Row OnClick=@(() => ParentComponent.SelectedItem = ViewModel)>
+    <Column>
+        <DoubleInput InputType=@InputType.Table Source=@ViewModel.BegT OnChange=@OnBegTChange />
+    </Column>
+    <Column>
+        <DoubleInput InputType=@InputType.Table Source=@ViewModel.EndT OnChange=@OnEndTChange />
+    </Column>
+    <Column>
+        <IntInput InputType=@InputType.Table Source=@ViewModel.MeshTimeElement.Internal OnChange=@OnTimeInternalChange />
+    </Column>
+    <Column>
+        <DoubleInput InputType=@InputType.Table Source=@ViewModel.Coef OnChange=@OnTimeCoefChange />
+    </Column>
+    <Column>
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="table__create" Title="Create new element" Image="img/plus.svg" />
+    </Column>
+    <Column>
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="table__remove" Title="Remove selected element" Image="img/close.svg" />
+    </Column>
+</Row>
+
+@code
+{
+    [Parameter] public Time ParentComponent { get; set; }
+
+    void OnBegTChange(ParameterFloat value) => ViewModel.BegT = value;
+    void OnEndTChange(ParameterFloat value) => ViewModel.EndT = value;
+    void OnTimeInternalChange(int value) => ViewModel.MeshTimeElement.Internal = value;
+    void OnTimeCoefChange(ParameterFloat value) => ViewModel.Coef = value;
+}

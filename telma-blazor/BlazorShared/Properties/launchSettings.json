@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BlazorShared": {
+      "commandName": "Project",
+      "jsWebView2Debugging": true
+    }
+  }
+}

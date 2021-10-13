@@ -1,0 +1,30 @@
+﻿@inherits ReactiveComponentBase<BoundaryMaterialWrapper>
+
+<Expander>
+    <Heading>
+        <Wrapper>
+            <TextInput Text="Name =" SizeType=@InputSize.Long Source=@ViewModel.Name />
+        </Wrapper>
+
+        <Wrapper>
+            <Label Text="Condition:" />
+            <Select Selected=@ViewModel.Condition Source=@ViewModel.AvailableConditions OnChange=@OnConditionChange />
+        </Wrapper>
+
+        <Wrapper>
+            <ColorPicker Source=@ViewModel.Color OnChange=@OnBoundaryColorChange />
+        </Wrapper>
+    </Heading>
+    <Content>
+        @foreach (var coeff in ViewModel.Coefs)
+        {
+            <Property ViewModel=@coeff />
+        }
+    </Content>
+</Expander>
+
+@code
+{
+    void OnConditionChange(string value) => ViewModel.Condition = value;
+    void OnBoundaryColorChange(Color color) => ViewModel.Color = color;
+}

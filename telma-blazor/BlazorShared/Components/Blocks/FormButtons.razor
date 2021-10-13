@@ -1,0 +1,22 @@
+@inherits ReactiveComponentBase<TelmaComponent>
+
+<div class="form__buttons @(IsVisible ? "" : "hide") @ButtonsColorMap[ButtonsColor]">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public ButtonsColor ButtonsColor { get; set; } = ButtonsColor.Violet;
+
+    Dictionary<ButtonsColor, string> ButtonsColorMap = new Dictionary<ButtonsColor, string>()
+    {
+        [ButtonsColor.Green] = "form__buttons-green",
+        [ButtonsColor.Yellow] = "form__buttons-yellow",
+        [ButtonsColor.Red] = "form__buttons-red",
+        [ButtonsColor.Orange] = "form__buttons-orange",
+        [ButtonsColor.Blue] = "form__buttons-blue",
+        [ButtonsColor.Violet] = ""
+    };
+}

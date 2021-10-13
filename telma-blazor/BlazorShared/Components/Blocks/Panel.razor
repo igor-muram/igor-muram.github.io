@@ -1,0 +1,21 @@
+﻿<div class="form form-@Id @(IsVisible ? "" : "hide")" id="form-@Id" data-top="0px" data-left="0px">
+    <div class="form__content">
+        @ChildContent
+    </div>
+
+    <div class="form__handle" id=@Id title=@Title>
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="form__close" Title="Close form" Image="img/close.svg" />
+        <ImageButton ButtonType=@ImageButtonType.Icon Class="form__pin" Title="Unpin form" Image="img/pushpin.svg" />
+        <span class="form__title @(IsTitleVisible ? "" : "hide")">@Title</span>
+    </div>
+</div>
+
+
+@code
+{
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public bool IsTitleVisible { get; set; } = true;
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

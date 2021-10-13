@@ -1,0 +1,47 @@
+﻿@switch (ButtonType)
+{
+    case TextButtonType.Outline:
+        <button class="button button-outline @(CanPush && IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">@Text</button>
+        break;
+    case TextButtonType.Color:
+        <label for=@Id class="button button-text button-color @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">
+            <span>@Text</span>
+            <input type="color" id=@Id value=@Source>
+        </label>
+        break;
+    case TextButtonType.Popup:
+        <button class="button button-text @(OnClickEvent.HasDelegate ? "" : "disabled") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClickEvent @onclick:stopPropagation="true">@Text</button>
+        break;
+    case TextButtonType.Default:
+        <button class="button button-text @(CanPush && IsPushed ? "push" : "") @(Disabled ? "disabled" : "") @(IsVisible ? "" : "hide")" title=@Title @onclick=@OnClick @onclick:stopPropagation="true">@Text</button>
+        break;
+    default:
+        break;
+}
+
+@code
+{
+    [Parameter] public string Text { get; set; } = "";
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string Source { get; set; } = "#ffffff";
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public TextButtonType ButtonType { get; set; } = TextButtonType.Default;
+    [Parameter] public bool CanPush { get; set; } = false;
+    [Parameter] public bool IsPushed { get; set; } = false;
+    [Parameter] public bool IsVisible { get; set; } = true;
+    [Parameter] public EventCallback OnClickEvent { get; set; }
+
+    bool Disabled => Command != null ? !Command.CanExecute(null) : true;
+
+    [Parameter] public ITelmaCommand Command { get; set; }
+
+    void OnClick() => Command?.Execute(null);
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Command != null)
+            Command.CanExecuteChanged += (sender, args) => InvokeAsync(() => StateHasChanged());
+    }
+}

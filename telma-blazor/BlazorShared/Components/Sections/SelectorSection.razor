@@ -1,0 +1,7 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Selector">
+    <SectionButton CanPush="true" Title="Set point selector mode" Image="img/buttons/mode/point.svg" Text="Point" Command=@OnSetPointSelector IsPushed=@service.IsPointSelector />
+    <SectionButton CanPush="true" Title="Set rectangle selector mode" Image="img/buttons/mode/rect.svg" Text="Rectangle" Command=@OnSetRectSelector IsPushed=@service.IsRectSelector />
+    <SectionButton CanPush="true" Title="Set circle selector mode" Image="img/buttons/mode/circle.svg" Text="Circle" Command=@OnSetCircleSelector IsPushed=@service.IsCircleSelector />
+</Section>

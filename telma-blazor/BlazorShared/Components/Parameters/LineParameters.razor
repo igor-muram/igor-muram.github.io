@@ -1,0 +1,38 @@
+@inherits ReactiveComponentBase<SegmentBoundaryEdit>
+
+<Parameters Title="Straight segment boundary" Id="line">
+    <DoubleInput Text="Coefficient =" SizeType=@InputSize.Short Source=@ViewModel.Coeff OnChange=@OnCoeffChange />
+    <IntInput Text="Internal =" Source=@ViewModel.Internal SizeType=@InputSize.Short OnChange=@OnInternalChange />
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox OnChange=@OnFixStartChange Id="line-fix-start" Text="Fix start point:" Source=@ViewModel.FixedBeg />
+        <PointInput Source=@ViewModel.BegPoint.As3D() OnChange=@OnBegPointChange />
+    </Wrapper>
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox OnChange=@OnFixEndChange Id="line-fix-end" Text="Fix end point:" Source=@ViewModel.FixedEnd />
+        <PointInput Source=@ViewModel.EndPoint.As3D() OnChange=@OnEndPointChange />
+    </Wrapper>
+
+    <DoubleInput Text="Segment length:" Source=@ViewModel.Length SizeType=@InputSize.Middle OnChange=@OnLengthChange />
+
+    <Wrapper>
+        <Label Text="Condition:" />
+        <Select Selected=@ViewModel.ConditionName Source=@BoundaryNames OnChange=@OnBoundaryChange />
+    </Wrapper>
+</Parameters>
+
+@code
+{
+    [Parameter] public IEnumerable<string> BoundaryNames { get; set; }
+
+    void OnCoeffChange(ParameterFloat value) => ViewModel.Coeff = value;
+    void OnLengthChange(ParameterFloat value) => ViewModel.Length = value;
+    void OnInternalChange(int value) => ViewModel.Internal = value;
+    void OnBoundaryChange(string value) => ViewModel.ConditionName = value;
+
+    void OnFixStartChange(bool value) => ViewModel.FixedBeg = value;
+    void OnBegPointChange(ParameterPoint3D value) => ViewModel.BegPoint = value.As2D();
+    void OnFixEndChange(bool value) => ViewModel.FixedEnd = value;
+    void OnEndPointChange(ParameterPoint3D value) => ViewModel.EndPoint = value.As2D();
+}

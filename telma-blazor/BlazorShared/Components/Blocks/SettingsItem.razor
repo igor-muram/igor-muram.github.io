@@ -1,0 +1,82 @@
+﻿@inherits ReactiveComponentBase<ProblemSettingsWrapper>
+
+<Expander>
+    <Heading>
+        <Wrapper>
+            <EditableListItem Text="Settings name:" Value=@ViewModel.Problem.ProblemItem.Settings AddElementEvent=@AddSettingsEvent DeleteElementEvent=@DeleteSettingsEvent EditElementEvent=@EditSettingsEvent />
+        </Wrapper>
+
+        <Wrapper>
+            <Label Text="Settings:" />
+            <Select Selected=@ViewModel.Name Source=@ParentViewModel.Project.AvailableSettings OnChange=@OnSettingsChange />
+        </Wrapper>
+    </Heading>
+    <Content>
+        <FormInner>
+            <Expander>
+                <Heading>SLAE solver parameters</Heading>
+                <Content>
+                    <FormInner FormInnerType=@FormInnerType.Grid>
+                        <DoubleInput Text="Residual:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.SlaeParameters.SLAEEps OnChange=@OnLinearResidualChange Min="0.0" Max="1.0" />
+                        <IntInput Text="Max iter:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.SlaeParameters.SLAEMaxIter OnChange=@OnLinearMaxIterChange Min="0" />
+
+                        <Wrapper>
+                            <Label Text="Method:" />
+                            <Select Selected=@ViewModel.Settings.SlaeParameters.Solver.ToString() Source=@ViewModel.SolverNames OnChange=@OnSolverTypeChange />
+                        </Wrapper>
+
+                        <Wrapper>
+                            <Label Text="Factorizer:" />
+                            <Select Selected=@ViewModel.FactorizerName Source=@ViewModel.FactorizerNames OnChange=@OnFactorizerTypeChange />
+                        </Wrapper>
+
+                        <IntInput Text="Depth:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.SlaeParameters.SLAEDepth OnChange=@OnLinearDepthChange Min="0" IsVisible=@ViewModel.IsSLAEDepthVisible />
+                    </FormInner>
+                </Content>
+            </Expander>
+        </FormInner>
+
+        <FormInner IsVisible=@ViewModel.Problem.IsNonLinear>
+            <Expander>
+                <Heading>Non-linear problem solver parameters</Heading>
+                <Content>
+                    <FormInner FormInnerType=@FormInnerType.Grid>
+                        <DoubleInput Text="Residual:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.NonLinearProblemParameters.TaskEps1 OnChange=@OnNonlinearResidualChange Min="0.0" Max="1.0" />
+                        <DoubleInput Text="Step eps:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.NonLinearProblemParameters.TaskEps2 OnChange=@OnStepEpsChange Min="0.0" Max="1.0" />
+                        <DoubleInput Text="Relax prec:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.NonLinearProblemParameters.OmegaPrecision OnChange=@OnRelaxPrecChange Min="0.0" Max="1.0" />
+                        <DoubleInput Text="Relaxation:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.NonLinearProblemParameters.NewtonWeight OnChange=@OnRelaxationChange Min="0.0" Max="1.0" />
+                        <IntInput Text="Max iter:" SizeType=@InputSize.Middle Source=@ViewModel.Settings.NonLinearProblemParameters.MaxNonLinearIter OnChange=@OnNonlinearMaxIterChange Min="0" />
+                    </FormInner>
+                </Content>
+            </Expander>
+        </FormInner>
+
+        <FormInner IsVisible=@ViewModel.Problem.IsTimeDependent>
+            <Expander>
+                <Heading>Time parameters</Heading>
+                <Content>
+                    <Time ViewModel=@ViewModel.Settings.TimeParameters ParentViewModel=@ViewModel />
+                </Content>
+            </Expander>
+        </FormInner>
+    </Content>
+</Expander>
+
+@code
+{
+    [Parameter] public ProblemItemWrapper ParentViewModel { get; set; }
+
+    void OnLinearResidualChange(ParameterFloat value) => ViewModel.Settings.SlaeParameters.SLAEEps = value;
+    void OnLinearMaxIterChange(int value) => ViewModel.Settings.SlaeParameters.SLAEMaxIter = value;
+    void OnLinearDepthChange(int value) => ViewModel.Settings.SlaeParameters.SLAEDepth = value;
+
+    void OnNonlinearResidualChange(ParameterFloat value) => ViewModel.Settings.NonLinearProblemParameters.TaskEps1 = value;
+    void OnStepEpsChange(ParameterFloat value) => ViewModel.Settings.NonLinearProblemParameters.TaskEps2 = value;
+    void OnRelaxPrecChange(ParameterFloat value) => ViewModel.Settings.NonLinearProblemParameters.OmegaPrecision = value;
+    void OnRelaxationChange(ParameterFloat value) => ViewModel.Settings.NonLinearProblemParameters.NewtonWeight = value;
+    void OnNonlinearMaxIterChange(int value) => ViewModel.Settings.NonLinearProblemParameters.MaxNonLinearIter = value;
+
+    void OnSolverTypeChange(string value) => ViewModel.Settings.SlaeParameters.Solver = (Telma.Matrix.SolverType)Enum.Parse(typeof(Telma.Matrix.SolverType), value);
+    void OnFactorizerTypeChange(string value) => ViewModel.FactorizerName = value;
+    void OnSettingsChange(string value) => ParentViewModel.ProblemItem.Settings = value;
+}

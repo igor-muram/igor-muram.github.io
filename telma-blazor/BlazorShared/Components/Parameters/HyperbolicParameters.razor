@@ -1,0 +1,38 @@
+@inherits ReactiveComponentBase<HyperbolicBoundaryEdit>
+
+<Parameters Title="Hyperbolic segment boundary" Id="hyperbolic">
+    <DoubleInput Text="Eccentricity =" Source=@ViewModel.Eccentricity SizeType=@InputSize.Short IsReadonly="true" />
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Label TitleType=@TitleType.Point Text="Zero:" />
+        <PointInput Source=@ViewModel.Zero.As3D() IsReadonly="true" />
+    </Wrapper>
+
+    <DoubleInput Text="Angle =" Source=@ViewModel.Angle SizeType=@InputSize.Short IsReadonly="true" />
+    <DoubleInput Text="Coefficient =" Source=@ViewModel.Coeff SizeType=@InputSize.Short OnChange=@OnCoeffChange />
+    <IntInput Text="Internal =" Source=@ViewModel.Internal SizeType=@InputSize.Short OnChange=@OnInternalChange />
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox Text="Fix start point:" OnChange=@OnFixStartChange Id="hyperbolic-fix-start" Source=@ViewModel.FixedBeg />
+        <PointInput Source=@ViewModel.BegPoint.As3D() OnChange=@OnBegPointChange />
+    </Wrapper>
+
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Checkbox OnChange=@OnFixEndChange Text="Fix end point:" Id="hyperbolic-fix-end" Source=@ViewModel.FixedEnd />
+        <PointInput Source=@ViewModel.EndPoint.As3D() OnChange=@OnEndPointChange />
+    </Wrapper>
+
+    <DoubleInput Text="Segment length:" Source=@ViewModel.Length SizeType=@InputSize.Middle OnChange=@OnLengthChange />
+</Parameters>
+
+@code
+{
+    void OnCoeffChange(ParameterFloat value) => ViewModel.Coeff = value;
+    void OnLengthChange(ParameterFloat value) => ViewModel.Length = value;
+    void OnInternalChange(int value) => ViewModel.Internal = value;
+
+    void OnFixStartChange(bool value) => ViewModel.FixedBeg = value;
+    void OnBegPointChange(ParameterPoint3D value) => ViewModel.BegPoint = value.As2D();
+    void OnFixEndChange(bool value) => ViewModel.FixedEnd = value;
+    void OnEndPointChange(ParameterPoint3D value) => ViewModel.EndPoint = value.As2D();
+}

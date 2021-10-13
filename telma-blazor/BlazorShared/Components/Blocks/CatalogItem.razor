@@ -1,0 +1,50 @@
+﻿@inherits ReactiveComponentBase<CatalogWrapper>
+
+<Expander>
+    <Heading>
+        <Wrapper>
+            <EditableListItem Text="Catalog name:" Value=@ViewModel.AttachedProblem.ProblemItem.Catalog AddElementEvent=@AddCatalogEvent DeleteElementEvent=@DeleteCatalogEvent EditElementEvent=@EditCatalogEvent />
+        </Wrapper>
+
+        <Wrapper>
+            <Label Text="Catalog:" />
+            <Select Selected=@ViewModel.Name Source=@ParentViewModel.Project.AvailableCatalogs OnChange=@OnCatalogChange />
+        </Wrapper>
+    </Heading>
+    <Content>
+        <FormInner>
+            <Expander>
+                <Heading>Volume materials</Heading>
+                <Content>
+                    @foreach (var material in ViewModel.Materials)
+                    {
+                        <FormInner>
+                            <Material ViewModel=@material ParentViewModel=@ParentViewModel />
+                        </FormInner>
+                    }
+                </Content>
+            </Expander>
+        </FormInner>
+
+        <FormInner>
+            <Expander>
+                <Heading>Boundary conditions</Heading>
+                <Content>
+                    @foreach (var condition in ViewModel.Conditions)
+                    {
+                        <FormInner>
+                            <Boundary ViewModel=@condition />
+                        </FormInner>
+                    }
+                </Content>
+            </Expander>
+        </FormInner>
+    </Content>
+</Expander>
+
+@code
+{
+    [Parameter] public ProblemItemWrapper ParentViewModel { get; set; }
+
+    void OnCatalogChange(string value) => ParentViewModel.ProblemItem.Catalog = value;
+}

@@ -1,0 +1,45 @@
+﻿<div class="select-box @OrientationMap[Orientation] @SideMap[Side]" title=@Title>
+    <div class="options-container @(IsActive ? "active" : "")" @onclick=@OnClick @onclick:stopPropagation="true">
+        @foreach (var pair in Source)
+        {
+            <div class="option" data-name=@pair.Key @onclick=@(() => OnChangeImpl(pair.Key))>
+                <input type="radio" class="radio" />
+                <label>@pair.Value</label>
+            </div>
+        }
+    </div>
+
+    <div class="selected" @onclick=@OnClick @onclick:stopPropagation="true">@Source[Selected]</div>
+</div>
+
+@code
+{
+    [Parameter] public Dictionary<string, string> Source { get; set; }
+    [Parameter] public Action<string> OnChange { get; set; }
+    [Parameter] public string Selected { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+
+    [Parameter] public Orientation Orientation { get; set; } = Orientation.Bottom;
+    [Parameter] public Side Side { get; set; } = Side.Left;
+
+    Dictionary<Orientation, string> OrientationMap = new Dictionary<Orientation, string>()
+    {
+        [Orientation.Top] = "select-top",
+        [Orientation.Bottom] = ""
+    };
+
+    Dictionary<Side, string> SideMap = new Dictionary<Side, string>()
+    {
+        [Side.Right] = "select-right",
+        [Side.Left] = ""
+    };
+
+    bool IsActive { get; set; } = false;
+    void OnClick() => IsActive = !IsActive;
+
+    void OnChangeImpl(string value)
+    {
+        Selected = value;
+        OnChange?.Invoke(value);
+    }
+}

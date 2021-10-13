@@ -1,0 +1,30 @@
+﻿@inject IFileService FileService
+@inject IJSRuntime JSInterop
+
+<Popup Id="save-name" Title="File name">
+    <TextInput SizeType=@InputSize.Long Text="File name:" OnChange=@OnFileNameChange Source=@FileService.Filename />
+
+    <Container Classes="popup__buttons">
+        <TextButton ButtonType=@TextButtonType.Popup Text="Save" OnClickEvent=@(() => Save()) />
+        <TextButton ButtonType=@TextButtonType.Popup Text="Cancel" OnClickEvent=@(() => Cancel()) />
+    </Container>
+</Popup>
+
+@code
+{
+    void OnFileNameChange(string value) => FileService.Filename = value;
+
+    async void Save()
+    {
+        if (FileService.Filename.Trim() == "")
+        {
+            await JSInterop.InvokeVoidAsync("alert", "Can't save file without name!");
+            return;
+        }
+
+        await JSInterop.InvokeVoidAsync("ClosePopup", "save-name");
+        await FileService.SaveAsync();
+    }
+
+    async void Cancel() => await JSInterop.InvokeVoidAsync("ClosePopup", "save-name");
+}

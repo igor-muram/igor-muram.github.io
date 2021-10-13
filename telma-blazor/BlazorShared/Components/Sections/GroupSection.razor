@@ -1,0 +1,9 @@
+﻿@inherits ReactiveComponentBase<PostProcessorComponent>
+
+<Section Title="Group">
+    <ToggleSectionButton Title="Set title draw mode" Image="img/buttons/titles/TitlesDrawMode.svg" Text="Titles draw" Text2="mode" Command=@ViewModel.TitleDraw IsPushed=@(ViewModel.TitleDraw.IsChecked == true) />
+    <SectionButton Title="Add title group" Image="img/buttons/titles/Add.svg" Text="Add title" Text2="group" Command=@AddTitlesView />
+    <SectionButton Title="Load titles" Image="img/buttons/titles/Load.svg" Text="Load" Text2="titles" Command=@ViewModel.OnLoadTitlesExecute />
+    <SectionButton Title="Save titles" Image="img/buttons/titles/Save.svg" Text="Save" Text2="titles" Command=@ViewModel.OnSaveTitlesExecute />
+    <SectionButton Title="Delete title group" Image="img/buttons/titles/Delete.svg" Text="Delete" Text2="titles" IsVisible=@(ViewModel.TitleDraw.IsChecked == true) Command=@ViewModel.OnDeleteTitlesView />
+</Section>

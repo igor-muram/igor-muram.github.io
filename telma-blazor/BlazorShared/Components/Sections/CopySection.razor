@@ -1,0 +1,11 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Copy" SectionType=@SectionType.Text>
+    <TextButton Title="Copy selected by vector" Text="Copy by vector" Command=@ViewModel.OnCopyVector />
+    <TextButton Title="Copy selected around point" Text="Copy around point" Command=@ViewModel.OnCopyAroundPoint />
+    <TextButton Title="Copy selected around zero" Text="Copy around zero" Command=@ViewModel.OnCopyAroundZero />
+    <TextButton Title="Copy selected by reflection" Text="Copy by reflection" Command=@ViewModel.OnCopyReflection />
+    <TextButton Title="Copy selected by scale" Text="Copy by scale" Command=@ViewModel.OnCopyScale />
+    <TextButton Title="Copy selected by radial scale" Text="Copy by radial scale" Command=@ViewModel.OnCopyRadialScaleFromZero />
+    <TextButton Title="Copy selected by radial scale from point" Text="Copy by radial scale from point" Command=@ViewModel.OnCopyRadialScaleFromPoint />
+</Section>

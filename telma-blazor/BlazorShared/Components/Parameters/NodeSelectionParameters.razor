@@ -1,0 +1,13 @@
+@inherits ReactiveComponentBase<NodeEdit>
+
+<Parameters Title="Node" Id="node">
+    <Wrapper WrapperType=@WrapperType.Point>
+        <Label TitleType=@TitleType.Point Text="Point:" />
+        <PointInput Source=@ViewModel.Point.As3D() OnChange=@OnPointChange />
+    </Wrapper>
+</Parameters>
+
+@code
+{
+    void OnPointChange(ParameterPoint3D value) => ViewModel.Point = value.As2D();
+}

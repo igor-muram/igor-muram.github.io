@@ -1,0 +1,11 @@
+﻿@inherits ReactiveComponentBase<TelmaComponent>
+
+<Section Title="Move" SectionType=@SectionType.Text>
+    <TextButton Title="Move selected by vector" Text="Move by vector" Command=@ViewModel.OnMoveVector />
+    <TextButton Title="Move selected around point" Text="Move around point" Command=@ViewModel.OnMoveAroundPoint />
+    <TextButton Title="Move selected around zero" Text="Move around zero" Command=@ViewModel.OnMoveAroundZero />
+    <TextButton Title="Move selected by reflection" Text="Move by reflection" Command=@ViewModel.OnMoveReflection />
+    <TextButton Title="Move selected by scale" Text="Move by scale" Command=@ViewModel.OnMoveScale />
+    <TextButton Title="Move selected by radial scale" Text="Move by radial scale" Command=@ViewModel.OnMoveRadialScaleFromZero />
+    <TextButton Title="Move selected by radial scale from point" Text="Move by radial scale from point" Command=@ViewModel.OnMoveRadialScaleFromPoint />
+</Section>

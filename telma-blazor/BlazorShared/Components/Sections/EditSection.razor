@@ -1,0 +1,8 @@
+﻿@inherits ReactiveComponentBase<TelbaseComponent>
+
+<Section Title="Edit">
+    <SectionButton Title="Set max step" Image="img/buttons/base-plane/SetMaxStep.svg" Text="Set max" Text2="step" Command=@ViewModel.OnSetBoundaryMaxStep />
+    <SectionButton Title="Set min step" Image="img/buttons/base-plane/SetMinStep.svg" Text="Set min" Text2="step" Command=@ViewModel.OnSetBoundaryMinStep />
+    <SectionButton Title="Set equal max step" Image="img/buttons/base-plane/GE.svg" Text="Set equal" Text2="max step" Command=@ViewModel.OnSetBoundaryEqualMaxNode />
+    <SectionButton Title="Set equal min step" Image="img/buttons/base-plane/LE.svg" Text="Set equal" Text2="min step" Command=@ViewModel.OnSetBoundaryEqualMinNode />
+</Section>

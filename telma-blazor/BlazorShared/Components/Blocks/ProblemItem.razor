@@ -1,0 +1,96 @@
+﻿@inherits ReactiveComponentBase<ProblemItemWrapper>
+
+<FormInner>
+    <Expander>
+        <Heading>
+            <Wrapper>
+                <EditableListItem Text="Problem:" Value=@ViewModel.Name AddElementEvent=@AddProblemEvent DeleteElementEvent=@DeleteProblemEvent EditElementEvent=@EditProblemEvent />
+            </Wrapper>
+
+            <Wrapper>
+                <ImageButton Title="Clear results" ButtonSize=@ButtonSize.Tiny Image="img/buttons/edit/delete.svg" Command=@ViewModel.ClearResults />
+                <ImageButton ButtonSize=@ButtonSize.Tiny Title="Run postprocessor" Command=@RunPostprocessor Image="img/buttons/file-form/Postprocessor.svg" />
+            </Wrapper>
+
+            <Wrapper>
+                <Label Text="Type:" />
+                <Select Side=@Side.Right Selected=@ViewModel.ProblemItem.Type Source=@ViewModel.AvailableProblemTypes OnChange=@OnProblemTypeChange />
+            </Wrapper>
+        </Heading>
+        <Content>
+            <FormInner IsVisible=@ViewModel.Is3D>
+                <Expander>
+                    <Heading>Symmetry conditions</Heading>
+                    <Content>
+                        <FormInner>
+                            <Wrapper>
+                                <Label Text="X:" />
+                                <DictionarySelect Selected=@ViewModel.XSymmetry.ToString() OnChange=@OnXSymmetryChange
+                                                  Source=@(new Dictionary<string, string>() { ["0"] = "None", ["1"] = "Positive", ["2"] = "Negative" }) />
+                            </Wrapper>
+
+                            <Wrapper>
+                                <Label Text="Y:" />
+                                <DictionarySelect Selected=@ViewModel.YSymmetry.ToString() OnChange=@OnYSymmetryChange
+                                                  Source=@(new Dictionary<string, string>() { ["0"] = "None", ["1"] = "Positive", ["2"] = "Negative" }) />
+                            </Wrapper>
+
+                            <Wrapper>
+                                <Label Text="Z:" />
+                                <DictionarySelect Selected=@ViewModel.ZSymmetry.ToString() OnChange=@OnZSymmetryChange
+                                                  Source=@(new Dictionary<string, string>() { ["0"] = "None", ["1"] = "Positive", ["2"] = "Negative" }) />
+                            </Wrapper>
+                        </FormInner>
+                    </Content>
+                </Expander>
+            </FormInner>
+
+            <FormInner>
+                <IntInput Text="Add basis order:" SizeType=@InputSize.Short Source=@ViewModel.ProblemItem.AddBasisOrder OnChange=@OnAddBasisOrderChange />
+                <IntInput Text="Add vector basis order:" SizeType=@InputSize.Short Source=@ViewModel.ProblemItem.AddVectorBasisOrder OnChange=@OnAddVectorBasisOrderChange />
+            </FormInner>
+
+            <FormInner>
+                <TextInput Text="Source time multiplier:" SizeType=@InputSize.Short Source=@ViewModel.ProblemItem.SourceTimeMultiplier OnChange=@OnSourceTimeMultiplierChange />
+            </FormInner>
+
+            <FormInner>
+                <Wrapper>
+                    <Label Text="Scalar basis:" />
+                    <Select Selected=@ViewModel.ProblemItem.BasisType.ToString() Source=@ViewModel.AvailableBasisTypes OnChange=@OnBasisTypeChange />
+                </Wrapper>
+
+                <Wrapper>
+                    <Label Text="Vector basis:" />
+                    <Select Selected=@ViewModel.ProblemItem.VectorBasisType.ToString() Source=@ViewModel.AvailableBasisTypes OnChange=@OnVectorBasisTypeChange />
+                </Wrapper>
+            </FormInner>
+
+            <FormInner>
+                <MeshItem ViewModel=@ViewModel.CurrentMesh ParentViewModel=@ViewModel />
+            </FormInner>
+
+            <FormInner>
+                <SettingsItem ViewModel=@ViewModel.CurrentProblemSettings ParentViewModel=@ViewModel />
+            </FormInner>
+
+            <FormInner>
+                <CatalogItem ViewModel=@ViewModel.CurrentCatalog ParentViewModel=@ViewModel />
+            </FormInner>
+        </Content>
+    </Expander>
+</FormInner>
+
+@code
+{
+    void OnProblemTypeChange(string value) => ViewModel.ProblemItem.Type = value;
+    void OnXSymmetryChange(string value) => ViewModel.XSymmetry = int.Parse(value, System.Globalization.NumberStyles.Any);
+    void OnYSymmetryChange(string value) => ViewModel.YSymmetry = int.Parse(value, System.Globalization.NumberStyles.Any);
+    void OnZSymmetryChange(string value) => ViewModel.ZSymmetry = int.Parse(value, System.Globalization.NumberStyles.Any);
+    void OnBasisTypeChange(string value) => ViewModel.ProblemItem.BasisType = (TelmaQuasar.BasisFunction.BasisFunctionTypes)Enum.Parse(typeof(TelmaQuasar.BasisFunction.BasisFunctionTypes), value);
+    void OnVectorBasisTypeChange(string value) => ViewModel.ProblemItem.VectorBasisType = (TelmaQuasar.BasisFunction.BasisFunctionTypes)Enum.Parse(typeof(TelmaQuasar.BasisFunction.BasisFunctionTypes), value);
+
+    void OnAddBasisOrderChange(int value) => ViewModel.ProblemItem.AddBasisOrder = value;
+    void OnAddVectorBasisOrderChange(int value) => ViewModel.ProblemItem.AddVectorBasisOrder = value;
+    void OnSourceTimeMultiplierChange(string value) => ViewModel.ProblemItem.SourceTimeMultiplier = value;
+}

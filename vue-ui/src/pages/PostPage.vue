@@ -47,9 +47,25 @@ export default {
     };
   },
   methods: {
-    createPost(post) {
-      this.posts.push(post);
-      this.dialogVisible = false;
+    async createPost(post) {
+      try {
+        const json = {
+          title: post.title,
+          body: post.body,
+        };
+        const response = await axios.post(
+          'https://python-fastapi-webapi.herokuapp.com/create_post',
+          json,
+        );
+
+        post.id = response.data.id;
+
+        this.posts.push(post);
+      } catch (e) {
+        alert('Во время добавления поста произошла ошибка: ' + e);
+      } finally {
+        this.dialogVisible = false;
+      }
     },
     removePost(post) {
       this.posts = this.posts.filter((p) => p.id !== post.id);
@@ -59,7 +75,7 @@ export default {
     },
     async fetchPosts() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+        const response = await axios.get('https://python-fastapi-webapi.herokuapp.com/posts', {
           params: {
             _page: this.page,
             _limit: this.limit,
@@ -77,7 +93,7 @@ export default {
     async loadMorePosts() {
       try {
         this.page++;
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+        const response = await axios.get('https://python-fastapi-webapi.herokuapp.com/posts', {
           params: {
             _page: this.page,
             _limit: this.limit,

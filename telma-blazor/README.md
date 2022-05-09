@@ -2,7 +2,7 @@
 
 Cross-platform version of the software package for numerical modeling of physical processes, created using web technologies.
 
-The [demonstration file](/raw/master/telma-blazor/Description.pdf) details the following sections:
+The [demonstration file](https://github.com/igor-muram/igor-muram.github.io/raw/master/telma-blazor/Description.pdf) details the following sections:
 * Catalog of created user interface controls.
 * Documentation about the usage of all created components.
 * Screenshots of all created components.

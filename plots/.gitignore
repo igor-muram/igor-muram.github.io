@@ -1,2 +1,2 @@
-src/libs/
-node_modules/
+gulp/node_modules/
+src/libs
